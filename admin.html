@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Kontrol & Validasi - Penyegaran Pagi</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .admin-badge {
+      background: #ef4444;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      margin-left: 6px;
+    }
+    .select-week {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 2px solid #0284c7;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #0f172a;
+      background: #f0f9ff;
+      margin-bottom: 12px;
+      cursor: pointer;
+    }
+    .validation-box {
+      background: #f8fafc;
+      border: 2px solid #cbd5e1;
+      padding: 12px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      font-size: 0.85rem;
+    }
+    .validation-box h3 {
+      font-size: 0.95rem;
+      color: #0f172a;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .status-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .status-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #ffffff;
+      padding: 8px 10px;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+      font-size: 0.8rem;
+    }
+    .status-row:hover {
+      background: #f0f9ff;
+      border-color: #bae6fd;
+      cursor: pointer;
+    }
+    .badge-status {
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 0.75rem;
+    }
+    .badge-ok { background: #dcfce7; color: #16a34a; }
+    .badge-dummy { background: #fee2e2; color: #dc2626; }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>Penyegaran Pagi <span class="admin-badge">ADMIN</span></h1>
+      <div id="info-minggu" class="sub-header">Pusat Kontrol & Validasi Interaktif</div>
+    </header>
+
+    <main class="app-content">
+      <!-- PILIH MINGGU -->
+      <label for="select-minggu" style="font-size:0.85rem; font-weight:bold; color:#475569;">PILIH MINGGU YANG SEDANG DIKERJAKAN:</label>
+      <select id="select-minggu" class="select-week" onchange="gantiMingguAdmin(this.value)">
+      </select>
+
+      <!-- PANEL VALIDASI INTERAKTIF -->
+      <div class="validation-box" id="panel-validasi">
+        <h3>
+          <span>🔍 Status Materi (Minggu <span id="val-minggu-num">1</span>)</span>
+          <span style="font-size:0.75rem; color:#64748b; font-weight:normal;">Klik baris untuk buka hari</span>
+        </h3>
+        <div class="status-grid" id="status-grid-hari">
+          <!-- Diisi otomatis oleh JavaScript -->
+        </div>
+      </div>
+
+      <!-- MENU UTAMA (7 PILIHAN) -->
+      <section id="menu-view" class="view">
+        <div class="menu-title">Pilih Navigasi Harian:</div>
+        <div class="grid-menu" id="list-menu-hari"></div>
+      </section>
+
+      <!-- DETAIL HARIAN & TABS -->
+      <section id="detail-view" class="view hidden">
+        <button class="btn-back" onclick="kembaliKeMenu()">‹ Kembali ke Menu Utama</button>
+        <h2 id="judul-hari" class="day-title">Hari</h2>
+
+        <div class="tab-container">
+          <button class="tab-btn active" onclick="bukaTab('baca')">Baca</button>
+          <button class="tab-btn" onclick="bukaTab('dengar')">Dengar</button>
+          <button class="tab-btn" onclick="bukaTab('lihat')">Lihat</button>
+        </div>
+
+        <!-- TAB BACA -->
+        <div id="content-baca" class="tab-content active">
+          <div id="teks-bacaan" class="reading-box">Memuat bacaan...</div>
+        </div>
+
+        <!-- TAB DENGAR -->
+        <div id="content-dengar" class="tab-content">
+          <p style="font-size: 0.85rem; color: #64748b;">Audio Pemulihan Harian:</p>
+          <audio id="audio-player" controls>
+            <source id="audio-source" src="" type="audio/mpeg">
+            Browser Anda tidak mendukung audio.
+          </audio>
+        </div>
+
+        <!-- TAB LIHAT -->
+        <div id="content-lihat" class="tab-content">
+          <p style="font-size: 0.85rem; color: #64748b;">Video / Renungan Visual:</p>
+          <div class="video-wrapper">
+            <video id="video-player" controls>
+              <source id="video-source" src="" type="video/mp4">
+              Browser Anda tidak mendukung video.
+            </video>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    window.IS_ADMIN_MODE = true;
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>

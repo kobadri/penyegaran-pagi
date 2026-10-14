@@ -1,19 +1,190 @@
-<!-- ================= HALAMAN 1: LANDING PAGE (HOME) ================= -->
-<div id="view-home" class="page-view active">
-    <div class="date-display">
-        <h2 id="current-day-name">SENIN</h2>
-        <p id="current-date-full">Materi FKKP</p>
-    </div>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Penyegaran Pagi - Kaum Beriman (1)</title>
+  
+  <!-- KONEKSI PWA HARUS ADA DI SINI -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="apple-touch-icon" href="icon-192.png">
 
-    <!-- TIGA TOMBOL UTAMA -->
-    <div class="main-buttons" style="margin: 20px 0; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-        <button class="btn-main read" onclick="bukaHalamanDetail('baca')" style="padding: 10px 20px; cursor: pointer;">📖 Baca</button>
-        <button class="btn-main listen" onclick="bukaHalamanDetail('dengar')" style="padding: 10px 20px; cursor: pointer;">🎧 Dengar Suara</button>
-        <button class="btn-main watch" onclick="bukaHalamanDetail('lihat')" style="padding: 10px 20px; cursor: pointer;">📺 Lihat Video</button>
-    </div>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .home-menu-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      margin-top: 20px;
+      padding: 0 10px;
+    }
 
-    <!-- TOMBOL NAVIGASI BAWAH -->
-    <div class="footer-nav" style="margin-top: 30px;">
-        <button class="btn-sub week" onclick="gantiTampilan('minggu')" style="padding: 8px 16px; cursor: pointer;">📅 Minggu Ini</button>
-    </div>
-</div>
+    .hari-ini-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .btn-lingkaran-hari-ini {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: white;
+      border: 4px solid #38bdf8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.2);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      text-align: center;
+    }
+
+    .btn-lingkaran-hari-ini:active {
+      transform: scale(0.95);
+    }
+
+    .btn-lingkaran-hari-ini .icon-hari {
+      font-size: 1.8rem;
+      margin-bottom: 2px;
+    }
+
+    .btn-lingkaran-hari-ini .label-hari {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .teks-tanggal-luar {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #0284c7;
+      text-align: center;
+      background: #f0f9ff;
+      padding: 4px 12px;
+      border-radius: 20px;
+      border: 1px solid #bae6fd;
+    }
+
+    .select-minggu-landing {
+      width: 50%;
+      min-width: 200px;
+      appearance: none;
+      -webkit-appearance: none;
+      background: #ffffff url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230f172a' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e") no-repeat right 14px center;
+      background-size: 16px;
+      border: 2px solid #cbd5e1;
+      color: #0f172a;
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 12px 16px;
+      border-radius: 12px;
+      cursor: pointer;
+      outline: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      text-align: center;
+      text-align-last: center;
+      transition: border-color 0.15s ease;
+    }
+
+    .select-minggu-landing:focus {
+      border-color: #0284c7;
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+
+    .select-minggu-landing option {
+      font-size: 0.95rem;
+      font-weight: normal;
+      color: #0f172a;
+      padding: 10px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>Penyegaran Pagi</h1>
+      <div id="info-minggu" class="sub-header">Memuat minggu aktif...</div>
+    </header>
+
+    <main class="app-content">
+      <section id="menu-view" class="view">
+        <div class="home-menu-container">
+          
+          <div class="hari-ini-wrapper" onclick="bukaHariIni()">
+            <div class="btn-lingkaran-hari-ini">
+              <span class="icon-hari">📅</span>
+              <span class="label-hari">HARI INI</span>
+            </div>
+            <div class="teks-tanggal-luar" id="teks-info-hari-ini">Memuat tanggal...</div>
+          </div>
+
+          <select class="select-minggu-landing" onchange="pilihHariDariDropdown(this.value)">
+            <option value="" disabled selected>📚 MINGGU INI</option>
+            <option value="garis_besar">Garis Besar Seminggu</option>
+            <option value="Senin">Senin</option>
+            <option value="Selasa">Selasa</option>
+            <option value="Rabu">Rabu</option>
+            <option value="Kamis">Kamis</option>
+            <option value="Jumat">Jumat</option>
+            <option value="Sabtu">Sabtu</option>
+          </select>
+
+        </div>
+      </section>
+
+      <section id="detail-view" class="view hidden">
+        <button class="btn-back" onclick="kembaliKeMenu()">‹ Kembali ke Menu Utama</button>
+        <h2 id="judul-hari" class="day-title">Hari</h2>
+
+        <div class="tab-container">
+          <button class="tab-btn active" onclick="bukaTab('baca')">Baca</button>
+          <button class="tab-btn" onclick="bukaTab('dengar')">Dengar</button>
+          <button class="tab-btn" onclick="bukaTab('lihat')">Lihat</button>
+        </div>
+
+        <div id="content-baca" class="tab-content active">
+          <div id="teks-bacaan" class="reading-box">Memuat bacaan...</div>
+        </div>
+
+        <div id="content-dengar" class="tab-content">
+          <p style="font-size: 0.85rem; color: #64748b;">Audio Pemulihan Harian:</p>
+          <audio id="audio-player" controls>
+            <source id="audio-source" src="" type="audio/mpeg">
+            Browser Anda tidak mendukung audio.
+          </audio>
+        </div>
+
+        <div id="content-lihat" class="tab-content">
+          <p style="font-size: 0.85rem; color: #64748b;">Video / Renungan Visual:</p>
+          <div class="video-wrapper">
+            <video id="video-player" controls>
+              <source id="video-source" src="" type="video/mp4">
+              Browser Anda tidak mendukung video.
+            </video>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+
+  <!-- SCRIPT REGISTRASI SERVICE WORKER -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then(() => console.log('Service Worker Terdaftar!'))
+          .catch(err => console.log('SW Gagal:', err));
+      });
+    }
+  </script>
+</body>
+</html>

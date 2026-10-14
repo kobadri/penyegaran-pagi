@@ -1,80 +1,190 @@
-/* --- Pengaturan Global untuk Tampilan Full Layar HP & Desktop --- */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background-color: #f8fafc;
+  background-color: #f1f5f9;
   color: #1e293b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 480px;
+  height: 100vh;
+  max-height: 100vh;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  overflow: hidden;
 }
 
-/* Kontainer Utama: Dibuat Full Layar Tanpa Kotak Melayang */
-.container {
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 16px !important;
-  background-color: #ffffff;
-  min-height: 100vh;
-  border-radius: 0 !important;
-  box-shadow: none !important;
+@media (min-width: 481px) {
+  .app-container {
+    height: 850px;
+    border-radius: 20px;
+  }
 }
 
-/* Header Aplikasi */
-.header {
-  background: #0f172a;
-  color: white;
-  padding: 20px 16px;
+.app-header {
+  background-color: #0f172a;
+  color: #ffffff;
+  padding: 18px 16px;
   text-align: center;
-  border-radius: 0 0 16px 16px;
-  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.header h2 {
+.app-header h1 {
   font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.sub-header {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+.app-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.view {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.menu-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #475569;
   margin-bottom: 4px;
 }
 
-.header p {
-  font-size: 0.9rem;
-  opacity: 0.8;
+.grid-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-/* Kartu & Tombol Navigasi */
-.card, .admin-card, .menu-card {
-  width: 100%;
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 16px;
-  margin-bottom: 16px;
+.btn-menu {
+  background-color: #f8fafc;
   border: 1px solid #e2e8f0;
-}
-
-/* Tombol Memenuhi Lebar Layar */
-button, .btn {
-  width: 100%;
-  padding: 14px;
+  color: #1e293b;
+  padding: 16px;
+  text-align: left;
   font-size: 1rem;
-  border-radius: 8px;
-  border: none;
+  font-weight: 500;
+  border-radius: 12px;
   cursor: pointer;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Penyesuaian Tampilan HP */
-@media (max-width: 768px) {
-  body {
-    background-color: #ffffff;
-  }
-  .container {
-    padding: 12px !important;
-  }
+.btn-menu::after {
+  content: "›";
+  font-size: 1.3rem;
+  color: #94a3b8;
+}
+
+.btn-back {
+  background: none;
+  border: none;
+  color: #0284c7;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  padding: 4px 0;
+}
+
+.day-title {
+  font-size: 1.25rem;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.tab-container {
+  display: flex;
+  background-color: #f1f5f9;
+  border-radius: 10px;
+  padding: 4px;
+  margin-top: 4px;
+  margin-bottom: 12px;
+}
+
+.tab-btn {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #64748b;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  background-color: #ffffff;
+  color: #0284c7;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.tab-content {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tab-content.active {
+  display: flex;
+}
+
+.reading-box {
+  line-height: 1.7;
+  font-size: 1rem;
+  color: #334155;
+  background-color: #fafaf9;
+  padding: 16px;
+  border-radius: 10px;
+  border-left: 4px solid #0284c7;
+}
+
+audio {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.video-wrapper {
+  width: 100%;
+  max-height: 450px;
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  max-height: 450px;
+  object-fit: contain;
 }

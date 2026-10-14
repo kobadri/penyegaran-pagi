@@ -1,7 +1,7 @@
 const TANGGAL_MULAI_BUKU = new Date('2026-10-05T00:00:00');
 
 const petaHari = {
-  0: 'Sabtu', // Jika Minggu, diarahkan ke Sabtu/Senin
+  0: 'Senin', // Jika Minggu, diarahkan ke Senin
   1: 'Senin',
   2: 'Selasa',
   3: 'Rabu',
@@ -57,7 +57,6 @@ function aturInfoHariIni() {
   const dayIndex = sekarang.getDay();
   hariAktif = (dayIndex === 0) ? 'Senin' : petaHari[dayIndex];
   
-  // Format Tanggal Bahasa Indonesia: "Selasa, 13 Oktober 2026"
   const opsiTanggal = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
   const teksTanggal = sekarang.toLocaleDateString('id-ID', opsiTanggal);
 
@@ -222,6 +221,7 @@ function pad(num) {
 async function muatKonten(idHari) {
   const mStr = pad(mingguAktif);
   
+  // Menggunakan nama hari langsung (contoh: T_02_Rabu.html, S_02_Rabu.mp3, V_02_Rabu.mp4)
   const namaFileTeks = `T_${mStr}_${idHari}.html`;
   const elTeks = document.getElementById('teks-bacaan');
   if (elTeks) elTeks.innerHTML = "Memuat bacaan...";
@@ -232,7 +232,7 @@ async function muatKonten(idHari) {
       const htmlContent = await res.text();
       if (elTeks) elTeks.innerHTML = htmlContent;
     } else {
-      if (elTeks) elTeks.innerHTML = `<p>Konten bacaan untuk ${idHari} Minggu ke-${mingguAktif} sedang disiapkan.</p>`;
+      if (elTeks) elTeks.innerHTML = `<p>Konten bacaan untuk ${idHari} Minggu ke-${mingguAktif} (${namaFileTeks}) sedang disiapkan.</p>`;
     }
   } catch (err) {
     if (elTeks) elTeks.innerHTML = `<p>Gagal memuat file bacaan.</p>`;

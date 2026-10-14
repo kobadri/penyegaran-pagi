@@ -188,3 +188,14 @@ audio {
   max-height: 450px;
   object-fit: contain;
 }
+
+
+/* Kunci frame halaman Home agar melekat di layar HP */
+.card, .container, .main-card, main {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+

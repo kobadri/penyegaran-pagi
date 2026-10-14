@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin - Unggah & Sync Materi</title>
+  <title>Admin - Unggah & Terbitkan Materi</title>
   <link rel="stylesheet" href="style.css">
   <style>
     .admin-card {
@@ -38,7 +38,7 @@
       margin-top: 8px;
     }
     .btn-simpan {
-      background-color: #2563eb;
+      background-color: #16a34a;
       color: white;
       border: none;
       padding: 14px 20px;
@@ -50,7 +50,7 @@
       margin-top: 15px;
     }
     .btn-simpan:hover {
-      background-color: #1d4ed8;
+      background-color: #15803d;
     }
     .status-msg {
       margin-top: 15px;
@@ -68,19 +68,26 @@
 <body>
   <div class="container">
     <header class="header">
-      <h2>Pusat Unggah & Otomatis Sync GitHub</h2>
-      <p>Simpan file ke lokal dan langsung publikasikan ke Jemaat</p>
+      <h2>Pusat Unggah & Terbitkan Materi</h2>
+      <p>Baku, Praktis, & Langsung Tuntas Sampai ke Jemaat</p>
     </header>
 
+    <!-- Kunci Token GitHub Aman -->
     <div class="admin-card">
-      <button onclick="pilihFolderMiniWeb()" id="btn-folder" style="padding:12px; width:100%; cursor:pointer; background:#f1f5f9; border:1px solid #cbd5e1; border-radius:6px; font-weight:bold;">
-        📁 Langkah 1: Hubungkan ke Folder mini-web Laptop
+      <div class="form-group">
+        <label>🔑 Kunci Token GitHub (Hanya Perlu Diisi Sekali):</label>
+        <input type="password" id="gh-token" class="form-control" placeholder="Tempel Token GitHub di sini..." onchange="simpanToken()">
+        <small id="token-status-text" style="color:#64748b;">*Token akan tersimpan aman di browser laptop Anda.</small>
+      </div>
+      <button onclick="pilihFolderMiniWeb()" id="btn-folder" style="padding:10px; width:100%; cursor:pointer; background:#f1f5f9; border:1px solid #cbd5e1; border-radius:6px; font-weight:bold;">
+        📁 Hubungkan Folder mini-web Laptop
       </button>
       <small id="lbl-folder-status" style="color:#ef4444; display:block; margin-top:6px; text-align:center;">
         *Belum terhubung ke folder mini-web
       </small>
     </div>
 
+    <!-- Interface Unggah -->
     <div class="admin-card">
       <div class="form-group">
         <label>Pilih Minggu & Hari Target:</label>
@@ -123,23 +130,34 @@
         <small>Target nama file: <b id="nama-target-video">V_01_Garis_Besar.mp4</b></small>
       </div>
 
-      <button onclick="simpanSemuaFile()" class="btn-simpan">💾 Simpan File & Siapkan untuk Kirim</button>
+      <button onclick="prosesSimpanDanTerbit()" class="btn-simpan">🚀 💾 Simpan & Terbitkan ke Jemaat</button>
       
       <div id="status-notif" class="status-msg"></div>
-
-      <div id="box-sync" style="display:none; margin-top:15px; padding:15px; background:#f0fdf4; border:1px solid #86efac; border-radius:8px;">
-        <p style="margin:0 0 10px 0; font-weight:bold; color:#166534;">
-          ✓ File berhasil tersimpan di lokal! Klik tombol di bawah untuk langsung publish ke GitHub:
-        </p>
-        <button onclick="copyCommandGit()" style="padding:10px 15px; background:#15803d; color:white; border:none; border-radius:6px; font-weight:bold; cursor:pointer; width:100%;">
-          📋 Salin Perintah Sync GitHub (Tinggal Paste ke Terminal)
-        </button>
-      </div>
     </div>
   </div>
 
   <script>
+    const REPO_OWNER = 'kobadri';
+    const REPO_NAME = 'penyegaran-pagi';
     let folderHandle = null;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedToken = localStorage.getItem('gh_token_penyegaran');
+      if (savedToken) {
+        document.getElementById('gh-token').value = savedToken;
+        document.getElementById('token-status-text').innerText = '✓ Token tersimpan secara lokal di browser Anda.';
+        document.getElementById('token-status-text').style.color = '#16a34a';
+      }
+    });
+
+    function simpanToken() {
+      const val = document.getElementById('gh-token').value.trim();
+      if (val) {
+        localStorage.setItem('gh_token_penyegaran', val);
+        document.getElementById('token-status-text').innerText = '✓ Token tersimpan secara lokal di browser Anda.';
+        document.getElementById('token-status-text').style.color = '#16a34a';
+      }
+    }
 
     const selMinggu = document.getElementById('select-minggu');
     for (let i = 1; i <= 12; i++) {
@@ -176,19 +194,22 @@
       }
     }
 
-    async function simpanSemuaFile() {
+    async function prosesSimpanDanTerbit() {
+      const token = localStorage.getItem('gh_token_penyegaran') || document.getElementById('gh-token').value.trim();
+      if (!token) {
+        alert("Harap isi Kunci Token GitHub terlebih dahulu!");
+        return;
+      }
+
       if (!folderHandle) {
-        alert("Silakan klik 'Langkah 1: Hubungkan ke Folder mini-web Laptop' terlebih dahulu!");
+        alert("Harap klik 'Hubungkan Folder mini-web Laptop' terlebih dahulu!");
         return;
       }
 
       const notif = document.getElementById('status-notif');
-      const boxSync = document.getElementById('box-sync');
-      
       notif.style.display = "block";
       notif.className = "status-msg info";
-      notif.innerText = "Sedang menyimpan file ke folder mini-web...";
-      boxSync.style.display = "none";
+      notif.innerText = "⏳ Sedang menyimpan ke laptop & menerbitkan ke GitHub...";
 
       const m = String(selMinggu.value).padStart(2, '0');
       const h = document.getElementById('select-hari').value;
@@ -197,51 +218,84 @@
       let fileSuara = document.getElementById('file-suara').files[0];
       let fileVideo = document.getElementById('file-video').files[0];
 
-      let tersimpan = 0;
+      let totalSelesai = 0;
 
       try {
         if (fileTeks) {
-          await tulisFileKeFolder(`T_${m}_${h}.html`, fileTeks);
-          tersimpan++;
+          const namaTarget = `T_${m}_${h}.html`;
+          await tulisLokal(namaTarget, fileTeks);
+          await uploadGitHub(namaTarget, fileTeks, token);
+          totalSelesai++;
         }
         if (fileSuara) {
-          await tulisFileKeFolder(`S_${m}_${h}.mp3`, fileSuara);
-          tersimpan++;
+          const namaTarget = `S_${m}_${h}.mp3`;
+          await tulisLokal(namaTarget, fileSuara);
+          await uploadGitHub(namaTarget, fileSuara, token);
+          totalSelesai++;
         }
         if (fileVideo) {
-          await tulisFileKeFolder(`V_${m}_${h}.mp4`, fileVideo);
-          tersimpan++;
+          const namaTarget = `V_${m}_${h}.mp4`;
+          await tulisLokal(namaTarget, fileVideo);
+          await uploadGitHub(namaTarget, fileVideo, token);
+          totalSelesai++;
         }
 
-        if (tersimpan > 0) {
+        if (totalSelesai > 0) {
           notif.className = "status-msg success";
-          notif.innerText = `Berhasil menyimpan ${tersimpan} file ke folder lokal!`;
-          boxSync.style.display = "block";
+          notif.innerText = `🎉 Berhasil! ${totalSelesai} file telah tersimpan di laptop DAN langsung terbit ke Jemaat secara tuntas!`;
         } else {
           notif.className = "status-msg error";
           notif.innerText = "Pilih minimal satu file untuk diunggah.";
         }
       } catch (e) {
         notif.className = "status-msg error";
-        notif.innerText = "Gagal menyimpan file: " + e.message;
+        notif.innerText = "Gagal menerbitkan: " + e.message;
       }
     }
 
-    async function tulisFileKeFolder(namaTarget, fileData) {
+    async function tulisLokal(namaTarget, fileData) {
       const fileHandle = await folderHandle.getFileHandle(namaTarget, { create: true });
       const writable = await fileHandle.createWritable();
       await writable.write(fileData);
       await writable.close();
     }
 
-    function copyCommandGit() {
-      const m = String(selMinggu.value).padStart(2, '0');
-      const h = document.getElementById('select-hari').value;
-      const cmd = `cd ~/mini-web && git add . && git commit -m "Upload materi Minggu ${m} Hari ${h}" && git push origin main || git push origin master`;
+    async function uploadGitHub(path, file, token) {
+      const arrayBuffer = await file.arrayBuffer();
+      const base64Content = btoa(new Uint8Array(arrayBuffer).reduce((data, byte) => data + String.fromCharCode(byte), ''));
       
-      navigator.clipboard.writeText(cmd).then(() => {
-        alert("Perintah Git berhasil disalin!\nBuka terminal Anda lalu tekan Ctrl+Shift+V untuk langsung mengirimkan ke jemaat.");
+      const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${path}`;
+      
+      let sha = null;
+      try {
+        const getRes = await fetch(url, {
+          headers: { 'Authorization': `token ${token}` }
+        });
+        if (getRes.ok) {
+          const getData = await getRes.json();
+          sha = getData.sha;
+        }
+      } catch (e) {}
+
+      const bodyData = {
+        message: `Update materi ${path} via Admin Interface`,
+        content: base64Content
+      };
+      if (sha) bodyData.sha = sha;
+
+      const putRes = await fetch(url, {
+        method: 'PUT',
+        headers: {
+          'Authorization': `token ${token}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(bodyData)
       });
+
+      if (!putRes.ok) {
+        const err = await putRes.json();
+        throw new Error(err.message || 'Gagal koneksi ke GitHub');
+      }
     }
   </script>
 </body>

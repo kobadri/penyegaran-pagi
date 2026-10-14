@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin - Unggah Materi Penyegaran Pagi</title>
+  <title>Admin - Unggah & Sync Materi</title>
   <link rel="stylesheet" href="style.css">
   <style>
     .admin-card {
@@ -41,47 +41,49 @@
       background-color: #2563eb;
       color: white;
       border: none;
-      padding: 12px 20px;
-      font-size: 1rem;
+      padding: 14px 20px;
+      font-size: 1.05rem;
       border-radius: 6px;
       cursor: pointer;
       width: 100%;
       font-weight: bold;
-      margin-top: 10px;
+      margin-top: 15px;
     }
     .btn-simpan:hover {
       background-color: #1d4ed8;
     }
     .status-msg {
-      margin-top: 10px;
-      padding: 10px;
+      margin-top: 15px;
+      padding: 12px;
       border-radius: 6px;
       display: none;
       font-weight: bold;
+      white-space: pre-line;
     }
-    .success { background-color: #dcfce7; color: #15803d; }
-    .error { background-color: #fee2e2; color: #b91c1c; }
+    .success { background-color: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
+    .error { background-color: #fee2e2; color: #b91c1c; border: 1px solid #fecaca; }
+    .info { background-color: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
   </style>
 </head>
 <body>
   <div class="container">
     <header class="header">
-      <h2>Pusat Unggah Materi Admin</h2>
-      <p>Simpan file otomatis ke folder mini-web dengan nama yang benar</p>
+      <h2>Pusat Unggah & Otomatis Sync GitHub</h2>
+      <p>Simpan file ke lokal dan langsung publikasikan ke Jemaat</p>
     </header>
 
     <div class="admin-card">
-      <button onclick="pilihFolderMiniWeb()" id="btn-folder" style="padding:10px; width:100%; cursor:pointer; background:#f1f5f9; border:1px solid #cbd5e1; border-radius:6px; font-weight:bold;">
+      <button onclick="pilihFolderMiniWeb()" id="btn-folder" style="padding:12px; width:100%; cursor:pointer; background:#f1f5f9; border:1px solid #cbd5e1; border-radius:6px; font-weight:bold;">
         📁 Langkah 1: Hubungkan ke Folder mini-web Laptop
       </button>
-      <small id="lbl-folder-status" style="color:#ef4444; display:block; margin-top:5px; text-align:center;">
+      <small id="lbl-folder-status" style="color:#ef4444; display:block; margin-top:6px; text-align:center;">
         *Belum terhubung ke folder mini-web
       </small>
     </div>
 
     <div class="admin-card">
       <div class="form-group">
-        <label>Pilih Minggu & Hari:</label>
+        <label>Pilih Minggu & Hari Target:</label>
         <div style="display: flex; gap: 10px;">
           <select id="select-minggu" class="form-control">
             <!-- Pilihan Minggu 1 - 12 -->
@@ -121,15 +123,24 @@
         <small>Target nama file: <b id="nama-target-video">V_01_Garis_Besar.mp4</b></small>
       </div>
 
-      <button onclick="simpanSemuaFile()" class="btn-simpan">💾 Simpan Semua File ke mini-web</button>
+      <button onclick="simpanSemuaFile()" class="btn-simpan">💾 Simpan File & Siapkan untuk Kirim</button>
+      
       <div id="status-notif" class="status-msg"></div>
+
+      <div id="box-sync" style="display:none; margin-top:15px; padding:15px; background:#f0fdf4; border:1px solid #86efac; border-radius:8px;">
+        <p style="margin:0 0 10px 0; font-weight:bold; color:#166534;">
+          ✓ File berhasil tersimpan di lokal! Klik tombol di bawah untuk langsung publish ke GitHub:
+        </p>
+        <button onclick="copyCommandGit()" style="padding:10px 15px; background:#15803d; color:white; border:none; border-radius:6px; font-weight:bold; cursor:pointer; width:100%;">
+          📋 Salin Perintah Sync GitHub (Tinggal Paste ke Terminal)
+        </button>
+      </div>
     </div>
   </div>
 
   <script>
     let folderHandle = null;
 
-    // Isi pilihan minggu 1-12
     const selMinggu = document.getElementById('select-minggu');
     for (let i = 1; i <= 12; i++) {
       let opt = document.createElement('option');
@@ -172,9 +183,12 @@
       }
 
       const notif = document.getElementById('status-notif');
+      const boxSync = document.getElementById('box-sync');
+      
       notif.style.display = "block";
-      notif.className = "status-msg";
-      notif.innerText = "Sedang menyimpan file...";
+      notif.className = "status-msg info";
+      notif.innerText = "Sedang menyimpan file ke folder mini-web...";
+      boxSync.style.display = "none";
 
       const m = String(selMinggu.value).padStart(2, '0');
       const h = document.getElementById('select-hari').value;
@@ -201,7 +215,8 @@
 
         if (tersimpan > 0) {
           notif.className = "status-msg success";
-          notif.innerText = `Berhasil menyimpan ${tersimpan} file ke folder mini-web dengan nama yang benar!`;
+          notif.innerText = `Berhasil menyimpan ${tersimpan} file ke folder lokal!`;
+          boxSync.style.display = "block";
         } else {
           notif.className = "status-msg error";
           notif.innerText = "Pilih minimal satu file untuk diunggah.";
@@ -217,6 +232,16 @@
       const writable = await fileHandle.createWritable();
       await writable.write(fileData);
       await writable.close();
+    }
+
+    function copyCommandGit() {
+      const m = String(selMinggu.value).padStart(2, '0');
+      const h = document.getElementById('select-hari').value;
+      const cmd = `cd ~/mini-web && git add . && git commit -m "Upload materi Minggu ${m} Hari ${h}" && git push origin main || git push origin master`;
+      
+      navigator.clipboard.writeText(cmd).then(() => {
+        alert("Perintah Git berhasil disalin!\nBuka terminal Anda lalu tekan Ctrl+Shift+V untuk langsung mengirimkan ke jemaat.");
+      });
     }
   </script>
 </body>

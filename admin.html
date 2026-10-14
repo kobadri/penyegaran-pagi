@@ -3,149 +3,221 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Kontrol & Validasi - Penyegaran Pagi</title>
+  <title>Admin - Unggah Materi Penyegaran Pagi</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .admin-badge {
-      background: #ef4444;
-      color: white;
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-size: 0.75rem;
-      font-weight: bold;
-      margin-left: 6px;
+    .admin-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
-    .select-week {
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+      color: #1e293b;
+    }
+    .form-control {
       width: 100%;
-      padding: 12px;
-      border-radius: 10px;
-      border: 2px solid #0284c7;
+      padding: 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
       font-size: 1rem;
-      font-weight: bold;
-      color: #0f172a;
-      background: #f0f9ff;
-      margin-bottom: 12px;
-      cursor: pointer;
+      box-sizing: border-box;
     }
-    .validation-box {
+    .file-box {
+      border: 2px dashed #94a3b8;
+      padding: 15px;
+      border-radius: 8px;
       background: #f8fafc;
-      border: 2px solid #cbd5e1;
-      padding: 12px;
-      border-radius: 10px;
-      margin-bottom: 12px;
-      font-size: 0.85rem;
-    }
-    .validation-box h3 {
-      font-size: 0.95rem;
-      color: #0f172a;
-      margin-bottom: 8px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .status-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
       margin-top: 8px;
     }
-    .status-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #ffffff;
-      padding: 8px 10px;
+    .btn-simpan {
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
       border-radius: 6px;
-      border: 1px solid #e2e8f0;
-      font-size: 0.8rem;
-    }
-    .status-row:hover {
-      background: #f0f9ff;
-      border-color: #bae6fd;
       cursor: pointer;
-    }
-    .badge-status {
-      padding: 2px 6px;
-      border-radius: 4px;
+      width: 100%;
       font-weight: bold;
-      font-size: 0.75rem;
+      margin-top: 10px;
     }
-    .badge-ok { background: #dcfce7; color: #16a34a; }
-    .badge-dummy { background: #fee2e2; color: #dc2626; }
+    .btn-simpan:hover {
+      background-color: #1d4ed8;
+    }
+    .status-msg {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 6px;
+      display: none;
+      font-weight: bold;
+    }
+    .success { background-color: #dcfce7; color: #15803d; }
+    .error { background-color: #fee2e2; color: #b91c1c; }
   </style>
 </head>
 <body>
-  <div class="app-container">
-    <header class="app-header">
-      <h1>Penyegaran Pagi <span class="admin-badge">ADMIN</span></h1>
-      <div id="info-minggu" class="sub-header">Pusat Kontrol & Validasi Interaktif</div>
+  <div class="container">
+    <header class="header">
+      <h2>Pusat Unggah Materi Admin</h2>
+      <p>Simpan file otomatis ke folder mini-web dengan nama yang benar</p>
     </header>
 
-    <main class="app-content">
-      <!-- PILIH MINGGU -->
-      <label for="select-minggu" style="font-size:0.85rem; font-weight:bold; color:#475569;">PILIH MINGGU YANG SEDANG DIKERJAKAN:</label>
-      <select id="select-minggu" class="select-week" onchange="gantiMingguAdmin(this.value)">
-      </select>
+    <div class="admin-card">
+      <button onclick="pilihFolderMiniWeb()" id="btn-folder" style="padding:10px; width:100%; cursor:pointer; background:#f1f5f9; border:1px solid #cbd5e1; border-radius:6px; font-weight:bold;">
+        📁 Langkah 1: Hubungkan ke Folder mini-web Laptop
+      </button>
+      <small id="lbl-folder-status" style="color:#ef4444; display:block; margin-top:5px; text-align:center;">
+        *Belum terhubung ke folder mini-web
+      </small>
+    </div>
 
-      <!-- PANEL VALIDASI INTERAKTIF -->
-      <div class="validation-box" id="panel-validasi">
-        <h3>
-          <span>🔍 Status Materi (Minggu <span id="val-minggu-num">1</span>)</span>
-          <span style="font-size:0.75rem; color:#64748b; font-weight:normal;">Klik baris untuk buka hari</span>
-        </h3>
-        <div class="status-grid" id="status-grid-hari">
-          <!-- Diisi otomatis oleh JavaScript -->
+    <div class="admin-card">
+      <div class="form-group">
+        <label>Pilih Minggu & Hari:</label>
+        <div style="display: flex; gap: 10px;">
+          <select id="select-minggu" class="form-control">
+            <!-- Pilihan Minggu 1 - 12 -->
+          </select>
+          <select id="select-hari" class="form-control">
+            <option value="Garis_Besar">Garis Besar</option>
+            <option value="Senin">Senin</option>
+            <option value="Selasa">Selasa</option>
+            <option value="Rabu">Rabu</option>
+            <option value="Kamis">Kamis</option>
+            <option value="Jumat">Jumat</option>
+            <option value="Sabtu">Sabtu</option>
+          </select>
         </div>
       </div>
 
-      <!-- MENU UTAMA (7 PILIHAN) -->
-      <section id="menu-view" class="view">
-        <div class="menu-title">Pilih Navigasi Harian:</div>
-        <div class="grid-menu" id="list-menu-hari"></div>
-      </section>
+      <hr style="border:0; border-top:1px solid #e2e8f0; margin:20px 0;">
 
-      <!-- DETAIL HARIAN & TABS -->
-      <section id="detail-view" class="view hidden">
-        <button class="btn-back" onclick="kembaliKeMenu()">‹ Kembali ke Menu Utama</button>
-        <h2 id="judul-hari" class="day-title">Hari</h2>
+      <!-- Unggah Teks -->
+      <div class="form-group file-box">
+        <label id="lbl-teks">Silakan unggah file teks untuk minggu ke-1 hari Garis_Besar:</label>
+        <input type="file" id="file-teks" accept=".html,.txt" class="form-control">
+        <small>Target nama file: <b id="nama-target-teks">T_01_Garis_Besar.html</b></small>
+      </div>
 
-        <div class="tab-container">
-          <button class="tab-btn active" onclick="bukaTab('baca')">Baca</button>
-          <button class="tab-btn" onclick="bukaTab('dengar')">Dengar</button>
-          <button class="tab-btn" onclick="bukaTab('lihat')">Lihat</button>
-        </div>
+      <!-- Unggah Suara -->
+      <div class="form-group file-box">
+        <label id="lbl-suara">Silakan unggah file suara untuk minggu ke-1 hari Garis_Besar:</label>
+        <input type="file" id="file-suara" accept=".mp3,.wav" class="form-control">
+        <small>Target nama file: <b id="nama-target-suara">S_01_Garis_Besar.mp3</b></small>
+      </div>
 
-        <!-- TAB BACA -->
-        <div id="content-baca" class="tab-content active">
-          <div id="teks-bacaan" class="reading-box">Memuat bacaan...</div>
-        </div>
+      <!-- Unggah Video -->
+      <div class="form-group file-box">
+        <label id="lbl-video">Silakan unggah file video untuk minggu ke-1 hari Garis_Besar:</label>
+        <input type="file" id="file-video" accept=".mp4,.webm" class="form-control">
+        <small>Target nama file: <b id="nama-target-video">V_01_Garis_Besar.mp4</b></small>
+      </div>
 
-        <!-- TAB DENGAR -->
-        <div id="content-dengar" class="tab-content">
-          <p style="font-size: 0.85rem; color: #64748b;">Audio Pemulihan Harian:</p>
-          <audio id="audio-player" controls>
-            <source id="audio-source" src="" type="audio/mpeg">
-            Browser Anda tidak mendukung audio.
-          </audio>
-        </div>
-
-        <!-- TAB LIHAT -->
-        <div id="content-lihat" class="tab-content">
-          <p style="font-size: 0.85rem; color: #64748b;">Video / Renungan Visual:</p>
-          <div class="video-wrapper">
-            <video id="video-player" controls>
-              <source id="video-source" src="" type="video/mp4">
-              Browser Anda tidak mendukung video.
-            </video>
-          </div>
-        </div>
-      </section>
-    </main>
+      <button onclick="simpanSemuaFile()" class="btn-simpan">💾 Simpan Semua File ke mini-web</button>
+      <div id="status-notif" class="status-msg"></div>
+    </div>
   </div>
 
   <script>
-    window.IS_ADMIN_MODE = true;
+    let folderHandle = null;
+
+    // Isi pilihan minggu 1-12
+    const selMinggu = document.getElementById('select-minggu');
+    for (let i = 1; i <= 12; i++) {
+      let opt = document.createElement('option');
+      opt.value = i;
+      opt.innerText = `Minggu ke-${i}`;
+      selMinggu.appendChild(opt);
+    }
+
+    function updateLabels() {
+      const m = String(selMinggu.value).padStart(2, '0');
+      const h = document.getElementById('select-hari').value;
+
+      document.getElementById('lbl-teks').innerText = `Silakan unggah file teks untuk minggu ke-${selMinggu.value} hari ${h}:`;
+      document.getElementById('lbl-suara').innerText = `Silakan unggah file suara untuk minggu ke-${selMinggu.value} hari ${h}:`;
+      document.getElementById('lbl-video').innerText = `Silakan unggah file video untuk minggu ke-${selMinggu.value} hari ${h}:`;
+
+      document.getElementById('nama-target-teks').innerText = `T_${m}_${h}.html`;
+      document.getElementById('nama-target-suara').innerText = `S_${m}_${h}.mp3`;
+      document.getElementById('nama-target-video').innerText = `V_${m}_${h}.mp4`;
+    }
+
+    selMinggu.addEventListener('change', updateLabels);
+    document.getElementById('select-hari').addEventListener('change', updateLabels);
+    updateLabels();
+
+    async function pilihFolderMiniWeb() {
+      try {
+        folderHandle = await window.showDirectoryPicker();
+        document.getElementById('lbl-folder-status').innerText = `✓ Terhubung ke folder: ${folderHandle.name}`;
+        document.getElementById('lbl-folder-status').style.color = "#16a34a";
+      } catch (err) {
+        alert("Akses folder dibatalkan.");
+      }
+    }
+
+    async function simpanSemuaFile() {
+      if (!folderHandle) {
+        alert("Silakan klik 'Langkah 1: Hubungkan ke Folder mini-web Laptop' terlebih dahulu!");
+        return;
+      }
+
+      const notif = document.getElementById('status-notif');
+      notif.style.display = "block";
+      notif.className = "status-msg";
+      notif.innerText = "Sedang menyimpan file...";
+
+      const m = String(selMinggu.value).padStart(2, '0');
+      const h = document.getElementById('select-hari').value;
+
+      let fileTeks = document.getElementById('file-teks').files[0];
+      let fileSuara = document.getElementById('file-suara').files[0];
+      let fileVideo = document.getElementById('file-video').files[0];
+
+      let tersimpan = 0;
+
+      try {
+        if (fileTeks) {
+          await tulisFileKeFolder(`T_${m}_${h}.html`, fileTeks);
+          tersimpan++;
+        }
+        if (fileSuara) {
+          await tulisFileKeFolder(`S_${m}_${h}.mp3`, fileSuara);
+          tersimpan++;
+        }
+        if (fileVideo) {
+          await tulisFileKeFolder(`V_${m}_${h}.mp4`, fileVideo);
+          tersimpan++;
+        }
+
+        if (tersimpan > 0) {
+          notif.className = "status-msg success";
+          notif.innerText = `Berhasil menyimpan ${tersimpan} file ke folder mini-web dengan nama yang benar!`;
+        } else {
+          notif.className = "status-msg error";
+          notif.innerText = "Pilih minimal satu file untuk diunggah.";
+        }
+      } catch (e) {
+        notif.className = "status-msg error";
+        notif.innerText = "Gagal menyimpan file: " + e.message;
+      }
+    }
+
+    async function tulisFileKeFolder(namaTarget, fileData) {
+      const fileHandle = await folderHandle.getFileHandle(namaTarget, { create: true });
+      const writable = await fileHandle.createWritable();
+      await writable.write(fileData);
+      await writable.close();
+    }
   </script>
-  <script src="app.js"></script>
 </body>
 </html>

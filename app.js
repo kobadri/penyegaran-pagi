@@ -6,6 +6,17 @@
    - Tombol Home universal di dalam reader (berfungsi normal di semua halaman)
    - Tombol Copy To Clipboard otomatis (Atas untuk Harian, Bawah untuk Minggu)
    - Tombol Audio & Video dinamis mengarah ke folder Pekan aktif
+   PERBAIKAN 2026-11-08 (tombol Audio & Video tersambung):
+   - playAudioPekanIni() / playVideoPekanIni() sebelumnya DIPANGGIL
+     oleh index.html tetapi tidak pernah didefinisikan, sehingga
+     klik tombol Audio/Video hanya memunculkan error ReferenceError.
+   - Kini kedua fungsi didefinisikan di file ini dan membaca daftar
+     berkas dari PP_CONFIG.mediaPekan (lihat pp-konfigurasi.js),
+     lalu memutarnya di modal #mediaModal yang sudah tersedia.
+   - closeModal()/closeModalDirect() juga kini terdefinisi sehingga
+     tombol "Tutup" dan klik di luar modal berfungsi.
+   - Blok mati btn-audio/btn-video di render() dihapus (elemen
+     dengan id tersebut tidak ada di index.html).
    ============================================================ */
 
 (function () {
@@ -330,15 +341,6 @@
             };
         }
 
-        var pekanFolder = "Pekan_" + pad2(pos.pekan || 1);
-        var pathMedia = "data/berita_mingguan/" + pekanFolder + "/";
-
-        var btnAudio = document.getElementById("btn-audio");
-        if (btnAudio) btnAudio.setAttribute("href", pathMedia);
-
-        var btnVideo = document.getElementById("btn-video");
-        if (btnVideo) btnVideo.setAttribute("href", pathMedia);
-
         var submenu = document.getElementById("pekanSubmenu");
         if (submenu) {
             submenu.innerHTML = "";
@@ -376,6 +378,128 @@
     }, 30000);
 
     document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape" || e.keyCode === 27) tutupBacaan();
+        if (e.key === "Escape" || e.keyCode === 27) {
+            hentikanPemutarMedia();
+            tutupBacaan();
+        }
     });
+
+    /* ============================================================
+       PEMUTAR MEDIA - tombol Audio & Video di menu Media
+       ------------------------------------------------------------
+       Sumber daftar berkas: PP_CONFIG.mediaPekan (pp-konfigurasi.js).
+       Pemutaran memakai modal #mediaModal yang sudah ada di index.html.
+       ============================================================ */
+
+    function folderMedia(pekan) {
+        return (K.pathMedia || "data/berita_mingguan/") + "Pekan_" + pad2(pekan) + "/";
+    }
+
+    function daftarMedia(pekan) {
+        try {
+            if (typeof PP_CONFIG !== "undefined" && PP_CONFIG.mediaPekan && PP_CONFIG.mediaPekan[pekan]) {
+                return PP_CONFIG.mediaPekan[pekan];
+            }
+        } catch (e) {}
+        return { audio: [], video: [] };
+    }
+
+    function judulDariNamaFile(nama) {
+        return nama.replace(/\.(m4a|mp3|mp4)$/i, "")
+                   .replace(/^[0-9]+[\s_]+/, "")
+                   .replace(/_/g, " ")
+                   .trim();
+    }
+
+    function hentikanPemutarMedia() {
+        var body = document.getElementById("modalBody");
+        if (body) {
+            var av = body.querySelectorAll("audio, video");
+            for (var i = 0; i < av.length; i++) {
+                try { av[i].pause(); av[i].currentTime = 0; } catch (e) {}
+            }
+            body.innerHTML = "";
+        }
+        var modal = document.getElementById("mediaModal");
+        if (modal) modal.style.display = "none";
+    }
+
+    function bukaModalMedia(isi) {
+        var modal = document.getElementById("mediaModal");
+        var body = document.getElementById("modalBody");
+        if (!modal || !body) { alert("Modal media tidak ditemukan."); return; }
+        body.innerHTML = isi;
+        modal.style.display = "flex";
+    }
+
+    function blokPemain(jenis, folder, nama, autoplay) {
+        var tautan = folder + nama;
+        var html = '<div style="margin:10px 0 14px 0;text-align:left;">' +
+            '<div style="font-size:12px;font-weight:bold;color:#1e5138;margin-bottom:6px;line-height:1.4;">' +
+            judulDariNamaFile(nama) + '</div>';
+        if (jenis === "audio") {
+            html += '<audio controls' + (autoplay ? ' autoplay' : '') + ' preload="metadata" style="width:100%;">' +
+                    '<source src="' + tautan + '" type="audio/mp4">' +
+                    'Peramban Anda tidak mendukung pemutar audio.</audio>';
+        } else {
+            html += '<video controls' + (autoplay ? ' autoplay' : '') + ' preload="metadata" playsinline ' +
+                    'style="width:100%;border-radius:8px;background:#000;">' +
+                    '<source src="' + tautan + '" type="video/mp4">' +
+                    'Peramban Anda tidak mendukung pemutar video.</video>';
+        }
+        html += '<a href="' + tautan + '" target="_blank" rel="noopener" ' +
+            'style="display:inline-block;margin-top:5px;font-size:11px;color:#2e7d32;text-decoration:none;">' +
+            'Tidak berputar? Buka di tab baru &rsaquo;</a></div>';
+        return html;
+    }
+
+    function kepalaModal(ikon, judul) {
+        var pos = window.ppPosisi();
+        var sub = "Pekan " + pos.pekan;
+        if (pos.dalam) sub += " \u2022 " + rentangPekan(pos.mulaiPekan, pos.akhirPekan);
+        return '<h3 style="margin:0 0 4px 0;font-size:16px;">' + ikon + ' ' + judul + '</h3>' +
+               '<p style="margin:0 0 8px 0;font-size:12px;color:#666;">' + sub + '</p>';
+    }
+
+    function posisiAktif() {
+        var pos = window.ppPosisi();
+        if (!pos.dalam) {
+            alert("Buku penyegaran pagi \"" + K.bukuJudul + "\" berlaku 4 Oktober - 26 Desember 2026.");
+            return null;
+        }
+        return pos;
+    }
+
+    window.playAudioPekanIni = function () {
+        var pos = posisiAktif();
+        if (!pos) return;
+        var m = daftarMedia(pos.pekan);
+        var isi = kepalaModal("\uD83C\uDFB5", "Audio Penyegaran Pagi");
+        if (!m.audio.length) {
+            isi += '<p style="font-size:13px;color:#666;margin:6px 0 2px 0;">Belum ada berkas audio untuk pekan ini.</p>';
+        } else {
+            for (var i = 0; i < m.audio.length; i++) {
+                isi += blokPemain("audio", folderMedia(pos.pekan), m.audio[i], i === 0);
+            }
+        }
+        bukaModalMedia(isi);
+    };
+
+    window.playVideoPekanIni = function () {
+        var pos = posisiAktif();
+        if (!pos) return;
+        var m = daftarMedia(pos.pekan);
+        var isi = kepalaModal("\uD83C\uDFAC", "Video Penyegaran Pagi");
+        if (!m.video.length) {
+            isi += '<p style="font-size:13px;color:#666;margin:6px 0 2px 0;">Belum ada berkas video untuk pekan ini.</p>';
+        } else {
+            for (var j = 0; j < m.video.length; j++) {
+                isi += blokPemain("video", folderMedia(pos.pekan), m.video[j], j === 0);
+            }
+        }
+        bukaModalMedia(isi);
+    };
+
+    window.closeModal = function () { hentikanPemutarMedia(); };
+    window.closeModalDirect = function () { hentikanPemutarMedia(); };
 })();

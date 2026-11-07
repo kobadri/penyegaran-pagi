@@ -447,9 +447,9 @@
                     '<source src="' + tautan + '" type="video/mp4">' +
                     'Peramban Anda tidak mendukung pemutar video.</video>';
         }
-        html += '<a href="' + tautan + '" target="_blank" rel="noopener" ' +
+        html += '<a href="' + tautan + '" target="_blank" rel="noopener" download ' +
             'style="display:inline-block;margin-top:5px;font-size:11px;color:#2e7d32;text-decoration:none;">' +
-            'Tidak berputar? Buka di tab baru &rsaquo;</a></div>';
+            'Unduh / putar di tab baru &rsaquo;</a></div>';
         return html;
     }
 
@@ -458,7 +458,8 @@
         var sub = "Pekan " + pos.pekan;
         if (pos.dalam) sub += " \u2022 " + rentangPekan(pos.mulaiPekan, pos.akhirPekan);
         return '<h3 style="margin:0 0 4px 0;font-size:16px;">' + ikon + ' ' + judul + '</h3>' +
-               '<p style="margin:0 0 8px 0;font-size:12px;color:#666;">' + sub + '</p>';
+               '<p style="margin:0 0 8px 0;font-size:12px;color:#666;">' + sub + '</p>' +
+               '<p style="margin:0 0 8px 0;font-size:11px;color:#999;">Media diputar daring (butuh koneksi internet); gunakan tautan di bawah untuk mengunduh.</p>';
     }
 
     function posisiAktif() {
@@ -502,4 +503,76 @@
 
     window.closeModal = function () { hentikanPemutarMedia(); };
     window.closeModalDirect = function () { hentikanPemutarMedia(); };
+
+    /* ============================================================
+       PWA - tombol Install Aplikasi & sinkron pekan ke service worker
+       ------------------------------------------------------------
+       PERBARUI 2026-11-08:
+       - Tombol "Install Aplikasi" menangkap peristiwa
+         beforeinstallprompt (Chrome/Android/Edge/desktop). Bila
+         peristiwa tidak tersedia (mis. tautan dibuka di dalam
+         WhatsApp, atau di iPhone), muncul petunjuk langkah demi
+         langkah sesuai perangkat.
+       - Setiap aplikasi dibuka, halaman mengirim pesan
+         SINKRON_PEKAN ke service worker agar bacaan pekan yang
+         baru selalu disiapkan untuk mode offline.
+       ============================================================ */
+
+    var promptInstall = null;
+
+    function dalamModeAplikasi() {
+        return (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) ||
+               window.navigator.standalone === true; /* iOS Safari */
+    }
+
+    function tampilkanTombolInstall() {
+        var b = document.getElementById("btn-install");
+        if (b && !dalamModeAplikasi()) b.style.display = "flex";
+    }
+
+    window.addEventListener("beforeinstallprompt", function (e) {
+        e.preventDefault();
+        promptInstall = e;
+        tampilkanTombolInstall();
+    });
+
+    window.addEventListener("appinstalled", function () {
+        promptInstall = null;
+        var b = document.getElementById("btn-install");
+        if (b) b.style.display = "none";
+    });
+
+    window.instalAplikasi = function () {
+        if (promptInstall) {
+            promptInstall.prompt();
+            promptInstall.userChoice.then(function () { promptInstall = null; });
+            return;
+        }
+        var ua = navigator.userAgent || "";
+        if (/WhatsApp/i.test(ua)) {
+            alert("Tautan ini masih terbuka di dalam WhatsApp.\n\n" +
+                  "Cara meng-install:\n" +
+                  "1. Ketuk titik tiga (\u22ee) di kanan atas WhatsApp.\n" +
+                  "2. Pilih \"Buka di Chrome\" / \"Open in browser\".\n" +
+                  "3. Setelah terbuka di Chrome, ketuk menu \u22ee lalu pilih \"Install aplikasi\" / \"Tambahkan ke layar utama\".");
+        } else if (/iphone|ipad|ipod/i.test(ua)) {
+            alert("Di iPhone/iPad (pakai Safari):\n\n" +
+                  "1. Ketuk ikon Bagikan (kotak dengan panah ke atas).\n" +
+                  "2. Gulir dan pilih \"Tambah ke Layar Utama\".\n" +
+                  "3. Ketuk \"Tambah\". Aplikasi akan muncul seperti aplikasi biasa.");
+        } else {
+            alert("Untuk meng-install aplikasi:\n\n" +
+                  "Buka menu titik tiga (\u22ee) di sudut peramban, lalu pilih \"Install aplikasi\" / \"Tambahkan ke layar utama\".");
+        }
+    };
+
+    tampilkanTombolInstall();
+
+    /* Beri tahu service worker agar precache bacaan pekan berjalan
+       diperbarui (bila perangkat sedang daring). */
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.ready.then(function (reg) {
+            if (reg.active) reg.active.postMessage({ jenis: "SINKRON_PEKAN" });
+        }).catch(function () {});
+    }
 })();

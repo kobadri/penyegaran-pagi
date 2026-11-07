@@ -144,6 +144,7 @@
                 <button class="btn-media-sub" onclick="playAudioPekanIni();">&#127925; Audio</button>
                 <button class="btn-media-sub" onclick="playVideoPekanIni();">&#127916; Video</button>
             </div>
+            <button class="menu-btn" id="btn-install" style="display:none;" onclick="instalAplikasi();"><span>&#128242; Install Aplikasi</span><span>&rsaquo;</span></button>
             <a href="#" onclick="exitApp(); return false;" class="menu-btn menu-btn-danger"><span>Keluar / Exit</span><span>&rsaquo;</span></a>
         </div>
         <div class="footer">Penyegaran Pagi - FKKP</div>
@@ -154,12 +155,23 @@
             <button class="modal-tutup" onclick="closeModalDirect()">Tutup</button>
         </div>
     </div>
-    <script src="pp-konfigurasi.js?v=3"></script>
-    <script src="app.js?v=3"></script>
+    <script src="pp-konfigurasi.js?v=4"></script>
+    <script src="app.js?v=4"></script>
     <script>
         function toggleSubmenu() { var s = document.getElementById("pekanSubmenu"); s.style.display = (s.style.display === "flex") ? "none" : "flex"; }
         function toggleMediaMenu() { var s = document.getElementById("media-submenu"); var a = document.getElementById("media-arrow"); var t = (s.style.display === "flex"); s.style.display = t ? "none" : "flex"; a.textContent = t ? "\u25BC" : "\u25B2"; }
         function exitApp() { try { window.close(); } catch (e) {} window.location.replace("about:blank"); }
+    </script>
+    <script>
+        /* PERBARUI 2026-11-08: pendaftaran service worker.
+           Tanpa ini PWA tidak dapat di-install dan mode offline
+           tidak pernah aktif (sw.js sebelumnya tidak pernah
+           didaftarkan). */
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function () {
+                navigator.serviceWorker.register("./sw.js").catch(function () {});
+            });
+        }
     </script>
 </body>
 </html>

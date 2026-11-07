@@ -60,6 +60,81 @@
             <div class="desc" id="pp-deskripsi">&nbsp;</div>
         </div>
         <div class="pesan-luar" id="pp-pesan-luar">Buku penyegaran pagi <b>Kaum Beriman (1)</b> berlaku 4 Oktober - 26 Desember 2026.</div>
+        <script>
+        /* ============================================================
+           PERBAIKAN 2026-11-07: TANGGAL LANGSUNG TAMPIL
+           Sebelumnya tanggal hanya terisi oleh app.js; bila app.js
+           tertunda/blokir (mis. mode preview), kotak tanggal diam
+           dengan teks "Menyiapkan tanggal...". Script kecil ini
+           mandiri (tanpa pp-konfigurasi.js / app.js) dan mengisi
+           tanggal seketika. Bila app.js ternyata berjalan, hasilnya
+           ditulis ulang dengan nilai yang sama (idempoten).
+           ============================================================ */
+        (function () {
+            "use strict";
+            var HARI = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+            var BULAN = ["Januari", "Februari", "Maret", "April", "Mei", "Juni",
+                         "Juli", "Agustus", "September", "Oktober", "Nopember", "Desember"];
+            var SATU_HARI = 24 * 60 * 60 * 1000;
+            var MS_MULAI = Date.UTC(2026, 9, 4);      /* 4 Oktober 2026 */
+            var MS_SELESAI = Date.UTC(2026, 11, 26);  /* 26 Desember 2026 */
+            var JUMLAH_PEKAN = 12;
+
+            function tanggalWIB() {
+                var y = 0, m = 0, d = 0, ok = false;
+                try {
+                    var fmt = new Intl.DateTimeFormat("en-GB", {
+                        timeZone: "Asia/Jakarta",
+                        year: "numeric", month: "2-digit", day: "2-digit"
+                    });
+                    if (fmt.formatToParts) {
+                        var bag = fmt.formatToParts(new Date()), i;
+                        for (i = 0; i < bag.length; i++) {
+                            if (bag[i].type === "year")  y = parseInt(bag[i].value, 10);
+                            if (bag[i].type === "month") m = parseInt(bag[i].value, 10);
+                            if (bag[i].type === "day")   d = parseInt(bag[i].value, 10);
+                        }
+                        ok = (y > 1970 && m >= 1 && m <= 12 && d >= 1 && d <= 31);
+                    }
+                } catch (e) { ok = false; }
+                if (!ok) {
+                    var wib = new Date(Date.now() + (7 * 60 + new Date().getTimezoneOffset()) * 60000);
+                    y = wib.getFullYear(); m = wib.getMonth() + 1; d = wib.getDate();
+                }
+                var ms = Date.UTC(y, m - 1, d);
+                return { hari: new Date(ms).getUTCDay(), ms: ms, y: y };
+            }
+
+            try {
+                var t = tanggalWIB();
+                var tgl = new Date(t.ms);
+                var selisih = Math.round((t.ms - MS_MULAI) / SATU_HARI);
+                var dalam = (selisih >= 0 && t.ms <= MS_SELESAI);
+                var pekan = dalam ? Math.floor(selisih / 7) + 1 : 0;
+                var mulaiPekan = t.ms - t.hari * SATU_HARI;
+                var akhirPekan = mulaiPekan + 6 * SATU_HARI;
+                var a = new Date(mulaiPekan), b = new Date(akhirPekan);
+
+                var elTgl = document.getElementById("pp-tanggal");
+                if (elTgl) elTgl.textContent = HARI[t.hari] + ", " + tgl.getUTCDate() + " " + BULAN[tgl.getUTCMonth()] + " " + t.y;
+
+                var elDesc = document.getElementById("pp-deskripsi");
+                if (elDesc) {
+                    if (dalam) {
+                        var rentang = (a.getUTCMonth() === b.getUTCMonth())
+                            ? a.getUTCDate() + " - " + b.getUTCDate() + " " + BULAN[b.getUTCMonth()] + " " + b.getUTCFullYear()
+                            : (a.getUTCDate() + " " + BULAN[a.getUTCMonth()]) + " - " + (b.getUTCDate() + " " + BULAN[b.getUTCMonth()]) + " " + b.getUTCFullYear();
+                        elDesc.textContent = "Pekan " + pekan + " dari " + JUMLAH_PEKAN + " \u2022 " + rentang;
+                    } else {
+                        elDesc.textContent = "Periode buku: 4 Oktober - 26 Desember " + new Date(MS_MULAI).getUTCFullYear();
+                    }
+                }
+
+                var pesan = document.getElementById("pp-pesan-luar");
+                if (pesan) pesan.style.display = dalam ? "none" : "block";
+            } catch (e) { /* biarkan teks bawaan bila kondisi tak terduga */ }
+        })();
+        </script>
         <div class="menu-list">
             <a href="#" id="btn-hari-ini" class="menu-btn"><span>Hari Ini</span><span>&rsaquo;</span></a>
             <a href="javascript:void(0);" id="baris-pekan-ini" onclick="toggleSubmenu();" class="menu-btn"><span>Pekan Ini</span><span>&#9662;</span></a>
@@ -79,8 +154,8 @@
             <button class="modal-tutup" onclick="closeModalDirect()">Tutup</button>
         </div>
     </div>
-    <script src="pp-konfigurasi.js?v=1"></script>
-    <script src="app.js"></script>
+    <script src="pp-konfigurasi.js?v=2"></script>
+    <script src="app.js?v=2"></script>
     <script>
         function toggleSubmenu() { var s = document.getElementById("pekanSubmenu"); s.style.display = (s.style.display === "flex") ? "none" : "flex"; }
         function toggleMediaMenu() { var s = document.getElementById("media-submenu"); var a = document.getElementById("media-arrow"); var t = (s.style.display === "flex"); s.style.display = t ? "none" : "flex"; a.textContent = t ? "\u25BC" : "\u25B2"; }

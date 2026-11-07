@@ -526,7 +526,7 @@
             submenu.innerHTML = "";
             if (pos.dalam) {
                 submenu.appendChild(buatTautanSubmenu(
-                    "Garis Besar", pos.fileGarisBesar, false));
+                    "Garis Besar Pekan " + pos.pekan, pos.fileGarisBesar, false));
                 for (var h = 1; h <= 6; h++) {
                     var ms = pos.mulaiPekan.msHari + h * SATU_HARI;
                     var tgl = objTanggal(ms);
@@ -568,25 +568,3 @@
         if (e.key === "Escape" || e.keyCode === 27) tutupBacaan();
     });
 })();
-
-window.tutupReader = function() {
-    var r = document.getElementById("reader") || document.getElementById("reader-overlay") || document.querySelector(".reader-container");
-    if (r) { r.innerHTML = ""; r.style.display = "none"; }
-    var main = document.querySelector(".mobile-container");
-    if (main) { main.style.display = "flex"; }
-    window.location.hash = "";
-};
-window.salinTeksBacaan = function() {
-    var el = document.querySelector(".bacaan-body, #reader, article, main") || document.body;
-    navigator.clipboard.writeText(el.innerText).then(function() {
-        alert("Materi berhasil disalin ke clipboard!");
-    });
-};
-    var main = document.querySelector(".mobile-container") || document.body;
-    if (main) { main.style.display = "flex"; }
-    window.location.hash = "";
-    // Sembunyikan elemen pembaca jika berupa elemen tertanam
-    var readerEl = document.getElementById("reader");
-    if (readerEl) readerEl.innerHTML = "";
-};;
-window.salinTeksBacaan = function() { var el = document.querySelector("#reader-content, .bacaan-body, article, main") || document.body; navigator.clipboard.writeText(el.innerText).then(function() { alert("Materi berhasil disalin ke clipboard!"); }); };

@@ -442,5 +442,18 @@
             });
         }
     </script>
+
+<script>
+function copyToClipboard() {
+    var konten = document.querySelector(".content, article, #reader-content, .mobile-container");
+    var teksSalin = konten ? konten.innerText : document.body.innerText;
+    navigator.clipboard.writeText(teksSalin).then(function() {
+        alert("Materi berhasil disalin ke clipboard! Silakan paste ke Gemini.");
+    }, function(err) {
+        alert("Gagal menyalin teks.");
+    });
+}
+</script>
 </body>
+
 </html>

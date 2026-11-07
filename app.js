@@ -568,3 +568,6 @@
         if (e.key === "Escape" || e.keyCode === 27) tutupBacaan();
     });
 })();
+
+window.tutupReader = function() { var r = document.getElementById("reader-overlay") || document.getElementById("reader") || document.querySelector(".reader-container"); if (r) r.style.display = "none"; window.location.hash = ""; };
+window.salinTeksBacaan = function() { var el = document.querySelector("#reader-content, .bacaan-body, article, main") || document.body; navigator.clipboard.writeText(el.innerText).then(function() { alert("Materi berhasil disalin ke clipboard!"); }); };

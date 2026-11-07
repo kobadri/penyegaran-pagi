@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Senin, 23 November 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 8 - Senin, 23 November 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Mat. 16:16</div>
+            <div class="scripture-text">Jawab Simon Petrus, "Engkaulah Mesias, Anak Allah yang hidup!"</div>
+            <div class="scripture-title">Mat. 21:5</div>
+            <div class="scripture-text">"Katakanlah kepada putri Sion: Lihat, Rajamu datang kepadamu, Ia lemah lembut dan mengendarai seekor keledai betina, dan seekor keledai beban yang muda."</div>
+            <p>Kristus adalah sebutan Tuhan menurut jabatan-Nya, misi-Nya. Putra Allah adalah sebutan-Nya menurut persona-Nya. Persona-Nya adalah perkara hayat Allah, dan misi-Nya adalah perkara pekerjaan Allah. Dia adalah Putra Allah untuk menjadi Kristus Allah.</p>
+            <p>Dalam Matius 16:16 ... "Kristus," Yang diurapi Allah, mengacu kepada amanat Tuhan, sedangkan "Putra Allah yang hidup," sebagai yang kedua dari Allah Tritunggal, mengacu kepada persona-Nya. Amanat-Nya adalah untuk merampungkan tujuan kekal Allah melalui penyaliban, kebangkitan, kenaikan, dan kedatangan-Nya kali kedua, sedangkan persona-Nya mewujudkan Bapa dan menghasilkan Roh bagi ekspresi penuh dari Allah Tritunggal. <em>(The Conclusion of the New Testament, hal. 230)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Matius 21:5 mengatakan bahwa Raja datang <em>"mengendarai seekor keledai betina, dan seekor keledai beban yang muda."</em> Ini melambangkan keadaan yang lemah lembut dan rendah yang di dalamnya Tuhan bersedia menyajikan diri-Nya. Tuhan tidak memberi tahu murid-murid untuk mencari kereta, melainkan keledai betina dan keledai muda. Dia bahkan tidak memilih menunggang kuda, tetapi keledai yang kecil. ... Keledai itu mungkin induknya, dan keledai beban yang muda adalah anaknya. Baik sang induk dan anaknya bekerja sama untuk menanggung Sang Raja.</p>
+            <p>Keledai dan anak keledai, keduanya memberi kita kesan kelemahlebutan dan kerendahhatian. Andai kata Tuhan hanya mengendarai keledai, kesan kelemahlebutan tidak akan begitu nyata. Misalkan saja seorang saudari kecil berdiri di depan kita dengan menggendong seorang bayi mungil, ini akan memberi kita kesan "kecil" yang mendalam, karena bayi kecil mungil itu akan memperkuat kesan kecil. Makna Tuhan mengendarai keledai bukan kecil namun lemah lembut. Raja surgawi datang tidak dengan kemuliaan yang megah, tetapi dengan kelemahlebutan yang lembut dan rendah hati. Kesan kelemahlebutan ini diperkuat oleh anak keledai yang menemani keledai untuk dikendarai oleh Raja yang lemah lembut. Tuhan Yesus tidak sambil menunggang kuda masuk ke Yerusalem dengan sombong. ... Tuhan Yesus seolah-olah berkata kepada murid-murid-Nya, "Bawalah keledai dan anak keledai yang kecil itu. Aku akan menunggangi keledai beban itu tetapi anaknya pun harus ikut serta untuk menunjukkan kelemahlebutan-Ku. Ini akan membantu orang-orang melihat alangkah lemah lembutnya Raja surgawi ini."</p>
+            <p>Kehadiran anak keledai mempersaksikan bahwa Tuhan tidak ingin berjuang atau bersaings dengan siapa pun. Sebaliknya, Dia rendah hati dan lemah lembut. Saya percaya inilah kesan yang ingin Tuhan Yesus sampaikan kepada orang-orang. Memang, Dia Raja surgawi, tetapi Dia tidak bermaksud untuk datang sebagai Raja besar yang berperang dan bersaings dengan orang lain Sebaliknya, Dia datang sebagai Raja yang lemah lembut yang tidak berperang melawan siapa pun atau bersaing dengan siapa pun.</p>
+            <p>Dalam Matius 21:7 kita melihat bahwa murid-murid mengalasi keledai itu dengan pakaian mereka, dan ayat 8 mengatakan, <em>"Orang banyak yang sangat besar jumlahnya menghamparkan pakaiannya di jalan."</em> Pakaian melambangkan kebajikan manusia dalam perilaku. Murid-murid menghormati Raja yang rendah hati dengan menaruh pakaian mereka pada keledai dan anak keledai untuk ditunggangi oleh-Nya, dan orang banyak menghormati Dia dengan menghamparkan pakaian mereka di jalan yang akan dilintasi-Nya. Orang-orang menghormati Tuhan dengan pakaiannya, berarti dengan segala sesuatu yang mereka miliki. Tidak peduli betapa miskinnya seseorang, paling tidak ia pasti mempunyai pakaian untuk menutupi dirinya. Kita perlu menghormati Tuhan, Raja yang lemah lembut, dengan apa adanya kita. Tidak peduli sebagaimana keadaan kita, kita tentu memiliki sesuatu untuk menghormati Dia. Saya tidak percaya bahwa pakaian-pakaian yang ditaruh di atas keledai dan di jalan itu sangat indah dan bagus. Namun, orang-orang menggunakan apa saja yang mereka miliki. Walau kita ini berdosa, kasihan, dan bahkan jahat, Tuhan dihormati dengan apa adanya kita. Bahkan orang berdosa pun, jika mereka memiliki hati untuk menghormati-Nya, dapat menghormati Tuhan dengan apa adanya mereka. <em>(Pelajaran-Hayat Matius, hal. 902-905)</em></p>
+            <p class="book-ref">Bacaan Tambahan: The Conclusion of the New Testament, berita 21; Pelajaran-Hayat Matius, berita 56</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

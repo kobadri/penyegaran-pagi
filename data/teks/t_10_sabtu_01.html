@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Sabtu, 12 Desember 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 10 - Sabtu, 12 Desember 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Flp. 3:12-13</div>
+            <div class="scripture-text">Bukan seolah-olah aku telah memperoleh hal ini atau telah sempurna, melainkan aku mengejarnya, kalau-kalau aku dapat juga menangkapnya, karena aku pun telah ditangkap oleh Kristus Yesus. Saudara-saudara, aku sendiri tidak menganggap bahwa aku telah menangkapnya, tetapi inilah yang kulakukan: Aku melupakan apa yang telah di belakangku dan mengarahkan diri kepada apa yang di hadapanku.</div>
+            <p>Paulus telah banyak mengalami dan mendapatkan Kristus, namun dia tidak menganggap dirinya telah mengalami Kristus secara penuh atau telah mendapatkan Dia sampai puncaknya. Dia masih berusaha untuk mengejar ke arah sasaran—mendapatkan Kristus sampai tingkat yang paling penuh.</p>
+            <p>Dalam Filipi 3:13 Paulus berbicara tentang "melupakan apa yang lebih di belakang." Untuk mendapatkan Kristus sampai tingkat yang paling penuh, Paulus tidak hanya meninggalkan pengalamannya dalam agama Yahudi tetapi juga tidak berpegang pada pengalamannya yang lampau akan Kristus. Dia melupakan yang lampau. Tidak melupakan tetapi berpegang pada pengalaman kita yang lampau, tak peduli betapa sejatinya itu, menghambat penuntutan kita akan Kristus lebih lanjut. <em>(The Conclusion of the New Testament, hal. 3512)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Paulus juga memberi tahu kita bahwa ia mengarahkan diri kepada apa yang di hadapanku. Ia tahu bahwa Kristus itu limpah tak terkira, bahwa ada wilayah kekayaan-Nya yang luas yang harus diraih. Ia mengarahkan diri untuk mendapatkan kekayaan ini dan untuk maju jauh ke dalam wilayah tersebut.</p>
+            <p>Meskipun Paulus adalah seorang saleh yang matang dan rasul yang berpengalaman, ia memberi tahu kita bahwa ia belum sepenuhnya memperolehnya dan belum mencapai kesempurnaan. ... Tentu saja, ia telah memperoleh keselamatan yang umum melalui iman yang umum (1 Tim. 1:14-16), tetapi ia masih mengejar Kristus agar bisa mendapatkan Dia sampai tingkat yang paling penuh. Selain itu, Paulus juga mengejar Kristus agar mendapatkan bagian ekstra dari kebangkitan, kebangkitan yang unggul. Untuk memperoleh bagian kebangkitan ini, kita harus mengejar, berlari dalam perlombaan, dan menyelesaikan perjalanan kita dengan berkemenangan. ... Pada saat kita bertobat, kita telah didapatkan oleh Kristus agar kita bisa mendapatkan Dia. Sekarang, sebagai orang-orang yang belum mendapatkan dan yang belum disempurnakan, kita sedang mengejar Kristus.</p>
+            <p>Paulus mengejar ke arah sasaran tujuan demi mendapatkan hadiah [Flp. 3:14]. Kristus adalah sasaran maupun hadiah itu. Sasaran itu adalah menikmati dan mendapatkan Kristus secara paling penuh, dan hadiah itu adalah kenikmatan yang paling puncak atas Kristus dalam Kerajaan Seribu Tahun sebagai pahala bagi para pelari yang menang dalam perlombaan Perjanjian Baru. Untuk mencapai sasaran demi mendapatkan hadiah itu, Paulus berlatih untuk melupakan hal-hal yang di belakang dan mengarahkan diri ke hal-hal yang di depan. Inilah cara untuk mendapatkan Kristus melalui mengejar-Nya.</p>
+            <p>Kita harus melihat fakta bahwa Allah telah menetapkan satu sasaran dan mempersiapkan hadiah. Kita perlu berlari dalam perlombaan yang baik dan mengejar Kristus dengan melupakan hal-hal yang di belakang serta mengarahkan diri kepada hal-hal yang di depan, yaitu hal-hal yang mengenai Kristus dan Tubuh-Nya, gereja. Marilah kita semua melupakan hal-hal yang di belakang dan memusatkan perhatian kepada masa depan yang cerah di depan kita, masa depan untuk mendapatkan Kristus dan mengalami Dia sampai puncaknya di dalam Tubuh-Nya.</p>
+            <p>Kita tidak boleh puas hanya dengan pengetahuan Alkitab, bahkan tidak dengan pengetahuan tentang Filipi 3. Kita perlu mengejar Kristus secara nyata. Kata Yunani untuk <em>mengejar</em> juga dapat diterjemahkan sebagai <em>menganiaya</em>. Sebelum Paulus diselamatkan, ia menganiaya Kristus secara negatif. Setelah ia diselamatkan, ia mengejar Kristus sedemikian rupa sehingga kita bahkan dapat mengatakan ia menganiaya Kristus, namun dengan cara yang sangat positif. Menganiaya seseorang berarti mengganggunya dan tidak mau melepaskannya. Sebelum Paulus diselamatkan, ia mengganggu Kristus dan tidak mau melepaskan-Nya, menganiaya Dia secara negatif. Namun setelah ia diselamatkan, ia mengganggu Kristus dan tidak mau melepaskan-Nya, menganiaya Dia, tetapi secara positif, sebab ia menolak untuk melepaskan Kristus. Kita juga harus menganiaya Kristus seperti ini untuk mendapatkan Dia. Kita tidak boleh melepaskan Kristus; sebaliknya, kita harus mengganggu-Nya, menganiaya Dia, untuk mendapatkan Dia. Inilah yang dimaksud dengan mengejar Kristus. <em>(The Conclusion of the New Testament, hal. 3512-3513)</em></p>
+            <p class="book-ref">Bacaan Tambahan: The Conclusion of the New Testament, berita 349</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

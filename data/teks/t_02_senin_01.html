@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Senin, 12 Oktober 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 2 - Senin, 12 Oktober 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Yoh. 1:4</div>
+            <div class="scripture-text">Dalam Dia ada hidup dan hidup itu adalah terang manusia.</div>
+            <div class="scripture-title">1 Yoh. 5:12</div>
+            <div class="scripture-text">Siapa yang memiliki Anak, ia memiliki hidup; siapa yang tidak memiliki Anak, ia tidak memiliki hidup.</div>
+            <p>Hayat kekal merupakan topik yang besar dalam Alkitab; ini adalah berkat terbesar yang Allah berikan kepada kita dalam keselamatan-Nya. Mengenai mendapatkan hayat kekal dan menikmati berkat hayat kekal, dibagi menjadi periode masa yang berbeda. Periode pertama mencakup mendapatkan hayat kekal di zaman ini; kedua, mencakup mendapatkan hayat kekal di zaman yang akan datang; dan ketiga mencakup menikmati hayat kekal dalam kekekalan.</p>
+            <p>Kita mendapatkan hayat kekal di zaman ini ketika kita percaya. Ketika kita percaya Tuhan di zaman ini, kita mendapat hayat kekal. Kita tidak perlu menunggu sampai zaman yang akan datang atau kekekalan baru mendapatkannya.</p>
+            <p>Banyak orang salah mengerti dan mengira bahwa hayat kekal mencakup berkat dalam kekekalan. Sebenarnya Alkitab memperlihatkan bahwa hayat kekal bukan berkat dalam kekekalan; sebaliknya ini adalah hayat kekekalan. Hayat kekal ini telah ada sejak semula (1 Yoh. 1:1). Hanya hayat Allah yang ada sejak semula. Karena itu, hayat kekal adalah hayat Allah, yang sudah ada sebelum alam semesta dan waktu dimulai. <em>(Pokok-pokok Penting dalam Alkitab, Volume 2, hal. 300-302)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Hayat kekal adalah hayat Allah, karena Allah itu kekal (1 Yoh. 1:2)... Allah itu kekal, tanpa awal dan tanpa akhir, sebab itu hayat-Nya juga kekal, tanpa awal dan tanpa akhir. Hayat Allah, yang tidak berawal dan tidak berakhir, adalah hayat kekal.</p>
+            <p>Putra Allah adalah Allah berinkarnasi. Allah sendiri yang terwujud dalam Putra-Nya; sebab itu hayat Allah juga ada di dalam Putra-Nya (5:11-12). Hayat ini, yang berada di dalam Putra Allah, adalah hayat yang kekal.</p>
+            <p>Tuhan Yesus yang berinkarnasi adalah Putra Allah, sebab itu hayat Allah, hayat kekal, ada di dalam-Nya (Yoh. 1:4). Ketika kita menerima Dia dan mendapatkan Dia, kita mendapatkan juga hayat kekal yang ada di dalam Dia.</p>
+            <p>Allah di dalam Tuhan Yesus dengan cuma-cuma memberikan hayat-Nya, hayat kekal, sebagai pemberian kepada kita (Rm. 6:23). Kita tidak perlu mengeluarkan harga apa pun; asal kita mau menerima, kita pasti mendapatkannya.</p>
+            <p>Karena hayat kekal, hayat Allah, diberikan kepada kita oleh Allah, ini adalah pemberian Allah, bukan pahala Allah, kepada kita (1 Yoh. 5:11).</p>
+            <p>Allah mengasihi kita dan memberi kita hayat-Nya, hayat kekal, yang ada di dalam Anak-Nya, supaya kita terima (Yoh. 3:16). Cara untuk menerima hayat kekal adalah percaya kepada Putra-Nya. Begitu kita percaya kepada Putra-Nya dan dengan iman menerima Putra-Nya, kita mendapat hayat kekal yang berada di dalam Putra-Nya.</p>
+            <p>Karena hayat kekal Allah yang ada di dalam Anak-Nya adalah satu pemberian, maka begitu kita percaya kepada Putra-Nya dan mendapatkan Putra-Nya, dengan sendirinya kita mempunyai hayat kekal yang ada di dalam Putra-Nya (ayat 36).</p>
+            <p>Begitu kita mendengar firman Tuhan, Injil, dan percaya kepada Dia, segera kita mempunyai hayat kekal (5:24). Banyak orang mengira bahwa meskipun hari ini kita percaya Tuhan, kita harus menunggu sampai kelak baru mendapat hayat kekal. Mereka tidak menyadari bahwa di antara "percaya" dengan "mempunyai" tidak ada jarak waktu... Begitu kita percaya Tuhan, kita segera beroleh hayat kekal. Setelah kita percaya, kita tidak perlu menunggu, bahkan sejenak, untuk mendapatkan hayat kekal. Kita tidak perlu menantikan apa yang segera diberikan kepada kita.</p>
+            <p>Dalam kekristenan banyak orang yang beranggapan dan mengatakan bahwa orang-orang yang percaya Tuhan tidak bisa mengetahui dirinya memiliki hayat kekal atau tidak di zaman ini. Tetapi 1 Yohanes 5:13 dengan jelas mengatakan bahwa Firman Allah, Alkitab, membuat kita mengetahui bahwa kita beroleh hayat kekal.</p>
+            <p>Karena hayat yang kita peroleh adalah kekal, kita tidak akan binasa. Sifat hayat ini yang kekal menjamin bahwa kita tidak akan binasa. Lagi pula, begitu kita memiliki hayat kekal, kita berada dalam tangan Tuhan dan Bapa, jadi seorang pun tidak dapat merebut kita dari tangan Mereka (Yoh. 10:28-29). Kita memiliki hayat Allah yang kekal yang menunjang kita secara batiniah, dan tangan Allah dan Tuhan yang melindungi kita secara lahiriah. Bagaimana kita bisa binasa? <em>(Pokok-pokok Penting dalam Alkitab, Volume 2, hal. 302-306)</em></p>
+            <p class="book-ref">Bacaan Tambahan: Pokok-pokok Penting dalam Alkitab, Volume 2, bab 12</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

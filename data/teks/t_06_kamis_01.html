@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Kamis, 12 November 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 6 - Kamis, 12 November 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">1 Ptr. 1:3</div>
+            <div class="scripture-text">Terpujilah Allah dan Bapa Tuhan kita Yesus Kristus, yang karena rahmat-Nya yang besar telah membuat kita lahir kembali melalui kebangkitan Yesus Kristus dari antara orang mati, kepada hidup yang penuh pengharapan.</div>
+            <div class="scripture-title">Rm. 8:29</div>
+            <div class="scripture-text">Sebab semua orang yang dipilih-Nya dari semula, mereka juga ditentukan-Nya dari semula untuk menjadi serupa dengan gambar Anak-Nya, supaya Ia, Anak-Nya itu, menjadi yang sulung di antara banyak saudara.</div>
+            <p>Dalam kebangkitan [Kristus], semua orang beriman-Nya dilahirkan, dilahirkan kembali, oleh-Nya sebagai jutaan "kembaran"-Nya untuk membuat semua kembaran-Nya ini sama seperti Dia (1 Ptr. 1:3). ... Prototipe ini adalah Putra sulung Allah, dan reproduksinya adalah putra-putra Allah. ... Ketika Yesus sebagai Anak Manusia melalui kematian dan kebangkitan dilahirkan menjadi Putra sulung Allah, jutaan orang pilihan Allah dilahirkan dalam persalinan yang sama. ... Jutaan manusia-Allah ini adalah reproduksi massal yang persis sama dengan persona Yesus Kristus yang ajaib. Reproduksi massal dari prototipe ini menjadi anggota-anggota dari prototipe itu untuk menjadi Tubuh-Nya, Tubuh Kristus, dan Tubuh Kristus ini rampung dalam Yerusalem Baru, yang adalah ekspresi korporat Allah Tritunggal yang telah melalui proses dan rampung dalam Kristus dan menjadi Roh pemberi-hayat. <em>(Pengkajian-Kristalisasi Kitab Roma, hal. 40)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Sebagai Putra tunggal Allah, dalam kebangkitan-Nya Ia menjadi Roh pemberi-hayat (1 Kor. 15:45b). ... Roh pemberi-hayat ini adalah kuasa penunasan untuk menunaskan setiap bagian dari ciptaan baru Allah. Ciptaan baru Allah adalah Tubuh Kristus, dan Tubuh Kristus ini akan rampung dalam Yerusalem Baru, yang merupakan ekspresi unik Allah yang membaurkan diri-Nya sendiri dengan manusia sampai kekekalan. Ini menunjukkan kepada kita keterlibatan yang all-might dan all-wise dari keilahian Kristus dalam persona-Nya yang ajaib.</p>
+            <p>Roh pemberi-hayat adalah perampungan Allah Tritunggal dan sang Perampung manusia tiga bagian sebagai Tubuh Kristus, yang akan rampung sempurna dalam Yerusalem Baru. <em>(Pengkajian-Kristalisasi Kitab Roma, hal. 41)</em></p>
+            <p>Allah tidak menghendaki kita kehilangan keinsanian kita. Sebaliknya, kita akan membawa keinsanian kita sampai kekekalan. Tetapi keinsanian kita dalam kekekalan tidak akan bersifat alamiah; melainkan telah dibangkitkan, dimuliakan, dan dipertinggi. ... Hari ini tubuh fisik kita seperti satu benih. Tetapi pada satu hari "benih" ini akan bangkit dan dimuliakan.</p>
+            <p>Melalui inkarnasi, Kristus mengenakan keinsanian dan karenanya memiliki dua sifat—sifat ilahi dan sifat insani. Melalui kebangkitan-Nya dan melalui masuk ke dalam kita sebagai Roh itu, Kristus membawa keilahian masuk ke dalam kita. Karena itu, kita juga memiliki dua sifat—sifat insani dan sifat ilahi. Melalui dilahirkan dari Roh itu, kita telah berbagian dalam sifat ilahi (2 Ptr. 1:4). Kita dapat berkata, "Tuhan, sebagaimana Engkau memiliki dua sifat, kami pun memiliki dua sifat. Engkau itu ilahi dan insani, dan kami adalah insani dan ilahi. Haleluya, kami serupa dengan-Mu! ... Engkau adalah Kepala Tubuh, dan kami adalah anggota-anggota Tubuh. Tuhan, Engkau adalah Putra Allah, dan kami juga adalah putra-putra Allah." Tuhan akan mengapresiasi kita bila kita berbicara kepada-Nya dengan cara demikian. Dia akan menikmati bila kita mengumumkan fakta bahwa Allah tidak lagi hanya memiliki seorang Putra, Putra tunggal, melainkan memiliki banyak putra; Kristus sebagai Putra sulung dan kita sebagai banyak putra Allah. Kristus telah dinyatakan sebagai Putra Allah, sedangkan kita masih berada dalam proses penyataan ini. Suatu hari nanti proses ini akan rampung, dan kita akan menjadi serupa dengan Kristus, Putra sulung Allah, sampai kekekalan. Roma 1:3 dan 4 mengandung banyak kata kunci. Ayat 3 memiliki frasa "menurut daging (TL)," dan ayat 4 memiliki frasa "menurut Roh." Dalam 8:4, Paulus membicarakan tentang berjalan "menurut roh" dan bukan "menurut daging." Inilah satu contoh bagaimana kata kunci dalam 1:3 dan 4 kemudian dipakai lagi oleh Paulus dalam kitab ini. <em>(Pelajaran-Hayat Roma, hal. 806-808)</em></p>
+            <p class="book-ref">Bacaan Tambahan: Pengkajian-Kristalisasi Kitab Roma, bab 3</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

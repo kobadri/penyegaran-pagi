@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Sabtu, 28 November 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 8 - Sabtu, 28 November 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Mat. 15:26-27</div>
+            <div class="scripture-text">Tetapi Yesus menjawab, "Tidak patut mengambil roti yang disediakan bagi anak-anak dan melemparikannya kepada anjing." Kata perempuan itu, "Benar Tuhan, namun anjing itu makan remah-remah yang jatuh dari meja tuannya."</div>
+            <p>Ketika Tuhan Yesus menganggap perempuan Kanaan itu sebagai anjing, ia berkata, <em>"Benar Tuhan, namun anjing itu makan remah-remah yang jatuh dari meja tuannya"</em> (ayat 27). Perempuan Kanaan itu tidak tersinggung karena perkataan Tuhan, malah mengakui bahwa dia adalah anjing kafir. Perempuan ini memperhatikan bahwa pada saat itu Kristus yang sudah ditolak oleh anak-anak, orang Yahudi, menjadi remah-remah di bawah meja, sebagai bagian bagi orang bukan Yahudi. Negeri Kudus Israel adalah meja yang di atasnya Kristus, sebagai roti surgawi, telah datang sebagai bagian bagi bangsa Israel. Tetapi mereka membuang-Nya dari meja ke tanah, tanah bukan Yahudi, sehingga Dia menjadi remah-remah sebagai bagian bagi orang bukan Yahudi. Betapa hebatnya pemahaman perempuan bukan Yahudi ini pada saat itu! Tidak heran kalau Raja surgawi mengagumi imannya (ayat 28). <em>(Pelajaran-Hayat Matius, hal. 753-754)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Menurut doktrin, sudah pasti perempuan [Kanaan] ini [Mat. 15:21-28] perlu dibasuh. Tetapi mengapa Tuhan Yesus tidak menyuruh dia membasuh dirinya sebelum memakan Dia? Seandainya Tuhan menyuruh perempuan itu membasuh diri lebih dulu, berarti Ia telah melakukan sesuatu yang bertentangan dengan apa yang telah Ia katakan dalam ayat-ayat sebelumnya bahwa Ia tidak mengindahkan masalah pembasuhan lahiriah. Di sini Tuhan menitikberatkan masalah makan. Tetapi ini bukan berarti bahwa kita tidak perlu dibasuh. Darah itu tersedia. Kita boleh mengambil darah dan makan domba. Tetapi agar tidak membingungkan, dalam bagian makan ini, Tuhan Yesus tidak menyatakan apa pun tentang pembasuhan. Saya yakin Tuhan Yesus sengaja melakukan hal ini untuk menunjukkan kepada murid-murid-Nya bahwa mereka hanya memerlukan satu hal—makan. Sekalipun kita serajis anjing kafir, kita masih berhak dan mempunyai posisi untuk makan Yesus. Oh, kita perlu menjadi pemakan yang tidak terbatas! Jangan menunggu sampai Anda sudah terbasuh. Datanglah kepada Tuhan menurut apa adanya Anda dan makan Dia. Seperti yang dikatakan dalam sebuah kidung, "Menurut adanya aku, aku datang." Kita perlu berkata, "Tuhan, aku datang menurut apa adanya aku. Aku tidak perlu berubah atau dibersihkan. Tuhan, aku perlu Engkau dan aku datang kepada-Mu untuk makan. Bahkan jika aku adalah anjing yang najis, aku datang kepada-Mu sebagaimana adanya aku." Makan adalah yang utama dan makan adalah segala-galanya.</p>
+            <p>Perempuan Kanaan itu tidak datang kepada Tuhan karena lapar; ia datang karena anak perempuannya sakit. Namun Tuhan mengubah situasi ini menjadi masalah makan. Tuhan tidak berkata, "Aku datang sebagai Tabib umat Israel, dan Aku tidak mau menyembuhkan orang kafir. Aku tidak sudi mengobati anjing." Sebaliknya, Tuhan seolah-olah berkata, "Aku datang sebagai roti untuk anak-anak. Tidak patut melemparakan roti anak-anak kepada anjing." Sekalipun permohonan perempuan itu tidak berhubungan dengan makan, Tuhan sengaja menghubungkan perkaranya dengan masalah makan untuk menunjukkan kepada kita bahwa apa yang kita perlukan bukan pembasuhan lahiriah, tetapi makan sebagai rawatan batiniah. Dalam pengaturan doktrinalnya, Matius menaruh hal-hal ini bersama sehingga kita bisa memahami bahwa bagi Kerajaan Surga, kita tidak memerlukan pembasuhan lahiriah, melainkan Kristus masuk ke dalam kita. Apakah Anda sakit atau lemah? Apakah Anda mempunyai masalah tertentu? Jangan mencoba membereskan masalah-masalah itu secara luaran. Lebih baik hadapi masalah itu secara batiniah dengan makan Yesus. Sesungguhnya Anda harus melupakan semua itu. Yang Anda perlukan bukan pembasuhan lahiriah, melainkan Kristus masuk ke dalam Anda. Tuhan seolah-olah berkata kepada perempuan Kanaan itu, "Kamu tidak memerlukan penyembuhan. Kamu memerlukan Aku! Dan kamu tidak memerlukan Aku secara lahiriah; kamu memerlukan Aku secara batiniah. Kamu perlu makan Aku. Aku datang sebagai roti untuk dimakan, dicerna, dan diasimilasi. Aku akan masuk ke dalam kamu, masuk ke dalam peredaran darahmu, organ, dan jaringanmu. Aku ingin masuk ke dalam unsur penyusunmu dan menjadi kamu. Karena itu kamu perlu makan Aku. Jangan membereskan masalah secara lahiriah. Sebaliknya, bereskanlah segala sesuatu secara batiniah dengan menerima Aku menjadi kamu. Asalkan Aku dapat masuk ke dalammu untuk memberi gizi, segala masalah akan terselesaikan." <em>(Pelajaran-Hayat Matius, hal. 755-757)</em></p>
+            <p class="book-ref">Bacaan Tambahan: Pelajaran-Hayat Matius, berita 46</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

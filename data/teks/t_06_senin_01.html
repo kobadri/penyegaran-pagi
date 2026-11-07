@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Senin, 9 November 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 6 - Senin, 9 November 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">2 Sam. 7:12-14a</div>
+            <div class="scripture-text">... Aku akan membangkitkan keturunanmu yang kemudian, anak kandungmu, dan Aku akan mengokohkan kerajaannya. Dialah yang akan mendirikan rumah bagi nama-Ku dan Aku akan mengokohkan takhta kerajaannya untuk selama-lamanya. Aku akan menjadi Bapanya, dan ia akan menjadi anak-Ku....</div>
+            <p>Dua Samuel 7 adalah nubuat yang memprediksi bahwa gereja akan dibangun oleh Allah sendiri di antara umat-Nya dalam Perjanjian Baru. Kristus adalah Dia yang sesungguhnya membangun rumah Allah, Bait Allah. Kristus juga unsur yang dalamnya dan dengannya gereja sebagai rumah Allah dibangun. Dalam pasal ini Allah kelihatannya mengatakan kepada Daud, "Daud, sejauh ini engkau masih hampa dan kosong. Jangan berpikir bahwa engkau dapat melakukan sesuatu untuk membangun rumah bagi-Ku. Engkau harus menyadari bahwa engkau perlu Aku untuk membangun diri-Ku sendiri ke dalammu sebagai Bapa, Putra, dan Roh. Kemudian engkau akan memiliki rumah, dan rumah ini juga menjadi rumah-Ku."</p>
+            <p>Makna mendasar 2 Samuel 7 adalah Allah Tritunggal menggarapkan diri-Nya sendiri di dalam Trinitas-Nya yang telah melalui proses dan rampung ke dalam umat pilihan-Nya. Karena itu, 2 Samuel 7 adalah pasal tentang Allah Tritunggal menggarapkan diri-Nya sendiri ke dalam kita untuk menjadikan kita rumah-Nya (Kristus dengan gereja) dan untuk menghasilkan benih (Kristus yang all-inclusive). ... Kristus adalah rumah, dan Kristus juga benih; Kristus adalah unsur, dan Kristus juga hasil; Kristus adalah segala sesuatu. <em>(Pelajaran-Hayat 1 & 2 Samuel, hal. 219)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Kristus adalah rumah Allah dan rumah kita. Karena itu, kita dan Allah memiliki tempat saling huni. Kristus tinggal di dalam kita, dan kita tinggal di dalam Dia. Dia dan kita, kita dan Dia, berbaur bersama sebagai satu kesatuan. Alam semesta sedang menunggu untuk ini. Roma 8 memberi tahu kita bahwa alam semesta dengan bersemangat menunggu ekspresi Allah Tritunggal berbaur dengan manusia tripartit melalui bangunan-Nya, yaitu oleh diri-Nya, dengan diri-Nya, di dalam diri-Nya, dan untuk diri-Nya.</p>
+            <p>Pembangunan organik gereja sebagai Tubuh Kristus melalui proses metabolisme rohani sebenarnya adalah apa yang Yehowa nubuatkan kepada Daud secara perlambangan dalam 2 Samuel 7:12-14a. ... Hanya melalui proses ini sesuatu yang insani—keturunan insani—bisa menjadi ilahi—anak-anak Allah. Dalam perlambangan Allah bernubuat kepada Daud tentang hal ini ketika Dia mengatakan kepada Daud bahwa keturunannya akan menjadi anak Allah. Hal ini menunjukkan bahwa keturunan insani akan menjadi anak ilahi. Inilah yang kita alami hari ini. Karena itu, kita, kaum beriman di dalam Kristus, adalah orang-orang yang sangat khusus dan khas. Kita adalah harta mustika di mata Allah.</p>
+            <p>Dalam 2 Samuel 7:12-14a ... firman mengenai "keturunanmu" dan "anak-Ku" menunjukkan bahwa benih Daud akan menjadi Putra Allah, bahwa keturunan manusia akan menjadi Putra Allah.</p>
+            <p>Pemikiran ini berlanjut dengan kuat dalam Perjanjian Baru, khususnya dalam Roma 1:3 dan 4. Di sini Paulus mengatakan, <em>"Tentang Anak-Nya yang secara jasmani berasal dari keturunan Daud, dan menurut Roh kekudusan dinyatakan oleh kebangkitan-Nya dari antara orang mati bahwa Dialah Anak Allah yang berkuasa, Yesus Kristus Tuhan kita."</em> ... Ayat-ayat ini mewahyukan, di satu pihak, bahwa Kristus adalah keturunan Daud dan, di pihak lain, bahwa Dia, keturunan Daud, telah ditunjuk menjadi Putra Allah. Ketika kita membandingkan dua bagian Firman ini, kita melihat bahwa dalam Perjanjian Lama dan Perjanjian Baru kita memiliki perkara keturunan Daud menjadi Putra Allah.</p>
+            <p>Daud memiliki hati untuk membangun rumah bagi Allah, tetapi Allah menunjukkan kepada Daud bahwa ini bukan apa yang dia perlukan atau apa yang Tuhan perlukan. Allah memberi tahu Daud bahwa Dia akan membangun Seseorang untuk menjadi keturunan Daud dan bahwa keturunan ini akan disebut Putra Allah. Keturunan ini adalah ilahi dan insani. Ibrani 1:5 menunjukkan bahwa ini mengacu kepada Kristus sebagai Putra sulung Allah. Selain itu, seperti telah kita lihat, Roma 1:3-4, yang berhubungan dengan 2 Samuel 7:12-14a, mengatakan bahwa dalam kebangkitan, keturunan Daud ditentukan menjadi Putra Allah. Dalam makna hakikinya, 2 Samuel 7:12-14a dan Roma 1:3-4 mewahyukan kepada kita satu persona insani dan ilahi. <em>(Pelajaran-Hayat 1 & 2 Samuel, hal. 219-220, 234, 221-222, 225)</em></p>
+            <p class="book-ref">Bacaan Tambahan: Pelajaran-Hayat 1 & 2 Samuel, berita 24–26; CWWL, 1993, vol. 1, hal. 227-228</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Minggu Pekan 5</title>
+    <style>
+        body { background-color: #121212; font-family: Arial, sans-serif; margin: 0; padding: 20px 0; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; }
+        .mobile-container { width: 100%; max-width: 420px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); display: flex; flex-direction: column; max-height: 88vh; overflow: hidden; position: relative; }
+        .header { background-color: #1e5138; color: white; padding: 15px; text-align: left; font-size: 16px; font-weight: bold; flex-shrink: 0; }
+        .content-scroll { padding: 15px; overflow-y: auto; flex-grow: 1; font-size: 14px; line-height: 1.6; color: #333; }
+        .week-title { font-size: 18px; font-weight: bold; color: #1e5138; margin-top: 5px; margin-bottom: 4px; line-height: 1.3; }
+        .scripture-subtitle { font-size: 12px; font-weight: bold; color: #2e7d32; margin-bottom: 15px; }
+        .accordion-section { background-color: #f4f9f4; border-left: 4px solid #1e5138; padding: 10px; margin-bottom: 15px; border-radius: 4px; }
+        .accordion-section .toggle-header { background-color: #c8e6c9; padding: 6px 8px; border-radius: 4px; cursor: pointer; font-weight: bold; color: #1e5138; margin: 0; display: flex; justify-content: space-between; align-items: center; }
+        .toggle-content { margin-top: 10px; display: none; }
+        .bottom-nav { display: flex; justify-content: space-between; gap: 6px; padding: 12px; background-color: #f8f9fa; border-top: 1px solid #ddd; flex-shrink: 0; }
+        .nav-btn { flex: 1; background-color: #1e5138; color: #ffffff; text-align: center; padding: 10px 0; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 12px; border: none; cursor: pointer; }
+        .nav-btn:hover { background-color: #143726; }
+        .verse-text { font-weight: bold; font-style: italic; }
+
+        /* Styling Modal Pemutar Media Agar Responsif dan Tidak Terpotong */
+        #mediaModal {
+            display: none;
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 200;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .modal-content {
+            background: white;
+            padding: 15px;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 400px;
+            max-height: 90vh;
+            overflow-y: auto;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .modal-content video {
+            width: 100%;
+            max-height: 60vh;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-top: 10px;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="mobile-container">
+        <div class="header">Kaum Beriman (1)</div>
+        <div class="content-scroll">
+            <div style="font-size: 12px; color: #555; margin-bottom: 2px;">Pekan ke 05</div>
+            <div class="week-title">Batu-batu Hidup dan Domba-domba.</div>
+            <div class="scripture-subtitle">1 Petrus 2:4-5; Zakharia 3:9, 4:10; Yohanes 10:11-16; Yehezkiel 34:11-31.</div>
+
+            <!-- AKORDION I: GARIS BESAR -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 I. Garis Besar (Outline) Pekan 5 <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+<p><strong>Kaum Beriman Dilambangkan oleh Batu-batu Hidup</strong><br>
+Kaum beriman ditransformasi dari tanah liat menjadi batu-batu hidup melalui penerimaan benih hayat ilahi pada saat kelahiran kembali.</p>
+<p><strong>Kristus adalah batu hidup, batu fondasi, batu penjuru, dan batu utama dari bangunan Allah (rumah rohani/gereja).</strong></p>
+<p><strong>Kristus sebagai batu dengan tujuh mata (tujuh Roh Allah) berfungsi untuk menerangi, menghakimi, serta menginfuskan esensi ilahi-Nya ke dalam kaum beriman bagi transformasi mereka.</strong></p>
+<p><strong>Kristus yang korporat bersama para pemenang-pejuang-Nya akan datang sebagai batu pemukul untuk meremukkan totalitas pemerintahan insani dan mendatangkan Kerajaan Allah di bumi.</strong></p>
+<p><strong>Kaum Beriman Dilambangkan oleh Domba-domba (Di Bawah Penggembalaan Organik Kristus)</strong><br>
+Tuhan sendiri datang mencari dan menemukan domba-domba-Nya yang tersesat di tengah bangsa-bangsa.<br>
+Tuhan membawa domba-domba-Nya kembali ke negeri mereka sendiri (Kristus), ke gunung yang tinggi (Kristus yang bangkit dan naik), dan ke tepi aliran sungai (Roh pemberi-hayat) untuk diberi makan dan minum dari kekayaan-Nya.<br>
+Tuhan membawa mereka ke padang rumput yang kaya, membalut yang luka, menyembuhkan yang sakit, dan membuat mereka berbaring untuk menikmati perhentian batiniah.</p>
+<p><strong>Kristus sebagai Daud yang sejati menggembalakan dan memelihara seluruh keperluan serta tanggung jawab kehidupan kaum beriman, sehingga kaum beriman datang ke bawah kedudukan raja-Nya dan hidup dalam keesaan yang sejati.</strong><br>
+Di bawah penggembalaan-Nya, kaum beriman menikmati damai sejahtera perjanjian, dibebaskan dari perbudakan, serta dijadikan saluran hujan berkat bagi orang lain.</p>
+                </div>
+            </div>
+
+            <!-- AKORDION II: AYAT ALKITAB RAWATAN PAGI -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 II. Ayat Alkitab Rawatan Pagi (Hari 1–6) <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+<p><strong>Hari 1 (Senin) 1 Petrus 2:</strong></p>
+<p class="verse-text">4-5: "Datanglah kepada-Nya, batu yang hidup itu, yang memang dibuang oleh manusia, tetapi dipilih dan dihormati di hadirat Allah. Biarlah kamu juga dipergunakan sebagai batu hidup untuk pembangunan suatu rumah rohani, bagi suatu imamat kudus, untuk mempersembahkan persembahan rohani yang karena Yesus Kristus berkenan kepada Allah."</p>
+<p><strong>Hari 2 (Selasa) Zakharia 4:</strong></p>
+<p class="verse-text">7: "... Ia akan mengangkat batu utama, sedang orang bersorak: Bagus! Bagus sekali batu itu!" Zakharia 3:9: "Sebab sesungguhnya permata yang telah Kuserahkan kepada Yosua — satu permata yang bermata tujuh — sesungguhnya Aku akan mengukirkan ukiran di atasnya, demikianlah firman TUHAN semesta alam, dan Aku akan menghapuskan kesalahan negeri ini dalam satu hari saja."</p>
+<p><strong>Hari 3 (Rabu) Daniel 2:</strong></p>
+<p class="verse-text">34-35: "Terungkit lepas sebuah batu tanpa perbuatan tangan manusia, lalu menimpa patung itu, tepat pada kakinya yang dari besi dan tanah liat itu, sehingga remuk. ... semuanya menjadi seperti sekam ... lalu angin menghembuskannya, sehingga tidak ada bekas-bekasnya yang ditemukan. Tetapi batu yang menimpa patung itu menjadi gunung besar yang memenuhi seluruh bumi."</p>
+<p><strong>Hari 4 (Kamis) Yehezkiel 34:</strong></p>
+<p class="verse-text">11-13: "Sebab beginilah firman Tuhan ALLAH: Dengan sesungguhnya Aku sendiri akan memperhatikan domba-domba-Ku dan akan mencarinya ... dan Aku akan menyelamatkan mereka dari segala tempat, ke mana mereka diserahkan. ... Aku akan membawa mereka keluar dari tengah bangsa-bangsa dan mengumpulkan mereka dari negeri-negeri dan membawa mereka ke tanahnya, Aku akan menggembalakan mereka di atas gunung-gunung Israel, di alur-alur sungainya dan di semua tempat kediaman orang di tanah itu."</p>
+<p><strong>Hari 5 (Jumat) Yehezkiel 34:</strong></p>
+<p class="verse-text">14-15: "Di padang rumput yang baik akan Kugembalakan mereka dan di atas gunung-gunung Israel yang tinggi di situlah tempat penggembalaannya; di sana di tempat penggembalaan yang baik mereka akan berbaring dan rumput yang subur menjadi makanannya di atas gunung-gunung Israel. Aku sendiri akan menggembalakan domba-domba-Ku dan Aku akan membiarkan mereka berbaring, demikianlah firman Tuhan ALLAH."</p>
+<p><strong>Hari 6 (Sabtu) Yehezkiel 34:</strong></p>
+<p class="verse-text">25-26: "Aku akan mengadakan perjanjian damai dengan mereka dan Aku akan meniadakan binatang buas dari tanah itu, sehingga mereka dapat diam di padang gurun dengan aman tenteram dan dapat tidur di hutan-hutan. Aku akan menjadikan mereka dan semua yang di sekitar gunung-Ku menjadi berkat, Aku akan menurunkan hujan pada waktunya, itu adalah hujan yang membawa berkat."</p>
+                </div>
+            </div>
+
+            <!-- AKORDION III: POIN-POIN CATATAN KAKI -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 III. Poin-Poin Catatan Kaki (Footnote) <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+<p><strong>Proses Transformasi dari Tanah Liat menjadi Batu Hidup (1 Ptr. 2:4-5, Yoh. 1:42 & Rm. 9:21) Secara kelahiran alamiah, manusia diciptakan dari debu tanah/tanah liat. Namun melalui kelahiran kembali, benih hayat ilahi ditaburkan di dalam batin. Pertumbuhan benih ini secara bertahap mentransformasi kaum beriman dari tanah liat menjadi batu-batu hidup yang layak dibangun menjadi rumah rohani Allah.</strong></p>
+<p><strong>Kristus sebagai Batu dalam Tiga Aspek & Batu Bermata Tujuh (Za. 3:9, 4:7-10 & 1 Ptr. 2:4-7) Bagi bangunan Allah, Kristus adalah batu fondasi (menopang), batu penjuru (mempersatukan Yahudi dan bukan Yahudi), dan batu utama (merampungkan bangunan). Sebagai batu bermata tujuh (Roh yang diintensifkan tujuh ganda), Dia menatap kaum beriman untuk menerangi, menghakimi, serta menginfuskan seluruh esensi ilahi-Nya ke dalam batin mereka.</strong></p>
+<p><strong>Batu Pemukul Korporat (Dan. 2:34-35 & Why. 19:11-21) Kristus adalah batu yang dipotong tanpa perbuatan tangan manusia. Pada penampakan-Nya kembali, Kristus bersama para pemenang-Nya (mempelai perempuan) akan datang sebagai satu batu pemukul korporat untuk menghancurkan seluruh patung manusia (agregat pemerintahan insani dari Nimrod hingga Antikristus) dan mendatangkan Kerajaan Allah yang memenuhi seluruh bumi.</strong></p>
+<p><strong>Pencarian dan Pemulihan oleh Sang Gembala (Yeh. 34:11-13 & Luk. 15:3-7) Di dalam kejatuhan dan kerosotan rohani, manusia tidak mampu mencari Allah. Tuhan Yesus sendiri datang sebagai Gembala untuk mencari dan membawa kaum beriman keluar dari "bangsa-bangsa" (sistem dunia) kembali ke dalam Kristus sebagai negeri yang baik, ke posisi kenaikan, dan ke aliran Roh hayat.</strong></p>
+<p><strong>Makna Berbaring dan Pembalutan Luka (Yeh. 34:14-16 & Mzm. 23:1-2)</strong> Berbaring: Melambangkan berhentinya usaha, perjuangan, dan kerja keras alamiah manusia untuk menerima perhentian batiniah di dalam Kristus. Pembalutan & Penyembuhan: Penggembalaan Kristus merawat luka-luka batiniah dan menyembuhkan kelemahan kaum beriman, sehingga mereka dipuaskan dan tidak lagi saling menghakimi melainkan hidup dalam keesaan yang sejati.</p>
+<p><strong>Kristus sebagai Daud yang Sejati & Kedudukan Raja (Yeh. 34:23 & 37:24-28) Kristus adalah Daud yang sejati, Gembala yang sejati. Penggembalaan-Nya mencakup perhatian atas seluruh masalah, tanggung jawab, dan keperluan harian kaum beriman. Hasil dari pengalaman disuplai oleh Gembala adalah kaum beriman dengan rela menaati Dia sebagai Raja dan hidup di bawah kekuasaan-Nya.</strong></p>
+<p><strong>Perjanjian Damai dan Hujan Berkat (Yeh. 34:25-28 & Bil. 6:23-27) Di bawah penggembalaan dan pemerintahan Kristus, binatang buas (orang/unsur yang merusak) dijauhkan dari kehidupan gereja, kuk perbudakan dipatahkan, dan kaum beriman hidup dalam keamanan yang sempurna. Allah menyalurkan diri-Nya sebagai berkat kekal, menjadikan kaum beriman tidak hanya menikmati berkat, melainkan menjadi saluran hujan berkat bagi lingkungan mereka.</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL PEMUTAR MEDIA -->
+        <div id="mediaModal" onclick="closeModal(event)">
+            <div class="modal-content" id="modalBody" onclick="event.stopPropagation()">
+                <!-- Konten Media Dinamis -->
+            </div>
+        </div>
+
+        <!-- NAVIGASI BAWAH -->
+        <div class="bottom-nav">
+            <a href="../../index.html" class="nav-btn">🏠 Home</a>
+            
+            
+        </div>
+    </div>
+
+    <script>
+        function toggleSection(header) {
+            const content = header.nextElementSibling;
+            const arrow = header.querySelector('.arrow');
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                arrow.textContent = "▼";
+            } else {
+                content.style.display = "block";
+                arrow.textContent = "▲";
+            }
+        }
+
+        function playAudio() {
+            var modal = document.getElementById("mediaModal");
+            var body = document.getElementById("modalBody");
+            
+            body.innerHTML = `
+                <h3 style="margin: 0 0 5px 0; font-size: 16px;">Audio Penyegaran Pagi</h3>
+                <p style="margin: 0 0 10px 0; font-size: 12px; color: #666;">Pekan 5</p>
+                <audio id="myAudio" controls autoplay style="width:100%; margin-top:10px;">
+                    <source src="../berita_mingguan/Pekan_05/5 Dari_Domba_Rapuh_Menjadi_Batu_Hidup.m4a" type="audio/mp4">
+                    Peramban Anda tidak mendukung elemen audio.
+                </audio>
+                <br>
+                <button onclick="closeModalDirect()" style="padding: 6px 14px; background:#1e5138; color:white; border:none; border-radius:8px; cursor:pointer; font-size: 12px; margin-top: 10px;">Tutup</button>
+            `;
+            modal.style.display = "flex";
+
+            var audioElement = document.getElementById("myAudio");
+            audioElement.onended = function() {
+                closeModalDirect();
+            };
+        }
+
+        function playVideo() {
+            var modal = document.getElementById("mediaModal");
+            var body = document.getElementById("modalBody");
+            
+            body.innerHTML = `
+                <h3 style="margin: 0 0 5px 0; font-size: 16px;">Video Penyegaran Pagi</h3>
+                <p style="margin: 0 0 10px 0; font-size: 12px; color: #666;">Pekan 5</p>
+                <video id="myVideo" controls autoplay>
+                    <source src="../berita_mingguan/Pekan_05/5 Bagaimana_Tanah_Liat_Bertransformasi_Menjadi_Batu_Hidup.mp4" type="video/mp4">
+                    Peramban Anda tidak mendukung elemen video.
+                </video>
+                <br>
+                <button onclick="closeModalDirect()" style="padding: 6px 14px; background:#1e5138; color:white; border:none; border-radius:8px; cursor:pointer; font-size: 12px; margin-top: 10px;">Tutup</button>
+            `;
+            modal.style.display = "flex";
+
+            var videoElement = document.getElementById("myVideo");
+            videoElement.onended = function() {
+                closeModalDirect();
+            };
+        }
+
+        function closeModal(event) {
+            closeModalDirect();
+        }
+
+        function closeModalDirect() {
+            var modal = document.getElementById("mediaModal");
+            if (modal) modal.style.display = "none";
+
+            var audioElement = document.getElementById("myAudio");
+            if (audioElement) {
+                audioElement.pause();
+                audioElement.currentTime = 0;
+            }
+            var videoElement = document.getElementById("myVideo");
+            if (videoElement) {
+                videoElement.pause();
+                videoElement.currentTime = 0;
+            }
+        }
+    </script>
+</body>
+</html>

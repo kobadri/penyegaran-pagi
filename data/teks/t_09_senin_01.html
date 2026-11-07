@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Senin, 30 November 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 9 - Senin, 30 November 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">2 Kor. 3:3</div>
+            <div class="scripture-text">Karena telah ternyata bahwa kamulah surat Kristus, yang ditulis oleh pelayanan kami, ditulis bukan dengan tinta, tetapi dengan Roh dari Allah yang hidup...</div>
+            <div class="scripture-title">2 Kor. 3:6</div>
+            <div class="scripture-text">Dialah yang membuat kami juga sanggup menjadi pelayan-pelayan dari suatu perjanjian baru, yang tidak terdiri dari hukum yang tertulis, tetapi dari Roh, sebab hukum yang tertulis mematikan, tetapi Roh menghidupkan.</div>
+            <div class="scripture-title">2 Kor. 3:9</div>
+            <div class="scripture-text">... Betapa lebih mulianya lagi pelayanan yang memimpin kepada pembenaran.</div>
+            <p>Bagi pelaksanaan ekonomi Perjanjian Baru Allah, ministri itu unik dan hanya ada satu. ... Ministri yang unik itu, yang adalah ministri perjanjian yang baru ... merekonsiliasi kaum saleh dengan Allah yang all-inclusif, yang adalah Roh di dalam kita dan terekspresi di luar kita sebagai keadilbenaran.</p>
+            <p>Roh dan keadilbenaran adalah dua aspek dari esensi yang dituliskan ke dalam kita oleh ministri perjanjian yang baru. Roh yang hidup adalah aspek yang di dalam dan keadilbenaran yang sempurna adalah aspek yang di luar.</p>
+            <p>Ministri kita di dalam gereja-gereja lokal haruslah merupakan ministri penulisan. ... Pengajaran tidak memerlukan esensi apa pun; namun, penulisan benar-benar memerlukan satu esensi, sama seperti menulis dengan pena itu memerlukan tinta. ... Untuk menulis, kita harus mempunyai tinta sebagai esensi penulisan. ... Demikian juga, kita harus memiliki esensi Ilahi untuk meunuliskannya ke dalam kaum saleh. <em>(Pelajaran-Hayat 2 Korintus, hal. 327-328)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Dalam 2 Korintus 3:8 Paulus membicarakan ministri Roh, dan dalam ayat 9 membicarakan ministri keadilbenaran. Kita mungkin memahami apakah ministri Roh itu, tetapi apakah ministri keadilbenaran itu? ... Saya mengira <em>ministri keadilbenaran</em> yang dimaksudkannya adalah ministri pembenaran, karena dalam pasal ini kelihatannya ada perbandingan antara penghakiman dengan pembenaran, yang adalah lawan dari penghukuman. Tetapi di sini Paulus membicarakan tentang keadilbenaran, bukan pembenaran. Jika ia mengatakan bahwa ministri perjanjian yang baru adalah ministri pembenaran, kita akan mudah memahami maksudnya. ... Karena dalam 2 Korintus 3 Paulus mengatakan bahwa ministri perjanjian yang baru adalah ministri keadilbenaran, bukan ministri pembenaran, maka kita harus berusaha memahami maksudnya. Sungguh bermakna bahwa ministri perjanjian yang baru adalah ministri Roh dan keadilbenaran.</p>
+            <p>Hasil dari mengalami Roh itu hidup dan bekerja di dalam kita adalah kita menjadi adil benar. Dengan spontan batin kita menjadi transparan, jernih seperti kristal, dan kita mengenal hati Allah. Dengan segera, tanpa harus giat berusaha, kita mengenal pikiran Tuhan dan memiliki pemahaman yang jelas terhadap kehendak dan pekerjaan-Nya. Kemudian apa yang kita lakukan akan menurut pikiran dan kehendak Tuhan. Inilah keadilbenaran.</p>
+            <p>Banyak orang Kristen memiliki konsepsi bahwa bila kita melakukan sesuatu yang salah, maka kita tidak benar terhadap Allah. Konsepsi terhadap keadilbenaran semacam ini terlalu dangkal. Sekalipun kita tidak melakukan sesuatu yang salah, kita mungkin tetap tidak benar terhadap Allah, karena diri kita tidak berada di dalam pikiran dan kehendak Tuhan. ... Kita mungkin tidak menurut pikiran Tuhan dan apa yang kita lakukan mungkin bukan kehendak-Nya. Selama kita tidak melakukan kehendak Allah, maka kita tidak benar. Malahan kita menghamburkan hidup kita dan segala sesuatu yang telah Tuhan berikan kepada kita.</p>
+            <p>Jika Anda diinfus dan dijenuhi oleh Roh pemberi-hayat, batin Anda akan menjadi transparan. Kemudian Anda akan tahu apa yang ada dalam pikiran Tuhan. Anda juga akan memahami apakah kehendak Tuhan. Dengan spontan, Anda akan berada di dalam kehendak-Nya dan melakukan kehendak-Nya. Hasilnya, Anda menjadi benar terhadap Dia. Selain itu, Anda akan menyadari bagaimana seharusnya Anda berperilaku terhadap orang lain dan bagaimana seharusnya Anda menanggulangi harta benda Anda. Anda akan menjadi seorang yang adil benar, seorang yang benar dalam hal-hal yang kecil dan juga dalam hal-hal yang besar, seorang yang benar terhadap Allah, terhadap orang lain, dan terhadap diri sendiri. Ini adalah seorang yang mengekspresikan Allah, karena keadilbenarannya adalah gambar Allah, yaitu Allah diekspresikan. <em>(Pelajaran-Hayat 2 Korintus, hal. 343-344, 348-349)</em></p>
+            <p class="book-ref">Bacaan Tambahan: Pelajaran-Hayat Wahyu, berita 15; Pelajaran-Hayat 2 Korintus, berita 25–29</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

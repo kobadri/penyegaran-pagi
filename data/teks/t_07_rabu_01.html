@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Rabu, 18 November 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 7 - Rabu, 18 November 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">2 Kor. 4:6-7</div>
+            <div class="scripture-text">... Allah ... yang membuat terang-Nya bercahaya di dalam hati kita, supaya kita beroleh terang dari pengetahuan tentang kemuliaan Allah yang tampak pada wajah Kristus. Tetapi harta ini kami miliki dalam bejana tanah liat, supaya nyata bahwa kekuatan yang melimpah-limpah itu berasal dari Allah, bukan dari diri kami.</div>
+            <div class="scripture-title">2 Kor. 3:18</div>
+            <div class="scripture-text">Kita semua mencerminkan kemuliaan Tuhan dengan muka yang tidak berselubung. Karena kemuliaan itu datangnya dari Tuhan yang adalah Roh, maka kita sedang diubah menjadi serupa dengan gambar-Nya....</div>
+            <p>Paulus memberi tahu kita bahwa kita adalah bejana-bejana, dan Tuhan Yesus di dalam kita adalah harta [2 Kor. 4:7]. Tetapi kunci untuk ayat ini adalah ayat sebelumnya: "Supaya kita beroleh terang dari pengetahuan tentang kemuliaan Allah yang tampak pada wajah Kristus" (ayat 6). Dalam bahasa Yunani, kata untuk wajah adalah yang sama dengan kata yang digunakan untuk Persona (hadapan) dalam 2 Korintus 2:10, yang berarti daerah di sekitar mata. ... Kita tidak akan pernah merasakan bahwa kita memiliki harta di botol sampai melihat wajah Yesus. Ketika kita menikmati hadirat-Nya, kita merasakan bahwa Dia adalah harta yang demikian mustika di dalam kita. <em>(CWWL, 1973-1974, vol. 1, "The Indwelling Christ in the Canon of the New Testament, hal. 597)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Kita semua dapat berkata bahwa kita adalah bejana tanah liat, dan Yesus adalah harta di dalam. Tetapi kita dapat mengatakan ini tanpa perasaan realitas di dalam kita. Hanya ketika kita hidup dalam hadirat-Nya, memandang petunjuk diri-Nya, baru kita akan merasakan bahwa Dia adalah harta yang berharga bagi kita. Di alam semesta tidak ada yang begitu mustika seperti memandang wajah Yesus. Ini adalah sesuatu dari pengalaman dan kenikmatan pribadi. Semakin kita hidup dalam hadirat-Nya, kita akan semakin merasakan bahwa kita akan memiliki kemustikaan Yesus. Inilah kenikmatan dari berhuninya Dia di dalam kita. Inilah Yesus yang menghuni kita. Inilah satu realitas yang hidup, bukan sekadar perkataan.</p>
+            <p>Jika kita semua mau belajar meninggalkan persona lama kita, mengambil Dia sebagai persona kita melalui memandang wajah-Nya ketika menikmati hadirat-Nya, kita akan memiliki perasaan yang manis akan kemustikaan Yesus yang berhuni. Ini akan membuat kita begitu bersinar, sinar yang memantulkan kemuliaan-Nya Saya dapat menjamin Anda bahwa jika Anda pernah memiliki pengalaman seperti itu, orang lain akan melihat bersinarnya Anda. Anda bukan sekadar gembira, tetapi Anda bersinar. Sesuatu dari dalam memancar, dan itu adalah pantulan Yesus. Inilah pengalaman Paulus akan Kristus yang berhuni. <em>(CWWL, 1973-1974, vol. 1, "The Indwelling Christ in the Canon of the New Testament," hal. 597-598)</em></p>
+            <p>Menurut 2 Korintus 3:18, kita seperti cermin memandang dan memantulkan kemuliaan Tuhan. Memandang kemuliaan Tuhan berarti melihat Tuhan itu sendiri; memantulkan kemuliaan Tuhan berarti membuat orang lain melihat Dia melalui kita. Kita seperti cermin memandang dan memantulkan kemuliaan Tuhan.</p>
+            <p>Kemuliaan dalam ayat 18 ini adalah kemuliaan Tuhan, Yang bangkit dan terangkat; yang sebagai Allah juga manusia telah melalui inkarnasi, kehidupan insani di bumi, dan kersaliban, masuk ke dalam kebangkitan, merampungkan penebusan yang penuh, dan menjadi Roh pemberi-hayat. Sebagai Roh pemberi-hayat, Dia berhuni di dalam kita untuk menjadikan diri-Nya dan semua yang telah Ia rampungkan, dapatkan, dan capai, riil bagi kita, supaya kita bersatu dengan-Nya dan ditransformasi menjadi serupa dengan gambar Tuhan, dari kemuliaan ke kemuliaan.</p>
+            <p>Ketika kita dengan muka yang tidak berselubung memandang dan memantulkan kemuliaan Tuhan, Dia menginfus kita dengan unsur-unsur apa adanya Dia dan apa yang telah Dia kerjakan. Demikianlah, kita ditransformasi secara metabolis untuk memiliki bentuk bayal-Nya oleh kuasa hayat-Nya dengan esensi hayat-Nya; yaitu, kita ditransfigurasi terutama oleh pembaruan pikiran kita (Rm. 12:2), ke dalam gambar-Nya.</p>
+            <p>Sebagai bejana, kita perlu memiliki muka yang tidak berselubung; yaitu, kita perlu terbuka kepada hayat ilahi dengan kekuatan, esensi, dan bentuknya. Saat kita terbuka kepada Tuhan, Dia sebagai Roh pemberi-hayat masuk ke dalam diri kita untuk menginfuskan esensi hayat-Nya ke dalam kita, untuk beroperasi di dalam kita dengan kuasa hayat-Nya, dan membentuk kita ke dalam gambar-Nya. Inilah penyusunan hayat untuk membuat kita menjadi para minister dari perjanjian yang baru. <em>(Pelajaran-Hayat 2 Korintus, hal. 97-98)</em></p>
+            <p class="book-ref">Bacaan Tambahan: Pelajaran-Hayat 2 Korintus, berita 8, 10; CWWL, 1973-1974, vol. 1, "The Indwelling Christ in the Canon of the New Testament," bab 10</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

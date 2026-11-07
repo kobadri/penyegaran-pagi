@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Jumat, 6 November 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 5 - Jumat, 6 November 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Yeh. 34:14-15</div>
+            <div class="scripture-text">Di padang rumput yang baik akan Kugembalakan mereka dan di atas gunung-gunung Israel yang tinggi di situlah tempat penggembalaannya; di sana di tempat penggembalaan yang baik mereka akan berbaring dan rumput yang subur menjadi makanannya di atas gunung-gunung Israel. Aku sendiri akan menggembalakan domba-domba-Ku dan Aku akan membiarkan mereka berbaring, demikianlah firman Tuhan ALLAH.</div>
+            <p>Aliran sungai melambangkan Roh pemberi-hayat, sedangkan padang rumput melambangkan Kristus [Yeh. 34:13-14]. Di tepi aliran sungai kita memiliki Kristus yang kaya sebagai padang rumput kita. Aliran sungai adalah untuk kita minum, dan padang rumput adalah untuk kita makan. Dalam sidang-sidang di gereja-gereja lokal, kita benar-benar memiliki perasaan bahwa kita ada di tepi aliran sungai dan di padang rumput, bahwa kita minum dan makan. Puji Tuhan sebab kita berada di bawah rawatan dari Gembala kita, minum di tepi aliran sungai dan diberi makan di padang rumput!</p>
+            <p>Dalam ayat 15 ... berbaring berarti tidak bekerja, bergumul, dan berjuang. ... Dalam Kidung Agung 1:7 sang pencari bertanya kepada Tuhan di mana Dia menggembalakan kawanan domba-Nya, di mana Dia membuat kawanan domba-Nya berbaring di petang hari. Ketika Tuhan memberi kita makan, menggembalakan kita, dan memberi kita sesuatu untuk diminum, Dia juga memberi kita perhentian. Dalam sidang-sidang gereja kita sering memiliki perasaan bahwa kita berbaring untuk beristirahat. Secara lahiriah, kita duduk, tetapi di batin, kita berbaring untuk mendapat perhentian. <em>(Life-study of Ezekiel, hal. 178-179)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Sebagai Gembala, Tuhan akan membalut yang luka dan menyembuhkan (menguatkan, LAI) yang sakit [Yeh. 34:16a]. Betapa kita memerlukan pembalutan dan penyembuhan Tuhan! Sering kali dalam sidang-sidang gereja kita memiliki perasaan bahwa kita berada di bawah pembalutan yang lembut dari Tuhan dan bahwa luka-luka dan tempat-tempat yang patah dibalut oleh-Nya. Pada saat-saat lain kita bisa merasakan bahwa kita mengalami penguatan-Nya, penyembuhan-Nya.</p>
+            <p>Hanya setelah Dia memberi kita suplai hayat, membalut luka-luka kita, dan menyembuhkan kita, barulah segala hal yang tidak adil di antara kita dapat dibersihkan. Namun, jika kita kekurangan suplai, pembalutan, dan penyembuhan Tuhan, kita akan menghakimi orang lain, menyalahkan orang lain, dan mengeluh tentang orang lain. Jika kita saling menghakimi dan saling menyalahkan, kita tidak dapat selaras satu sama lain. Namun, saat Tuhan memulihkan kita melalui hayat, kita mengalami kebangunan yang sejati, kita memiliki kenikmatan atas Kristus, yang membuat kita puas, tenang, dan damai, serta kita mengalami pembalutan dan penyembuhan Tuhan. Dia yang merawat kita dan menyuplai kita membuat kita memiliki perasaan yang akurat mengenai hubungan kita dengan saudara saudari. Ketika kita memiliki perasaan seperti itu, kita menghakimi diri kita sendiri, dan sebagai hasilnya, kita memiliki keesaan yang sejati dengan kaum saleh sebagai satu kawanan.</p>
+            <p>Ayat 23 melanjutkan, <em>"Aku akan mengangkat satu orang gembala atas mereka, yang akan menggembalakannya, yaitu Daud, hamba-Ku; dia akan menggembalakan mereka, dan menjadi gembalanya."</em> Daud melambangkan Kristus. Kristus adalah Daud yang sejati, Gembala yang sejati, memberi makan kita dan membuat kita kenyang serta puas.</p>
+            <p>Sebagai Gembala kita, Kristus memelihara kita, termasuk semua masalah dan tanggung jawab kita. Ia memelihara kita tidak hanya dalam hal-hal rohani, tetapi juga dalam segala hal yang berkaitan dengan keperluan insani kita. Ini berarti, menurut Mazmur 23, Ia memelihara kita dalam setiap aspek kehidupan kita.</p>
+            <p>Karena Tuhan Yesus adalah Gembala kita yang memelihara kita, kita tidak perlu khawatir tentang masalah-masalah kita atau tentang kehidupan kita. Sebaliknya, kita perlu belajar untuk menaruh kepercayaan kita kepada-Nya. Pada malam hari, sangat baik untuk berdoa kepada Tuhan sebagai Gembala kita. Tidak perlu berdoa panjang lebar dengan cara yang formal dan agamawi. Cukup katakan, "Tuhan Yesus, aku bersyukur karena aku berada di bawah pemeliharaan-Mu. Sekarang aku akan tidur, dan aku memohon agar Engkau datang dan menjagaku." Doa sederhana itu sudah cukup. Ketika Anda bangun di pagi hari, katakanlah, "Tuhan, aku bersyukur karena aku masih berada di bawah pemeliharaan-Mu." Tidak perlu bersikap agamawi, meminta Tuhan untuk melindungi Anda dan melakukan banyak hal lain bagi Anda.</p>
+            <p>Sewaktu Dia memelihara kita, Dia memberi makan kita, dan kita memiliki pengalaman dari Mazmur 23: Tuhan adalah Gembala kita, dan kita tidak akan kekurangan. Semoga kita semua belajar untuk mengalami Kristus sebagai Gembala kita. <em>(Life-study of Ezekiel, hal. 179-181)</em></p>
+            <p class="book-ref">Bacaan Tambahan: Life-study of Ezekiel, berita 16</p>
+        
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

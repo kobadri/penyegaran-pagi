@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Selasa, 8 Desember 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 10 - Selasa, 8 Desember 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Gal. 2:19b-20</div>
+            <div class="scripture-text">... Aku telah disalibkan dengan Kristus, namun aku hidup, tetapi bukan lagi aku sendiri yang hidup, melainkan Kristus yang hidup di dalam aku. Hidup yang sekarang aku hidapi secara jasmani adalah hidup oleh iman dalam Anak Allah yang telah mengasihi aku dan menyerahkan diri-Nya untuk aku.</div>
+            <div class="scripture-title">Mat. 16:24</div>
+            <div class="scripture-text">Lalu Yesus berkata kepada murid-murid-Nya, "Jika seseorang mau mengikut Aku, ia harus menyangkal dirinya, memikul salibnya dan mengikut Aku."</div>
+            <p>Kematian Kristus adalah cetakan yang padanya kita diserupakan seperti adonan yang ditaruh ke dalam cetakan kue dan diserupakan kepadanya. Allah telah menaruh kita ke dalam cetakan kematian Kristus, dan hari demi hari Allah sedang mencetak kita untuk menyerupakan kita kepada kematian ini (Rm. 6:3-4). Kita harus diserupakan kepada cetakan sedemikian melalui kita mati kepada hayat insani kita untuk memperhidupkan hayat ilahi. Jika kita mematikan hayat alamiah kita, kita akan memiliki kesadaran bahwa kita memiliki hayat yang lain, hayat ilahi, di dalam kita; hayat ini akan dilepaskan, dan kemudian dalam pengalaman kita, kita akan diserupakan kepada kematian Kristus (Yoh. 10:10; 1 Yoh. 5:11-12). Dalam cetakan kematian Kristus, hayat alamiah dimatikan, manusia lama disalibkan, dan ego dihabisi (2 Kor. 4:16; Rm. 6:6; Mat. 16:24). Jika kita menginginkan lingkungan kita menekan kita ke dalam cetakan ini, kehidupan kita sehari-hari akan dicetak ke dalam bentuk kematian Kristus (Rm. 8:28-29).</p>
+            <p>Diserupakan kepada kematian Kristus adalah kondisi untuk mengenal dan mengalami Dia, kuasa kebangkitan-Nya, dan persekutuan dalam penderitaan-Nya. Diserupakan kepada kematian Kristus adalah dasar pengalaman atas Kristus. <em>(The Conclusion of the New Testament, hal. 3508)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Kecuali kita diserupakan dengan kematian Kristus, kita tidak dapat diserupakan kepada gambar Kristus. Kematian Kristus adalah cetakan di mana kita diserupakan kepada gambar-Nya, gambar Putra sulung Allah. Sewaktu kita mengalami proses transformasi dan penyerupaan ini, kita diserupakan kepada kematian Kristus.</p>
+            <p>Kematian Kristus telah ada di dalam diri-Nya sepanjang hidup-Nya. Sewaktu Dia hidup, Dia juga sedang mati. ... Ketika Dia memberi tahu murid-murid-Nya bahwa Dia akan menderita dan disalibkan, mereka tidak mau mendengarkan. Hari demi hari Kristus mati terhadap ciptaan lama agar Dia dapat hidup dalam ciptaan baru.</p>
+            <p>Diserupakan kepada kematian Kristus harus menjadi pengalaman kita sehari-hari sebagai orang-orang beriman. Semakin hayat alamiah kita dimatikan, hayat Ilahi di dalam kita akan semakin dilepaskan. Kemudian dalam pengalaman kita, kita akan diserupakan kepada kematian Kristus.</p>
+            <p>Salib [Mat. 16:24] bukan sekadar penderitaan, salib terutama adalah pembunuhan. Salib membunuh dan mengakhiri penjahat. Kristus memikul salib dan kemudian disalibkan. Saat Ia memikul salib, Ia berada di bawah proses pembunuhan, bukan sekadar penderitaan. Kaum beriman di dalam Kristus disalibkan bersama Dia dan kemudian memikul salib. Memikul salib berarti tetap berada di proses pembunuhan kematian Kristus untuk mengakhiri diri, hayat alamiah, dan manusia lama kita.</p>
+            <p>Agar kita dapat memikul salib, kita harus menyadari bahwa kita telah disalibkan. Kita telah disalibkan bersama dengan Kristus di kayu salib; hayat kita sendiri, hayat alamiah, manusia lama, dan seluruh diri kita telah dimatikan. Kini kita harus tinggal di bawah pembunuhan itu. Inilah makna dari memikul salib.</p>
+            <p>Makna memikul salib adalah kita membawa kematian Kristus di dalam tubuh kita, mengizinkan kematian Kristus bekerja senantiasa atas diri kita untuk mematikan ego kita. Memikul salib juga adalah tinggal di dalam kematian Kristus. Kematian Kristus adalah takdir kita dan sasaran kita. Jika kita ingin ditransformasi dan diserupakan kepada gambar Kristus yang sulung, kita perlu tinggal di dalam kematian-Nya, mengambil kematian-Nya sebagai tempat tinggal kita. Karena itu, makna memikul salib adalah mengikatkan diri kita dengan Kristus yang tersalib dan tinggal di dalam kematian Kristus. Kita meninggalkan salib-Nya: jika kita tinggal di dalam kematian-Nya, kita memikul salib. Inilah diserupakan kepada kematian Kristus. <em>(Truth Lessons—Level Three, vol. 3, hal. 51-53)</em></p>
+            <p class="book-ref">Bacaan Tambahan: Truth Lessons—Level Three, vol. 3, pel. 45</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

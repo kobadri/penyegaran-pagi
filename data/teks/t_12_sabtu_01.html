@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Sabtu, 26 Desember 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 12 - Sabtu, 26 Desember 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Ef. 6:10-11</div>
+            <div class="scripture-text">Akhirnya, hendaklah kamu kuat di dalam Tuhan, di dalam kekuatan kuasa-Nya. Kenakanlah seluruh perlengkapan senjata Allah, supaya kamu dapat bertahan melawan tipu muslihat Iblis.</div>
+            <div class="scripture-title">Why. 11:15</div>
+            <div class="scripture-text">Pemerintahan atas dunia dipegang oleh Tuhan kita dan Dia yang diurapi-Nya, dan Ia akan memerintah sebagai Raja sampai selama-lamanya.</div>
+            <p>Dalam kelima pasal pertama [Kitab Efesus], pada sisi positifnya, gereja dilukiskan dalam berbagai cara untuk menggenapkan kehendak kekal Allah. Pada sisi negatif, gereja dalam pasal 6 diperlihatkan sebagai pejuang, untuk mengalahkan musuh Allah, Iblis. Untuk itu, gereja harus mengenakan seluruh perlengkapan senjata Allah.</p>
+            <p>Pada tahun 1928, Saudara Watchman Nee mengadakan konferensi pemenang yang pertama mengenai peperangan rohani. Dalam konferensi kali itu, Satan, si jahat, telah ditelanjangi habis-habisan. Saudara Watchman Nee menegaskan bahwa di alam semesta ada tiga kehendak: kehendak Ilahi, kehendak satani, dan kehendak insani. ... Kehendak Allah yang sedia-ada, bersifat kekal, dan bukan ciptaan. Sebagai makhluk ciptaan, para malaikat juga mempunyai satu kehendak. Satu di antara malaikat-malaikat ini, penghulu malaikat, ditunjuk Allah untuk menguasai alam semesta yang sudah ada sebelum penciptaan Adam. Karena posisinya yang tinggi dan keelokannya, penghulu malaikat ini menjadi sombong. Kesombongan ini membangkitkan keinginan jahat, yang menjadi kehendak satani. Karena itu, di samping ada maksud Allah, kehendak Allah, ada pula maksud yang kedua, kehendak yang kedua, karena sekarang kehendak satani berlawanan dengan kehendak Allah. Semua peperangan bersumber pada konflik kehendak ini. <em>(Pelajaran-Hayat Efesus, hal. 776)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Kita tidak tahu berapa lamanya rentang waktu di antara pemberontakan Satan dengan penciptaan Adam. Kita hanya tahu pada suatu waktu, Allah menciptakan manusia dan memberinya satu kehendak insani yang bebas. Karena Allah itu agung, Ia memberi manusia satu kehendak yang bebas. ... Dengan memberi manusia satu kehendak yang bebas, Allah menunjukkan bahwa Ia tidak akan memaksa manusia menaati-Nya.</p>
+            <p>Dalam Kejadian 2 kita melihat betapa manusia bebas menggunakan kehendaknya untuk memakan pohon hayat atau pohon pengetahuan baik dan jahat. Kedua pohon itu masing-masing mewakili kehendak ilahi dan kehendak satani. Jadi, di dalam taman itu terdapat situasi segi tiga: pohon hayat mewakili kehendak ilahi, pohon pengetahuan mewakili kehendak satani, dan Adam mewakili kehendak insani. Sebenarnya, pohon hayat menunjukkan diri Allah sendiri, dan pohon pengetahuan mengacu kepada Satan. Karena itu, ada tiga persona—Allah, Satan, dan manusia—dengan kehendaknya masing-masing.</p>
+            <p>Melalui pertobatan, manusia dapat beralih dari kehendak satani kepada kehendak ilahi, dari pihak Satan ke pihak Allah. ... Setiap orang dosa yang damba beroleh selamat harus mematuhi ketiga perintah ini: ia harus bertobat kepada Allah, percaya kepada Tuhan Yesus, dan dibaptis di dalam air. Bertobat berarti beralih dari kehendak satani kepada kehendak ilahi.</p>
+            <p>Sejak hari keselamatan kita, kehidupan kristiani kita merupakan kehidupan peperangan. Hal itu sama seperti pengalaman bangsa Israel setelah mereka keluar dari Mesir. ... Mereka diselamatkan dalam atmosfir peperangan. Begitu mereka keluar dari Mesir, peperangan dimulai. Firaun dan kereta perangnya mengejar bangsa Israel, tetapi Allah datang berperang bagi mereka. Setelah bangsa Israel menyeberangi Laut Merah dan setelah tentara Firaun tenggelam, umat Allah memuji-Nya dengan pujian kemenangan karena kemenangan-Nya atas musuh. Orang-orang Israel ini terus berperang sepanjang perjalanan mereka di padang belantara, dan mereka terus berperang di negeri yang baik. Sejarah mereka mewahyukan bahwa kehidupan orang yang beroleh selamat adalah kehidupan peperangan.</p>
+            <p>Sebagai manusia baru, gereja harus hidup menurut realitas dan oleh kasih karunia, dan sebagai mempelai perempuan, gereja harus hidup dalam kasih dan terang. Tetapi, tidak saja kehendak kekal Allah harus digenapi, dan kedamaian hati Kristus harus dipuaskan, musuh Allah pun harus dikalahkan. Untuk ini gereja harus menjadi satu pejuang. <em>(Pelajaran-Hayat Efesus, hal. 777-780)</em></p>
+            <p class="book-ref">Bacaan Tambahan: CWWL, 1983, vol. 2, "The Divine Dispensing of the Divine Trinity," bab 20</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

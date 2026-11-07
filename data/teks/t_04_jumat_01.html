@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Jumat, 30 Oktober 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 4 - Jumat, 30 Oktober 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Kis. 26:18</div>
+            <div class="scripture-text">Untuk membuka mata mereka, supaya mereka berbalik dari kegelapan kepada terang dan dari kuasa Iblis kepada Allah, supaya mereka oleh iman mereka kepada-Ku memperoleh pengampunan dosa dan mendapat bagian dalam apa yang ditentukan untuk orang-orang yang dikuduskan.</div>
+            <div class="scripture-title">Flp. 3:21</div>
+            <div class="scripture-text">Yang akan mengubah tubuh kita yang hina ini, sehingga serupa dengan tubuh-Nya yang mulia, menurut kuasa-Nya yang dapat menaklukkan segala sesuatu kepada diri-Nya.</div>
+            <p>Dalam status mereka sebagai ahli-ahli waris Allah, kaum beriman berbagi dengan seluruh kaum saleh dalam terang Allah Tritunggal yang terwujud di dalam Kristus sebagai bagian mereka. Kisah Para Rasul 26:18 berbicara tentang pengampunan dosa-dosa dan warisan (bagian, LAI) di antara mereka yang telah dikuduskan oleh iman di dalam Kristus. ... Warisan ilahi ini adalah Allah Tritunggal dengan segala adanya Dia, semua yang telah Dia lakukan, dan semua yang akan Dia lakukan bagi umat tebusan-Nya. Allah Tritunggal ini terwujud di dalam Kristus yang almuhit (Kol. 2:9), yang adalah bagian yang dibagikan kepada kaum saleh sebagai warisan mereka (1:12). Roh Kudus adalah jaminan, garansi, dari warisan ilahi ini, yang padanya kita berbagian dan menikmati hari ini sebagai pencicipan dan akan berbagian dan menikmati secara penuh di zaman yang akan datang dan sampai kekekalan (1 Ptr. 1:4). <em>(The Conclusion of the New Testament, hal. 1087-1088)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Kaum beriman umumnya diajarkan bahwa warisan dalam Kisah Para Rasul 26:18 adalah rumah besar surgawi. Namun, warisan ini sebenarnya adalah Kristus sebagai perwujudan Allah Tritunggal yang telah melalui proses. ... Paulus berkata bahwa Bapa telah melayakan kita "untuk mendapat bagian dalam apa yang ditentukan untuk orang-orang kudus di dalam terang" [Kol. 1:12].</p>
+            <p>Negeri yang baik adalah lambang dari Kristus yang almuhit, yang diberikan kepada kita sebagai warisan kita. Kata Yunani yang diterjemahkan sebagai "bagian" dalam Kolose 1:12 juga dapat diterjemahkan sebagai "undian," yang mengacu kepada pembagian. Ketika Paulus menulis ayat ini, tak diragukan lagi ia membayangkan gambaran pembagian negeri yang baik kepada bangsa Israel (Yos. 14:1) dan menggunakan kata bagian dengan latar belakang catatan Perjanjian Lama mengenai negeri itu. ... Sama seperti negeri Kanaan adalah segalanya bagi bangsa Israel, demikian pula Kristus, realitas dari lambang negeri yang baik, adalah segalanya bagi kita. Karena itu, Kristus, perwujudan Allah Tritunggal yang telah melalui proses, adalah warisan kita, yang kita bagi bersama semua orang kudus di dalam terang.</p>
+            <p>Kristus sekarang ada dalam kemuliaan. Pada akhirnya kita akan dibawa ke dalam kemuliaan dan dimuliakan bersama Kristus. Ketika kita dimuliakan, tubuh kita yang hina akan ditransfigurasi menjadi tubuh yang mulia (Flp. 3:21). Pada saat itu, kita akan sepenuhnya dan mutlak dibawa ke dalam diri Allah sebagai kemuliaan kita. Kemudian kita akan tampil bersama Kristus dalam kemuliaan (Kol. 3:4).</p>
+            <p>Beberapa di antara kita mungkin dengan tegas memegang konsep objektif mengenai pemuliaan. Menurut konsep ini, mereka yang telah diselamatkan dan dilahirkan kembali akan tiba-tiba dimuliakan. Diperkirakan, pemuliaan kaum beriman akan terjadi secara instan pada kedatangan Tuhan Yesus. Namun, meskipun pemuliaan kita mungkin terlihat sebagai peristiwa yang tiba-tiba, sebenarnya hal itu merupakan perampungan dari proses pertumbuhan dan perkembangan bertahap dalam hayat. Melalui kelahiran kembali, hayat kemuliaan telah masuk ke dalam kita, dan sekarang kita memiliki benih kemuliaan di dalam kita. Hayat yang kita miliki di dalam kita sebagai benih adalah hayat kemuliaan. Inilah Kristus di dalam kita, pengharapan akan kemuliaan (1:27). Pada akhirnya, benih ini akan mekar, dan dengan demikian kita akan dibawa ke dalam kemuliaan. Hal itu seperti transfigurasi Tuhan Yesus (Mat. 17:1-2). Ketika Tuhan ditransfigurasi di atas gunung, bukan berarti kemuliaan shekinah tiba-tiba turun dari surga atas Dia; ini adalah kemuliaan ilahi bersinar dari dalam Dia. Demikian pula, kemuliaan yang ke dalamnya kita akan dibawa adalah pancaran dari kemuliaan yang sudah ada di dalam kita saat ini. Ini berarti Kristus tidak memimpin kita ke dalam suatu kemuliaan yang objektif, melainkan ke dalam kemuliaan yang telah ditaburkan ke dalam kita sebagai benih. Karena itu, dimuliakan berarti kemuliaan yang telah ditaburkan ke dalam kita sebagai benih menjenuhi seluruh diri kita. Ketika kita telah diresapi dan dijenuhi oleh unsur kemuliaan, kemuliaan itu akan terpancar dari kita. Inilah maknanya bagi kita, para ahli waris Allah, untuk dimuliakan bersama Kristus. <em>(The Conclusion of the New Testament, hal. 1088-1089)</em></p>
+            <p class="book-ref">Bacaan Tambahan: The Conclusion of the New Testament, berita 101</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

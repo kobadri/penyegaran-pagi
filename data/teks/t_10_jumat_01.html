@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Jumat, 11 Desember 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 10 - Jumat, 11 Desember 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Flp. 1:21</div>
+            <div class="scripture-text">Karena bagiku hidup adalah Kristus dan mati adalah keuntungan.</div>
+            <div class="scripture-title">Yoh. 11:25</div>
+            <div class="scripture-text">Jawab Yesus kepadanya, "Akulah kebangkitan dan hidup..."</div>
+            <p>Memperhidupkan Kristus adalah memperhidupkan kebangkitan yang unggul, ini harus menjadi sasaran kita. ... Perbuatan dan perkataan kita harus dalam kebangkitan. Pertanyaannya bukanlah apakah satu perkara itu benar atau salah tetapi apakah itu di dalam kebangkitan atau tidak. Ini memperlihatkan bahwa memperhidupkan Kristus adalah memperhidupkan kebangkitan yang unggul, menempuh kehidupan yang mutlak di luar ciptaan lama dan di dalam Allah. Dalam kebangkitan yang unggul tidak ada unsur dari ciptaan lama. Sebaliknya, segala sesuatu penuh dengan unsur ilahi. Inilah sebabnya orang-orang merasakan Allah ketika mereka bersama orang yang hidup dalam kebangkitan yang unggul. ... Perbuatan dan perkataannya [adalah] dalam kebangkitan. Ini adalah kebangkitan yang unggul dalam kehidupan kita sehari-hari. ... Paulus mengejar jenis kehidupan seperti ini. Inilah yang ia pikirkan ketika ia menyatakan bahwa keinginannya adalah mengenal Kristus dan kuasa kebangkitan-Nya dan berusaha untuk mencapai kebangkitan yang unggul [lihat Flp. 3:10-11]. Kita perlu berdoa, "Tuhan Yesus, aku mencintai-Mu lebih dari sebelumnya. ... Dalam hadirat-Mu aku ingin mengejar-Mu sebagai kebangkitan yang unggul. Aku ingin segala sesuatu dalam kehidupanku berada di luar ciptaan lama dan di dalam Allah." <em>(The Conclusion of the New Testament, hal. 3511)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Istilah kebangkitan yang unggul berarti bahwa setiap bagian dari diri kita akan dibangkitkan. ... Perjalanan orang Kristen melihatkan proses yang panjang, dan ini membawa kita menempuh perjalanan yang jauh. Pada akhir perjalanan ini ada sasaran yang harus kita capai, ... kebangkitan yang unggul.</p>
+            <p>Mencapai kebangkitan yang unggul adalah akibat, hasil, dari diserupakan kepada kematian Kristus. Diserupakan, diocetak, kepada kematian Kristus berarti kita tetap berada dalam kematian-Nya. Jika kita tinggal dalam kematian Kristus, membiarkan diri kita dicetak ke dalam rupa-Nya, hasilnya adalah setiap bagian diri kita akan dibangkitkan secara bertahap.</p>
+            <p>Kebangkitan kita dimulai dengan kelahiran kembali kita. Sebagai orang dosa, kita semua adalah bagian dari Adam yang lama. Dalam segala hal kita itu usang. ... Tetapi ketika kita percaya kepada Tuhan Yesus, sesuatu yang baru masuk ke dalam kita. Roh Kudus Allah datang untuk melahirkan kita kembali dengan hayat Allah. Karena itu, melalui kelahiran kembali, roh kita yang usang dan mati dibangkitkan. Alkitab berkata bahwa ketika kita diselamatkan, kita dihidupkan (Ef. 2:5). Sebelum kita diselamatkan, kita mati dalam pelanggaran-pelanggaran dan dosa-dosa (ayat 1; Kol. 2:13). Tetapi ketika kita percaya kepada Tuhan Yesus, Roh Kudus Allah datang untuk menghidupkan roh kita yang mati dengan hayat ilahi. Pada saat itu, bagian dari diri kita, yaitu roh kita, dibangkitkan. Tetapi, bagaimana dengan bagian-bagian lain dari diri kita, seperti pikiran, emosi, tekad, dan hati kita? Ketika roh kita dilahirkan kembali, bagian-bagian ini belum dibangkitkan. Namun demikian, sasaran Allah adalah membangkitkan seluruh diri kita.</p>
+            <p>Suatu hari [seorang saudara] mungkin mulai melihat bahwa kasihnya kepada istrinya seharusnya bukan kasih alamiah. Maka, ia mungkin berdoa, "Tuhan, aku mengaku bahwa kasihku kepada istriku selama ini adalah kasih bersifat alamiah. Berikanlah aku kasih karunia untuk menempuh kehidupan tersalib bersama istriku." Ini adalah diserupakan kepada kematian Kristus dalam hal khusus mencintai istrinya. Beberapa hari kemudian ia mungkin menyadari bahwa bahkan hubungannya dengan kaum saleh terlalu alamiah. ... Karena itu, ia berdoa dan mengakui hal ini kepada Tuhan, meminta kasih karunia-Nya agar tidak lagi menggembalakan kaum saleh menurut hayat alamiahnya, ia mungkin berdoa, "Tuhan, aku ingin diserupakan kepada kematian-Mu. Seperti Engkau, aku ingin menempuh kehidupan tersalib. Ketika Engkau di bumi, Engkau tidak mengasihi orang-orang atau memperhatikan mereka menurut hayat alamiah. Segala sesuatu yang Engkau lakukan adalah dalam kebangkitan. Tuhan, berikanlah aku kasih karunia agar sejak sekarang aku tidak lagi menggembalakan orang-orang kudus-Mu dalam hayat alamiahku, melainkan di dalam-Mu." Melalui pengalaman ini, ia juga diserupakan kepada kematian Kristus. Satu hal demi satu hal, ia diserupakan kepada kematian Kristus. Semakin ia diserupakan kepada kematian Kristus sedemikian ini, ia akan semakin dibangkitkan. Dalam mengasihi istrinya dan dalam menggembalakan kaum saleh, ia dibangkitkan. (CWWL, 1978, vol. 1, "The Experience of Christ," hal. 475-478)</p>
+            <p class="book-ref">Bacaan Tambahan: CWWL, 1978, vol. 1, "The Experience of Christ," bab 19</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

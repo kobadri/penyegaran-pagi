@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Minggu Pekan 12</title>
+    <style>
+        body { background-color: #121212; font-family: Arial, sans-serif; margin: 0; padding: 20px 0; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; }
+        .mobile-container { width: 100%; max-width: 420px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); display: flex; flex-direction: column; max-height: 88vh; overflow: hidden; position: relative; }
+        .header { background-color: #1e5138; color: white; padding: 15px; text-align: left; font-size: 16px; font-weight: bold; flex-shrink: 0; }
+        .content-scroll { padding: 15px; overflow-y: auto; flex-grow: 1; font-size: 14px; line-height: 1.6; color: #333; }
+        .week-title { font-size: 18px; font-weight: bold; color: #1e5138; margin-top: 5px; margin-bottom: 4px; line-height: 1.3; }
+        .scripture-subtitle { font-size: 12px; font-weight: bold; color: #2e7d32; margin-bottom: 15px; }
+        .accordion-section { background-color: #f4f9f4; border-left: 4px solid #1e5138; padding: 10px; margin-bottom: 15px; border-radius: 4px; }
+        .accordion-section .toggle-header { background-color: #c8e6c9; padding: 6px 8px; border-radius: 4px; cursor: pointer; font-weight: bold; color: #1e5138; margin: 0; display: flex; justify-content: space-between; align-items: center; }
+        .toggle-content { margin-top: 10px; display: none; }
+        .bottom-nav { display: flex; justify-content: space-between; gap: 6px; padding: 12px; background-color: #f8f9fa; border-top: 1px solid #ddd; flex-shrink: 0; }
+        .nav-btn { flex: 1; background-color: #1e5138; color: #ffffff; text-align: center; padding: 10px 0; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 12px; border: none; cursor: pointer; }
+        .nav-btn:hover { background-color: #143726; }
+        .verse-text { font-weight: bold; font-style: italic; }
+
+        /* Styling Modal Pemutar Media Agar Responsif dan Tidak Terpotong */
+        #mediaModal {
+            display: none;
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 200;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .modal-content {
+            background: white;
+            padding: 15px;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 400px;
+            max-height: 90vh;
+            overflow-y: auto;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .modal-content video {
+            width: 100%;
+            max-height: 60vh;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-top: 10px;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="mobile-container">
+        <div class="header">Kaum Beriman (1)</div>
+        <div class="content-scroll">
+            <div style="font-size: 12px; color: #555; margin-bottom: 2px;">Pekan ke 12</div>
+            <div class="week-title">Mempelai Laki-laki, Kematangan Mempelai Perempuan, dan Menjadi Pejuang untuk Mengalahkan Musuh Allah.</div>
+            <div class="scripture-subtitle">Yohanes 3:29a; Matius 9:15; Ibrani 6:1; Wahyu 19:7.</div>
+
+            <!-- AKORDION I: GARIS BESAR -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 I. Garis Besar (Outline) Pekan 12 <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+<p><strong>Kristus adalah Mempelai Laki-laki</strong><br>
+Yesus menyajikan diri-Nya sebagai Mempelai Laki-laki—persona yang paling menyenangkan di alam semesta.<br>
+Empat Aspek Kenikmatan Kristus sebagai Mempelai Laki-laki:<br>
+Sahabat-sahabat di kamar pengantin yang menikmati hadirat Mempelai Laki-laki (Mat. 9:15).<br>
+Tamu-tamu perjamuan yang menikmati perjamuan pernikahan (Luk. 14:15-17; Why. 19:9).<br>
+Gadis-gadis yang menyongsong kedatangan Mempelai Laki-laki (Mat. 25:1-13).<br>
+Mempelai perempuan yang menikmati Mempelai Laki-laki sampai puncaknya (Why. 19:7).<br>
+Arah pergerakan Tuhan hari ini adalah mempersiapkan mempelai perempuan sebagai pasangan dari Mempelai Laki-laki bagi pernikahan kekal Allah.</p>
+<p><strong>Kematangan Mempelai Perempuan</strong><br>
+"Pengantin-Nya telah siap sedia" (Why. 19:7b).<br>
+Melalui kematangan hayat ilahi, pengasih Kristus menjadi Gadis Sulam / Gadis Sulami (bentuk feminin dari Salomo), yaitu duplikat dan reproduksi Kristus dalam hayat, sifat, ekspresi, dan fungsi (tetapi bukan dalam ke-Allahan-Nya) yang sepadan bagi pernikahan mereka (Kid. 6:13; Why. 21:2, 9).</p>
+<p><strong>Kematangan adalah dipenuhi oleh hayat ilahi yang mentransformasi kita. Orang beriman yang matang sadar akan Tubuh Kristus dan berpusat pada Tubuh.</strong></p>
+<p><strong>Kristus sebagai Petani yang sejati dengan sabar menantikan kematangan kaum beriman sebagai buah-buah sulung dan panenan dari ladang-Nya untuk mempercepat kedatangan-Nya kembali (Yak. 5:7; Why. 14:4, 14-15).</strong></p>
+<p><strong>Gereja sebagai Mempelai Perempuan adalah Pejuang untuk Mengalahkan Musuh Allah</strong></p>
+<p><strong>Gereja sebagai mempelai perempuan Kristus harus menjadi pejuang untuk mengalahkan musuh Allah dan mendatangkan Kerajaan Allah (Why. 12:10; Ef. 6:10-18; Why. 19:11-16).</strong><br>
+Peperangan rohani adalah perkara Tubuh—pasukan korporat yang berperang bagi kepentingan Allah di bumi.</p>
+<p><strong>Kristus akan datang sebagai Jenderal bersama mempelai perempuan-Nya sebagai pasukan-Nya di Harmagedon. Pakaian pernikahan (kain lenan halus / keadilbenaran subjektif) berfungsi sekaligus sebagai seragam peperangan.</strong><br>
+Dalam Kidung Agung, pengasih Kristus yang menang menjadi cantik seperti Tirza dan juita seperti Yerusalem di hadapan Tuhan, tetapi dahsyat seperti bala tentara dengan panji-panjinya di hadapan musuh (Kid. 6:4, 10).<br>
+Abigail melambangkan gereja yang berperang bersama Kristus (Daud yang sejati) di tengah penderitaan bagi penegakan Kerajaan Allah setelah manusia lama yang bebal (Nabal) dipukul mati.</p>
+                </div>
+            </div>
+
+            <!-- AKORDION II: AYAT ALKITAB RAWATAN PAGI -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 II. Ayat Alkitab Rawatan Pagi (Hari 1–6) <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+<p><strong>Hari 1 (Senin) Yohanes 3:</strong></p>
+<p class="verse-text">29a: "Yang punya mempelai perempuan, ialah mempelai laki-laki..." Matius 9:15: "Jawab Yesus kepada mereka, “Dapatkah sahabat-sahabat mempelai laki-laki berdukacita selama mempelai itu bersama mereka? Tetapi waktunya akan datang mempelai itu diambil dari mereka dan pada waktu itulah mereka akan berpuasa.”"</p>
+<p><strong>Hari 2 (Selasa) 2 Korintus 3:</strong></p>
+<p class="verse-text">18: "Kita semua mencerminkan kemuliaan Tuhan dengan muka yang tidak berselubung. Karena kemuliaan itu datangnya dari Tuhan yang adalah Roh, maka kita sedang diubah menjadi serupa dengan gambar-Nya, dalam kemuliaan yang semakin besar." Ibrani 6:1: "Sebab itu, marilah kita tinggalkan asas-asas pertama ajaran tentang Kristus dan beralih kepada perkembangannya yang penuh..."</p>
+<p><strong>Hari 3 (Rabu) Yakobus 5:</strong></p>
+<p class="verse-text">7: "Karena itu, Saudara-saudara, bersabarlah sampai kedatangan Tuhan! Sesungguhnya petani menantikan hasil yang berharga dari tanahnya dan ia sabar sampai telah turun hujan musim gugur dan hujan musim semi." Galatia 4:19: "Hai anak-anakku, karena kamu aku menderita sakit bersalin lagi, sampai rupa Kristus menjadi nyata di dalam kamu."</p>
+<p><strong>Hari 4 (Kamis) Wahyu 19:</strong></p>
+<p class="verse-text">7-8: "Marilah kita bersukacita dan bersorak-sorai, dan memuliakan Dia! Karena hari perkawinan Anak Domba telah tiba, dan pengantin-Nya telah siap sedia. Kepadanya dikaruniakan supaya memakai kain lenan halus yang berkilau-kilauan dan putih bersih!" Wahyu 19:14: "Semua pasukan yang di surga mengikuti Dia, mereka menunggang kuda putih dan memakai lenan halus yang putih bersih."</p>
+<p><strong>Hari 5 (Jumat) Kidung Agung 6:</strong></p>
+<p class="verse-text">4: "Cantik engkau, manisku, seperti kota Tirza, juita seperti Yerusalem, dahsyat seperti bala tentara dengan panji-panjinya." Efesus 6:12-13: "Karena perjuangan kita bukanlah melawan darah dan daging, tetapi melawan pemerintah-pemerintah, melawan penguasa-penguasa, melawan kuasa-kuasa dunia yang gelap ini, melawan roh-roh jahat di udara. Sebab itu ambillah seluruh perlengkapan senjata Allah..."</p>
+<p><strong>Hari 6 (Sabtu) Efesus 6:</strong></p>
+<p class="verse-text">10-11: "Akhirnya, hendaklah kamu kuat di dalam Tuhan, di dalam kekuatan kuasa-Nya. Kenakanlah seluruh perlengkapan senjata Allah, supaya kamu dapat bertahan melawan tipu muslihat Iblis." Wahyu 11:15: "Pemerintahan atas dunia dipegang oleh Tuhan kita dan Dia yang diurapi-Nya, dan Ia akan memerintah sebagai Raja sampai selama-lamanya."</p>
+                </div>
+            </div>
+
+            <!-- AKORDION III: POIN-POIN CATATAN KAKI -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 III. Poin-Poin Catatan Kaki (Footnote) <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+<p><strong>Keindahan Mempelai Laki-laki & Empat Aspek Kenikmatan (Mat. 9:14-15; 25:1-13; Why. 19:7-9) Mempelai Laki-laki adalah persona yang paling menawan dan tanpa rasa takut. Kaum beriman menikmati Kristus dalam 4 aspek: sahabat di kamar pengantin (kemesraan), tamu pesta (makanan/kelimpahan), gadis-gadis (penantian/kesucian), dan mempelai perempuan (kesatuan penuh dalam perjamuan nikah).</strong></p>
+<p><strong>Signifikansi Gadis Sulam / Sulami (Kid. 6:13; 2 Kor. 3:18; Why. 19:7) Sulami adalah bentuk feminin dari nama Salomo. Kristus adalah Salomo yang sejati, dan kaum beriman yang telah matang melalui pertumbuhan hayat dijadikan Sulami—duplikat, reproduksi, dan pasangan yang persis sama dengan Kristus dalam hayat, sifat, ekspresi, dan fungsi (tetapi bukan dalam ke-Allahan-Nya).</strong></p>
+<p><strong>Petani Sejati dan Penantian Kematangan (Yak. 5:7; Mat. 13:3; Why. 14:14-15) Kristus adalah Petani sejati yang menaburkan diri-Nya sebagai benih. Sama seperti petani menantikan hasil tanah dengan sabar, Kristus dengan sabar menantikan kematangan kaum beriman. Kematangan hayat kaum beriman inilah satu-satunya hal yang mempercepat kedatangan Tuhan kembali.</strong></p>
+<p><strong>Pakaian Pernikahan sebagai Seragam Peperangan (Why. 19:7-8, 14; Ef. 6:10-18) Pakaian pernikahan (kain lenan halus) adalah Kristus yang diperhidupkan keluar dari kaum beriman sebagai keadilbenaran subjektif. Pakaian ini tidak hanya melayakkan kaum beriman menghadiri perkawinan Anak Domba, melainkan sekaligus menjadi seragam militer untuk bergabung dengan pasukan Kristus dalam Perang Harmagedon.</strong></p>
+<p><strong>Dua Penampilan Mempelai Perempuan (Kid. 6:4, 10; Ef. 5:27) Mempelai perempuan memiliki dua penampilan ganda yang seimbang: indah dan cantik seperti Tirza/Yerusalem di hadapan Tuhan (karena disusun oleh sifat surgawi), tetapi dahsyat seperti bala tentara dengan panji-panjinya (terrible as an army with banners) yang menggentarkan Iblis dan kuasa gelap.</strong></p>
+<p><strong>Abigail sebagai Lambang Gereja yang Berperang (1 Sam. 25:2-42; Ef. 6:10-20) Daud melambangkan Kristus yang berperang di tengah penderitaan. Manusia lama kita yang bebal (Nabal) harus dipukul mati oleh Tuhan. Setelah itu, kita menyatu dengan Kristus sebagai Abigail—gereja yang mengikuti Kristus dalam penderitaan dan berperang bersama Dia bagi Kerajaan Allah.</strong></p>
+<p><strong>Peperangan Korporat Tubuh Kristus (Ef. 6:10-20; Why. 11:15; 19:11-21) Peperangan rohani bukanlah pertempuran individu melainkan pertempuran pasukan korporat (Tubuh Kristus). Senjata Allah diberikan kepada Tubuh. Ketika gereja sebagai mempelai perempuan yang matang berdiri dalam keesaan pasukan korporat, musuh dikalahkan dan pemerintahan atas dunia ini sepenuhnya diserahkan kepada Allah dan Kristus-Nya.</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL PEMUTAR MEDIA -->
+        <div id="mediaModal" onclick="closeModal(event)">
+            <div class="modal-content" id="modalBody" onclick="event.stopPropagation()">
+                <!-- Konten Media Dinamis -->
+            </div>
+        </div>
+
+        <!-- NAVIGASI BAWAH -->
+        <div class="bottom-nav">
+            <a href="../../index.html" class="nav-btn">🏠 Home</a>
+            
+            
+        </div>
+    </div>
+
+    <script>
+        function toggleSection(header) {
+            const content = header.nextElementSibling;
+            const arrow = header.querySelector('.arrow');
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                arrow.textContent = "▼";
+            } else {
+                content.style.display = "block";
+                arrow.textContent = "▲";
+            }
+        }
+
+        function playAudio() {
+            var modal = document.getElementById("mediaModal");
+            var body = document.getElementById("modalBody");
+            
+            body.innerHTML = `
+                <h3 style="margin: 0 0 5px 0; font-size: 16px;">Audio Penyegaran Pagi</h3>
+                <p style="margin: 0 0 10px 0; font-size: 12px; color: #666;">Pekan 12</p>
+                <audio id="myAudio" controls autoplay style="width:100%; margin-top:10px;">
+                    <source src="../berita_mingguan/Pekan_12/12_Ketika_Gaun_Pengantin_Menjadi_Zirah_Perang.m4a" type="audio/mp4">
+                    Peramban Anda tidak mendukung elemen audio.
+                </audio>
+                <br>
+                <button onclick="closeModalDirect()" style="padding: 6px 14px; background:#1e5138; color:white; border:none; border-radius:8px; cursor:pointer; font-size: 12px; margin-top: 10px;">Tutup</button>
+            `;
+            modal.style.display = "flex";
+
+            var audioElement = document.getElementById("myAudio");
+            audioElement.onended = function() {
+                closeModalDirect();
+            };
+        }
+
+        function playVideo() {
+            var modal = document.getElementById("mediaModal");
+            var body = document.getElementById("modalBody");
+            
+            body.innerHTML = `
+                <h3 style="margin: 0 0 5px 0; font-size: 16px;">Video Penyegaran Pagi</h3>
+                <p style="margin: 0 0 10px 0; font-size: 12px; color: #666;">Pekan 12</p>
+                <video id="myVideo" controls autoplay>
+                    <source src="../berita_mingguan/Pekan_12/12_Dua_Sisi_Mempelai_Kristus_yang_Menggetarkan_Musuh.mp4" type="video/mp4">
+                    Peramban Anda tidak mendukung elemen video.
+                </video>
+                <br>
+                <button onclick="closeModalDirect()" style="padding: 6px 14px; background:#1e5138; color:white; border:none; border-radius:8px; cursor:pointer; font-size: 12px; margin-top: 10px;">Tutup</button>
+            `;
+            modal.style.display = "flex";
+
+            var videoElement = document.getElementById("myVideo");
+            videoElement.onended = function() {
+                closeModalDirect();
+            };
+        }
+
+        function closeModal(event) {
+            closeModalDirect();
+        }
+
+        function closeModalDirect() {
+            var modal = document.getElementById("mediaModal");
+            if (modal) modal.style.display = "none";
+
+            var audioElement = document.getElementById("myAudio");
+            if (audioElement) {
+                audioElement.pause();
+                audioElement.currentTime = 0;
+            }
+            var videoElement = document.getElementById("myVideo");
+            if (videoElement) {
+                videoElement.pause();
+                videoElement.currentTime = 0;
+            }
+        }
+    </script>
+</body>
+</html>

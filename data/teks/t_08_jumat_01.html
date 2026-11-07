@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Jumat, 27 November 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 8 - Jumat, 27 November 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Mat. 9:38</div>
+            <div class="scripture-text">Karena itu, mintalah kepada tuan yang empunya tuaian, supaya Ia mengirimkan pekerja-pekerja untuk tuaian itu.</div>
+            <div class="scripture-title">Mat. 11:29-30</div>
+            <div class="scripture-text">Pikullah gandar yang Kupasang dan belajarlah kepada-Ku, karena Aku lemah lembut dan rendah hati dan jiwamu akan mendapat ketenangan. Sebab gandar yang Kupasang itu menyenangkan dan beban-Ku pun ringan.</div>
+            <p>Raja surgawi menganggap orang-orang Israel sebagai domba dan diri-Nya sebagai Gembala [Mat. 9:36]. Ketika Kristus datang kepada orang-orang Yahudi untuk kali pertama, mereka seperti orang kusta, orang lumpuh, orang yang kerasukan setan, dan segala macam orang yang kasihan, karena mereka tidak mempunyai gembala untuk merawat mereka. Kini dalam ministri rajani-Nya, untuk mendirikan kerajaan surgawi-Nya, Dia melayani mereka bukan hanya sebagai seorang Tabib, tetapi juga sebagai Gembala, seperti yang dinubuatkan dalam Yesaya 40:11.</p>
+            <p>Raja surgawi menganggap orang-orang bukan hanya sebagai domba, tetapi juga sebagai tuaian [Mat. 9:37]. Domba memerlukan penggembalaan dan tuaian perlu dituai.</p>
+            <p>Raja kerajaan surgawi menganggap diri-Nya bukan hanya sebagai Gembala domba, tetapi juga Tuan yang empunya tuaian [ayat 38]. Kerajaan-Nya didirikan dengan hal-hal hayat yang dapat bertumbuh dan berlipat ganda. Dialah Tuan yang empunya tuaian ini. Kita adalah kawanan domba juga tuaian. Kawanan domba terdiri atas binatang-binatang hidup, dan hasil tuaian adalah tumbuh-tumbuhan yang hidup. Di bawah tangan Tuhan Yesus, tidak ada sesuatu yang mati. ... Segala sesuatu yang Raja surgawi perhatikan adalah benda-benda yang hidup. <em>(Pelajaran-Hayat Matius, hal. 492-493)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Kita semua perlu melihat visi Tuhan Yesus sebagai Tuan yang empunya tuaian. Dalam Matius 9:38 Tuhan memberi tahu kita agar meminta kepada Tuan yang empunya tuaian, supaya Ia mengirimkan pekerja-pekerja untuk tuaian itu. ... Sering kali ketika kita memerlukan pekerja-pekerja, kita berteriak meminta bantuan. Tetapi mulai hari ini, ketika Anda memerlukan pekerja-pekerja, Anda wajib pertama-tama berdoa kepada Tuan yang empunya tuaian dengan berkata, "Tuhan inilah tuaian-Mu. Engkaulah Tuan yang empunya tuaian. Kami berseru kepada-Mu untuk meminta pekerja-pekerja bagi tuaian-Mu itu. Tuhan, utuslah lebih banyak pekerja untuk menuai tuaian-Mu." ... Berdoa sedemikian berarti kita telah melihat suatu visi bahwa Kristus kita, Sang Rajani, Sang Gembala, ialah Tuan yang empunya tuaian. Bila Anda berdoa agar Tuhan mengirimkan pekerja-pekerja untuk tuaian-Nya, Anda sangat menghormati-Nya. Ini sangat berbeda dengan memanggil orang untuk membantu Anda dalam pekerjaan Anda! Bila Anda berbuat demikian, berarti Anda tidak menghormati Kristus sebagai Tuan yang empunya tuaian. ... Dengan demikian Anda sudah menjadi tuan pekerjaan itu dan Dia tidak Anda hargai sebagai Tuan yang empunya tuaian.</p>
+            <p>Dalam 11:28 Tuhan menyerukan panggilan: <em>"Marilah kepada-Ku, semua yang letih lesu dan berbeban berat, Aku akan memberikan kelegaan kepadamu."</em> ... Sungguh perkataan yang penuh kasih karunia. Jerih lelah (letih lesu, LAI) yang disebutkan dalam ayat 28 bukan hanya mengacu kepada jerih lelah untuk memelihara perintah hukum Taurat dan peraturan-peraturan agamawi, tetapi juga mengacu kepada jerih lelah dalam berjuang untuk berhasil dalam pekerjaan apa pun. ... Perhentian bukan hanya berarti dibebaskan dari jerih lelah dan beban di bawah hukum Taurat dan agama, di bawah pekerjaan atau tanggung jawab apa pun, tetapi juga mengacu kepada damai sejahtera yang sempurna dan kepuasan yang penuh.</p>
+            <p>Memikul gandar Tuhan [ayat 29-30] adalah melakukan kehendak Bapa. Ini bukan diatur oleh tuntutan hukum Taurat atau agama yang mana pun, atau diperbudak oleh pekerjaan apa pun, melainkan dikuasai oleh kehendak Bapa. Tuhan menempuh hidup yang demikian, tidak memperhatikan apa-apa selain kehendak Bapa-Nya (Yoh. 4:34; 5:30; 6:38). Dia sepenuhnya taat kepada kehendak Bapa (Mat. 26:39, 42). Jadi, Dia meminta kita untuk belajar dari Dia. Kehendak Allah ialah gandar kita. Karena itu, kita tidak bebas berbuat sesuka hati, sebaliknya kita memikul gandar. ... Gandar Tuhan ialah kehendak Bapa dan beban-Nya ialah pekerjaan untuk melakukan kehendak Bapa. Gandar semacam ini menyenangkan, tidak menyulitkan; beban semacam ini ringan, tidak berat. Kata Yunani yang diterjemahkan "menyenangkan" berarti "cocok untuk dipakai": jadi baik, ramah, lembut, halus, mudah, menyenangkan, yang berlawanan dengan keras, kasar, tajam, dan pahit.</p>
+            <p>Tuhan berkata bahwa jika kita memikul gandar-Nya dan belajar dari Dia, kita akan mendapat perhentian bagi jiwa kita [11:29]. Perhentian yang kita peroleh dengan memikul gandar Tuhan dan belajar dari Dia adalah untuk jiwa kita. Ini adalah perhentian yang batiniah, bukan yang bersifat luaran belaka. <em>(Pelajaran-Hayat Matius, hal. 493-494, 539-541)</em></p>
+            <p class="book-ref">Bacaan Tambahan: Pelajaran-Hayat Matius, berita 29–31</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

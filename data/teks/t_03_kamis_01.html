@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Kamis, 22 Oktober 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 3 - Kamis, 22 Oktober 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Mat. 5:13</div>
+            <div class="scripture-text">Kamu adalah garam dunia. Jika garam itu menjadi tawar, dengan apakah ia diasinkan? Tidak ada lagi gunanya selain dibuang dan diinjak orang.</div>
+            <div class="scripture-title">Luk. 17:32</div>
+            <div class="scripture-text">Ingatlah akan istri Lot!</div>
+            <p>Berhentinya Daud menjadi kesaksian ganda di alam semesta. Pertama, semua pekerjaan di alam semesta harus berasal dari Allah, bukan dari manusia. Kedua, yang penting adalah apa yang Allah lakukan bagi manusia, bukan apa yang manusia lakukan bagi Allah. Daud ingin membangun satu Bait bagi Allah, tetapi Allah berkata bahwa Dia akan membangun rumah bagi Daud, yang darinya satu kerajaan akan muncul. Bahkan setelah Allah mengucapkan firman ini kepada Daud, ia jatuh dua kali. Pertama, ia membunuh Uria dan merebut istrinya, Batsyeba (2 Sam. 11:2-17, 26-27). Kedua, ia menghitung jumlah orang Israel (24:1-10). Sungguh mengagumkan bahwa setelah pembunuhan Uria, Batsyeba melahirkan seorang putra bagi Daud, yaitu Salomo, dan setelah Daud ditegur oleh Allah karena menghitung jumlah rakyat, ia mempersembahkan korban di sebidang tanah, seperti yang diperintahkan Allah, yang kemudian menjadi lokasi pembangunan Bait (ayat 18-25; 1 Taw. 21:1; 2 Taw. 3:1).</p>
+            <p>Baik putra maupun lokasi pembangunan Bait itu berasal dari pengampunan dosa-dosa Daud. Mereka yang dapat melihat hal ini akan menundukkan kepala dan menyembah Allah, "Bukan kami yang dapat berbuat sesuatu bagi-Mu, melainkan Engkaulah yang berbuat sesuatu bagi manusia." ... Allah hanya menginginkan kerja sama kita; Dia tidak memerlukan kita untuk melakukan apa pun bagi-Nya. ... Kita harus menghentikan semua pendapat, keputusan, dan gagasan kita; kita perlu membiarkan Dia berbicara, membiarkan Dia masuk, dan membiarkan Dia memerintah. Yang perlu kita lakukan hanya bekerja sama dengan Dia. <em>(CWWL, 1953, vol. 1, "Knowing Life and the Church," hal. 284)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>"Kamu" dalam Matius 5:13 mengacu kepada kaum beriman pemenang dalam hayat kerajaan. Selain itu, menjadi garam bumi adalah perkara korporat, bukan perkara individu. ... Sebagai satu entitas korporatlah, umat kerajaan menjadi garam bumi. Jika kita memisahkan diri dari kehidupan gereja, kita tidak dapat menjadi garam seperti itu.</p>
+            <p>Bagi kita untuk menjadi garam bumi berarti kita mencegah bumi agar tidak sepenuhnya rusak. ... Bumi, yang diciptakan oleh Allah, telah jatuh ke dalam dosa. Dalam arti tertentu, bumi telah menjadi busuk dan rusak. Namun, garam membunuh kuman, menghilangkan kebusukan, dan menjaga segala sesuatu dalam kondisi aslinya. ... Oleh karena itu, fungsi garam adalah memelihara apa yang telah diciptakan Allah. Seluruh bumi semakin membusuk. ... Bagi bumi yang telah rusak, umat Kerajaan Surga adalah unsur yang menjaga bumi agar tidak sepenuhnya rusak. Mereka memiliki fungsi garam untuk membunuh kuman, menghilangkan kebusukan, dan menjaga segala sesuatu dalam kondisi aslinya atau mengembalikannya ke kondisi yang diciptakan Allah.</p>
+            <p>Ketika Kerajaan Seribu Tahun tiba, seluruh bumi akan digarami. Semua kuman di bumi akan dimatikan sepenuhnya, dan seluruh bumi tidak hanya akan didapatkan kembali oleh Kristus, tetapi juga dikembalikan ke kondisi yang diciptakan Allah. Pekerjaan ini akan dilakukan oleh umat kerajaan. Di mana pun umat kerajaan berada, mereka harus melaksanakan fungsi penggaraman terhadap orang-orang di sekitar mereka. Di lingkungan kita, kita harus menjalankan fungsi kita dalam membunuh kuman-kuman. ... Jika kita miskin di dalam roh, berdukacita, lemah lembut, adil benar, berbelaskasihan, dan murni dalam mencari Allah, kita akan memiliki fungsi menggarami. Tidak perlu menegur orang lain atau menunjukkan kesalahan dan kekurangan mereka. Mereka akan digarami hanya dengan kehadiran kita. Inilah arti menjadi garam yang membunuh kuman-kuman di bumi yang rusak ini. <em>(The Conclusion of the New Testament, hal. 1157-1158)</em></p>
+            <p>Istri Lot menjadi tiang garam karena dia menoleh ke Sodom seakan-akan segan meninggalkannya. Pandangan yang demikian menunjukkan bahwa dia mengasihi dan memustikakan dunia jahat yang akan dihakimi dan dimusnahkan oleh Allah. Dia diselamatkan dari Sodom, tetapi dia tidak sampai pada tempat aman yang dicapai oleh Lot (Kej. 19:15-30). Dia tidak binasa; juga tidak sepenuhnya diselamatkan. Seperti garam yang menjadi tawar (Luk. 14:34-35), dia ditinggalkan di tempat yang memalukan. Ini merupakan suatu peringatan yang serius kepada kaum beriman yang mengasihi dunia. <em>(Pelajaran-Hayat Lukas, hal. 450-451)</em></p>
+            <p class="book-ref">Bacaan Tambahan: Pelajaran-Hayat Lukas, berita 33, 39</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

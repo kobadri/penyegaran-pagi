@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Rabu, 16 Desember 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 11 - Rabu, 16 Desember 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Why. 12:5</div>
+            <div class="scripture-text">Ia melahirkan seorang Anak laki-laki, yang akan menggembalakan semua bangsa dengan gada besi; tiba-tiba Anaknya itu dirampas dan dibawa lari kepada Allah dan ke takhta-Nya.</div>
+            <div class="scripture-title">Why. 12:11</div>
+            <div class="scripture-text">Mereka mengalahkan dia oleh darah Anak Domba, dan oleh perkataan kesaksian mereka. Karena mereka tidak mengasihi nyawa mereka sampai menghadapi maut.</div>
+            <p>Lambang lain dari kaum beriman adalah anak-laki-laki (Why. 12:5) yang dilahirkan oleh perempuan universal yang cemerlang. Sepanjang generasi telah ada beberapa orang yang lebih kuat di antara umat Allah. Dalam Alkitab, mereka dianggap satu unit kolektif—anak-laki-laki—yang berperang bagi Allah dan membawa Kerajaan Allah turun ke bumi. Dalam Alkitab, perempuan melambangkan orang yang lebih lemah dan laki-laki adalah yang lebih kuat (1 Ptr. 3:7). Jadi, anak-laki-laki dalam Wahyu 12:5 melambangkan bagian yang lebih kuat dari umat Allah. <em>(The Conclusion of the New Testament, hal. 1223-1224)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Kunci untuk menjadi bagian yang lebih kuat dalam perempuan itu adalah manusia batiniah kita harus dikuatkan [Ef. 3:16], [yang] adalah roh kita yang telah dilahirkan kembali yang dihuni oleh Roh Kudus. Dalam ayat 18 Paulus melanjutkan doanya. Ia ingin supaya kita "bersama-sama dengan semua orang kudus dapat dengan penuh kekuatan memahami, betapa lebarnya dan panjangnya dan tingginya dan dalamnya kasih Kristus" (7). Kita perlu menerima kekuatan untuk memahami betapa besar dimensi-dimensi kekayaan Kristus. Untuk menjadi anak-laki-laki itu, bukan hanya manusia batiniah kita perlu dikuatkan, diri pun harus menerima rawatan dari kekayaan Kristus.</p>
+            <p>Cara untuk menjadi bagian yang lebih kuat di dalam perempuan itu adalah manusia batiniah kita harus dikuatkan, mendapatkan kekuatan untuk mengalami kekayaan Kristus, dan menjadi kuat melalui mengenakan Kristus yang almuhit sebagai perlengkapan senjata kita [ayat 16, 18; 6:10-11].</p>
+            <p>Cara kita berperang ialah menggunakan firman Allah dengan segala doa. ... Cara yang paling efektif untuk berperang melawan musuh adalah mendoabacakan Firman, dan salah satu bagian Firman yang paling baik didoabacakan adalah Kitab Efesus. ... Ahli-ahli berusaha untuk memahami Kitab Efesus, Anda harus mendoabacakan kitab ini, bahkan mendoabacakan seluruh kitab ini dalam dua minggu. Dengan berbuat demikian, Anda akan bisa bersaksi bahwa Anda menjadi bagian yang lebih kuat di dalam perempuan itu.</p>
+            <p>Firman dalam Efesus 6 adalah sebilah pedang ... Pedang ini bukan untuk membunuh Anda—melainkan untuk membunuh musuh dan semua perkara negatif di dalam Anda. Jika kita ingin berperang melawan penghulu-penghulu dan penguasa-penguasa di udara, terlebih dulu kita harus membunuh semua "hama" di dalam kita.</p>
+            <p>Saudara-saudara yang membentuk anak-laki-laki itu memerangi Setan dan akhirnya mengalahkannya. Mereka mengalahkan Setan oleh tiga perkara: oleh darah Anak Domba, oleh perkataan kesaksian mereka, dan dengan tidak mengasihi hayat jiwa mereka, bahkan sampai ke dalam maut.</p>
+            <p>Darah Anak Domba, yang adalah untuk penebusan kita, menjawab semua dakwaan Iblis terhadap kita di hadapan Allah, supaya kita mengalahkan dia. Setiap kali kita merasa didakwa Iblis, kita perlu menerapkan darah ini.</p>
+            <p>Mereka mengalahkan musuh juga oleh "perkataan kesaksian mereka" [Why. 12:22]. Perkataan kesaksian mereka adalah perkataan yang mempersaksikan bahwa Iblis sudah dihakimi oleh Tuhan. Setiap kali kita merasa didakwa Iblis, kita harus membuka mulut mempersaksikan bagaimana Tuhan sudah menanggulangi dia. Kita harus mengumumkan dengan lantang kemenangan Tuhan atas Iblis. ... Anda perlu mengkhorbahi Setan, "Hai Satan, tidakkah kau tahu bahwa kau telah disalibkan? Kamu telah dihakimi, dan tempatmu adalah di telaga api." Inilah kesaksian lisan Anda.</p>
+            <p>Para saudara juga bisa menang karena mereka tidak menyayangi hayat jiwa mereka. Karena kejatuhan Adam, Setan telah bersatu dengan hayat jiwa manusia, yaitu ego manusia sendiri (Mat. 16:23-24). Karena itu, untuk mengalahkan dia kita seharusnya tidak menyayangi hayat jiwa kita, melainkan membencinya dan menyangkalnya (Luk. 14:26; 9:23). Kaum beriman pemenang yang menyusun anak-laki-laki itu tidak menyayangi nyawa mereka sampai ke dalam maut. Orang-orang yang tidak menyayangi hayat jiwa mereka, rela mati martir. Kita harus membenci ego kita sendiri. <em>(Pelajaran-Hayat Wahyu, hal. 721-723, 593, 597, 600)</em></p>
+            <p class="book-ref">Bacaan Tambahan: Pelajaran-Hayat Wahyu, berita 29–30, 35–36, 45–46, 48</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

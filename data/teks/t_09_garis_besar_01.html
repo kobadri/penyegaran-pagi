@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Minggu Pekan 9</title>
+    <style>
+        body { background-color: #121212; font-family: Arial, sans-serif; margin: 0; padding: 20px 0; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; }
+        .mobile-container { width: 100%; max-width: 420px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); display: flex; flex-direction: column; max-height: 88vh; overflow: hidden; position: relative; }
+        .header { background-color: #1e5138; color: white; padding: 15px; text-align: left; font-size: 16px; font-weight: bold; flex-shrink: 0; }
+        .content-scroll { padding: 15px; overflow-y: auto; flex-grow: 1; font-size: 14px; line-height: 1.6; color: #333; }
+        .week-title { font-size: 18px; font-weight: bold; color: #1e5138; margin-top: 5px; margin-bottom: 4px; line-height: 1.3; }
+        .scripture-subtitle { font-size: 12px; font-weight: bold; color: #2e7d32; margin-bottom: 15px; }
+        .accordion-section { background-color: #f4f9f4; border-left: 4px solid #1e5138; padding: 10px; margin-bottom: 15px; border-radius: 4px; }
+        .accordion-section .toggle-header { background-color: #c8e6c9; padding: 6px 8px; border-radius: 4px; cursor: pointer; font-weight: bold; color: #1e5138; margin: 0; display: flex; justify-content: space-between; align-items: center; }
+        .toggle-content { margin-top: 10px; display: none; }
+        .bottom-nav { display: flex; justify-content: space-between; gap: 6px; padding: 12px; background-color: #f8f9fa; border-top: 1px solid #ddd; flex-shrink: 0; }
+        .nav-btn { flex: 1; background-color: #1e5138; color: #ffffff; text-align: center; padding: 10px 0; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 12px; border: none; cursor: pointer; }
+        .nav-btn:hover { background-color: #143726; }
+        .verse-text { font-weight: bold; font-style: italic; }
+
+        /* Styling Modal Pemutar Media Agar Responsif dan Tidak Terpotong */
+        #mediaModal {
+            display: none;
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 200;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .modal-content {
+            background: white;
+            padding: 15px;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 400px;
+            max-height: 90vh;
+            overflow-y: auto;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .modal-content video {
+            width: 100%;
+            max-height: 60vh;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-top: 10px;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="mobile-container">
+        <div class="header">Kaum Beriman (1)</div>
+        <div class="content-scroll">
+            <div style="font-size: 12px; color: #555; margin-bottom: 2px;">Pekan ke 09</div>
+            <div class="week-title">Tiang-tiang dan Benda-benda Penerang.</div>
+            <div class="scripture-subtitle">Wahyu 3:7-13; Filipi 2:12-16.</div>
+
+            <!-- AKORDION I: GARIS BESAR -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 I. Garis Besar (Outline) Pekan 9 <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+<p><strong>Menjadi Tiang-tiang di Dalam Allah Tritunggal Melalui Jalan Filadelfia</strong><br>
+Mengambil jalan setapak gereja di Filadelfia (gereja yang dipulihkan) untuk menggenapkan tujuan kekal Allah.<br>
+Pemenang di Filadelfia adalah tiang-tiang yang menopang kebenaran dan memegang "ministri Perjanjian Baru yang unik", yang mencakup:<br>
+Ministri Roh: Menulisi hati kaum saleh dengan Roh Allah yang hidup sebagai tinta ilahi untuk menjadikan mereka surat-surat Kristus yang hidup.<br>
+Ministri Keadilbenaran: Menjadikan Kristus keadilbenaran objektif dan subjektif yang disulamkan ke dalam kita.<br>
+Ministri Pendamaian: Mendamaikan orang dosa dari dosa (langkah pertama) dan mendamaikan kaum beriman dari daging/manusia alamiah ke dalam Ruang Maha Kudus (langkah kedua).</p>
+<p><strong>Karakteristik dan Penyusunan Para Pemenang di Filadelfia</strong><br>
+Para pemenang dijadikan tiang di dalam Bait Suci Allah—karena Allah Tritunggal dan Anak Domba adalah Bait Suci itu sendiri (Why. 21:22), menjadi tiang berarti Allah dibangun ke dalam manusia dan manusia dibangun ke dalam Allah dalam satu tempat tinggal saling huni (interlocking/incorporation).<br>
+Dituliskan nama Allah, nama Yerusalem Baru, dan nama baru Kristus pada mereka, menunjukkan bahwa seluruh sifat, persona, dan kerealitasan Allah Tritunggal dideifikasi ke dalam kaum beriman.</p>
+<p><strong>Kehidupan Manusia-Allah dan Kasih Persaudaraan</strong><br>
+Memiliki "sedikit kekuatan" menunjukkan bahwa Tuhan tidak menuntut perkara-perkara luar yang besar, melainkan bahwa kaum beriman melakukan yang terbaik dengan apa yang ada padanya untuk menuruti firman Tuhan dan tidak menyangkal nama-Nya.<br>
+Meninggalkan segala nama denominasi di luar nama Tuhan Yesus Kristus dan menyeru nama-Nya untuk mengecap kekayaan-Nya.<br>
+Kasih persaudaraan (Filadelfia) menjadi keunggulan di mana kaum beriman saling menggembalakan menurut hati Allah Bapa yang penuh kasih dan pengampunan.</p>
+<p><strong>Fungsi Bersinar sebagai Benda-benda Penerang di Dunia</strong></p>
+<p><strong>Kristus adalah Matahari, gereja adalah Bulan, dan kaum beriman adalah Benda-benda Penerang (bintang/planet) yang memantulkan cahaya ilahi di tengah dunia yang gelap dan rusak (Flp. 2:15).</strong><br>
+Berpegang pada firman hayat berarti mendoabacakan, mencerna, dan menyajikan Kristus yang hidup kepada orang lain melalui kehidupan sehari-hari.</p>
+<p><strong>Dilepaskan dari Bersungut-sungut dan Beralasan</strong><br>
+Bersungut-sungut (dari emosi/keluhan batin) dan beralasan/berbantah-bantahan (dari pikiran/keraguan) adalah dua hambatan utama yang menghalangi bersinarnya Kristus.<br>
+Menghentikan pencarian alasan dengan berlutut di bawah kekepalaan Allah ("Akulah TUHAN") dan menempuh kehidupan yang bersukacita, berdoa, dan memuji di dalam Roh.</p>
+                </div>
+            </div>
+
+            <!-- AKORDION II: AYAT ALKITAB RAWATAN PAGI -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 II. Ayat Alkitab Rawatan Pagi (Hari 1–6) <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+<p><strong>Hari 1 (Senin) 2 Korintus 3:</strong></p>
+<p class="verse-text">3: "Karena telah ternyata bahwa kamulah surat Kristus, yang ditulis oleh pelayanan kami, ditulis bukan dengan tinta, tetapi dengan Roh dari Allah yang hidup, bukan pada loh-loh batu, melainkan pada loh-loh daging yaitu hati manusia." 2 Korintus 3:6: "Dialah yang membuat kami juga sanggup menjadi pelayan-pelayan dari suatu perjanjian baru, yang tidak terdiri dari hukum yang tertulis, tetapi dari Roh, sebab hukum yang tertulis mematikan, tetapi Roh menghidupkan."</p>
+<p><strong>Hari 2 (Selasa) 2 Korintus 5:</strong></p>
+<p class="verse-text">18-19: "Semuanya ini dari Allah, yang dengan perantaraan Kristus telah mendamaikan kita dengan diri-Nya dan telah mempercayakan pelayanan pendamaian itu kepada kami. Sebab Allah dalam Kristus mendamaikan dunia dengan diri-Nya dengan tidak memperhitungkan pelanggaran mereka..." 2 Korintus 5:20: "Jadi, kami ini utusan-utusan Kristus, seakan-akan Allah menasihati kamu dengan perantaraan kami, dalam nama Kristus kami meminta kepadamu: Berilah dirimu didamaikan dengan Allah."</p>
+<p><strong>Hari 3 (Rabu) Wahyu 3:</strong></p>
+<p class="verse-text">8: "Aku tahu segala pekerjaanmu: Lihatlah, Aku telah membuka pintu bagimu, yang tidak dapat ditutup oleh seorang pun. Aku tahu bahwa kekuatanmu tidak seberapa, namun engkau menuruti firman-Ku dan engkau tidak menyangkal nama-Ku." Wahyu 3:12: "Siapa yang menang, ia akan Kujadikan tiang di dalam Bait Suci Allah-Ku, dan ia tidak akan keluar lagi dari situ; dan padanya akan Kutuliskan nama Allah-Ku, nama kota Allah-Ku, yaitu Yerusalem Baru, yang turun dari surga dari Allah-Ku, dan nama-Ku yang baru."</p>
+<p><strong>Hari 4 (Kamis) Wahyu 3:</strong></p>
+<p class="verse-text">8: "... Kekuatanmu tidak seberapa, namun engkau menuruti firman-Ku dan engkau tidak menyangkal nama-Ku." Efesus 6:24: "Anugerah menyertai semua orang, yang mengasihi Tuhan kita Yesus Kristus dengan kasih yang tidak binasa."</p>
+<p><strong>Hari 5 (Jumat) Filipi 2:</strong></p>
+<p class="verse-text">15-16: "Supaya kamu tidak beraib dan tidak bernoda, sebagai anak-anak Allah yang tidak bercela di tengah-tengah orang yang jahat dan sesat ini, sehingga kamu bercahaya di antara mereka seperti bintang-bintang di dunia, sambil berpegang pada firman kehidupan, agar aku dapat bermegah pada hari Kristus bahwa aku tidak percuma berlomba dan tidak percuma bersusah-susah."</p>
+<p><strong>Hari 6 (Sabtu) Filipi 2:</strong></p>
+<p class="verse-text">14-15: "Lakukanlah segala sesuatu tanpa bersungut-sungut dan berbantah-bantahan, supaya kamu tidak beraib dan tidak bernoda, sebagai anak-anak Allah yang tidak bercela di tengah-tengah orang yang jahat dan sesat ini..."</p>
+                </div>
+            </div>
+
+            <!-- AKORDION III: POIN-POIN CATATAN KAKI -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 III. Poin-Poin Catatan Kaki (Footnote) <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+<p><strong>Gereja di Filadelfia & Puncak Wahyu Ilahi (Why. 3:7-8 & 2 Kor. 3:3, 6) Filadelfia berarti "kasih persaudaraan". Gereja ini dipuji karena menuruti firman Tuhan (memegang ajaran sehat para rasul tanpa menyimpang) dan tidak menyangkal nama-Nya (menanggalkan semua nama sistem denominasi dan meninggikan nama Kristus yang tunggal).</strong></p>
+<p><strong>Ministri Perjanjian Baru yang Unik & Dua Langkah Rekonsiliasi (2 Kor. 3:3-9 & 5:18-20)</strong> Ministri Roh & Keadilbenaran: Roh adalah tinta ilahi yang menulisi hati kita menjadi surat Kristus yang hidup, dan keadilbenaran adalah Kristus yang terekspresi keluar. Dua Langkah Pendamaian: Langkah pertama mendamaikan orang dosa dari dosa-dosanya; langkah kedua mendamaikan kaum beriman yang telah diselamatkan dari manusia alamiah/daging agar masuk melintasi tabir ke dalam Ruang Maha Kudus.</p>
+<p><strong>Di-Jadikan Tiang di Dalam Allah Tritunggal (Why. 3:12 & 21:22) Dalam Yerusalem Baru, Allah Tritunggal dan Anak Domba adalah Bait Suci itu sendiri. Maka, dijadikan tiang di dalam Bait berarti dijadikan tiang di dalam Allah Tritunggal—unsur ilahi digarapkan ke dalam kaum beriman dan kaum beriman dipadukan ke dalam Allah secara organik.</strong></p>
+<p><strong>Makna "Sedikit Kekuatan" & Penulisan Nama Ilahi (Why. 3:8, 12)</strong> Sedikit Kekuatan: Tuhan tidak mencari kehebatan alamiah lahiriah, melainkan kesetiaan dan kebergantungan penuh kaum beriman kepada-Nya. Penulisan Nama: Menuliskan nama Allah, Yerusalem Baru, dan nama baru Tuhan menandakan bahwa apa adanya Allah, sifat kota kudus, dan persona Kristus telah menyatu dan dideifikasi ke dalam diri pemenang.</p>
+<p><strong>Fungsi Bersinar sebagai Benda Penerang / Planet (Flp. 2:15-16) Kaum beriman di dalam dunia tidak memiliki cahaya sendiri, melainkan bertindak sebagai benda penerang (luminaries) yang memantulkan sinar Kristus sebagai Matahari. Berpegang pada firman hayat dilakukan dengan mendoabacakan dan menyajikan Kristus yang hidup kepada masyarakat yang gelap.</strong></p>
+<p><strong>Pembebasan dari Bersungut-sungut dan Beralasan (Flp. 2:14 & Im. 18–22)</strong> Bersungut-sungut: Berasal dari emosi yang tidak puas (keluhan rahasia). Beralasan/Berbantah-bantahan: Berasal dari pikiran yang penuh keraguan dan kecurigaan. Penyebab utama dari perdebatan adalah hidup di dalam pohon pengetahuan benar-and-salah. Ketaatan kepada Allah dengan memegang prinsip "Akulah TUHAN" melenyapkan segala alasan dan membebaskan pencerahan Roh Kudus.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL PEMUTAR MEDIA -->
+        <div id="mediaModal" onclick="closeModal(event)">
+            <div class="modal-content" id="modalBody" onclick="event.stopPropagation()">
+                <!-- Konten Media Dinamis -->
+            </div>
+        </div>
+
+        <!-- NAVIGASI BAWAH -->
+        <div class="bottom-nav">
+            <a href="../../index.html" class="nav-btn">🏠 Home</a>
+            
+            
+        </div>
+    </div>
+
+    <script>
+        function toggleSection(header) {
+            const content = header.nextElementSibling;
+            const arrow = header.querySelector('.arrow');
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                arrow.textContent = "▼";
+            } else {
+                content.style.display = "block";
+                arrow.textContent = "▲";
+            }
+        }
+
+        function playAudio() {
+            var modal = document.getElementById("mediaModal");
+            var body = document.getElementById("modalBody");
+            
+            body.innerHTML = `
+                <h3 style="margin: 0 0 5px 0; font-size: 16px;">Audio Penyegaran Pagi</h3>
+                <p style="margin: 0 0 10px 0; font-size: 12px; color: #666;">Pekan 9</p>
+                <audio id="myAudio" controls autoplay style="width:100%; margin-top:10px;">
+                    <source src="../berita_mingguan/Pekan_09/9_Merobek_Tirai_Ego_demi_Penyatuan_Ilahi.m4a" type="audio/mp4">
+                    Peramban Anda tidak mendukung elemen audio.
+                </audio>
+                <br>
+                <button onclick="closeModalDirect()" style="padding: 6px 14px; background:#1e5138; color:white; border:none; border-radius:8px; cursor:pointer; font-size: 12px; margin-top: 10px;">Tutup</button>
+            `;
+            modal.style.display = "flex";
+
+            var audioElement = document.getElementById("myAudio");
+            audioElement.onended = function() {
+                closeModalDirect();
+            };
+        }
+
+        function playVideo() {
+            var modal = document.getElementById("mediaModal");
+            var body = document.getElementById("modalBody");
+            
+            body.innerHTML = `
+                <h3 style="margin: 0 0 5px 0; font-size: 16px;">Video Penyegaran Pagi</h3>
+                <p style="margin: 0 0 10px 0; font-size: 12px; color: #666;">Pekan 9</p>
+                <video id="myVideo" controls autoplay>
+                    <source src="../berita_mingguan/Pekan_09/9_Cara_Memantulkan_Cahaya_Kristus.mp4" type="video/mp4">
+                    Peramban Anda tidak mendukung elemen video.
+                </video>
+                <br>
+                <button onclick="closeModalDirect()" style="padding: 6px 14px; background:#1e5138; color:white; border:none; border-radius:8px; cursor:pointer; font-size: 12px; margin-top: 10px;">Tutup</button>
+            `;
+            modal.style.display = "flex";
+
+            var videoElement = document.getElementById("myVideo");
+            videoElement.onended = function() {
+                closeModalDirect();
+            };
+        }
+
+        function closeModal(event) {
+            closeModalDirect();
+        }
+
+        function closeModalDirect() {
+            var modal = document.getElementById("mediaModal");
+            if (modal) modal.style.display = "none";
+
+            var audioElement = document.getElementById("myAudio");
+            if (audioElement) {
+                audioElement.pause();
+                audioElement.currentTime = 0;
+            }
+            var videoElement = document.getElementById("myVideo");
+            if (videoElement) {
+                videoElement.pause();
+                videoElement.currentTime = 0;
+            }
+        }
+    </script>
+</body>
+</html>

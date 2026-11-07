@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Sabtu, 19 Desember 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 11 - Sabtu, 19 Desember 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Why. 4:3</div>
+            <div class="scripture-text">Dia yang duduk di takhta itu tampaknya bagaikan permata yaspis....</div>
+            <div class="scripture-title">Why. 21:11</div>
+            <div class="scripture-text">... Cahayanya sama seperti permata yang paling indah, bagaikan permata yaspis, jernih seperti kristal.</div>
+            <div class="scripture-title">Why. 21:18-19</div>
+            <div class="scripture-text">Tembok itu terbuat dari permata yaspis; dan kota itu sendiri dari emas mural. ... Dasar-dasar tembok kota itu dihiasi dengan segala jenis permata. Dasar yang pertama batu yaspis....</div>
+            <p>Sekarang kita tiba pada lambang yang terakhir, ramping, dan paling mencolok dalam Perjanjian Baru—permata yaspis dan batu-batu permata lainnya. ... Pada akhirnya semua orang beriman akan ditransformasi menjadi batu-batu permata. Secara sifat, kita adalah tanah liat. Tetapi sejak kita dilahirkan kembali, kita mulai ditransformasi.</p>
+            <p>Permata yaspis melambangkan penampilan Allah yang bersinar dengan kemuliaan Allah sebagai terang Yerusalem Baru bagi ekspresi Allah. Dalam Wahyu 4:3 kita dengan jelas diberi tahu bahwa Allah yang duduk di atas takhta terlihat bagaikan permata yaspis yang, menurut 21:11, adalah "permata yang paling indah ... jernih seperti kristal." Warnanya pastilah hijau gelap, menandakan hayat dalam kelimpahannya. Permata yaspis di sini, seperti yang ditunjukkan oleh 21:11, melambangkan kemuliaan Allah yang disampaikan dalam hayat-Nya yang kaya (Yoh. 17:22; 2). Ini adalah penampilan Allah, yang juga adalah penampilan Yerusalem Baru. Tembok dan fondasi pertama kota itu dibangun oleh permata ini (Why. 21:18-19). <em>(The Conclusion of the New Testament, hal. 1233)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Karena permata yaspis adalah penampilan Allah, ekspresi-Nya, dan karena kita akan ditransformasi menjadi permata yaspis, ini berarti kita akan menjadi ekspresi korporat dari Allah Tritunggal. ... Seluruh kota itu akan memiliki penampilan Allah, ekspresi Allah. Ini sesuai dengan firman dalam 1 Yohanes 3:2: "Kita tahu bahwa apabila Kristus dinyatakan, kita akan menjadi sama seperti Dia, sebab kita akan melihat Dia dalam keadaan-Nya yang sebenarnya." Allah dan kaum beriman akan memiliki penampilan yang sama—penampilan permata yaspis. Ini akan menjadi penggenapan akhir dari Kejadian 1:26, sebab ini akan menjadi ekspresi korporat yang luar biasa dari Allah Tritunggal.</p>
+            <p>Dalam Wahyu 21:19 dan 20 kaum beriman dilambangkan oleh sebelas batu permata lainnya selain permata yaspis [yang] melambangkan kekayaan dari keindahan Kristus dalam berbagai aspeknya bagi fondasi tempat kediaman kekal Allah. Kristus adalah batu fondasi bangunan Allah dalam kekekalan, dan semua batu permata itu adalah berbagai aspek dari kekayaan Kristus sebagai fondasinya.</p>
+            <p>Warna-warna dari batu-batu permata dalam 21:19 dan 20 memberi penampilan pelangi. Ini menandakan bahwa Yerusalem Baru dibangun dan dijamin oleh kesetiaan Allah dalam memegang perjanjian-Nya (Kej. 9:8-17). Karena fondasi itu dibangun di atas kesetiaan yang dengannya Allah memegang perjanjian-Nya, ini dapat dipercaya dan dapat diandalkan. Karena itu, fondasi Yerusalem Baru akan menjadi suatu pelangi kesal yang menjamin kesetiaan Allah. ... Kesetiaan Allah adalah fondasi yang pasti yang padanya Yerusalem Baru dibangun. <em>(The Conclusion of the New Testament, hal. 1231-1232)</em></p>
+            <p>[Wahyu 21:19-20] memuat urutan nama kedua belas batu permata, yang adalah kedua belas rasul Anak Domba itu, masing-masing dilambangkan dengan sebuah batu permata. Petrus, rasul pertama dari kedua belas rasul, semula bersama Simon. Ketika Simon dibawa kepada Tuhan, Tuhan mengubah namanya menjadi Petrus, yang berarti "baru" (Yoh. 1:42). Kelak Tuhan menyebutnya dengan nama ini ketika Ia berbicara tentang pembangunan gereja-Nya (Mat. 16:18). ... Semua rasul diciptakan sebagai tanah liat, tetapi mereka telah dilahirkan kembali dan ditransformasi menjadi batu-batu permata bangunan kekal Allah. Setiap orang beriman perlu dilahirkan kembali dan ditransformasi, agar dapat menjadi bagian dari Yerusalem Baru.</p>
+            <p>Lapis pertama dari fondasi tembok kota itu, sama seperti seluruh tembok Yerusalem Baru, dibangun dengan permata yaspis. Ini menunjukkan bahwa bahan utama dalam pembangunan kota kudus itu adalah permata yaspis. Karena permata yaspis melambangkan Allah yang diekspresikan dalam kemuliaan-Nya yang dapat ditransmisikan, maka fungsi utama kota kudus itu adalah mengekspresikan Allah dengan mengemban kemuliaan-Nya (Why. 21:11). <em>(Pelajaran-Hayat Wahyu, hal. 992)</em></p>
+            <p class="book-ref">Bacaan Tambahan: The Conclusion of the New Testament, berita 113</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

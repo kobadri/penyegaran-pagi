@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Jumat, 4 Desember 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 9 - Jumat, 4 Desember 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Flp. 2:15-16</div>
+            <div class="scripture-text">Supaya kamu tidak bersaib dan tidak bernoda, sebagai anak-anak Allah yang tidak bercela di tengah-tengah orang yang jahat dan sesat ini, sehingga kamu bercahaya di antara mereka seperti bintang-bintang di dunia, sambil berpegang pada firman kehidupan, agar aku dapat bermegah pada hari Kristus bahwa aku tidak percuma berlomba dan tidak percuma bersusah-susah.</div>
+            <p>Istilah "bintang-bintang" [dalam Filipi 2:15] dalam bahasa Yunani berarti benda-benda terang yang memantulkan cahaya matahari. Hal ini menunjukkan kemampuan kita untuk berfungsi. Puji Tuhan kita bisa bercahaya! Kita bukan hanya sebagai anak-anak Allah, tetapi juga benda-benda terang yang memiliki fungsi surgawi untuk memantulkan Kristus, matahari sejati.</p>
+            <p>Setiap jenis hayat memiliki fungsinya sendiri. ... Sebagai anak-anak Allah yang memiliki hayat ilahi, kita memiliki fungsi untuk bercahaya. Dalam kehidupan sehari-hari, kita tidak boleh hanya berperilaku menurut standar tertentu, tetapi kita harus bercahaya. <em>(Pelajaran-Hayat Filipi, hal. 582-583)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Sebagai bintang-bintang, kaum beriman bercahaya di dunia ini di tengah-tengah angkatan yang jahat dan sesat [Flp. 2:15]. Sebenarnya kita tidak memiliki cahaya apa pun dalam diri kita sendiri; kita adalah benda-benda terang yang memantulkan cahaya Kristus. Kristus adalah matahari dengan gereja sebagai bulan yang memantulkan Dia. ... <em>Dunia di sini</em> mengacu kepada dunia yang gelap dan rusak, yang dijajah oleh Setan (1 Yoh. 5:19; 2:15-17). <em>Di dunia</em> bisa diterjemahkan "di alam semesta."</p>
+            <p>Firman hayat [Flp. 2:16] sangat berbeda dengan doktrin huruf yang mati. Firman hayat adalah napas hidup Allah (2 Tim. 3:16), Roh yang memberi hayat (Yoh. 6:63). Kita memiliki Tuhan Yesus sebagai teladan kita (Flp. 2:6-11), kita memiliki Allah yang bekerja di dalam kita (ayat 13), kita adalah anak-anak Allah yang memiliki hayat Allah dan sifat ilahi (ayat 15), kita adalah benda-benda penerang yang layak memantulkan cahaya ilahi Kristus (ayat 15), dan kita memiliki firman hidup untuk dipegang, dan untuk dinyatakan kepada orang lain. ... Dengan demikian kita benar-benar dapat melaksanakan keselamatan Allah secara penuh.</p>
+            <p>Firman hayat yang kita pegang sebenarnya adalah Kristus sendiri (Yoh. 1:1, 4). Berpegang pada firman hayat adalah menerapkannya, menyajikannya, dan meunawarkannya kepada dunia melalui memperhidupkan Kristus. Untuk memiliki pengalaman akan Kristus yang diwahyukan dalam Kitab Filipi, kita perlu memiliki Kristus sebagai teladan kita, kita perlu memiliki Allah Tritunggal beroperasi dalam kita, kita perlu menjadi anak-anak Allah dengan hayat dan sifat ilahi, dan kita perlu menjadi benda-benda terang yang layak memantulkan Kristus.</p>
+            <p>Kita harus membiarkan perkataan Kristus tinggal dengan limpahnya di dalam kita [Kol. 3:16]. Dengan demikian kita akan memiliki firman hayat yang dengannya kita dapat bercahaya. Untuk memegang firman hayat, pertama-tama kita harus memiliki hayat ilahi dalam batin kita. ... Semakin kita terawat melalui memakan firman hayat, mencerna dan menyerap firman itu, semakin besar simpanan firman itu di batin kita. Lalu kita akan dengan spontan bercahaya dengan setiap firman hayat yang telah kita terima di dalam kita. Maka, bercahaya berarti berpegang pada, menyajikan firman hayat yang ajaib itu kepada orang lain. ... Jika kita setiap hari mencerna Kristus sebagai firman hayat, mengakumulasikan kekayaan firman secara subjektif dan organik, kita akan memiliki sesuatu yang hidup dan organik untuk dibagikan kepada orang lain. Inilah pemberitaan Injil dan penyampaian kebenaran yang tepat. ... inilah cara untuk memperbesar dan memperhidupkan Kristus.</p>
+            <p>Semoga kita dibebaskan dari segala macam belenggu dalam hal berkontak dengan Firman dan Roh itu. Jika kita melatih roh kita untuk mendoabacakan, menyanyikan, dan memazmurkan Filipi 2:14-16, kita akan memuji Tuhan karena kita adalah anak-anak Allah dan juga bintang-bintang yang bercahaya yang berpegang pada firman hayat. Kalau kita melaksanakan mendoabacakan ayat-ayat ini kata demi kata dan juga berlatih menyanyikan Firman Allah, kita akan diresapi dan dijenuhi dengan suplai yang kaya dari Firman yang hidup. Dengan demikian manusia batiniah kita akan dipenuhi dengan kekayaan Kristus. Lalu kita akan dengan spontan, tanpa disadari, bahkan tanpa sengaja, akan menempuh suatu kehidupan yang mengekspresikan Kristus dan memegang firman hayat. <em>(Pelajaran-Hayat Filipi, hal. 162-163, 583-584)</em></p>
+            <p class="book-ref">Bacaan Tambahan: Pelajaran-Hayat Filipi, berita 12–13, 21, 23, 29, 46</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

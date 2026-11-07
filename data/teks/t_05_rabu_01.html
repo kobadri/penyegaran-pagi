@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Rabu, 4 November 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 5 - Rabu, 4 November 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Dan. 2:34-35</div>
+            <div class="scripture-text">... Terungkit lepas sebuah batu tanpa perbuatan tangan manusia, lalu menimpa patung itu, tepat pada kakinya yang dari besi dan tanah liat itu, sehingga remuk ... semuanya menjadi seperti sekam ... lalu angin menghembuskannya, sehingga tidak ada bekas-bekasnya yang ditemukan. Tetapi batu yang menimpa patung itu menjadi gunung besar yang memenuhi seluruh bumi.</div>
+            <p>Batu yang dipotong tanpa perbuatan tangan manusia ini adalah Kristus. ... Dia dipotong oleh Allah melalui penyaliban dan kebangkitan-Nya. Melalui penyaliban-Nya, Dia dipotong melalui dimatikan (Kis. 2:23), dan dalam kebangkitan-Nya, Dia dipotong untuk menjadi, pertama, batu penjuru bagi pembangunan gereja dan batu pemukul untuk menghancurkan totalitas pemerintahan manusia (ayat 24; Mat. 21:42, 44b).</p>
+            <p>Pada saat penampakan-Nya sebagai batu yang terpotong tanpa perbuatan tangan manusia, Kristus akan meremukkan patung besar itu dari jari kaki sampai kepalanya. ... Wahyu 19 berbicara tentang peperangan antara Kristus dan Antikristus. Bersama Kristus akan ada mempelai perempuan yang baru dinikahi-Nya, yang tersusun dari para pemenang, dan bersama Antikristus akan ada sepuluh raja bersama pasukan mereka. Peperangan ini akan menjadi peperangan bumi melawan langit, manusia melawan Allah. Kristus akan mengalahkan dan menghancurkan Antikristus dan sepuluh raja itu.</p>
+            <p>Menurut Daniel 2:34-35a, ini akan memerlukan penghancuran seluruh patung manusia itu dari jari sampai kepala. ... Ini menandakan kehancuran total dari seluruh pemerintahan insani dari Nimrod sampai Antikristus. Karena itu pemerintahan insani akan diakhiri oleh Kristus pada saat penampakan-Nya sebagai batu yang dipotong Allah. <em>(Life-study of Daniel, hal. 16-17)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Alkitab mewahyukan bahwa Kristus adalah batu dalam tiga aspek. Pertama, bagi kaum beriman Kristus adalah batu fondasi yang mereka percayai. Mengenai aspek Kristus sebagai batu ini, Yesaya 28:16 berkata, <em>"Sesungguhnya, Aku meletakkan sebagai dasar di Sion sebuah batu, batu yang teruji, sebuah batu penjuru yang mahal, suatu dasar yang teguh."</em> Kedua, bagi orang Yahudi yang tidak percaya, Kristus adalah batu sandungan (8:14; Rm. 9:33). Mengenai aspek ini, Matius 21:44a berkata, <em>"Siapa saja yang jatuh ke atas batu itu, ia akan hancur."</em> Ketiga, bagi bangsa-bangsa, Kristus akan menjadi batu pemukul. <em>"Siapa saja yang ditimpa batu itu, ia akan remuk"</em> (ayat 44b). Daniel 2 mewahyukan Kristus sebagai batu pemukul yang menghancurkan patung manusia besar dan menjadikannya seperti sekam yang ditiup angin. <em>(Life-study of Daniel, hal. 17)</em></p>
+            <p>Melalui doa-baca kita menerima firman Allah ke dalam kita. Biasanya bila kita berbicara tentang menerima firman Allah ke dalam kita, kita menganggap firman sebagai makanan. ... Firman yang memberi makan itu untuk membangun kita, sedang firman yang membunuh adalah untuk membunuh musuh [lihat Ef. 6]. Dalam konteks ini, kita harus mendoabacakan firman terutama bukan untuk menerima makanan, melainkan untuk mengalami pedang sebagai alat pembunuh. Semakin kita mendoabacakan firman, kita akan semakin mengalami kuasa pembunuh dari firman tersebut.</p>
+            <p>Pedang adalah satu-satunya aspek perlengkapan senjata untuk melakukan peperangan secara ofensif, yaitu satu-satunya perlengkapan senjata Allah yang dipakai untuk menyerang musuh. Mungkin Anda heran apa hubungannya hal ini dengan pengalaman subjektif kita atas kuasa pembunuh dari firman itu. Jika kita ingin mengerti hal ini, kita harus melihat bahwa dalam peperangan rohani kita tidak saja harus menanggulangi musuh-musuh yang objektif, tetapi juga menanggulangi seteru-seteru yang subjektif. Satan tidak saja adalah musuh yang di luar kita, ia pun adalah seteru yang di dalam kita. ... Serangan-serangan musuh dari luar tidak sehebat serangan seteru dari dalam. Untuk menanggulangi seteru di dalam kita perlu mengalami kuasa pembunuh dari firman. Benar, musuh berada di luar kita, tetapi unsur-unsur musuh berada di batin kita. ... Musuh telah menyuntikkan dirinya sendiri ke dalam diri kita, maka yang kita perlukan ialah penerapan kuasa pembunuh dari firman ke dalam kita untuk menanggulangi unsur-unsur musuh yang ada di batin kita.</p>
+            <p>Dalam pengalaman kita, pada akhirnya kita akan menyadari bahwa musuh kita yang tersulit ialah ego. Ego adalah musuh kita yang terjahat. Sering kali kita tergoda bukan oleh musuh yang objektif, tetapi oleh ego, yaitu diri kita sendiri. <em>(Pelajaran-Hayat Efesus, hal. 1203-1205)</em></p>
+            <p class="book-ref">Bacaan Tambahan: Life-study of Daniel, berita 3–4; Pelajaran-Hayat Efesus, berita 97</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

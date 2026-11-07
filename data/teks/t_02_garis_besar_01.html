@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Minggu Pekan 2</title>
+    <style>
+        body { background-color: #121212; font-family: Arial, sans-serif; margin: 0; padding: 20px 0; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; }
+        .mobile-container { width: 100%; max-width: 420px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); display: flex; flex-direction: column; max-height: 88vh; overflow: hidden; position: relative; }
+        .header { background-color: #1e5138; color: white; padding: 15px; text-align: left; font-size: 16px; font-weight: bold; flex-shrink: 0; }
+        .content-scroll { padding: 15px; overflow-y: auto; flex-grow: 1; font-size: 14px; line-height: 1.6; color: #333; }
+        .week-title { font-size: 18px; font-weight: bold; color: #1e5138; margin-top: 5px; margin-bottom: 4px; line-height: 1.3; }
+        .scripture-subtitle { font-size: 12px; font-weight: bold; color: #2e7d32; margin-bottom: 15px; }
+        .accordion-section { background-color: #f4f9f4; border-left: 4px solid #1e5138; padding: 10px; margin-bottom: 15px; border-radius: 4px; }
+        .accordion-section .toggle-header { background-color: #c8e6c9; padding: 6px 8px; border-radius: 4px; cursor: pointer; font-weight: bold; color: #1e5138; margin: 0; display: flex; justify-content: space-between; align-items: center; }
+        .toggle-content { margin-top: 10px; display: none; }
+        .bottom-nav { display: flex; justify-content: space-between; gap: 6px; padding: 12px; background-color: #f8f9fa; border-top: 1px solid #ddd; flex-shrink: 0; }
+        .nav-btn { flex: 1; background-color: #1e5138; color: #ffffff; text-align: center; padding: 10px 0; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 12px; border: none; cursor: pointer; }
+        .nav-btn:hover { background-color: #143726; }
+        .verse-text { font-weight: bold; font-style: italic; }
+
+        /* Styling Modal Pemutar Media Agar Responsif dan Tidak Terpotong */
+        #mediaModal {
+            display: none;
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 200;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .modal-content {
+            background: white;
+            padding: 15px;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 400px;
+            max-height: 90vh;
+            overflow-y: auto;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .modal-content video {
+            width: 100%;
+            max-height: 60vh;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-top: 10px;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="mobile-container">
+        <div class="header">Kaum Beriman (1)</div>
+        <div class="content-scroll">
+            <div style="font-size: 12px; color: #555; margin-bottom: 2px;">Pekan ke 02</div>
+            <div class="week-title">Menikmati Hayat Kekal, Berbagian dalam Sifat Ilahi, Allah Tritunggal sebagai Struktur Perjanjian Baru, Allah yang Menyembunyikan Diri, dan Iman yang Menghubungkan.</div>
+            <div class="scripture-subtitle">Yohanes 1:4; 1 Yohanes 5:11-12; Markus 10:29-30; 2 Petrus 1:4; Yohanes 14:16-17; Yesaya 45:15; Lukas 18:1-8.</div>
+
+            <!-- AKORDION I: GARIS BESAR -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 I. Garis Besar (Outline) Pekan 2 <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+<p><strong>Mengenal dan Menikmati Hayat Kekal dalam Tiga Periode Masa</strong><br>
+Hayat kekal adalah hayat Allah sendiri yang tidak berawal dan tidak berakhir (uncreated), yang ada di dalam Kristus dan diberikan cuma-cuma saat kita percaya.<br>
+Tiga Periode Nikmat Hayat Kekal:<br>
+Zaman ini: Didapatkan secara gratis pada saat percaya (Yoh. 3:16, 5:24) sebagai pemberian Allah, yang menjamin bahwa kita tidak akan pernah binasa.<br>
+Zaman yang akan datang (Kerajaan Seribu Tahun): Didapatkan sebagai pahala bagi mereka yang membayar harga dengan meninggalkan segala sesuatu demi Tuhan dan Injil serta setia sampai mati (Mrk. 10:29-30; Why. 2:10).<br>
+Dalam kekekalan (Yerusalem Baru): Dinikmati secara penuh oleh semua orang yang beroleh selamat melalui minum air hayat dan makan buah pohon hayat (Yoh. 4:14; Why. 21:6; 22:14).</p>
+<p><strong>Berbagian dalam Sifat Ilahi (2 Petrus 1:4)</strong><br>
+Sifat ilahi adalah substansi/konstitusi dari hayat ilahi (apa adanya Allah: Roh, Kasih, dan Terang).<br>
+Melalui kelahiran kembali, benih ilahi ditaburkan di dalam kita. Sebagai anak-anak Allah (spesies Allah), kita berhak menikmati dan berbagian dalam sifat ilahi agar diserupakan dengan Allah dalam hayat dan sifat (tetapi bukan dalam ke-Allahan-Nya).</p>
+<p><strong>Allah Tritunggal adalah Struktur Perjanjian Baru</strong><br>
+Perjanjian Baru secara struktur dibangun oleh pergerakan Allah Tritunggal (Bapa, Putra, dan Roh Kudus) yang menyalurkan diri-Nya ke dalam manusia (Mat. 28:19; 2 Kor. 13:13; Ef. 3:16-17).<br>
+Enam Fungsi Roh Kudus yang Berhuni: Roh Esensial, Roh Hayat, Meterai Allah, Jaminan (guarantee/sample) Warisan Ilahi, Roh yang Berhuni (membuat rumah di batin), dan Realitas Kristus.</p>
+<p><strong>Mengenal dan Mengalami Allah yang Menyembunyikan Diri (Yes. 45:15)</strong><br>
+Watak Allah adalah bekerja secara rahasia dan batiniah, bukan secara terbuka/pamer luar (seperti terlihat dalam Kitab Ester dan kehidupan Yesus di Nazaret).</p>
+<p><strong>Allah beroperasi di dalam kita dengan diam namun penuh kuasa (Flp. 2:13), menyertai dan menolong kita tanpa menonjolkan diri-Nya secara fisik.</strong></p>
+<p><strong>Perumpamaan Janda dan Hakim / Menghidupi "Iman yang Menghubungkan" (Luk. 18:1-8)</strong><br>
+Di zaman ini, kaum beriman berstatus seperti "janda" karena Suami (Kristus) secara jasmani kelihatannya tidak ada, dan kita menghadapi lawan (Iblis).</p>
+<p><strong>Kita dipanggil untuk berdoa dengan tekun tanpa jemu-jemu.</strong><br>
+Ketika Anak Manusia datang kembali, Dia mencari "iman yang menghubungkan" (connecting faith) — yaitu iman yang gigih dari para pemenang yang senantiasa mengontak Allah Tritunggal sehingga hidup oleh Putra Allah.</p>
+                </div>
+            </div>
+
+            <!-- AKORDION II: AYAT ALKITAB RAWATAN PAGI -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 II. Ayat Alkitab Rawatan Pagi (Hari 1–6) <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+<p><strong>Hari 1 (Senin) Yohanes 1:</strong></p>
+<p class="verse-text">4: "Dalam Dia ada hidup dan hidup itu adalah terang manusia." 1 Yohanes 5:12: "Siapa yang memiliki Anak, ia memiliki hidup; siapa yang tidak memiliki Anak, ia tidak memiliki hidup."</p>
+<p><strong>Hari 2 (Selasa) Markus 10:</strong></p>
+<p class="verse-text">29-30: "... Setiap orang yang karena Aku dan karena Injil meninggalkan ... orang itu pada zaman ini juga akan menerima kembali seratus kali lipat ... dan pada zaman yang akan datang ia akan menerima hidup yang kekal." Wahyu 2:10: "Hendaklah engkau setia sampai mati, dan Aku akan mengaruniakan kepadamu mahkota kehidupan."</p>
+<p><strong>Hari 3 (Rabu) Yohanes 4:</strong></p>
+<p class="verse-text">14: "Sebaliknya air yang akan Kuberikan kepadanya, akan menjadi mata air di dalam dirinya, yang terus-menerus memancar sampai pada hidup yang kekal." Wahyu 21:6: "... Orang yang haus akan Kuberi minum dengan cuma-cuma dari mata air kehidupan."</p>
+<p><strong>Hari 4 (Kamis) Yohanes 14:</strong></p>
+<p class="verse-text">16-17: "Aku akan minta kepada Bapa, dan Ia akan memberikan kepadamu seorang Penolong yang lain, supaya Ia menyertai kamu selama-lamanya, yaitu Roh Kebenaran..." Yohanes 14:26: "Tetapi Penolong, yaitu Roh Kudus, yang akan diutus oleh Bapa dalam nama-Ku, Dialah yang akan mengajarkan segala sesuatu kepadamu dan akan mengingatkan kamu akan semua yang telah Kukatakan kepadamu."</p>
+<p><strong>Hari 5 (Jumat) Yesaya 45:</strong></p>
+<p class="verse-text">15: "Sungguh, Engkau Allah yang menyembunyikan diri, Allah Israel, Juru Selamat." Yohanes 1:18: "Tidak seorang pun yang pernah melihat Allah; tetapi Anak Tunggal Allah yang ada di pangkuan Bapa, Dialah yang menyatakan-Nya."</p>
+<p><strong>Hari 6 (Sabtu) Lukas 18:</strong></p>
+<p class="verse-text">1-3: "Yesus menyampaikan suatu perumpamaan kepada mereka untuk menegaskan bahwa mereka harus selalu berdoa tanpa jemu-jemu. Kata-Nya, “Dalam sebuah kota ada seorang hakim yang tidak takut akan Allah dan tidak menghormati seorang pun. Di kota itu ada seorang janda yang selalu datang kepada hakim itu dan berkata: Belalah hakku terhadap lawanku.”" Lukas 18:7-8: "Tidakkah Allah akan membenarkan orang-orang pilihan-Nya yang siang malam berseru kepada-Nya? Apakah Ia mengulur-ulur waktu sebelum menolong mereka? Aku berkata kepadamu: Ia akan segera membenarkan mereka. Akan tetapi, jika Anak Manusia itu datang, apakah Ia akan mendapati iman di bumi?”</p>
+                </div>
+            </div>
+
+            <!-- AKORDION III: POIN-POIN CATATAN KAKI -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 III. Poin-Poin Catatan Kaki (Footnote) <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+<p><strong>Dalam pembacaan materi Penyegaran Pagi Pekan 2, terdapat penyingkapan catatan kaki kunci dari Alkitab Versi Pemulihan:</strong></p>
+<p><strong>Hakikat Hayat Kekal (1 Yoh. 1:2 & Yoh. 1:4) Hayat kekal bukanlah sekadar berkat masa depan di surga, melainkan hayat kekekalan (hayat Allah sendiri) yang tidak berawal dan tidak berakhir. Begitu seseorang percaya kepada Kristus, ia segera memiliki hayat kekal ini tanpa jarak waktu.</strong></p>
+<p><strong>Perbedaan Pemberian (Karunia) dan Pahala Hayat Kekal (Mrk. 10:29-30 & Why. 2:10)</strong> Pemberian / Karunia: Diberikan secara cuma-cuma pada zaman ini bagi keselamatan kekal setiap orang yang percaya. Pahala: Menerima kenikmatan hayat kekal pada zaman yang akan datang (Kerajaan 1000 Tahun) dan mahkota kehidupan, yang didapatkan melalui membayar harga (meninggalkan segala sesuatu dan setia sampai mati).</p>
+<p><strong>Mata Air dan Pohon Hayat (Yoh. 4:14 & Why. 22:14) Air hayat yang diberikan Kristus menjadi mata air yang memancar di dalam batin hingga kekekalan. Di Yerusalem Baru, menikmati pohon hayat dan air hayat adalah berkat penuh dari keselamatan Allah agar orang beriman tidak lagi lapar atau haus selama-lamanya.</strong></p>
+<p><strong>Fungsi Pemeteraian dan Jaminan Roh Kudus (Ef. 1:13-14 & 2 Kor. 1:22)</strong> Meterai: Roh Kudus menandai kita sebagai milik/warisan Allah dan secara terus-menerus menyebarkan esensi ilahi ke dalam pikiran, emosi, dan tekad kita. Jaminan (Sample/Guaranty): Roh Kudus adalah cicipan awal (foretaste) dan bukti sah bahwa Allah Tritunggal sendiri akan menjadi warisan kita secara penuh.</p>
+<p><strong>Allah yang Tersembunyi (Yes. 45:15 & Yoh. 1:18) Allah memiliki sifat tidak suka memamerkan diri. Bahkan ketika Anak Tunggal Allah datang berinkarnasi, Allah tersembunyi di dalam seorang manusia biasa dari Nazaret tanpa rupa luar yang menarik (Yes. 53:2), sehingga hanya orang yang ditarik oleh Roh yang dapat mengenal-Nya.</strong></p>
+<p><strong>Status "Janda" Kaum Beriman dan Hakim Tidak Jujur (Luk. 18:1-8) Di zaman sekarang, gereja/orang percaya berstatus seperti janda karena Suami (Tuhan Yesus) kelihatannya absen secara fisik dan ada musuh (Satan) yang menganiaya. Allah kelihatannya membiarkan ketidakadilan terjadi, tetapi doa yang tekun tanpa jemu-jemu akan dijawab dengan pembalasan cepat saat kedatangan Kristus kembali.</strong></p>
+<p><strong>Makna "Iman Itu" / Iman yang Menghubungkan (Luk. 18:8 & Gal. 2:20) Frasa "iman itu" dalam bahasa Yunani mengacu pada iman yang menghubungkan (connecting faith) — yaitu iman yang gigih dari para pemenang yang senantiasa mengontak Allah Tritunggal sehingga mereka tidak mengandalkan diri sendiri melainkan hidup oleh hayat Anak Allah.</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL PEMUTAR MEDIA -->
+        <div id="mediaModal" onclick="closeModal(event)">
+            <div class="modal-content" id="modalBody" onclick="event.stopPropagation()">
+                <!-- Konten Media Dinamis -->
+            </div>
+        </div>
+
+        <!-- NAVIGASI BAWAH -->
+        <div class="bottom-nav">
+            <a href="../../index.html" class="nav-btn">🏠 Home</a>
+            
+            
+        </div>
+    </div>
+
+    <script>
+        function toggleSection(header) {
+            const content = header.nextElementSibling;
+            const arrow = header.querySelector('.arrow');
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                arrow.textContent = "▼";
+            } else {
+                content.style.display = "block";
+                arrow.textContent = "▲";
+            }
+        }
+
+        function playAudio() {
+            var modal = document.getElementById("mediaModal");
+            var body = document.getElementById("modalBody");
+            
+            body.innerHTML = `
+                <h3 style="margin: 0 0 5px 0; font-size: 16px;">Audio Penyegaran Pagi</h3>
+                <p style="margin: 0 0 10px 0; font-size: 12px; color: #666;">Pekan 2</p>
+                <audio id="myAudio" controls autoplay style="width:100%; margin-top:10px;">
+                    <source src="../berita_mingguan/Pekan_02/2_Mengapa_Allah_Suka_Menyembunyikan_Diri.m4a" type="audio/mp4">
+                    Peramban Anda tidak mendukung elemen audio.
+                </audio>
+                <br>
+                <button onclick="closeModalDirect()" style="padding: 6px 14px; background:#1e5138; color:white; border:none; border-radius:8px; cursor:pointer; font-size: 12px; margin-top: 10px;">Tutup</button>
+            `;
+            modal.style.display = "flex";
+
+            var audioElement = document.getElementById("myAudio");
+            audioElement.onended = function() {
+                closeModalDirect();
+            };
+        }
+
+        function playVideo() {
+            var modal = document.getElementById("mediaModal");
+            var body = document.getElementById("modalBody");
+            
+            body.innerHTML = `
+                <h3 style="margin: 0 0 5px 0; font-size: 16px;">Video Penyegaran Pagi</h3>
+                <p style="margin: 0 0 10px 0; font-size: 12px; color: #666;">Pekan 2</p>
+                <video id="myVideo" controls autoplay>
+                    <source src="../berita_mingguan/Pekan_02/2_Realitas_Tersembunyi_Kaum_Beriman.mp4" type="video/mp4">
+                    Peramban Anda tidak mendukung elemen video.
+                </video>
+                <br>
+                <button onclick="closeModalDirect()" style="padding: 6px 14px; background:#1e5138; color:white; border:none; border-radius:8px; cursor:pointer; font-size: 12px; margin-top: 10px;">Tutup</button>
+            `;
+            modal.style.display = "flex";
+
+            var videoElement = document.getElementById("myVideo");
+            videoElement.onended = function() {
+                closeModalDirect();
+            };
+        }
+
+        function closeModal(event) {
+            closeModalDirect();
+        }
+
+        function closeModalDirect() {
+            var modal = document.getElementById("mediaModal");
+            if (modal) modal.style.display = "none";
+
+            var audioElement = document.getElementById("myAudio");
+            if (audioElement) {
+                audioElement.pause();
+                audioElement.currentTime = 0;
+            }
+            var videoElement = document.getElementById("myVideo");
+            if (videoElement) {
+                videoElement.pause();
+                videoElement.currentTime = 0;
+            }
+        }
+    </script>
+</body>
+</html>

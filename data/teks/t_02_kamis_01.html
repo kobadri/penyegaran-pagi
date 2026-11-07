@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Kamis, 15 Oktober 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 2 - Kamis, 15 Oktober 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Yoh. 14:16-17</div>
+            <div class="scripture-text">Aku akan minta kepada Bapa, dan Ia akan memberikan kepadamu seorang Penolong yang lain, supaya Ia menyertai kamu selama-lamanya, yaitu Roh Kebenaran...</div>
+            <div class="scripture-title">Yoh. 14:26</div>
+            <div class="scripture-text">Tetapi Penolong, yaitu Roh Kudus, yang akan diutus oleh Bapa dalam nama-Ku, Dialah yang akan mengajarkan segala sesuatu kepadamu dan akan mengingatkan kamu akan semua yang telah Kukatakan kepadamu.</div>
+            <p>Menurut wahyu Alkitab, Roh yang berhuni di dalam kita memiliki enam fungsi utama berikut:</p>
+            <p>Pertama, Roh itu masuk ke dalam kita sebagai Roh esensial bagi keberadaan, diri, hayat, dan kehidupan kita. Dia adalah penampungan ultima dari Allah Tritunggal yang telah melalui proses, Roh pemberi-hayat; Kristus menjadi Roh pemberi-hayat dalam kebangkitan (1 Kor. 15:45). Roh ini masuk ke dalam kita yang telah percaya dalam Kristus (Yoh. 20:22) dan hidup di dalam kita untuk menjadi esensi dari hayat, sifat, dan diri ilahi di dalam kita.</p>
+            <p>[Kedua], Roh itu masuk ke dalam kita sebagai Roh hayat (Rm. 8:2). Hayat adalah isi dari Trinitas Ilahi. Ketika Roh hayat masuk ke dalam kita, Dia membagikan hayat kekal Allah ke dalam kita untuk menjadi hayat kita ... [sampai] Roh hayat memenuhi seluruh diri kita, termasuk roh, jiwa, dan tubuh kita, menguduskan kita dan menyerupakan kita kepada gambar Putra sulung Allah (ayat 29) sehingga kita bisa menjadi banyak putra Allah untuk menjadi ekspresi korporat-Nya. <em>(Truth Lessons—Level One, vol. 4, hal. 56-57)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>[Ketiga], Roh Kudus masuk ke dalam kita juga sebagai meterai di dalam kita (Ef. 1:13; 4:30; 2 Kor. 1:22)... Bahwa kita, kaum beriman, dimeteraikan dengan Roh Kudus berarti kita ditandai dengan Roh Kudus sebagai meterai yang hidup, menunjukkan bahwa kita milik Allah, yaitu, bahwa kita adalah warisan Allah (Ef. 1:11)... Pemeteraian ini menyebar dari roh kita kepada pikiran, emosi, dan tekad kita bagi pengudusan dan transformasi jiwa kita. Pada akhirnya, bahkan tubuh kita akan sepenuhnya dimeteraikan, yaitu, dijenuhi dan ditransfigurasi; itu akan menjadi penebusan tubuh kita.</p>
+            <p>[Keempat], Roh Kudus adalah ... juga jaminan dari warisan ilahi (ayat 14; 2 Kor. 1:22b; 5:5b). Dalam ekonomi Allah, kita adalah warisan bagi Allah (Ef. 1:11), dan Allah adalah warisan bagi kita (ayat 14). Allah dan kita saling mewarisi... Sebagai meterai, Roh Kudus membentuk unsur-unsur ilahi menjadi satu kesan di dalam kita bagi ekspresi Allah; sebagai jaminan, Dia memberi kita pencicipan sebagai contoh dan garansi akan rasa yang penuh dari Allah.</p>
+            <p>[Kelima], Roh Kudus di dalam kita juga adalah Roh yang berhuni (Rm. 8:9; 1 Kor. 6:19). Dalam 1 Yohanes 14:17 Tuhan Yesus dengan jelas dan pasti berjanji bahwa ketika Roh Kudus itu datang, Dia akan menghuni murid-murid. Kemudian pada malam hari kebangkitan-Nya, Dia datang ke tengah-tengah murid-murid dan dihembuskan ke dalam mereka agar mereka bisa menerima Roh Kudus (20:22)... Roh yang berhuni ... masuk ke dalam kita bukan untuk mengunjungi tetapi berhuni di dalam kita, untuk membuat rumah-Nya di dalam kita, bahkan untuk menguasai seluruh diri kita, agar Dia bisa mewahyukan Allah dan Kristus ke dalam kita dan agar kita bisa menerima dan menikmati segala kekayaan Allah di dalam Kristus.</p>
+            <p>[Keenam], Roh yang berhuni di dalam kita juga adalah realitas Kristus. Yohanes 14:16-20 mewahyukan bahwa sang Penghibur yang akan datang adalah perwujudan Kristus... Roh yang menghuni kita adalah Kristus yang mati dan bangkit dan yang menghuni kita.</p>
+            <p>[Dalam ayat 26] sang Penghibur itu adalah Roh Kudus, yang Bapa utus dalam nama Putra. Datang dalam nama Putra adalah datang sebagai Putra. Ini membuktikan bahwa ketika Roh itu datang, Putra-lah yang datang, dan bahwa ketika Roh itu berhuni di dalam kita, ini adalah Kristus sang Putra yang berhuni di dalam kita.</p>
+            <p>Roh itu menghuni kaum beriman adalah untuk mewahyukan Kristus, memuliakan Kristus, dan menjadikan Kristus riil dalam kaum beriman [16:12-15]... Segala adanya Allah dan yang Allah miliki terwujud di dalam Kristus (Kol. 2:9; Yoh. 16:15), dan segala adanya Kristus dan yang Kristus miliki diterima oleh Roh itu dan diwahyukan kepada kaum beriman melalui Roh itu (ayat 14-15). Karena itu, ketika Roh itu ada di dalam kita, Kristuslah yang ada di dalam kita. <em>(Truth Lessons—Level One, vol. 4, hal. 57-59)</em></p>
+            <p class="book-ref">Bacaan Tambahan: The Conclusion of the New Testament, berita 130; Perkataan Sehat, bab 2; CWWL, 1978, vol. 3, "Truth Messages," bab 2</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

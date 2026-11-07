@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Kamis, 10 Desember 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 10 - Kamis, 10 Desember 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Flp. 3:11</div>
+            <div class="scripture-text">Supaya aku akhirnya beroleh kebangkitan dari antara orang mati.</div>
+            <div class="scripture-title">Why. 20:6</div>
+            <div class="scripture-text">Berbahagia dan kuduslah orang yang mendapat bagian dalam kebangkitan pertama itu. Kematian yang kedua tidak berkuasa lagi atas mereka, tetapi mereka akan menjadi imam-imam Allah dan Kristus, dan mereka akan memerintah sebagai raja bersama-sama dengan Dia selama seribu tahun.</div>
+            <p>Mencapai kebangkitan yang unggul dari antara orang mati menuntut kita untuk dengan penuh kemenangan berlari pada perlombaan untuk mendapatkan pahala (1 Kor. 9:24-26; 2 Tim. 4:7-8). Kebangkitan yang unggul mengacu kepada kebangkitan yang luar biasa, kebangkitan ekstra, yang akan menjadi pahala bagi kaum saleh pemenang (Ibr. 11:35; Why. 20:1-6). Semua orang beriman yang mati dalam Kristus akan berbagian dalam kebangkitan dari antara orang mati pada saat kedatangan Tuhan kembali (1 Tes. 4:16; 1 Kor. 15:52), tetapi kaum saleh pemenang akan menikmati bagian ekstra yang luar biasa dari kebangkitan tersebut. <em>(The Conclusion of the New Testament, hal. 3509)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Allah pertama-tama membangkitkan roh kita yang mati (Ef. 2:5-6). Kemudian, dari roh kita, Ia melanjutkan untuk membangkitkan jiwa kita (Rm. 8:6) dan tubuh fana kita (ayat 11), hingga seluruh diri kita—roh, jiwa, dan tubuh—sepenuhnya dibangkitkan dari diri lama kita oleh dan dengan hayat-Nya. Ini adalah proses dalam hayat yang harus kita lalui dan perlombaan yang harus kita jalani sampai kita mencapai kebangkitan yang unggul sebagai hadiahnya. Karena itu, kebangkitan yang unggul harus menjadi sasaran dan tujuan dari kehidupan Kristen kita. Kita hanya dapat mencapai sasaran ini dengan diserupakan kepada kematian Kristus, melalui menempuh kehidupan tersalib. Dalam kematian Kristus, kita diproses dalam kebangkitan dari ciptaan lama kepada yang baru.</p>
+            <p>Berada dalam kebangkitan yang unggul berarti meninggalkan segala sesuatu dari ciptaan lama dan dibawa ke dalam Allah. ... Hanya ada satu jenis kebangkitan yang membawa kita keluar dari ciptaan lama dan masuk ke dalam Allah, yaitu kebangkitan Kristus. Karena itu, kebangkitan Kristus adalah kebangkitan yang luar biasa. Kristus adalah Sang Unik yang keluar dari ciptaan lama dan masuk ke dalam Allah. Kristus hidup dalam tubuh dan lingkungan ciptaan lama selama tiga puluh tiga setengah tahun, tetapi hayat yang Ia perhidupkan sepenuhnya milik ciptaan baru karena Ia senantiasa mati dalam tubuh dan lingkungan ciptaan lama-Nya serta hidup kepada Allah. Melalui kematian dan kebangkitan-Nya, Ia meninggalkan ciptaan lama dan dibawa masuk ke dalam Allah.</p>
+            <p>Kebangkitan yang unggul ini sebenarnya adalah persona Kristus yang terkasih, berharga, dan luar biasa, yaitu Dia yang, melalui penyaliban dan kebangkitan, telah keluar dari ciptaan lama dan masuk ke dalam Allah. Dia yang luar biasa ini jauh lebih unggul daripada malaikat, yang milik ciptaan lama. Mereka belum mengalami penyaliban atau kebangkitan. Namun, setelah Kristus disalibkan dan dikuburkan, Ia dibangkitkan keluar dari ciptaan lama dan masuk ke dalam Allah. Kristus sendiri adalah realitas dari kebangkitan yang unggul. Sekarang kita harus mengejar hayat yang adalah persona Kristus yang luar biasa ini. Bersama Paulus, kita harus dapat berkata, "Bagiku hidup adalah Kristus" (Flp. 1:21). Paulus juga dapat bersaksi bahwa ia telah disalibkan dengan Kristus dan bahwa Kristus hidup di dalam dirinya (Gal. 2:19b-20). Kristus yang hidup di dalam Paulus adalah Dia yang, dalam persona-Nya sendiri, merupakan kebangkitan yang unggul.</p>
+            <p>Dapatkah kita mencapai sasaran kebangkitan yang unggul di zaman ini, atau apakah kita hanya dapat berlari dalam perlombaan dan berharap mencapai sasaran di zaman yang akan datang? Beberapa orang mungkin berpikir bahwa kita harus menunggu hingga zaman yang akan datang untuk mencapai sasaran tersebut. Namun, jika kita tidak mencapai sasaran di zaman ini, kita tidak akan mencapainya di zaman berikutnya. Kita harus berupaya mencapai sasaran tersebut selama masa hidup kita.</p>
+            <p>Dalam Roma 8:11 Paulus berkata, <em>"jika Roh Dia, yang telah membangkitkan Yesus dari antara orang mati, tinggal di dalam kamu, maka Ia, yang telah membangkitkan Kristus Yesus dari antara orang mati, akan menghidupkan juga tubuhmu yang fana itu oleh Roh-Nya yang tinggal di dalam kamu."</em> Ayat ini menunjukkan bahwa kita dapat mencapai kebangkitan yang unggul pada zaman ini. Di sini Paulus berkata bahwa Roh Dia yang membangkitkan Kristus dari antara orang mati akan memberikan hayat (menghidupkan, LAI) kepada bagian diri kita yang sedang mati, yaitu tubuh fana kita. ... Roh itu menghuni di dalam kita untuk mengerjakan kebangkitan yang unggul ke dalam diri kita secara riil dan praktis. Dengan demikian, Roma 8:11 menunjukkan bahwa kita harus mencapai kebangkitan yang unggul pada zaman ini. <em>(The Conclusion of the New Testament, hal. 3509-3511)</em></p>
+            <p class="book-ref">Bacaan Tambahan: The Conclusion of the New Testament, berita 349</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

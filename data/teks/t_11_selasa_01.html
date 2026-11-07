@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Selasa, 15 Desember 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 11 - Selasa, 15 Desember 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">1 Kor. 3:12</div>
+            <div class="scripture-text">Entahkah orang membangun di atas dasar ini dengan emas, perak, batu permata, kayu, rumput kering atau jerami.</div>
+            <div class="scripture-title">1 Kor. 3:16-17</div>
+            <div class="scripture-text">Tidak tahukah kamu bahwa kamu sekalian adalah bait Allah dan bahwa Roh Allah diam di dalam kamu? Jika ada orang yang membinasakan bait Allah, maka Allah akan membinasakan dia. Sebab bait Allah adalah kudus dan bait Allah itu ialah kamu sekalian.</div>
+            <p>Bintang yang tepat memiliki pusat berlabuh dan orbit yang tetap. Bintang itu terus pada jalannya dengan tekum. Namun, ada beberapa bintang yang tidak memiliki posisi atau orbit yang tetap; mereka adalah bintang-bintang yang mengembara, ... Jika Anda mengikuti mereka, Anda akan disesatkan; pada akhirnya, Anda tidak tahu harus pergi ke mana. ... Mereka tidak memiliki tumpuan; mereka tidak memiliki kedudukan; mereka tidak memiliki jalan yang pasti untuk maju bersama Tuhan. Hari ini mereka mengatakan satu hal, dan besok mereka akan mengatakan sesuatu yang berbeda. ... Kita perlu berhati-hati. Kita tidak bisa menemukan Yesus melalui mengikuti bintang yang mengembara. <em>(CWWL, 1970, vol. 1, "New Testament Service," hal. 292)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Yehezkiel 25—32 membicarakan tujuh bangsa yang mengelilingi bangsa Israel. ... Ketujuh bangsa ini dibagi menjadi tiga kelompok. Empat bangsa pertama—Amon, Moab, Edom, dan Filistin—membentuk kelompok pertama; Tiras dan Sidon membentuk kelompok kedua; sedangkan Mesir berdiri sendiri.</p>
+            <p>Bani Amon ... bersukacita atas tiga hal: tempat kudus yang dinodai, negeri yang baik yang menjadi sunyi sepi, dan kaum Yehuda yang dibuang. Hal ini menunjukkan bahwa mereka membenci tempat kudus, Negeri Kudus, dan kaum Yehuda.</p>
+            <p>Menurut perlambangan ... tempat kudus melambangkan Kristus, negeri yang baik melambangkan seluruh kasih karunia Allah yang kaya di dalam Kristus, dan kaum Yehuda melambangkan gereja. Bani Amon hari ini membenci tiga hal ini. Mereka membenci Kristus, mereka membenci kasih karunia Allah di dalam Kristus, dan mereka membenci gereja.</p>
+            <p>Bani Moab berkata, "Sungguh, kaum Yehuda adalah sama dengan semua bangsa lain" (25:8) ... Dengan demikian, mereka melambangkan orang-orang yang ingin membawa gereja ke dalam hubungan dengan dunia dan menjadikan gereja sama seperti bangsa-bangsa.</p>
+            <p>Edom adalah anak Esau, saudara Yakub. Karena itu, Edom dan bangsa Israel adalah sepupu. Edom melambangkan manusia lama; ia melambangkan kita sebagai manusia lama. Manusia lama kita yang belum dilahirkan kembali adalah Edom, dan manusia baru kita yang telah dilahirkan kembali adalah Israel. Kita dapat mengatakan bahwa, dalam arti tertentu, manusia lama kita dan manusia baru kita adalah "sepupu," karena keduanya sangat dekat satu sama lain.</p>
+            <p>Menurut catatan Yehezkiel, Edom penuh kebencian terhadap Israel, terus-menerus berusaha membalas dendam dan mencari pembalasan. Inilah keadaan kita dalam "manusia lama" kita. "Manusia lama" kita membenci gereja. Pernahkah Anda menyadari bahwa Anda adalah dua manusia? Di satu aspek, Anda adalah seorang Israel sejati yang mengasihi gereja; di aspek lain, Anda adalah Edom sejati yang membenci gereja. Kadang-kadang Anda mengasihi gereja dan semua yang memimpin, tetapi pada saat lain Anda membenci gereja dan semua penatua.</p>
+            <p>Tiras melambangkan mereka yang mencari kekayaan duniawi, mereka yang damba menghasilkan banyak uang dan menjadi kaya. Mereka akan mengorbankan segala sesuatu yang berkaitan dengan Tuhan demi bisnis mereka. Mereka tidak peduli dengan kepentingan Tuhan, tetapi hanya memedulikan kekayaan, harta, dan bisnis mereka.</p>
+            <p>[Ketujuh] jenis orang ini ... dapat merusak kehidupan gereja. Sebagian menantang gereja, membenci Kristus, keselamatan Allah, dan kasih karunia Allah. Mereka inilah "bani Amon." Yang lain menyusup ke dalam gereja dan berusaha mengaitkan gereja dengan dunia serta menjadikan gereja sama seperti dunia. Mereka inilah "bani Moab." Lalu ada "bani Edom," yaitu manusia lama, dan "bangsa Filistin," yaitu manusia alamiah. "Orang Tiras" mengejar kekayaan dunia, sedangkan "orang Sidon" menjadi duri dan tuak bagi gereja karena mengejar kekayaan. Akhirnya, ada "orang Mesir," yaitu mereka yang merdeka dari Allah, mengejar kekayaan duniawi dengan mengembangkan sumber daya mereka sendiri agar kaya dalam suplai dan menjadi sumber suplai bagi orang lain. Inilah berbagai jenis orang yang dapat merusak kehidupan gereja. Kita semua perlu waspada agar tidak ada di antara kita yang menjadi orang-orang semacam ini. <em>(Life-study of Ezekiel, hal. 164-168, 170)</em></p>
+            <p class="book-ref">Bacaan Tambahan: Life-study of Ezekiel, berita 15–16</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

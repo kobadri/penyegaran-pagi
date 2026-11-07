@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Kamis, 5 November 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 5 - Kamis, 5 November 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Yeh. 34:11-13</div>
+            <div class="scripture-text">Sebab beginilah firman Tuhan ALLAH: Dengan sesungguhnya Aku sendiri akan memperhatikan domba-domba-Ku dan akan mencarinya ... dan Aku akan menyelamatkan mereka dari segala tempat, ke mana mereka diserahkan. ... Aku akan membawa mereka keluar dari tengah bangsa-bangsa dan mengumpulkan mereka dari negeri-negeri dan membawa mereka ke tanahnya; Aku akan menggembalakan mereka di atas gunung-gunung Israel, di alur-alur sungainya dan di semua tempat kediaman orang di tanah itu.</div>
+            <p>Karena kondisi kita yang jatuh, kita semua terkubur di bawah banyak hal jahat, jadi kita memerlukan Allah untuk mencari kita. Dalam Lukas 15 kita memiliki gembala (melambangkan Kristus sebagai sang Gembala) mencari domba yang hilang dan perempuan (melambangkan Roh itu) menyalakan pelita dan mencari di dalam rumah untuk dirham yang hilang. Anak yang hilang kemudian kembali pulang melalui pencarian Roh itu.</p>
+            <p>Tuhan telah melakukan hal yang serupa pada kita. Dia mencari kita untuk menyelamatkan kita dan memulihkan kita. Sebelum kita diselamatkan, kita terkubur di bawah banyak dosa; tetapi Tuhan Yesus mencari kita. Kemudian setelah kita diselamatkan, kita undur ke dalam kekristenan yang merosot, dan kita terkubur di bawah banyak hal, seperti doktrin-doktrin, bentuk-bentuk, dan karunia-karunia. Namun, sekali lagi Tuhan Yesus mencari kita; Dia mencari kita dan membawa kita keluar. Sekarang kita adalah orang-orang yang telah ditemukan oleh Tuhan Yesus sebagai Gembala. <em>(Life-study of Ezekiel, hal. 175-176)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Yehezkiel bernubuat bahwa sebagai Gembala, Tuhan akan membawa umat-Nya, domba-domba-Nya, keluar dari bangsa-bangsa [Yeh. 34:12-13a].</p>
+            <p>Ini juga telah menjadi pengalaman kita. ... Sebagai orang dosa atau ketika kita menjadi orang yang undur, ... meskipun kita hidup seperti orang-orang yang tidak beriman di antara miliaran orang lain di bumi, Tuhan Yesus mencari kita dan membawa kita keluar dari bangsa-bangsa, keluar dari orang-orang tidak beriman. ... Sebelumnya, Anda serupa dengan orang-orang yang tidak beriman, tetapi suatu hari Tuhan Yesus sebagai Gembala mencari Anda dan membawa Anda keluar dari antara orang-orang yang tidak beriman serta membawa Anda kepada-Nya.</p>
+            <p>Dalam ayat 13b, Tuhan melanjutkan dengan mengatakan bahwa Ia akan membawa umat-Nya kembali ke negeri mereka sendiri. Mereka berada dalam pembuangan di negeri kafir, tetapi Tuhan berjanji untuk membawa mereka kembali ke negeri mereka sendiri, ke negeri yang baik, Kanaan. Negeri kita yang baik adalah Kristus. Sebelum kita diselamatkan atau setelah kita undur, kita terpisah dari Kristus. Namun, Tuhan mencari kita dan membawa kita kembali kepada-Nya, dan bahkan ke dalam diri-Nya sendiri sebagai negeri kita yang baik. ... Negeri yang baik hari ini juga terdapat dalam kehidupan gereja. Dengan demikian, ketika kita dibawa kembali kepada Kristus, kita juga dibawa ke dalam kehidupan gereja, di mana kita memiliki kekayaan dan kenikmatan akan negeri yang baik itu.</p>
+            <p>Tuhan berjanji untuk membawa umat-Nya kembali bukan hanya ke negeri mereka sendiri, tetapi juga ke gunung-gunung yang tinggi (ayat 13-14). ... Hal ini menunjukkan bahwa Tuhan Yesus membawa kita kembali kepada pengalaman akan Kristus yang bangkit dan naik.</p>
+            <p>Tuhan juga berkata bahwa Ia akan membawa umat-Nya kembali ke sungai-sungai (ayat 13). Sungai-sungai ini melambangkan Roh pemberi-hayat, air hidup dari Roh itu. Dari gunung-gunung, Kristus yang bangkit dan naik, air hidup dari Roh itu mengalir. Roh hayat mengalir dari Kristus dalam kebangkitan dan kenaikan-Nya. Setelah Tuhan mencari kita dan membawa kita kembali kepada diri-Nya, kita tidak hanya kembali kepada Kristus dalam posisi yang unggul dari kenaikan-Nya, tetapi kita juga mulai minum dari Roh itu sebagai air hidup.</p>
+            <p>Selain itu, ayat 13 mengatakan bahwa Tuhan akan memberi makan kawanan domba-Nya di tepi sungai-sungai itu. Kita dapat bersaksi bahwa di gereja-gereja lokal kita merasakan bahwa Tuhan Yesus memberi kita makan hari demi hari di tepi sungai-sungai air hidup. Saat kita berada di denominasi, kita merasakan kekeringan dan kemarau, tetapi begitu kita masuk ke sidang-sidang gereja-gereja lokal, kita mulai merasakan bahwa kita telah dibawa kembali ke tepi sungai-sungai itu dan bahwa di tepi sungai-sungai itulah kita diberi makan oleh Tuhan Yesus. Ada sesuatu yang mengalir di sana sebagai sungai, dan kita berada di tepi sungai itu menikmati kekayaan Kristus. <em>(Life-study of Ezekiel, hal. 176-178)</em></p>
+            <p class="book-ref">Bacaan Tambahan: The Conclusion of the New Testament, berita 109; Life-study of Zechariah, berita 10–11</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

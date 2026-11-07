@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Rabu, 2 Desember 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 9 - Rabu, 2 Desember 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Why. 3:8</div>
+            <div class="scripture-text">... Aku telah membuka pintu bagimu, yang tidak dapat ditutup oleh seorang pun. Aku tahu bahwa kekuatanmu tidak seberapa, namun engkau menuruti firman-Ku dan engkau tidak menyangkal nama-Ku.</div>
+            <div class="scripture-title">Why. 3:12</div>
+            <div class="scripture-text">Siapa yang menang, ia akan Kujadikan tiang di dalam Bait Suci Allah-Ku...</div>
+            <p>Ada satu gereja yang unik dan sangat dipuji oleh Tuhan—gereja di Filadelfia. Tuhan sangat memuji mereka dan bahkan mengapresiasi mereka karena mereka memegang firman (Why. 3:8). Ini berarti mereka tidak berpaling dari ajaran yang tepat dari para rasul. Meskipun mereka lemah, Tuhan masih sangat menghargai mereka, memberi tahu mereka bahwa mereka memiliki sedikit kekuatan dan bahwa mereka memegang firman-Nya.</p>
+            <p>Berpaling dari ajaran yang tepat adalah hal yang mengerikan yang akan mendatangkan kemerosotan dan masuknya ajaran lain. ... Saya harap kita akan mengikuti teladan gereja di Filadelfia—memegang firman Tuhan meskipun kita hanya memiliki sedikit kekuatan. Marilah kita memegang firman Tuhan, yaitu tinggal dalam ajaran para rasul, tinggal dalam perkataan sehat, tinggal dalam wahyu unik dari Tuhan dengan kepemimpinan yang tepat. <em>(CWWL, 1986, vol. 1, "Elders' Training, Book 7: One Accord for the Lord's Move," hal. 173-174)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Kaum beriman dilambangkan dengan tiang-tiang [Why. 3:12]. Pertama, tiang-tiang tersebut adalah tokoh-tokoh terkemuka di antara kaum beriman dalam gereja hari ini. Hal ini ditunjukkan dalam Galatia 2:9 di mana Paulus menyebut <em>"Yakobus, Kefas dan Yohanes, yang dipandang sebagai tiang utama jemaat."</em></p>
+            <p>Tiang-tiang itu juga adalah para pemenang di antara kaum beriman di Bait Suci Allah pada zaman yang akan datang dan di kekekalan. [Dalam] Wahyu 3:12 ... kita melihat bahwa para pemenang akan dijadikan tiang yang terbangun di dalam Bait Suci Allah. Karena ia dibangun ke dalam bangunan Allah, <em>"ia tidak akan keluar lagi dari situ."</em> Janji ini akan digenapi dalam Kerajaan Seribu Tahun sebagai pahala bagi para pemenang.</p>
+            <p>Tuhan menjadikan kita tiang-tiang dengan mentransformasi kita, yaitu dengan menyingkirkan unsur alamiah kita dan menggantinya dengan esensi Ilahi-Nya. Karena itu, makna kata <em>"Kujadikan"</em> dalam 3:12 adalah membentuk kita menjadi sesuatu, membangun kita secara kreatif. ... Pekerjaan Tuhan di dalam gereja adalah menggarapkan diri-Nya ke dalam diri kita sebagai aliran Ilahi untuk menyingkirkan alamiah kita dan menggantikannya dengan substansi-Nya, sehingga kita secara bertahap dapat diproses oleh unsur transformatif-Nya. Sebagai hasil dari pekerjaan transformasi ini, kita menjadi tiang-tiang di dalam Bait Suci Allah.</p>
+            <p>Ayat 12 memberi tahu kita bahwa para pemenang akan menjadi tiang-tiang di Bait Allah pada zaman yang akan datang. Namun, 21:22, yang berbicara tentang Yerusalem Baru di zaman yang akan datang dan dalam kekekalan, berkata, <em>"Aku tidak melihat Bait Suci di dalamnya; sebab Allah, Tuhan Yang Mahakuasa, adalah Bait Suci-nya, demikian juga Anak Domba itu."</em> Di sini kita melihat bahwa di Yerusalem Baru, Allah Tritunggal sendiri akan menjadi Baitnya. Ini berarti bahwa bagi para pemenang untuk menjadi tiang-tiang di Bait berarti mereka akan menjadi tiang-tiang di dalam Allah Tritunggal. Hal ini mencakup dibaurkan dengan Allah Tritunggal dan disusun oleh-Nya. Ini adalah suatu misteri.</p>
+            <p>Bahkan dalam kehidupan gereja saat ini, kaum saleh pemenang adalah tiang-tiang di dalam Allah Tritunggal. Selain itu, kaum saleh ini terkadang memiliki kesadaran bahwa gereja sebenarnya tidak lain adalah Allah Tritunggal. Fakta ini ditunjukkan oleh kaki pelita emas sebagai lambang gereja (1:12, 20). Selain itu, kaki pelita adalah perwujudan dan ekspresi Allah Tritunggal. Emas pada kaki pelita melambangkan sifat Bapa; bentuknya melambangkan Kristus sebagai perwujudan dan gambar Allah; dan ketujuh pelita melambangkan Roh Kudus sebagai ekspresi. ... Tidaklah berlebihan untuk mengatakan bahwa, pada kenyataannya, gereja adalah Allah Tritunggal, karena kaki pelita itu adalah gereja dan juga perwujudan Allah Tritunggal. ... Di zaman yang akan datang, kaum beriman pemenang ini akan menjadi tiang-tiang di Bait Allah, yang adalah diri Allah sendiri. Dari sini kita melihat bahwa dijadikan tiang mencakup Allah Tritunggal dibaurkan dengan dan disusun ke dalam para pemenang yang setia. <em>(The Conclusion of the New Testament, hal. 1214-1216)</em></p>
+            <p class="book-ref">Bacaan Tambahan: CWWL, 1984, vol. 2, "Elders' Training, Book 2: The Vision of the Lord's Recovery," bab 8</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Jumat, 16 Oktober 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 2 - Jumat, 16 Oktober 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Yes. 45:15</div>
+            <div class="scripture-text">Sungguh, Engkau Allah yang menyembunyikan diri, Allah Israel, Juru Selamat.</div>
+            <div class="scripture-title">Yoh. 1:18</div>
+            <div class="scripture-text">Tidak seorang pun yang pernah melihat Allah; tetapi Anak Tunggal Allah yang ada di pangkuan Bapa, Dialah yang menyatakan-Nya.</div>
+            <p>Jika Anda baik-baik membaca Alkitab, Anda akan melihat bahwa sepertinya Allah memiliki suatu watak, yaitu tidak senang menampilkan diri. Dia senang bekerja secara rahasia dan bukan secara terbuka. Dia menciptakan alam semesta dan kemudian menyembunyikan diri-Nya di dalamnya, sampai kita tidak tahu di mana bisa menemukan Dia. Dia mengambil tempat kediaman-Nya di dalam manusia, tetapi manusia itu hampir tidak dikenal. Sewaktu menjumpai Dia untuk kali pertama, orang-orang hanya melihat seorang manusia yang disebut Yesus dari Nazaret. Sewaktu menjumpai Dia untuk kali kedua, mereka mengenali Dia sebagai manusia yang memiliki kecerdasan di atas rata-rata; dan pada pertemuan kali ketiga, mereka berpikir bahwa Dia pasti adalah seorang nabi. Ketika mereka menjumpai Dia kemudian, mereka merasakan, "Orang ini tentu lebih dari seorang nabi." Tetapi untuk menemukan dengan pasti siapakah Dia, bukan perkara yang mudah. Bahkan murid-murid-Nya, selama tiga setengah tahun mendampingi Dia, tidak mencapai pengetahuan yang benar akan Dia. Semua ini memberi tahu kita bahwa Dia senantiasa menyembunyikan diri-Nya. Dia akan memanifestasikan diri-Nya sejenak dan kemudian menyembunyikan diri-Nya lagi. <em>(CWWL, 1956, vol. 2, "A God Who Hides Himself," hal. 6-7)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Perhatikanlah bagaimana Yesaya mengekspresikan pemikiran ini: <em>"Sungguh, Engkau Allah yang menyembunyikan diri, Allah Israel"</em> (Yes. 45:15). Pernyataan ini sangat tegas... Pengutaraannya adalah berdasarkan pada akumulasi fakta... Yang telah ia lihat dari tindakan Allah, yang telah ia amati terjadi pada Israel di bawah tangan Allah, yang ia telah pandang dari pengalaman umat Allah—semua pengamatan ini telah memaksa nabi untuk mengakui bahwa Allah adalah Allah yang menyembunyikan diri-Nya. Mengapa Yesaya sampai pada kesimpulan ini?... Ini karena Allah melakukan banyak hal di tengah-tengah bangsa Israel dan banyak hal dalam kehidupan pribadi mereka, namun Dia menyembunyikan diri-Nya... Sangat banyak yang dilakukan oleh-Nya, namun bangsa Israel sepenuhnya buta mengenai siapa yang melakukannya. Kemudian suatu hari Yesaya mengatakan, "Sungguh, Engkau Allah yang menyembunyikan diri." <em>(CWWL, 1956, vol. 2, "A God Who Hides Himself," hal. 3)</em></p>
+            <p>Jika kita dengan teliti mempelajari sejarah alam semesta, sejarah umat manusia, sejarah Perjanjian Lama, dan sejarah Perjanjian Baru, kita akan mencapai kesimpulan yang sama: Allah adalah Allah yang menyembunyikan diri-Nya... Ada banyak hal dan banyak kisah di alam semesta, namun dalam enam ribu tahun tidak ada orang yang pernah melihat Allah [Yoh. 1:18]... Pada masa Perjanjian Baru, meskipun Putra tunggal, yang ada di pangkuan Bapa, datang untuk mendeklarasikan Allah, deklarasi ini juga tersembunyi. Meskipun Putra sulung datang dengan tujuan mendeklarasikan Allah, Allah tersembunyi di dalam seorang manusia, bahkan seorang manusia yang tidak menarik. Wajah dan rupa manusia ini buruk; Dia tidak memiliki rupa yang menarik atau penampilan yang elok (Yes. 53:2). Ini mengakibatkan sangat sulit bagi siapa pun untuk mengenali bahwa Dia adalah Allah. Dia bertumbuh di kota kecil Nazaret di provinsi Galilea yang tidak penting. Orang-orang Yahudi mengetahui bahwa tidak ada nabi atau orang terkemuka yang datang dari Nazaret (Yoh. 1:46). Karena itu, ketika Yesus orang Nazaret muncul, sangat sedikit yang berpikir bahwa Dia mungkin adalah seorang nabi, apalagi bahwa Allah ada di dalam Dia. Namun Allah tersembunyi di dalam Dia. Sungguh fakta yang ajaib! <em>(CWWL, 1956, vol. 3, hal. 16)</em></p>
+            <p>Karena Allah kita adalah Allah yang tersembunyi, orang lain mungkin memeriksa dan bertanya, "Di manakah Allahmu? Di manakah kerajaan-Nya?" Ketika kita ditanya demikian, kita mungkin akan menjawab dengan cara demikian: "Allahku tersembunyi. Aku tidak dapat melihat Dia, dan Anda juga tidak dapat melihat Dia. Tetapi Anda perlu menyadari bahwa cepat atau lambat, Allahku yang tersembunyi akan datang untuk melakukan sesuatu demi aku dan untuk menanggulangi mereka yang tidak percaya kepada Dia."</p>
+            <p>Hari ini kita perlu menyadari bahwa Allah yang Maha Kuasa yang sedang kita layani masih menyembunyikan diri-Nya, terutama ketika Dia menolong kita. Kita tidak dapat melihat Dia, dan kelihatannya Dia tidak melakukan apa-apa bagi kita. Sebenarnya, Dia menyertai kita sepanjang waktu dan, dengan cara yang tersembunyi, Dia melakukan banyak hal bagi kita. <em>(Pelajaran-Hayat Ester, hal. 5-8)</em></p>
+            <p class="book-ref">Bacaan Tambahan: Pelajaran-Hayat Ester, berita 1; CWWL, 1956, vol. 3, hal. 17, 24-35</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

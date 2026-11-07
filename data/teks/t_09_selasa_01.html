@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Selasa, 1 Desember 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 9 - Selasa, 1 Desember 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">2 Kor. 5:18-20</div>
+            <div class="scripture-text">Semuanya ini dari Allah, yang dengan perantaraan Kristus telah mendamaikan kita dengan diri-Nya dan telah mempercayakan pelayanan pendamaian itu kepada kami ... dan Dia telah mempercayakan berita pendamaian itu kepada kami. Jadi, kami ini utusan-utusan Kristus, seakan-akan Allah menasihati kamu dengan perantaraan kami; dalam nama Kristus kami meminta kepadamu: Berilah dirimu didamaikan dengan Allah.</div>
+            <p>Penulisan Paulus dalam 2 Korintus 5:20 ini tidak lazim. Setelah mengatakan "Kami ini utusan-utusan Kristus," ia berkata, "Seakan-akan Allah menasihati kamu dengan perantaraan kami." Seolah-olah Paulus berkata, "Kami adalah utusan-utusan Kristus, dan kami sedang melaksanakan pekerjaan rekonsiliasi ini. Ini seperti Allah menasihati kamu melalui kami. Kami adalah satu dengan Kristus dan satu dengan Allah. ..." Ministri perjanjian yang baru adalah ministri yang di dalamnya Allah, Kristus, dan para meleinister adalah sama. ... Allah, Kristus, dan para rasul adalah satu dalam melaksanakan ministri rekonsiliasi ini. <em>(Pelajaran-Hayat 2 Korintus, hal. 457-458)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Kaum beriman di Korintus ... telah direkonsiliasikan dengan Allah sebagian. Tetapi, mereka belum sepenuhnya direkonsiliasikan dengan Dia. ... Dalam 1 Korintus 1 Paulus menyebut mereka sebagai orang-orang kudus, sebagai orang-orang yang telah dipanggil oleh Allah ke dalam persekutuan dengan Anak-Nya. Karena itu, mereka benar-benar telah direkonsiliasikan dengan Allah sampai tingkat tertentu.</p>
+            <p>Kitab 1 dan 2 Korintus memperlihatkan bahwa kaum beriman di Korintus, setelah direkonsiliasikan dengan Allah sebagian, mereka masih hidup dalam daging, yaitu dalam manusia lahiriah. Di antara mereka dengan Allah masih ada tabir daging yang memisahkan, yaitu manusia alamiah. Tabir ini berhubungan dengan tabir di dalam tabernakel, tabir yang memisahkan Ruang Kudus dengan Ruang Maha Kudus, bukan tabir di jalan masuk ke Ruang Kudus. Kaum beriman Korintus mungkin telah berada di Ruang Kudus, tetapi mereka belum berada di dalam Ruang Maha Kudus. Ini berarti mereka masih terpisah dari tempat di mana Allah berada. Karena itu, mereka belum direkonsiliasikan sepenuhnya dengan Allah.</p>
+            <p>Dalam 2 Korintus 5:19 dunialah yang direkonsiliasikan dengan Allah. Dalam ayat 20 kaum beriman yang telah direkonsiliasikan dengan Allah, yang akan direkonsiliasikan lebih lanjut dengan Allah. Ini jelas menunjukkan bahwa dua langkah diperlukan manusia untuk sepenuhnya direkonsiliasikan dengan Allah. Langkah pertama adalah merekonsiliasikan orang dosa kepada Allah dari dosa. Untuk tujuan ini, Kristus telah mati bagi dosa-dosa kita (1 Kor. 15:3), supaya dosa-dosa kita diampuni Allah. Ini adalah aspek objektif dari kematian Kristus. Dalam aspek ini, Dia memikul dosa-dosa kita di atas kayu salib, sehingga dosa-dosa itu bisa dihakimi oleh Allah atas diri-Nya bagi kita. Langkah yang kedua adalah merekonsiliasikan kaum beriman yang hidup dalam hayat alamiah kepada Allah dari daging. Untuk tujuan ini, Kristus mati bagi kita, manusia, supaya kita dapat hidup kepada-Nya dalam hayat kebangkitan (2 Kor. 5:14-15). Ini adalah aspek subjektif dari kematian Kristus. Dalam aspek ini, Dia dijadikan dosa bagi kita, dihakimi dan diakhiri Allah, supaya kita bisa menjadi keadilbenaran Allah di dalam Dia. Melalui kedua aspek kematian-Nya ini, Dia telah sepenuhnya merekonsiliasikan umat pilihan Allah kepada Allah.</p>
+            <p>Meskipun orang-orang Korintus telah beroleh selamat dan direkonsiliasikan kepada Allah setengah jalan, tetapi mereka masih hidup dalam daging, yaitu hidup dalam jiwa, manusia lahiriah, diri alamiah. Tabir daging, manusia alamiah, masih memisahkan mereka dari Allah. Ini berarti alamiah mereka adalah satu tabir yang memisahkan. Karena itu, mereka perlu langkah kedua rekonsiliasi. ... Apa yang sedang dilakukan Rasul Paulus dalam 1 dan 2 Korintus adalah memotong tabir daging pemisah itu supaya kaum beriman di Korintus dapat masuk ke dalam Ruang Maha Kudus.</p>
+            <p>Berkat Allah dapat ditemukan di Ruang Kudus, tetapi Allah sendiri ada di Ruang Maha Kudus. Di Ruang Kudus ada berkat dari Roh itu, kaki pelita, dan mezbah ukupan. Tetapi di Ruang Kudus itu tidak ada hadirat Allah secara langsung. Untuk mendapatkan diri Allah sendiri, kita harus direkonsiliasikan lebih lanjut dan masuk ke Ruang Maha Kudus. Kita harus mengambil langkah kedua rekonsiliasi untuk dibawa masuk ke hadirat Allah. Inilah rekonsiliasi yang penuh. Rekonsiliasi ini bukan hanya membawa kita keluar dari dosa, tetapi juga keluar dari daging, manusia alamiah, dan diri alamiah. Kemudian kita akan dibawa kepada Allah dan menjadi satu dengan Dia. <em>(Pelajaran-Hayat 2 Korintus, hal. 458-462)</em></p>
+            <p class="book-ref">Bacaan Tambahan: Pelajaran-Hayat 2 Korintus, berita 37</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

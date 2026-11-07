@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Selasa, 13 Oktober 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 2 - Selasa, 13 Oktober 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Mrk. 10:29-30</div>
+            <div class="scripture-text">... Setiap orang yang karena Aku dan karena Injil meninggalkan ... orang itu pada zaman ini juga akan menerima kembali seratus kali lipat ... dan pada zaman yang akan datang ia akan menerima hidup yang kekal.</div>
+            <div class="scripture-title">Why. 2:10</div>
+            <div class="scripture-text">... Hendaklah engkau setia sampai mati, dan Aku akan mengaruniakan kepadamu mahkota kehidupan.</div>
+            <p>Mendapatkan hayat yang kekal pada zaman yang akan datang, yang adalah zaman Kerajaan Seribu Tahun, hanya berkaitan dengan perkara pahala pada zaman kerajaan; ini tidak ada hubungannya dengan keselamatan kekal kita.</p>
+            <p>Dalam Markus 10:29-30 Tuhan Yesus berkata tentang zaman ini dan zaman yang akan datang. Zaman ini adalah zaman sekarang ini; ini adalah zaman kasih karunia yang kita alami sekarang ini. Zaman yang akan datang adalah zaman berikutnya: zaman Kerajaan Seribu Tahun yang akan datang. Tuhan berjanji bahwa jika kita karena Tuhan dan Injil meninggalkan segalanya, kita akan mendapatkan hayat kekal di zaman yang akan datang. Ini memperlihatkan bahwa menerima hayat kekal pada zaman yang akan datang adalah satu pahala, yang untuknya kita perlu mengeluarkan harga—meninggalkan segalanya untuk Tuhan dan Injil... Sebelumnya, kita mendapatkan hayat kekal karena percaya, tetapi dalam ayat-ayat ini, kita mendapatkan hayat kekal di zaman yang akan datang hanya jika kita meninggalkan segalanya. Sebab itu, ini tidak berhubungan dengan keselamatan kekal, melainkan berhubungan dengan pahala kita dalam zaman kerajaan yang akan datang. <em>(Pokok-pokok Penting dalam Alkitab, Volume 2, hal. 307-308)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Karena mendapatkan hayat yang kekal di zaman yang akan datang menuntut kita meninggalkan segalanya, itu pasti berkaitan dengan pahala yang diberikan kepada kita dalam Kerajaan Seribu Tahun. Ini memperlihatkan bahwa Tuhan khusus menetapkan zaman kerajaan sebagai periode kenikmatan atas hayat yang kekal sebagai pahala bagi orang yang setia mengikuti Dia.</p>
+            <p>Tuhan berjanji akan mengaruniakan mahkota kehidupan kepada orang yang setia sampai mati (Why. 2:10). Mahkota adalah lambang kemuliaan memerintah sebagai raja. Mahkota kehidupan adalah lambang kemuliaan meraja di dalam hayat... Kemuliaan meraja di dalam hayat diberikan kepada orang yang setia sampai mati; ini dibeli dengan harga setia sampai mati. Ini tidak berkaitan dengan karunia hayat kekal yang cuma-cuma yang didapatkan melalui iman dalam zaman ini; sebaliknya, ini adalah pahala hayat kekal yang akan didapatkan dalam zaman yang akan datang karena membayar harga tertinggi. Pahala ini adalah menikmati kemuliaan meraja di dalam hayat di zaman yang akan datang. Ini akan terjadi pada Kerajaan Seribu Tahun.</p>
+            <p>Dalam Firdaus Allah yang disinggung [dalam ayat 7] ada pohon hayat. Sebab itu Firdaus ini pasti adalah Yerusalem Baru yang akan datang, dalam Yerusalem Baru yang akan datang memiliki pohon hayat (22:2). Yerusalem Baru dan segala berkatnya telah disediakan Allah bagi kita dan bagi kenikmatan kita dalam kekekalan di langit baru dan bumi baru. Dalam 2:7 Tuhan berjanji bahwa makan buah pohon hayat dalam Yerusalem Baru akan menjadi pahala bagi kaum beriman yang menang... Tuhan akan memberikan buah pohon hayat dalam Yerusalem Baru sebagai pahala kepada kaum beriman pemenang di zaman Kerajaan Seribu Tahun. Meskipun semua orang beriman kelak dalam langit baru dan bumi baru bisa menikmati Yerusalem Baru dengan semua berkatnya, tetapi hanya para pemenang yang bisa mencicipi buah pohon hayat dalam Yerusalem Baru selama Kerajaan Seribu Tahun. Makan buah pohon hayat adalah menikmati berkat hayat yang kekal, yaitu menikmati hayat kekal itu sendiri. Mencicipi buah pohon hayat adalah mendapatkan kenikmatan awal dari berkat hayat yang kekal. Kenikmatan berkat hayat yang kekal ini adalah sesuatu yang akan didapatkan oleh setiap orang yang beroleh selamat dalam langit baru dan bumi baru. Namun, hanya para pemenang yang akan mencicipi berkat hayat kekal dalam Kerajaan Seribu Tahun. Sebelum langit baru dan bumi baru tiba, pada Kerajaan Seribu Tahun, Tuhan terlebih dahulu memberikan kesegaran berkat hayat kekal, buah pohon hayat, sebagai pahala kepada para pemenang sebagai pencicipan dan kenikmatan awal. Karena itu, menikmati hayat kekal pada zaman yang akan datang berlainan dengan memperoleh hayat yang kekal pada masa ini, dan menikmati hayat kekal dalam kekekalan. <em>(Pokok-pokok Penting dalam Alkitab, Volume 2, hal. 308-311)</em></p>
+            <p class="book-ref">Bacaan Tambahan: Pelajaran-Hayat 1 Yohanes, berita 4</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

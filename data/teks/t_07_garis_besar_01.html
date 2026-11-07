@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Minggu Pekan 7</title>
+    <style>
+        body { background-color: #121212; font-family: Arial, sans-serif; margin: 0; padding: 20px 0; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; }
+        .mobile-container { width: 100%; max-width: 420px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); display: flex; flex-direction: column; max-height: 88vh; overflow: hidden; position: relative; }
+        .header { background-color: #1e5138; color: white; padding: 15px; text-align: left; font-size: 16px; font-weight: bold; flex-shrink: 0; }
+        .content-scroll { padding: 15px; overflow-y: auto; flex-grow: 1; font-size: 14px; line-height: 1.6; color: #333; }
+        .week-title { font-size: 18px; font-weight: bold; color: #1e5138; margin-top: 5px; margin-bottom: 4px; line-height: 1.3; }
+        .scripture-subtitle { font-size: 12px; font-weight: bold; color: #2e7d32; margin-bottom: 15px; }
+        .accordion-section { background-color: #f4f9f4; border-left: 4px solid #1e5138; padding: 10px; margin-bottom: 15px; border-radius: 4px; }
+        .accordion-section .toggle-header { background-color: #c8e6c9; padding: 6px 8px; border-radius: 4px; cursor: pointer; font-weight: bold; color: #1e5138; margin: 0; display: flex; justify-content: space-between; align-items: center; }
+        .toggle-content { margin-top: 10px; display: none; }
+        .bottom-nav { display: flex; justify-content: space-between; gap: 6px; padding: 12px; background-color: #f8f9fa; border-top: 1px solid #ddd; flex-shrink: 0; }
+        .nav-btn { flex: 1; background-color: #1e5138; color: #ffffff; text-align: center; padding: 10px 0; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 12px; border: none; cursor: pointer; }
+        .nav-btn:hover { background-color: #143726; }
+        .verse-text { font-weight: bold; font-style: italic; }
+
+        /* Styling Modal Pemutar Media Agar Responsif dan Tidak Terpotong */
+        #mediaModal {
+            display: none;
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 200;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .modal-content {
+            background: white;
+            padding: 15px;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 400px;
+            max-height: 90vh;
+            overflow-y: auto;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .modal-content video {
+            width: 100%;
+            max-height: 60vh;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-top: 10px;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="mobile-container">
+        <div class="header">Kaum Beriman (1)</div>
+        <div class="content-scroll">
+            <div style="font-size: 12px; color: #555; margin-bottom: 2px;">Pekan ke 07</div>
+            <div class="week-title">Bejana-bejana Belas Kasihan untuk Kehormatan dan Kemuliaan, Butir Gandum, dan Ranting Pohon Anggur.</div>
+            <div class="scripture-subtitle">Roma 9:21, 23; Kisah Para Rasul 9:15; 2 Korintus 4:7; Yohanes 12:24; 15:1, 4-5, 7.</div>
+
+            <!-- AKORDION I: GARIS BESAR -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 I. Garis Besar (Outline) Pekan 7 <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+<p><strong>Kaum Beriman adalah Bejana-bejana Belas Kasihan untuk Kehormatan dan Kemuliaan</strong><br>
+Bejana Belas Kasihan: Manusia diciptakan sebagai wadah tanah liat untuk menampung dan dipenuhi Kristus bagi pembangunan Tubuh Kristus. Kunci pengalaman rohani adalah menjadi "bejana terbuka". Belas kasihan adalah atribut Allah yang menjangkau paling jauh, menyelamatkan manusia dari keadaan yang kasihan ke dalam kondisi yang layak menerima kasih dan kasih karunia-Nya.<br>
+Bejana Kehormatan: Di tengah kemerosotan gereja, bejana kehormatan berfungsi sebagai penyuntik yang menyuntikkan hayat Kristus melalui 5 peran: pengajar/minister firman, prajurit (berperang melawan ajaran sesat dan maut), olahragawan, petani (sabar menabur dan menyiram), serta pekerja yang memotong lurus firman kebenaran.<br>
+Bejana Kemuliaan: Menampung Kristus sebagai Allah kemuliaan. Harta dalam bejana tanah liat adalah wajah/persona Kristus. Memandang dan memantulkan kemuliaan Tuhan dengan muka tidak berselubung mentransformasi kita menjadi serupa dengan gambar-Nya.</p>
+<p><strong>Kaum Beriman adalah Butir-butir Gandum</strong></p>
+<p><strong>Kristus sebagai satu biji gandum jatuh ke tanah dan mati untuk melepaskan api hayat kekal-Nya dalam kebangkitan.</strong><br>
+Banyak biji gandum (kaum beriman) yang dihasilkan melalui kematian dan kebangkitan Kristus dihancurkan, digiling, dibaurkan dengan minyak, dan dipanggang menjadi satu roti—Tubuh Kristus (kurban sajian).<br>
+Sebagai butir gandum, kaum beriman harus kehilangan hayat jiwa (hayat alamiah) agar manusia lahiriah diremukkan dan manusia batiniah diperbarui dari hari ke hari. Allah menggunakan seluruh lingkungan untuk menyerupakan kita dengan gambar Putra-Nya.</p>
+<p><strong>Kaum Beriman adalah Ranting-ranting Pohon Anggur</strong><br>
+Pohon anggur (Kristus) bersama ranting-rantingnya (kaum beriman) adalah organisme Allah Tritunggal untuk bertumbuh dan mengekspresikan hayat ilahi.</p>
+<p><strong>Kita tidak bisa melakukan apa pun di luar Kristus, sehingga kita harus tinggal (abide) di dalam Dia, menjaga persekutuan tanpa sekatan/dosa, serta membiarkan firman-Nya yang instan tinggal di dalam kita.</strong><br>
+Tinggal di dalam Kristus adalah tinggal di dalam kasih-Nya untuk saling mengasihi dan menghasilkan buah. Menghasilkan buah adalah luapan kelimpahan hayat batiniah bagi pemuliaan Bapa.</p>
+                </div>
+            </div>
+
+            <!-- AKORDION II: AYAT ALKITAB RAWATAN PAGI -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 II. Ayat Alkitab Rawatan Pagi (Hari 1–6) <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+<p><strong>Hari 1 (Senin) Roma 9:</strong></p>
+<p class="verse-text">21: "Apakah tukang periuk tidak mempunyai hak atas tanah liatnya, untuk membuat dari gumpal yang sama suatu bejana untuk tujuan yang mulia dan yang lain untuk tujuan yang biasa." Roma 9:23: "Justru untuk menyatakan kekayaan kemuliaan-Nya atas bejana-bejana belas kasihan-Nya yang telah dipersiapkan-Nya untuk kemuliaan."</p>
+<p><strong>Hari 2 (Selasa) 2 Timotius 2:</strong></p>
+<p class="verse-text">21: "Jika seseorang menyucikan dirinya dari hal-hal yang jahat, ia akan menjadi perabot rumah untuk maksud yang mulia, ia dikuduskan, dipandang layak untuk dipakai tuannya dan disediakan untuk setiap pekerjaan yang baik." 2 Timotius 2:2: "Apa yang telah engkau dengar dariku di depan banyak saksi, percayakanlah itu kepada orang-orang yang dapat dipercayai, yang juga pandai mengajar orang lain." 2 Timotius 2:15: "Usahakanlah supaya engkau layak di handapan Allah ... yang berterus terang memberitakan perkataan kebenaran itu."</p>
+<p><strong>Hari 3 (Rabu) 2 Korintus 4:</strong></p>
+<p class="verse-text">6-7: "... Allah ... yang membuat terang-Nya bercahaya di dalam hati kita, supaya kita beroleh terang dari pengetahuan tentang kemuliaan Allah yang tampak pada wajah Kristus. Tetapi harta ini kami miliki dalam bejana tanah liat, supaya nyata bahwa kekuatan yang melimpah-limpah itu berasal dari Allah, bukan dari diri kami." 2 Korintus 3:18: "Kita semua mencerminkan kemuliaan Tuhan dengan muka yang tidak berselubung. Karena kemuliaan itu datangnya dari Tuhan yang adalah Roh, maka kita sedang diubah menjadi serupa dengan gambar-Nya, dalam kemuliaan yang semakin besar."</p>
+<p><strong>Hari 4 (Kamis) Yohanes 12:</strong></p>
+<p class="verse-text">24-26: "Sesungguhnya Aku berkata kepadamu: Jika biji gandum tidak jatuh ke dalam tanah dan mati, ia tetap satu biji saja, tetapi jika ia mati, ia akan menghasilkan banyak buah. Siapa saja yang mencintai nyawanya, ia akan kehilangan nyawanya, tetapi siapa saja yang membenci nyawanya di dunia ini, ia akan memeliharanya untuk hidup yang kekal. Siapa saja yang melayani Aku, ia harus mengikut Aku dan di mana Aku berada, di situ pun pelayan-Ku akan berada. Siapa saja yang melayani Aku, ia akan dihormati Bapa."</p>
+<p><strong>Hari 5 (Jumat) Yohanes 15:</strong></p>
+<p class="verse-text">4-5: "Tinggallah di dalam Aku dan Aku di dalam kamu. Sama seperti ranting tidak dapat berbuah dari dirinya sendiri, kalau ia tidak tinggal pada pokok anggur, demikian juga kamu tidak berbuah, jikalau kamu tidak tinggal di dalam Aku. Akulah pokok anggur dan kamulah ranting-rantingnya. Siapa saja yang tinggal di dalam Aku dan Aku di dalam dia, ia berbuah banyak, sebab di luar Aku kamu tidak dapat berbuat apa-apa."</p>
+<p><strong>Hari 6 (Sabtu) Kolose 1:</strong></p>
+<p class="verse-text">10: "Sehingga hidupmu layak di hadapan-Nya serta berkenan kepada-Nya dalam segala hal, dan kamu memberi buah dalam segala pekerjaan yang baik dan bertumbuh dalam pengetahuan tentang Allah." Yohanes 21:15: "... Yesus berkata kepada Simon Petrus, “Simon, anak Yohanes, apakah engkau mengasihi Aku lebih daripada mereka ini?” Jawab Petrus kepada-Nya, “Benar Tuhan, Engkau tahu bahwa aku mengasihi Engkau.” Kata Yesus kepadanya, “Peliharalah anak-anak domba-Ku.”"</p>
+                </div>
+            </div>
+
+            <!-- AKORDION III: POIN-POIN CATATAN KAKI -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 III. Poin-Poin Catatan Kaki (Footnote) <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+<p><strong>Prinsip Bejana Terbuka dan Atribut Belas Kasihan (Rm. 9:21, 23 & 2 Kor. 4:7) Manusia diciptakan bukan sebagai alat/senjata, melainkan sebagai wadah/bejana. Rahasia dasar seluruh pengalaman akan Kristus dan gereja adalah menjadi bejana terbuka. Belas kasihan adalah atribut Allah yang menjangkau paling jauh (melebih kasih karunia), karena menjangkau manusia dalam kondisinya yang kasihan dan tidak layak untuk dibawa ke dalam kasih karunia-Nya.</strong></p>
+<p><strong>Bejana Kehormatan sebagai Penyuntik (2 Tim. 2:20-22, 2:2, 2:15) Dalam menghadapi kemerosotan gereja, bejana kehormatan berfungsi sebagai penyuntik yang menyuntikkan kesehatan rohani melalui 5 aspek: pengajar yang merawat dengan firman sehat, prajurit yang berperang melawan ajaran sesat dan maut, olahragawan, petani yang bekerja dengan sabar, dan pekerja yang memotong lurus firman kebenaran tanpa penyimpangan.</strong></p>
+<p><strong>Harta dalam Bejana Tanah Liat & Memandang Wajah Kristus (2 Kor. 4:6-7 & 3:18) Harta di dalam bejana tanah liat yang fana adalah Kristus sebagai Allah kemuliaan. "Wajah Kristus" menandakan daerah di sekitar mata (hadirat/persona Kristus secara langsung). Memandang dan memantulkan kemuliaan Tuhan dengan muka yang tidak berselubung menyalurkan esensi ilahi-Nya ke dalam batin kita untuk mentransformasi kita secara metabolik menjadi serupa dengan gambar-Nya.</strong></p>
+<p><strong>Pelepasan Hayat dan Pembentukan Satu Roti (Yoh. 12:24-26 & 1 Kor. 10:17) Kristus adalah satu biji gandum unik yang mati di atas salib untuk meremukkan cangkang insani dan melepaskan hayat ilahi. Kematian dan kebangkitan-Nya menghasilkan banyak biji gandum (kaum beriman). Biji-biji ini digiling, dibaurkan bersama Roh (minyak), dan dipanggang menjadi satu roti—yaitu Tubuh Kristus / kehidupan gereja.</strong></p>
+<p><strong>Organisme Pohon Anggur dan Hubungan Tinggal di dalam Kristus (Yoh. 15:1-8) Pohon anggur universal (Kristus) beserta ranting-rantingnya (kaum beriman) membentuk satu-satunya organisme dari Allah Tritunggal dalam ekonomi-Nya. Ranting tidak dapat hidup terpisah dari pokok; karena itu kaum beriman harus menjaga persekutuan yang jernih tanpa ada sekatan dosa/penghambat di antara mereka dengan Tuhan.</strong></p>
+<p><strong>Menghasilkan Buah dan Menggembalakan Domba (Yoh. 15:8, 16 & Yoh. 21:15-17) Menghasilkan buah adalah luapan kelimpahan hayat batiniah yang mengalirkan esensi Allah kepada orang lain. Ketika hayat ilahi terekspresi dalam pelipatgandaan buah, Allah Bapa dimuliakan. Mengasihi Tuhan sampai puncaknya melayakkan dan memperlengkapi kita untuk mengutarakan Kristus serta menggembalakan anak-anak domba-Nya.</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL PEMUTAR MEDIA -->
+        <div id="mediaModal" onclick="closeModal(event)">
+            <div class="modal-content" id="modalBody" onclick="event.stopPropagation()">
+                <!-- Konten Media Dinamis -->
+            </div>
+        </div>
+
+        <!-- NAVIGASI BAWAH -->
+        <div class="bottom-nav">
+            <a href="../../index.html" class="nav-btn">🏠 Home</a>
+            
+            
+        </div>
+    </div>
+
+    <script>
+        function toggleSection(header) {
+            const content = header.nextElementSibling;
+            const arrow = header.querySelector('.arrow');
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                arrow.textContent = "▼";
+            } else {
+                content.style.display = "block";
+                arrow.textContent = "▲";
+            }
+        }
+
+        function playAudio() {
+            var modal = document.getElementById("mediaModal");
+            var body = document.getElementById("modalBody");
+            
+            body.innerHTML = `
+                <h3 style="margin: 0 0 5px 0; font-size: 16px;">Audio Penyegaran Pagi</h3>
+                <p style="margin: 0 0 10px 0; font-size: 12px; color: #666;">Pekan 7</p>
+                <audio id="myAudio" controls autoplay style="width:100%; margin-top:10px;">
+                    <source src="../berita_mingguan/Pekan_07/7 Harta_Ilahi_dalam_Bejana_Tanah_Liat.m4a" type="audio/mp4">
+                    Peramban Anda tidak mendukung elemen audio.
+                </audio>
+                <br>
+                <button onclick="closeModalDirect()" style="padding: 6px 14px; background:#1e5138; color:white; border:none; border-radius:8px; cursor:pointer; font-size: 12px; margin-top: 10px;">Tutup</button>
+            `;
+            modal.style.display = "flex";
+
+            var audioElement = document.getElementById("myAudio");
+            audioElement.onended = function() {
+                closeModalDirect();
+            };
+        }
+
+        function playVideo() {
+            var modal = document.getElementById("mediaModal");
+            var body = document.getElementById("modalBody");
+            
+            body.innerHTML = `
+                <h3 style="margin: 0 0 5px 0; font-size: 16px;">Video Penyegaran Pagi</h3>
+                <p style="margin: 0 0 10px 0; font-size: 12px; color: #666;">Pekan 7</p>
+                <video id="myVideo" controls autoplay>
+                    <source src="../berita_mingguan/Pekan_07/7 Mengapa_Kita_Disebut_Bejana,_Gandum,_dan_Ranting.mp4" type="video/mp4">
+                    Peramban Anda tidak mendukung elemen video.
+                </video>
+                <br>
+                <button onclick="closeModalDirect()" style="padding: 6px 14px; background:#1e5138; color:white; border:none; border-radius:8px; cursor:pointer; font-size: 12px; margin-top: 10px;">Tutup</button>
+            `;
+            modal.style.display = "flex";
+
+            var videoElement = document.getElementById("myVideo");
+            videoElement.onended = function() {
+                closeModalDirect();
+            };
+        }
+
+        function closeModal(event) {
+            closeModalDirect();
+        }
+
+        function closeModalDirect() {
+            var modal = document.getElementById("mediaModal");
+            if (modal) modal.style.display = "none";
+
+            var audioElement = document.getElementById("myAudio");
+            if (audioElement) {
+                audioElement.pause();
+                audioElement.currentTime = 0;
+            }
+            var videoElement = document.getElementById("myVideo");
+            if (videoElement) {
+                videoElement.pause();
+                videoElement.currentTime = 0;
+            }
+        }
+    </script>
+</body>
+</html>

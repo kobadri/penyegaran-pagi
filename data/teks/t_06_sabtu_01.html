@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Sabtu, 14 November 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 6 - Sabtu, 14 November 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Ibr. 2:10-11</div>
+            <div class="scripture-text">Sebab memang sepantasnya Allah—yang bagi-Nya dan oleh-Nya segala sesuatu dijadikan, yaitu Allah yang membawa banyak orang kepada kemuliaan—juga menyempurnakan Perintis yang memimpin mereka kepada keselamatan melalui penderitaan. Sebab Ia yang menguduskan dan mereka yang dikuduskan, semuanya berasal dari Satu; itulah sebabnya Ia tidak malu menyebut mereka saudara.</div>
+            <p>Ibrani 3:1 membicarakan kaum beriman sebagai "saudara-saudara yang kudus." Ayat ini menunjukkan bahwa kaum beriman adalah saudara-saudara Kristus. Kita adalah saudara-saudara Kristus karena Dia dan kita berasal dari sumber yang sama. Dia telah datang dari Allah Bapa, dan kita juga berasal dari Bapa. Kristus adalah Putra sulung Allah, dan kita adalah banyak putra Allah (Rm. 8:29; Ibr. 2:10). Ketika Allah menciptakan Adam, Adam tanpa dosa dan murni. Namun, melalui kejatuhan, Adam dan semua keturunannya tersusun menjadi orang dosa (Rm. 5:19). Namun dalam keselamatan Allah, kita telah menjadi putra-putra Allah, saudara-saudara Kristus. Dia sebagai Putra sulung Allah dan kita sebagai banyak putra Allah berasal dari sumber yang sama, Allah Bapa. <em>(CWWL, 1993, vol. 1, hal. 127)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Putra sulung Allah adalah prototipe, sedang kita adalah produksi massal-Nya. Kristus ialah prototipe, cetakan, dan model. Allah telah meletakkan kita semua ke dalam Dia, supaya kita dapat dicetak ke dalam gambar Putra sulung-Nya. Akhirnya kita semua akan diserupakan kepada cetakan itu. Ada kalanya ketika para saudari membuat kue, mereka menaruh adonan ke dalam cetakan kue. Melalui ditaruh ke dalam cetakan, maka adonan itu akhirnya memiliki rupa dan bentuk cetakannya. Selain itu, adonan itu harus dipanggang di dalam oven, agar kue itu bisa memiliki bentuk cetakan itu tanpa perubahan. ... Demikian pula, Kristus, Putra sulung Allah, adalah prototipe, model, dan cetakannya, sedang kita adalah segumpal adonan. Kita semua telah dimasukkan ke dalam cetakan ini, dan kini sedang ditekan dan diratakan oleh tangan Allah.</p>
+            <p>Kita telah ditentukan dari semula untuk diserupakan dengan gambar Putra Allah, agar Ia dapat menjadi Yang sulung di antara banyak saudara. Inilah tujuan Allah. Tujuan Allah adalah memproduksi banyak saudara bagi Putra sulung-Nya. Tatkala Kristus hanya Putra tunggal, Ia hanya seorang diri, namun Allah damba untuk memperoleh banyak putra yang akan menjadi banyak saudara bagi Putra-Nya. Dengan demikian Putra tunggal Allah menjadi Putra sulung di antara banyak saudara. Ia adalah Putra sulung, dan kita adalah banyak saudara. ... Tanpa banyak putra, Allah tidak bisa pernah memiliki kerajaan, dan tanpa banyak saudara, Kristus pun takkan dapat memperoleh Tubuh. Jadi banyak putra Allah adalah bagi Kerajaan Allah, dan banyak saudara Kristus adalah bagi Tubuh Kristus. Kerajaan Allah ialah kehidupan Tubuh, dan kehidupan Tubuh ini di dalam gereja adalah Kerajaan Allah, tempat Allah diekspresikan dan tempat kekuasaan Allah dilaksanakan di bumi. Inilah tujuan Allah.</p>
+            <p>Mengapa Allah mengatur lingkungan, keadaan sekitar, atau situasi kita sedemikian sehingga kita mengalami penderitaan? Kita tidak boleh menjelaskan ini menurut konsep alamiah kita, "Seluruh dunia penuh penderitaan dan setiap manusia pasti mengalami kesukaran. Masakan kita terkecuali?" Itu adalah konsep alamiah, dan kita tidak boleh menerimanya. Kita harus menyadari bahwa tujuan Allah adalah menjadikan kita putra-putra yang dewasa penuh, bukan anak-anak kecil. Kita jangan puas tetap sebagai anak-anak yang menikmati kasih sayang dan asuhan-Nya. Allah bermaksud untuk menjadikan kita putra-putra yang dewasa, yang sepenuhnya bertumbuh besar, sehingga menjadi ahli waris yang sah, supaya kita dapat mewarisi segala adanya Dia di alam semesta ini dan agar kita dapat mengekspresikan Dia dan menjalankan kekuasaan-Nya di bumi. Karena maksud Allah ialah membawa kita ke dalam keputraan yang penuh, maka kita perlu bertumbuh. Tidak diragukan, pertumbuhan berasal dari rawatan batiniah, namun rawatan batiniah ini memerlukan kerja sama dengan lingkungan lahiriah. Menurut perasaan kita, sebagian besar lingkungan lahiriah tidak menyenangkan. Karena itu, lingkungan lahiriah yang berhubungan dengan kita menjadi suatu penderitaan. Saya tidak mengatakan bahwa lingkungan lahiriah itu tidak baik; ini selalu baik, tetapi dalam perasaan Anda mungkin ini tidak terlalu baik. <em>(Pelajaran-Hayat Roma, hal. 357-360)</em></p>
+            <p class="book-ref">Bacaan Tambahan: CWWL, 1993, vol. 1, hal. 127-128</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

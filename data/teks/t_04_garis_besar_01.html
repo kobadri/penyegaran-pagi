@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Minggu Pekan 4</title>
+    <style>
+        body { background-color: #121212; font-family: Arial, sans-serif; margin: 0; padding: 20px 0; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; }
+        .mobile-container { width: 100%; max-width: 420px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); display: flex; flex-direction: column; max-height: 88vh; overflow: hidden; position: relative; }
+        .header { background-color: #1e5138; color: white; padding: 15px; text-align: left; font-size: 16px; font-weight: bold; flex-shrink: 0; }
+        .content-scroll { padding: 15px; overflow-y: auto; flex-grow: 1; font-size: 14px; line-height: 1.6; color: #333; }
+        .week-title { font-size: 18px; font-weight: bold; color: #1e5138; margin-top: 5px; margin-bottom: 4px; line-height: 1.3; }
+        .scripture-subtitle { font-size: 12px; font-weight: bold; color: #2e7d32; margin-bottom: 15px; }
+        .accordion-section { background-color: #f4f9f4; border-left: 4px solid #1e5138; padding: 10px; margin-bottom: 15px; border-radius: 4px; }
+        .accordion-section .toggle-header { background-color: #c8e6c9; padding: 6px 8px; border-radius: 4px; cursor: pointer; font-weight: bold; color: #1e5138; margin: 0; display: flex; justify-content: space-between; align-items: center; }
+        .toggle-content { margin-top: 10px; display: none; }
+        .bottom-nav { display: flex; justify-content: space-between; gap: 6px; padding: 12px; background-color: #f8f9fa; border-top: 1px solid #ddd; flex-shrink: 0; }
+        .nav-btn { flex: 1; background-color: #1e5138; color: #ffffff; text-align: center; padding: 10px 0; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 12px; border: none; cursor: pointer; }
+        .nav-btn:hover { background-color: #143726; }
+        .verse-text { font-weight: bold; font-style: italic; }
+
+        /* Styling Modal Pemutar Media Agar Responsif dan Tidak Terpotong */
+        #mediaModal {
+            display: none;
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 200;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .modal-content {
+            background: white;
+            padding: 15px;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 400px;
+            max-height: 90vh;
+            overflow-y: auto;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .modal-content video {
+            width: 100%;
+            max-height: 60vh;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-top: 10px;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="mobile-container">
+        <div class="header">Kaum Beriman (1)</div>
+        <div class="content-scroll">
+            <div style="font-size: 12px; color: #555; margin-bottom: 2px;">Pekan ke 04</div>
+            <div class="week-title">Ahli Waris Allah</div>
+            <div class="scripture-subtitle">Galatia 3:29, 4:7; Roma 8:17; Efesus 1:18; Titus 3:7</div>
+
+            <!-- AKORDION I: GARIS BESAR -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 I. Garis Besar (Outline) Pekan 4 <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+<p><strong>Makna dan Hakikat Ahli Waris Allah</strong><br>
+Ahli waris adalah orang yang secara sah ditetapkan untuk menerima harta, hak, dan tanggung jawab Bapa.<br>
+Melalui kelahiran kembali, kita diperbarui untuk menerima esensi ilahi dan dijadikan ahli waris Allah menurut pengharapan hayat kekal. Hayat kekal bukan hanya kenikmatan di zaman ini, tetapi merupakan pengharapan untuk mewarisi seluruh kekayaan Allah di zaman yang akan datang dan dalam kekekalan.</p>
+<p><strong>Tahap Pertumbuhan dan Syarat Menjadi Ahli Waris Matang</strong><br>
+Roma 8:17 menunjukkan bahwa ada syarat untuk menjadi ahli waris yang sah: tidak cukup hanya dilahirkan sebagai anak-anak Allah, tetapi harus bertumbuh dalam hayat.<br>
+Tiga Tahap Keputraan:<br>
+Anak-anak: Dilahirkan kembali oleh hayat Allah (pembenaran).<br>
+Putra-putra: Ditransformasi dalam jiwa dan dapat dipimpin oleh Roh (pengudusan).<br>
+Ahli Waris Matang: Ditransfigurasi dalam tubuh melalui pemuliaan.<br>
+Syarat utama menjadi ahli waris dan sesama ahli waris dengan Kristus adalah menderita bersama-sama dengan Dia.</p>
+<p><strong>Bukan di Bawah Taurat, Melainkan di Dalam Kristus sebagai Keturunan Abraham</strong><br>
+Kaum beriman Perjanjian Baru menjadi ahli waris bukan melalui hukum Taurat, melainkan melalui pekerjaan Allah Tritunggal: Bapa mengutus Putra dan Roh, Putra merampungkan penebusan, dan Roh melaksanakan keputraan di dalam batin kita.<br>
+Karena kita adalah milik Kristus dan esa dengan-Nya, kita adalah keturunan Abraham yang berhak mewarisi berkat janji, yaitu Roh yang almuhit.</p>
+<p><strong>Warisan Ilahi, Pemuliaan, dan Dijadikan Warisan Allah</strong></p>
+<p><strong>Warisan ilahi bukanlah rumah materi, melainkan Allah Tritunggal sendiri dengan segala adanya Dia.</strong><br>
+Pemuliaan (transfigurasi tubuh) adalah mekar dan terpancarnya benih kemuliaan (Kristus yang berhuni di batin) ke seluruh diri kita.<br>
+Kenikmatan kaum beriman atas warisan ilahi rampung dengan dijadikan warisan Allah (Ef. 1:18). Kita menikmati Allah sebagai warisan kita, dan Allah menikmati kita yang telah dijenuhi esensi ilahi sebagai milik pusaka-Nya.</p>
+                </div>
+            </div>
+
+            <!-- AKORDION II: AYAT ALKITAB RAWATAN PAGI -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 II. Ayat Alkitab Rawatan Pagi (Hari 1–6) <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+<p><strong>Hari 1 (Senin) Titus 3:</strong></p>
+<p class="verse-text">7: "Supaya kita, sebagai orang yang dibenarkan oleh anugerah-Nya, berhak menerima hidup yang kekal, sesuai dengan pengharapan kita." Yohanes 1:12-13: "Namun semua orang yang menerima-Nya diberi-Nya kuasa supaya menjadi anak-anak Allah, yaitu mereka yang percaya dalam nama-Nya; orang-orang yang dilahirkan ... dari Allah."</p>
+<p><strong>Hari 2 (Selasa) Roma 8:</strong></p>
+<p class="verse-text">14: "Semua orang, yang dipimpin Roh Allah, adalah anak Allah." Roma 8:16-17: "Roh itu sendiri bersaksi bersama-sama dengan roh kita bahwa kita adalah anak-anak Allah. Jika kita adalah anak, maka kita juga adalah ahli waris, maksudnya orang-orang yang berhak menerima janji-janji Allah, yang akan menerimanya bersama-sama dengan Kristus, yaitu jika kita menderita bersama-sama dengan Dia, supaya kita juga dipermuliakan bersama-sama dengan Dia."</p>
+<p><strong>Hari 3 (Rabu) Galatia 4:</strong></p>
+<p class="verse-text">7: "Jadi, kamu bukan lagi hamba, melainkan anak; jikalau kamu anak, maka kamu juga adalah ahli-ahli waris, oleh perbuatan Allah." Galatia 3:29: "Lagi pula, jikalau kamu adalah milik Kristus, maka kamu juga adalah keturunan Abraham dan ahli waris menurut janji Allah."</p>
+<p><strong>Hari 4 (Kamis) 1 Petrus 1:</strong></p>
+<p class="verse-text">3-4: "Terpujilah Allah dan Bapa Tuhan kita Yesus Kristus, yang karena rahmat-Nya yang besar telah membuat kita lahir kembali melalui kebangkitan Yesus Kristus dari antara orang mati, kepada hidup yang penuh pengharapan, untuk menerima warisan yang tidak dapat binasa, yang tidak dapat cemar dan tidak dapat layu, yang tersimpan di surga bagi kamu."</p>
+<p><strong>Hari 5 (Jumat) Kisah Para Rasul 26:</strong></p>
+<p class="verse-text">18: "Untuk membuka mata mereka, supaya mereka berbalik dari kegelapan kepada terang dan dari kuasa Iblis kepada Allah, supaya mereka oleh iman mereka kepada-Ku memperoleh pengampunan dosa dan mendapat bagian dalam apa yang ditentukan untuk orang-orang yang dikuduskan." Filipi 3:21: "Yang akan mengubah tubuh kita yang hina ini, sehingga serupa dengan tubuh-Nya yang mulia, menurut kuasa-Nya yang dapat menaklukkan segala sesuatu kepada diri-Nya."</p>
+<p><strong>Hari 6 (Sabtu) Efesus 1:</strong></p>
+<p class="verse-text">18: "Dan supaya Ia menjadikan mata hatimu terang, agar kamu mengerti pengharapan apakah yang terkandung dalam panggilan-Nya: Betapa kayanya kemuliaan warisan-Nya kepada orang-orang kudus." Efesus 1:13: "Di dalam Dia kamu juga — karena kamu telah mendengar firman kebenaran, yaitu Injil keselamatanmu — di dalam Dia kamu juga, ketika kamu percaya, dimeteraikan dengan Roh Kudus, yang dijanjikan-Nya itu."</p>
+                </div>
+            </div>
+
+            <!-- AKORDION III: POIN-POIN CATATAN KAKI -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 III. Poin-Poin Catatan Kaki (Footnote) <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+<p><strong>Pengharapan Hayat Kekal (Titus 3:7 & Yohanes 1:12-13) Hayat kekal adalah hayat ilahi Allah yang abadi dan tak terbinasakan. Hayat ini bukan hanya kenikmatan dan cita rasa hari ini, melainkan memberi kita pengharapan yang pasti akan kenikmatan penuh seluruh kekayaan Allah di zaman yang akan datang dan dalam kekekalan.</strong></p>
+<p><strong>Perbedaan Anak-anak, Putra-putra, dan Ahli Waris (Roma 8:14-17)</strong> Anak-anak (teknon): Tahap awal kelahiran kembali melalui hayat Allah. Putra-putra (huios): Tahap pertumbuhan dan transformasi jiwa di mana kaum beriman dewasa dan dapat menerima pimpinan Roh. Ahli Waris (kleronomos): Tahap kematangan penuh saat transfigurasi tubuh, di mana kaum beriman dinyatakan sah secara hukum untuk mewarisi warisan ilahi.</p>
+<p><strong>Makna Penderitaan Bersama Kristus (Roma 8:17) Penderitaan bagi orang beriman adalah "jelmaan kasih karunia". Penderitaan zaman sekarang tidak sebanding dengan kemuliaan yang akan datang, sebab penderitaan yang kita terima menentukan dan meningkatkan kadar kemuliaan yang kita pancarkan kelak.</strong></p>
+<p><strong>Operasi Allah Tritunggal dalam Keputraan (Galatia 4:7 & 3:29) Proses menjadi ahli waris dikerjakan oleh Allah Tritunggal: Bapa mengutus Putra dan Roh, Putra merampungkan penebusan, dan Roh melaksanakan keputraan di dalam kita. Di dalam Kristus, kita adalah keturunan Abraham yang mewarisi Roh yang almuhit sebagai kegenapan janji Allah.</strong></p>
+<p><strong>Roh Kudus sebagai Meterai, Jaminan, dan Sampel (Efesus 1:13-14 & 1 Petrus 1:3-4) Karena warisan kita adalah Persona Ilahi (Allah Tritunggal), maka Jaminan-Nya juga adalah Persona Ilahi (Roh Kudus). Roh Kudus bekerja sebagai: Meterai: Menandai kita sebagai milik Allah dan menyebarkan esensi ilahi ke dalam kita. Jaminan / Sampel / Pencicipan: Contoh nyata (cicipan awal) dari kekayaan warisan Allah yang akan kita nikmati secara penuh kelak.</strong></p>
+<p><strong>Pemuliaan sebagai Mekarnya Benih Kemuliaan (Filipi 3:21 & Kolose 1:27) Pemuliaan (transfigurasi tubuh) bukanlah sekadar peristiwa objektif dari luar, melainkan hasil dari perkembangan hayat di batin. Benih kemuliaan (Kristus di dalam kita) yang telah ditaburkan saat kelahiran kembali akhirnya mekar dan memancar keluar menjenuhi seluruh jiwa dan tubuh fana kita.</strong></p>
+<p><strong>Dijadikan Warisan Allah (Efesus 1:11 & 1:18) Perkara warisan bersifat dua arah: Allah adalah warisan kita bagi kenikmatan kita, dan kita disusun menjadi warisan Allah bagi kenikmatan-Nya. Allah tidak mewarisi daging alamiah kita, melainkan semua esensi ilahi yang telah Dia garapkan ke dalam diri kita.</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL PEMUTAR MEDIA -->
+        <div id="mediaModal" onclick="closeModal(event)">
+            <div class="modal-content" id="modalBody" onclick="event.stopPropagation()">
+                <!-- Konten Media Dinamis -->
+            </div>
+        </div>
+
+        <!-- NAVIGASI BAWAH -->
+        <div class="bottom-nav">
+            <a href="../../index.html" class="nav-btn">🏠 Home</a>
+            
+            
+        </div>
+    </div>
+
+    <script>
+        function toggleSection(header) {
+            const content = header.nextElementSibling;
+            const arrow = header.querySelector('.arrow');
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                arrow.textContent = "▼";
+            } else {
+                content.style.display = "block";
+                arrow.textContent = "▲";
+            }
+        }
+
+        function playAudio() {
+            var modal = document.getElementById("mediaModal");
+            var body = document.getElementById("modalBody");
+            
+            body.innerHTML = `
+                <h3 style="margin: 0 0 5px 0; font-size: 16px;">Audio Penyegaran Pagi</h3>
+                <p style="margin: 0 0 10px 0; font-size: 12px; color: #666;">Pekan 4</p>
+                <audio id="myAudio" controls autoplay style="width:100%; margin-top:10px;">
+                    <source src="../berita_mingguan/Pekan_04/4_Allah_Sendiri_Adalah_Warisan_Kita.m4a" type="audio/mp4">
+                    Peramban Anda tidak mendukung elemen audio.
+                </audio>
+                <br>
+                <button onclick="closeModalDirect()" style="padding: 6px 14px; background:#1e5138; color:white; border:none; border-radius:8px; cursor:pointer; font-size: 12px; margin-top: 10px;">Tutup</button>
+            `;
+            modal.style.display = "flex";
+
+            var audioElement = document.getElementById("myAudio");
+            audioElement.onended = function() {
+                closeModalDirect();
+            };
+        }
+
+        function playVideo() {
+            var modal = document.getElementById("mediaModal");
+            var body = document.getElementById("modalBody");
+            
+            body.innerHTML = `
+                <h3 style="margin: 0 0 5px 0; font-size: 16px;">Video Penyegaran Pagi</h3>
+                <p style="margin: 0 0 10px 0; font-size: 12px; color: #666;">Pekan 4</p>
+                <video id="myVideo" controls autoplay>
+                    <source src="../berita_mingguan/Pekan_04/4_Proses_Kematangan_Ahli_Waris_Allah.mp4" type="video/mp4">
+                    Peramban Anda tidak mendukung elemen video.
+                </video>
+                <br>
+                <button onclick="closeModalDirect()" style="padding: 6px 14px; background:#1e5138; color:white; border:none; border-radius:8px; cursor:pointer; font-size: 12px; margin-top: 10px;">Tutup</button>
+            `;
+            modal.style.display = "flex";
+
+            var videoElement = document.getElementById("myVideo");
+            videoElement.onended = function() {
+                closeModalDirect();
+            };
+        }
+
+        function closeModal(event) {
+            closeModalDirect();
+        }
+
+        function closeModalDirect() {
+            var modal = document.getElementById("mediaModal");
+            if (modal) modal.style.display = "none";
+
+            var audioElement = document.getElementById("myAudio");
+            if (audioElement) {
+                audioElement.pause();
+                audioElement.currentTime = 0;
+            }
+            var videoElement = document.getElementById("myVideo");
+            if (videoElement) {
+                videoElement.pause();
+                videoElement.currentTime = 0;
+            }
+        }
+    </script>
+</body>
+</html>

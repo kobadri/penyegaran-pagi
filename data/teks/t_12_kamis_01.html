@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Kamis, 24 Desember 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 12 - Kamis, 24 Desember 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Why. 19:7-8</div>
+            <div class="scripture-text">Marilah kita bersukacita dan bersorak-sorai, dan memuliakan Dia! Karena hari perkawinan Anak Domba telah tiba, dan pengantin-Nya telah siap sedia. Kepada-Nya dikaruniakan supaya memakai kain lenan halus yang berkilau-kilauan dan putih bersih!...</div>
+            <div class="scripture-title">Why. 19:14</div>
+            <div class="scripture-text">Semua pasukan yang di surga mengikuti Dia; mereka menunggang kuda putih dan memakai lenan halus yang putih bersih.</div>
+            <p>Gereja seharusnya bukan hanya Tubuh untuk mengekspresikan Kristus, atau tempat kediaman Allah, dan manusia baru bagi kegenapan ekonomi Allah [lihat Ef. 1:22-23]; gereja pun harus sebagai pejuang, laskar untuk mengalahkan musuh Allah [6:11-13].</p>
+            <p>Menurut Wahyu 19, gereja adalah mempelai perempuan yang dipersembahkan kepada Kristus, juga pejuang yang berperang bersama-Nya melawan musuh Allah. Pada saat Dia datang lagi, Tuhan Yesus pertama-tama akan mendapatkan mempelai perempuan-Nya. Setelah mendapatkan mempelai perempuan, Kristus dan para pemenang akan terjun ke medan perang untuk melawan musuh. ... Tuhan akan menunggang kuda putih, dan pasukan yang di surga akan mengikuti Dia dengan menunggang kuda putih pula, dengan berpakaian lenan halus, putih lagi bersih (ayat 11, 14). ... Pakaian pernikahan mempelai perempuan juga merupakan seragam yang ia kenakan sebagai pasukan Allah untuk memerangi musuh-Nya [lihat ayat 7-9, 14]. Karena itu, mengenakan pakaian pernikahan sama artinya dengan mengenakan seragam. <em>(Pelajaran-Hayat Efesus, hal. 1196-1197)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Dalam Efesus 5—6 kita melihat gereja sebagai mempelai perempuan dan pejuang. ... Sebagai gereja, kita bukan hanya Tubuh, tempat kediaman Allah, Kerajaan Allah, keluarga Allah, dan manusia baru; kita juga mempelai perempuan dan pejuang. Sebagai mempelai perempuan, kita harus elok, tanpa cacat atau kerut, dan berpakaian lenan halus. Sebagai pejuang, kita harus diperlengkapi untuk memerangi musuh Allah.</p>
+            <p>Dalam ekonomi Allah ada satu pasukan yang terbentuk dari satu pejuang korporat. Ini berarti pejuang dalam Efesus 6 merupakan satu entitas korporat. Hanya sebagai entitas korporat, Tubuh, barulah kita dapat mengenakan seluruh perlengkapan senjata Allah. ... Perlengkapan senjata dalam Efesus 6 bukan bagi orang Kristen secara individual, melainkan bagi gereja secara korporat sebagai Tubuh. Apa yang diwahyukan dalam pasal ini bukan kaum beriman berperang secara individual, melainkan satu pasukan yang korporat berperang bagi kepentingan Allah di bumi.</p>
+            <p>Peperangan rohani bukan satu masalah individual, tetapi satu masalah Tubuh, yakni satu entitas korporat berperang melawan musuh Allah. Tidak ada prajurit dalam suatu pasukan modern yang terjun ke medan perang sendirian. Sebaliknya, ia berperang sebagai bagian dari satu pasukan yang terlatih baik dan dengan persenjataan lengkap. Setelah kita dibentuk menjadi satu pasukan secara korporat, kita akan dapat berperang melawan musuh Allah. Siasat perang Allah ialah memakai gereja sebagai pasukan-Nya untuk berperang melawan musuh. Karena itu, sangat berbahaya jika kita memisahkan diri dari pasukan. Hanya dengan tinggal dalam pasukan baru kita memiliki perlindungan yang kita perlukan.</p>
+            <p>Pada tahun-tahun yang lampau, umat Tuhan mengira peperangan rohani adalah suatu masalah individual. Namun dalam beberapa tahun ini kita telah melihat bahwa hal ini sepenuhnya masalah gereja sebagai pasukan Allah yang korporat. Bila Anda memisahkan diri Anda dari gereja, Anda akan dikalahkan. Siasat Satan adalah memisahkan Anda dari gereja sebagai pasukan Allah. Kita sangat menyadari bahwa peperangan rohani adalah suatu masalah Tubuh. Jika kita menyadari hal ini, dan tinggal bersama gereja, kita akan menang. Peperangan ini bukan untuk kita sebagai kaum beriman individual, melainkan untuk gereja sebagai pasukan Allah.</p>
+            <p>Ketika kita berada di Tubuh, kita sebenarnya bukan menempuh peperangan rohani, melainkan menismatinya. Tidak ada susah payah dalam peperangan, malahan peperangan itu akan menjadi suatu kenikmatan. Karena kita berdoa di dalam roh untuk menerapkan seluruh aspek Kristus sebagai perlengkapan senjata, maka peperangan rohani ini menjadi suatu kenikmatan. ... Mazmur 23:5 mengatakan, "Engkau menyediakan hidangan bagiku, di hadapan lawanku." Ini menunjukkan medan peperangan itu adalah tempat berpesta. Kita berpesta di hadapan lawan, menikmati Kristus sebagai realitas, kebenaran, damai sejahtera, iman, keselamatan, dan firman Allah yang hidup. Kita menikmati Dia dan memakai Dia melalui berdoa di dalam roh. <em>(Pelajaran-Hayat Efesus, hal. 1197-1198, 1202-1203)</em></p>
+            <p class="book-ref">Bacaan Tambahan: Pelajaran-Hayat Efesus, berita 63, 74, 97</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

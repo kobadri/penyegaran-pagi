@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Selasa, 22 Desember 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 12 - Selasa, 22 Desember 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">2 Kor. 3:18</div>
+            <div class="scripture-text">Kita semua mencerminkan kemuliaan Tuhan dengan muka yang tidak berselubung. Karena kemuliaan itu datangnya dari Tuhan yang adalah Roh, maka kita sedang diubah menjadi serupa dengan gambar-Nya, dalam kemuliaan yang semakin besar.</div>
+            <div class="scripture-title">Ibr. 6:1</div>
+            <div class="scripture-text">Sebab itu, marilah kita tinggalkan asas-asas pertama ajaran tentang Kristus dan beralih kepada perkembangannya yang penuh...</div>
+            <p>Ditransformasi berarti hayat alamiah kita diubah, sedangkan matang berarti dipenuhi oleh hayat ilahi yang mengubah kita. Mungkin kita telah ditransformasi dalam hayat alamiah kita, namun belum dipenuhi oleh hayat ilahi. Kejadian 37—45 merupakan catatan proses pematangan Yakub. ... Dalam pasal ini kita melihat penanggulangan dalam tahap terakhir kehidupan Yakub. Penderitaan yang ia alami di sini, sangat dalam menjamah perasaan pribadinya. Setelah pasal-pasal ini, Yakub sudah tidak mengalami penanggulangan apa-apa lagi. Ia telah sungguh-sungguh matang, ia telah dipenuhi dengan hayat ilahi, dan ia mempunyai ekspresi dan kekuasaan Allah. <em>(Pelajaran-Hayat Kejadian, hal. 1742)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Mengenai kedatangan Mempelai Laki-laki dan penantian kita akan kedatangan-Nya kembali, syarat pertama adalah hayat. ... Kedatangan Kristus adalah hayat karena hayat Kristus menjadikan kita mempelai perempuan-Nya. Tanpa memiliki Kristus sebagai hayat kita, kita tidak pernah bisa menjadi bagian dari mempelai perempuan-Nya sebagai pasangan-Nya dan pertambahan-Nya. Yang kita perlukan untuk bertemu Kristus sebagai Mempelai Laki-laki bukan doktrin kedatangan Kristus kali kedua, melainkan hayat Kristus. Kita membutuhkan Kristus sebagai hayat kita, dan kita memerlukan hayat ini untuk bertumbuh di dalam kita setiap saat.</p>
+            <p>Semua orang beriman sejati memiliki Kristus sebagai hayat mereka (Kol. 3:4), tetapi banyak yang hanya memiliki Dia pada tahap awal. Hayat ini perlu bertumbuh di dalam kita, dan pertambahan hayat ini adalah pertumbuhannya dalam hayat. Kitab Kidung Agung menggambarkan pertumbuhan bertahap dalam hayat dari pengasih Tuhan dan transformasi mereka dalam hayat. Sang pencari dalam Kitab Kidung Agung ditransformasi tahap demi tahap melalui pertumbuhan dalam hayat, dari kuda betina dari kereta-kereta Firaun menjadi bunga bakung, merpati, tiang asap, joli, tandu, mahkota, dan taman yang menghasilkan Kristus dalam segala aspek yang kaya (1:9; 2:1, 14; 3:6-7, 9, 11; 4:12; 5:1). Taman itu menjadi kota sebagai tempat kediaman Allah, indah di hadapan Allah namun dahsyat sebagai pasukan dengan panji-panji di hadapan musuh. Akhirnya, kota itu menjadi benda-benda langit yang penuh cahaya dan sang Sulami (6:4, 10, 13).</p>
+            <p>Kata Sulami (Gadis Sulam, LAI) adalah bentuk feminin dari Salomo, yang berasal dari akar kata yang berarti "damai sejahtera." Dalam kitab ini, Salomo adalah perlambangan Kristus. Penggunaan nama Sulami menunjukkan bahwa dalam kematangan hayat Kristus, pengasih Kristus menjadi duplikat-Nya, pasangan-Nya; serupa Dia dalam hayat, sifat, ekspresi, dan fungsi (tetapi bukan dalam ke-Allahan-Nya) agar sepadan dengan-Nya bagi pernikahan mereka (2 Kor. 3:18; Rm. 8:29). Kristus sebagai hayat bertumbuh di dalam sang pencari dan mentransformasikannya dari kuda liar yang menarik kereta Firaun menjadi Sulami yang menakjubkan. Transformasi semacam itu tidak dapat dicapai melalui doktrin, melainkan hanya melalui pertumbuhan dan pertambahan Kristus sebagai hayat. Hal ini memperlihatkan bahwa hayat dengan pertumbuhan dan pertambahannya adalah bagi kembalinya Tuhan.</p>
+            <p>Mengenal Kristus sebagai Mempelai Laki-laki lebih intim dan pribadi daripada mengenal-Nya sebagai Raja atau Hakim. Kristus sebagai Mempelai Laki-laki adalah Kekasih kita yang datang bukan untuk menghakimi kita, tetapi mengasihi kita. Kristus akan kembali sebagai Mempelai Laki-laki untuk mendapatkan mempelai perempuan-Nya. ... Sebagai Sulami, pencari yang telah matang adalah pertambahan Kristus. ... Kita semua perlu ditransformasi menjadi Sulami sebagai pertambahan Kristus, reproduksi-Nya. Transformasi bukanlah peristiwa yang instan, melainkan proses yang bertahap. Karena itu, meskipun kita mungkin belum menjadi Sulami hari ini, selama kita tetap di bawah pekerjaan transformasi Roh itu, kita akan menjadi Sulami yang korporat.</p>
+            <p>Agar layak untuk menantikan kembalinya Tuhan, kita memerlukan hayat, termasuk pertumbuhan dalam hayat, transformasi oleh hayat, dan kematangan hayat. Sebagai orang beriman, kita memiliki hayat; namun, hayat ini perlu bertumbuh di dalam kita setiap saat. (CWWL, 1972, vol. 1, "Preparing for the Lord's Return," hal. 401-402)</p>
+            <p class="book-ref">Bacaan Tambahan: CWWL, 1972, vol. 1, "Preparing for the Lord's Return," hal. 399-404; Pelajaran-Hayat Kejadian, berita 92–94, 97–99</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

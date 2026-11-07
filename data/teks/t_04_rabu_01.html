@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Rabu, 28 Oktober 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 4 - Rabu, 28 Oktober 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Gal. 4:7</div>
+            <div class="scripture-text">Jadi, kamu bukan lagi hamba, melainkan anak; jikalau kamu anak, maka kamu juga adalah ahli-ahli waris, oleh perbuatan Allah.</div>
+            <div class="scripture-title">Gal. 3:29</div>
+            <div class="scripture-text">Lagi pula, jikalau kamu adalah milik Kristus, maka kamu juga adalah keturunan Abraham dan ahli waris menurut janji Allah.</div>
+            <p>Galatia 3:29 mewahyukan bahwa kaum beriman adalah ahli-ahli waris menurut janji yang diberikan oleh Allah kepada Abraham. ... Keturunan Abraham hanya satu, Kristus (ayat 16). Jadi, untuk menjadi keturunan Abraham, kita harus menjadi milik Kristus, bagian dari Kristus. Karena kita esa dengan Kristus, kita juga adalah keturunan Abraham, ahli-ahli waris menurut janji, mewarisi berkat yang dijanjikan Allah, yang adalah Roh yang almuhit sebagai penampungan ultima dari Allah Tritunggal yang telah melalui proses untuk menjadi bagian kita. Dalam ekonomi Perjanjian Baru Allah, kaum beriman sebagai umat pilihan Allah, sebagai putra-putra Allah, adalah ahli-ahli waris sedemikian, bukan di bawah hukum Taurat tetapi di dalam Kristus. <em>(The Conclusion of the New Testament, hal. 1082)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Galatia 3 mewahyukan bahwa Allah bermaksud memberikan janji itu kepada Abraham menurut tujuan kekal-Nya. Sebelum janji ini digenapi, hukum Taurat diberikan untuk menjadi penjaga umat pilihan Allah. Kemudian, pada waktu yang telah ditentukan, Kristus, keturunan yang dijanjikan, datang untuk menggenapi janji Allah kepada Abraham. ... Sekarang kita berada di dalam Kristus, Dia yang telah menggenapi janji itu, untuk mewarisi janji yang telah digenapi dan menikmati berkat janji kepada Abraham. Berkat ini adalah Allah Tritunggal yang telah melalui proses sebagai Roh pemberi-hayat yang almuhit.</p>
+            <p>Kaum beriman telah menjadi ahli-ahli waris Allah melalui kelahiran kembali dalam kebangkitan Kristus (1 Ptr. 1:3). ... Kelahiran kembali, seperti penebusan dan pembenaran, merupakan satu aspek dari keselamatan Allah yang penuh. Penebusan dan pembenaran menyelesaikan masalah kita dengan Allah dan mendamaikan kita dengan Allah. Kelahiran kembali menghidupkan kita dengan hayat Allah dan membawa kita ke dalam hubungan hayat, persatuan organik, dengan Allah. Karena itu, kelahiran kembali mengakibatkan dan menghasilkan pengharapan yang hidup. Kelahiran kembali semacam itu terjadi melalui kebangkitan Kristus dari antara orang mati. Ketika Kristus dibangkitkan, kita, orang-orang beriman-Nya, semuanya tercakup di dalam Dia. Dengan demikian, kita dibangkitkan bersama Dia (Ef. 2:6). Dalam kebangkitan-Nya, Ia membagikan hayat ilahi ke dalam kita dan menjadikan kita serupa dengan Dia dalam hayat dan sifat. Inilah faktor dasar kelahiran kembali kita untuk menjadi ahli-ahli waris Allah.</p>
+            <p>Dilahirkan kembali adalah menerima hayat yang lain, hayat ilahi, sebagai tambahan kepada hayat insani. ... Karena pemilihan Allah, pengudusan Roh itu, dan penebusan Kristus (1 Ptr. 1:2), Allah melahirkan kita, melahirkan kita kembali. Hasilnya, kita memiliki kelahiran kedua. Melalui kelahiran kembali, Allah Bapa membagikan hayat ilahi ke dalam kita. Karena itu, kelahiran pertama adalah kelahiran hayat insani kita, dan kelahiran kedua adalah kelahiran hayat ilahi.</p>
+            <p>Begitu seseorang dilahirkan di bumi, ia memiliki hak untuk menikmati warisan bumiah. Berdasarkan prinsip yang sama, begitu seseorang dilahirkan kembali oleh Allah dengan Roh-Nya, ia dilahirkan ke dalam pengharapan yang hidup, dan pengharapan yang hidup ini adalah warisan (ayat 4) dari segala berkat rohani dan surgawi yang berkaitan dengan hayat kekal. Setiap hari kita perlu mengambil warisan ini dan menikmatinya.</p>
+            <p>Melalui kelahiran kembali dalam kebangkitan Kristus, kita telah menjadi ahli-ahli waris untuk mewarisi Allah Tritunggal sebagai warisan kita, dengan Roh Kudus sebagai jaminan. "Roh Kudus, yang dijanjikan-Nya itu" adalah <em>"jaminan warisan kita sampai kita memperoleh penebusan"</em> (Ef. 1:13b-14). Allah adalah warisan kita. Kita akan mewarisi segala adanya Allah dan yang Allah miliki. ... Kata Yunani untuk "jaminan" dalam ayat 14 juga berarti pencicipan, garansi, atau uang muka. Allah memberikan Roh Kudus-Nya kepada kita bukan hanya sebagai garansi atas warisan kita, yang menjamin warisan kita, tetapi juga sebagai pencicipan dari apa yang akan kita warisi dari Allah.</p>
+            <p>Pada zaman kuno, kata Yunani untuk "jaminan" digunakan dalam pembelian tanah. Penjual memberikan kepada pembeli sampel tanah dari lahan yang dibeli. Oleh karena itu, menurut penggunaan bahasa Yunani kuno, jaminan itu juga berarti sampel. Sebagai jaminan, Roh Kudus adalah sampel dari apa yang akan kita warisi dari Allah Tritunggal. <em>(The Conclusion of the New Testament, hal. 1083, 1085-1086)</em></p>
+            <p class="book-ref">Bacaan Tambahan: The Conclusion of the New Testament, berita 101</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

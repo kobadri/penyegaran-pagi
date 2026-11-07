@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Rabu, 14 Oktober 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 2 - Rabu, 14 Oktober 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Yoh. 4:14</div>
+            <div class="scripture-text">... Sebaliknya air yang akan Kuberikan kepadanya, akan menjadi mata air di dalam dirinya, yang terus-menerus memancar sampai pada hidup yang kekal.</div>
+            <div class="scripture-title">Why. 21:6</div>
+            <div class="scripture-text">... Orang yang haus akan Kuberi minum dengan cuma-cuma dari mata air kehidupan.</div>
+            <p>Begitu kita percaya dan mendapatkan hayat Tuhan, nama kita tercatat pada kitab kehidupan (Why. 3:5). Hayat Tuhan adalah hayat kekal, jadi begitu kita mendapatkan hayat Tuhan yang kekal, kita tidak akan binasa selama-lamanya (Yoh. 10:28)... Mendapatkan hayat kekal demi iman dan tidak binasa dalam kekekalan tidak menuntut syarat yang berkaitan dengan menang. Tetapi janji Tuhan untuk tidak akan menghapus nama kita dari kitab kehidupan, syaratnya harus menjadi pemenang. Sebab itu Wahyu 3:5 berkaitan dengan perkara pahala, bukan pemberian kasih karunia. Pemberian itu diberikan dengan cuma-cuma, tetapi pahala diberikan dengan syarat. Karena ini adalah persoalan pahala, ini berkaitan dengan Kerajaan Seribu Tahun. Dari sudut keselamatan kekal, semua orang yang diselamatkan tidak akan binasa; dari sudut pahala Kerajaan Seribu Tahun, hanya kaum beriman pemenang akan menikmati berkat memiliki nama-nama mereka dalam kitab kehidupan selama Kerajaan Seribu Tahun... Pemberian itu diberikan dengan cuma-cuma; pahala itu didapatkan. <em>(Pokok-pokok Penting dalam Alkitab, Volume 2, hal. 311-312)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Kenikmatan akan hayat yang kekal dalam kekekalan di langit baru dan bumi baru adalah kenikmatan yang penuh atas keselamatan Allah, yang adalah bagian semua orang yang beroleh selamat dalam kekekalan.</p>
+            <p>Air yang Tuhan berikan adalah hayat-Nya. Hayat ini akan menjadi mata air di dalam kita, memancar dan mengalir ke dalam hayat yang kekal (Yoh. 4:14). Karena itu, kita akan menikmati berkat hayat kekal dalam kekekalan.</p>
+            <p>Berkat yang penuh dari keselamatan Allah adalah Yerusalem Baru yang akan datang, yang diberikan kepada semua orang yang diselamatkan bagi kenikmatan mereka dalam kekekalan. Berkat ini diterima oleh semua orang yang telah mempunyai hayat kekal Tuhan dan yang namanya ditulis dalam kitab kehidupan Anak Domba (Why. 21:27).</p>
+            <p>Semua orang yang beroleh selamat kelak di Yerusalem Baru akan menikmati berkat hayat yang kekal, dan salah satu di antara berkat-berkat ini adalah air hayat (ayat 6; 22:1)... Semua orang yang telah beroleh selamat akan minum air hayat ini sampai kekal dan sampai kekal menikmati hayat kekal Allah.</p>
+            <p>Semua orang yang beroleh selamat akan menikmati berkat Yerusalem Baru, termasuk berkat yang lain lagi—pohon hayat (ayat 14)... Dalam kekekalan yang akan datang kita akan menikmati hayat Allah yang kekal, supaya kita selama-lamanya tidak lapar dan tidak haus.</p>
+            <p>Di zaman ini, begitu kita percaya, kita mendapatkan hayat yang kekal. Setelah mendapatkan hayat kekal, kita bisa menikmati hayat ini, dan hidup oleh hayat ini. Kalau hari ini kita hidup bagi Tuhan oleh kuasa hayat ini, kita akan menjadi pemenang. Kemudian pada zaman kerajaan yang akan datang, kita bersama Tuhan akan meraja dalam hayat, kita akan menikmati kemuliaan hayat, dan kita akan mencicipi berkat kekekalan. Terakhir, ketika kekekalan tiba, kita, yang telah menerima hayat kekal melalui keselamatan, akan menikmati berkat hayat yang kekal dalam Yerusalem Baru untuk selama-lamanya. <em>(Pokok-pokok Penting dalam Alkitab, Volume 2, hal. 313-315)</em></p>
+            <p>Dua Petrus 1:4 berbicara tentang orang yang "mengambil bagian dalam sifat [kodrat, LAI] ilahi." ... Sebagai orang yang telah menerima iman yang sama berharganya, kita, kaum beriman dalam Kristus, seharusnya orang-orang yang berbagian dalam sifat ilahi.</p>
+            <p>Sifat ilahi mengacu kepada apa adanya Allah, yaitu: kekayaan, unsur, dan penyusun diri Allah (Yoh. 4:24; 1 Yoh. 1:5; 4:8, 16). Sifat ilahi, yang terutama mengacu kepada konstitusi dari hayat ilahi, konstitusi Allah, dikonstitusi dengan Roh, kasih, dan terang. Hayat ilahi dan sifat ilahi tidak terpisahkan; sifat ilahi adalah substansi dari hayat ilahi dan di dalam hayat ilahi (1:1-2; 5:11-13). Sebagai anak-anak Allah, kita adalah manusia-manusia-Allah, dilahirkan dari Allah, memiliki hayat dan sifat Allah, dan milik spesies Allah (3:1; Yoh. 1:12-13)... Karena sifat ilahi ada dalam hayat ilahi, hayat ilahi yang dengannya kita dilahirkan kembali memiliki sifat ilahi di dalamnya (3:3, 5-6, 15). Setiap orang yang percaya ke dalam Putra Allah dilahirkan dari Allah dan memiliki hak untuk menjadi anak Allah; karena itu, seorang beriman memiliki hak untuk berbagian, menikmati, sifat Allah (1:12-13). <em>(The Conclusion of the New Testament, hal. 3932-3933)</em></p>
+            <p class="book-ref">Bacaan Tambahan: The Conclusion of the New Testament, berita 389</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

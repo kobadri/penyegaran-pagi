@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Rabu, 11 November 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 6 - Rabu, 11 November 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Rm. 1:3-4</div>
+            <div class="scripture-text">Tentang Anak-Nya yang secara jasmani berasal dari keturunan Daud, dan menurut Roh kekudusan dinyatakan oleh kebangkitan-Nya dari antara orang mati bahwa Dialah Anak Allah yang berkuasa, Yesus Kristus Tuhan kita.</div>
+            <p>Persona Kristus terdiri atas dua aspek. ... Dalam satu persona ini ada keilahian dan keinsanian ... berbaur menjadi satu persona.</p>
+            <p>Sekarang, marilah kita membahas keinsanian Kristus. ... Keturunan Daud mengacu kepada keinsanian Kristus (Mat. 22:42-45).</p>
+            <p>Kristus sebagai keturunan Daud adalah keturunan manusia yang tergolong dalam ciptaan lama (manusia lama—Rm. 6:6) Allah (Kol. 1:15b).</p>
+            <p>Dalam keinsanian-Nya, Ia adalah "menurut daging," serupa dengan "daging dosa" tetapi tanpa dosa (Rm. 8:3b).</p>
+            <p>Baik Satan maupun dosa (dosa batin dalam sifat kita) tercakup dalam daging ini (Ibr. 2:14; Yoh. 3:14; Rm. 1:3; 8:3b). ... Karena sekarang dosa ada dalam daging kita, dan Satan berkaitan erat dengan dosa, Satan dan dosa tercakup dalam daging ini, bahkan tercakup dalam daging Kristus secara tidak langsung.</p>
+            <p>Ada juga keterlibatan dunia dalam daging ini melalui Satan, penguasa dunia (Yoh. 12:31). Daging dari keturunan Daud ini adalah seorang manusia lama dari ciptaan lama yang mencakup Satan, dosa, dan dunia.</p>
+            <p>Ketika Yesus Kristus mati di kayu salib, Dia membawa semua perkara itu tersalib bersama-Nya. Kematian-Nya yang all-might membersihkan alam semesta. <em>(Pengkajian-Kristalisasi Kitab Roma, hal. 8-11, 37)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Ibrani 9:14 menunjukkan bahwa Kristus mati di kayu salib bukan hanya sebagai manusia. Dia juga mempersembahkan diri-Nya sendiri kepada Allah sebagai Roh yang kekal. Roh yang kekal ada bersama-Nya dan menguatkan-Nya untuk mati.</p>
+            <p>Yesus dalam keinsanian-Nya, pada bagian itu, bukan Anak Allah. Dia termasuk dalam ciptaan lama, manusia lama, memiliki daging yang mencakup Satan, dosa, dan dunia. Karena itu, bagian ini harus dijadikan ilahi, diputrakan, ditetapkan, sehingga dapat menjadi bagian dari Anak Allah.</p>
+            <p>Kristus adalah persona yang menakjubkan. Dia memiliki dua bagian: bagian manusia, bagian dari manusia; dan bagian Allah, bagian dari Allah. Bagian dari manusia adalah insani. Bagian dari Allah adalah ilahi. Bagian manusia berada dalam daging, berkaitan dengan perkara-perkara negatif, dan bagian ilahi itu menakjubkan. ... Dalam kebangkitan-Nya itulah Kristus membuat keinsanian-Nya menjadi keilahian. Kebangkitan-Nya meninggikan keinsanian Yesus sampai tingkat keilahian. Inilah esensi persona Kristus. Ini amat sangat dalam. Keilahian Yesus adalah Roh kekudusan, memiliki kuasa ilahi dan unsur ilahi untuk mentransformasi keinsanian Yesus, membuatnya menjadi ilahi. Inilah yang dimaksud dengan ditetapkan (dinyatakan), dan inilah diputrakan.</p>
+            <p>Inilah penggenapan nubuat dalam perlambangan yang ada dalam 2 Samuel 7:12-14. Dalam penggenapan ini, kita telah melihat esensi persona Kristus sebagai keturunan Daud dalam keinsanian-Nya.</p>
+            <p>Dia adalah Anak Manusia dalam daging. Bagaimana mungkin Dia menjadi Anak Allah yang begitu ilahi? Melalui ditetapkan dalam kebangkitan.</p>
+            <p>Penetapan ini adalah dengan kuat kuasa menurut Roh kekudusan. Roh kekudusan adalah keilahian (Rm. 9:5) dalam keturunan Daud—seorang manusia yang terdiri atas keinsanian (Rm. 5:15; 17b; 19). Roma 9:5 menunjukkan kepada kita bahwa Kristus adalah Allah. Sebagai Allah, Ia memiliki keilahian dalam diri-Nya sendiri sebagai keturunan Daud, seorang manusia yang terdiri atas keinsanian.</p>
+            <p>Keilahian Kristus memiliki kuasa untuk meninggikan keinsanian-Nya yang tersalib, untuk membangkitkan keinsanian itu. Ketika Paulus mengatakan bahwa Yesus Kristus dinyatakan sebagai Putra Allah, ini berarti kebangkitan Kristus meninggikan keinsanian-Nya dan menaruh keilahian-Nya ke dalam keinsanian ini. Karena itu, melalui kebangkitan ini, keinsanian-Nya dilahirkan untuk menjadi bagian dari Putra Allah. Inilah sebabnya Kisah Para Rasul 13:33 memberi tahu kita bahwa dalam kebangkitan, Kristus sebagai Anak Manusia dilahirkan menjadi Anak Allah. Sebagai Anak Allah yang memiliki keinsanian, Ia adalah Manusia-Allah. Susunan dari keilahian dan keinsanian ini menjadi seorang Manusia-Allah, dan Manusia-Allah ini adalah prototipe untuk menghasilkan sesuatu. <em>(Pengkajian-Kristalisasi Kitab Roma, hal. 37, 11-13, 39-40)</em></p>
+            <p class="book-ref">Bacaan Tambahan: Pengkajian-Kristalisasi Kitab Roma, bab 1–2</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

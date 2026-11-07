@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Jumat, 13 November 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 6 - Jumat, 13 November 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Rm. 6:5</div>
+            <div class="scripture-text">Oleh karena kita telah menjadi satu dengan apa yang sama dengan kematian-Nya, maka kita juga akan menjadi satu dengan apa yang sama dengan kebangkitan-Nya.</div>
+            <div class="scripture-title">Rm. 8:11</div>
+            <div class="scripture-text">Jika Roh Dia, yang telah membangkitkan Yesus dari antara orang mati, tinggal di dalam kamu, maka Ia, yang telah membangkitkan Kristus Yesus dari antara orang mati, akan menghidupkan juga tubuhmu yang fana itu oleh Roh-Nya yang tinggal di dalam kamu.</div>
+            <p>Kristus dinyatakan sebagai Putra Allah "oleh kebangkitan-Nya dari antara orang mati" [Rm. 1:4]. Dalam 6:5, Paulus mengatakan bahwa "kita juga akan menjadi satu dengan apa yang sama dengan kebangkitan-Nya." ... Bila kita berbagian dengan kebangkitan Kristus, kita akan berada dalam proses dinyatakan menjadi putra-putra Allah. Pada faktanya, kita dinyatakan oleh kebangkitan ini. <em>(Pelajaran-Hayat Roma, hal. 808)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Sebagai putra-putra Allah, kita dinyatakan oleh kebangkitan, yaitu oleh perubahan dalam hayat. Marilah kita memakai benih anyelir sebagai satu ilustrasi. ... Menurut jalan hayat, benih anyelir ini dinyatakan dengan ditanam ke dalam tanah, supaya ia dapat bertumbuh menjadi sebuah tanaman anyelir yang berbunga. Ketika satu tanaman anyelir masih merupakan satu tunas yang kecil, sulit sekali untuk mengenal apakah itu anyelir, karena kelihatannya sama dengan tunas lainnya. Tetapi semakin tanaman anyelir itu bertumbuh, ia akan makin terlihat sebagai tanaman anyelir. Akhirnya, dari bunganya, kita semua dapat mengenal bahwa itu adalah anyelir.</p>
+            <p>Sama prinsipnya, kita dinyatakan sebagai putra-putra Allah dengan perubahan dalam hayat melalui proses kebangkitan. Harinya akan tiba saat kita mencapai tahap "berbunga seutuhnya." Hal itu akan menjadi waktu penebusan, pemuliaan tubuh kita, waktu keputraan yang penuh (Rm. 8:23). Hayat Putra Allah telah ditanamkan ke dalam roh kita. Sekarang kita seperti benih anyelir yang ditaburkan ke dalam tanah, harus melalui proses kematian dan kebangkitan. Hal ini membuat manusia lahiriah kita merosot, tetapi membuat hayat batiniah bertumbuh, berkembang, dan akhirnya, berbunga. Inilah kebangkitan.</p>
+            <p>Seluruh ciptaan sedang menunggu dan mengeluh akan hal ini. Kita juga mengeluh karena kita belum memiliki penampilan yang seharusnya kita miliki. Kita tahu bahwa kita masih kurang dalam banyak aspek dan bersalah dalam banyak hal, dan kita masih memiliki kegagalan. Tetapi di bawah kedaulatan Tuhan, kegagalan-kegagalan kita bahkan dipakai sebagai bagian dari proses ini. ... Dengan kegagalan-kegagalan kita, ego kita yang buruk ini diruntuhkan, dan Tuhan memiliki kesempatan yang lebih besar untuk bekerja di dalam kita.</p>
+            <p>Dalam proses kebangkitan ini ada empat aspek: Pengudusan, transformasi, penyerupaan, dan pemuliaan. ... Pengudusan, yaitu proses menjadi kudus ini, membawa kita masuk ke dalam kenikmatan terhadap hayat yang kekal [6:22].</p>
+            <p>Dalam 12:2, Paulus membicarakan tentang transformasi, yang mengatakan bahwa kita tidak boleh menjadi serupa dengan zaman ini, tetapi bahwa kita harus ditransformasi melalui pembaruan pikiran. Dalam Roma 8:29, Paulus membicarakan tentang penyerupaan, dan dalam ayat 30 membicarakan tentang pemuliaan. Pemuliaan kita pada masa yang akan datang akan menjadi tahap yang terakhir dari kebangkitan ini; ini adalah kebangkitan yang diterapkan pada tubuh. Karena tubuh kita masih tetap takluk kepada maut, maka adakalanya kita bisa lemah dan bahkan sakit secara fisik. Jadi, kita memerlukan penebusan tubuh kita; kita perlu menerapkan kebangkitan pada tubuh kita. Sebagai orang-orang yang berada dalam proses kebangkitan ini, kita memiliki transfigurasi, pemuliaan tubuh kita, sebagai tahap terakhir dari kebangkitan ini.</p>
+            <p>Kita semua memiliki perasaan bahwa hari ini keputraan kita belum penuh. Namun, keputraan ini akan menjadi semakin penuh sampai puncaknya pada waktu pemuliaan kita, ketika kita sepenuhnya dibangkitkan dan dinyatakan sebagai putra-putra Allah dalam sifat dan penampilan. Baik secara nama maupun realitas, kita akan menjadi putra-putra Allah dalam roh, dalam jiwa, dan dalam tubuh. Sama seperti benih anyelir bertumbuh dari satu benih menjadi satu tanaman yang berbunga sampai matang, kita juga akan melalui proses melalui kebangkitan sampai kita sepenuhnya dimuliakan dan dinyatakan sebagai banyak putra Allah. Sekarang kita berada dalam proses kebangkitan supaya kita dapat dikuduskan, ditransformasi, diserupakan, dan dimuliakan. ... Inilah sasaran inti dari Injil. <em>(Pelajaran-Hayat Roma, hal. 808-811, 813-814)</em></p>
+            <p class="book-ref">Bacaan Tambahan: Pelajaran-Hayat Roma, berita 52; The Conclusion of the New Testament, berita 287</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

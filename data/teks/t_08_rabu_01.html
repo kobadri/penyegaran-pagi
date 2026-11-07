@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Rabu, 25 November 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 8 - Rabu, 25 November 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Mat. 4:16</div>
+            <div class="scripture-text">"Bangsa yang diam dalam kegelapan, telah melihat Terang yang besar dan bagi mereka yang diam di negeri yang dinaungi maut, telah terbit Terang."</div>
+            <div class="scripture-title">Mat. 9:11-12</div>
+            <div class="scripture-text">Pada waktu orang Farisi melihat hal itu, berkatalah mereka kepada murid-murid Yesus, "Mengapa gurumu makan bersama-sama dengan pemungut cukai dan orang berdosa?" Yesus mendengarnya dan berkata, "Bukan orang sehat yang memerlukan tabib, tetapi orang sakit."</div>
+            <p>Tuhan mengambil kesempatan untuk memberikan wahyu yang sangat manis tentang diri-Nya sebagai tabib saat orang Farisi datang mengajukan pertanyaan. Dalam Matius 9:12 kita melihat jawaban Tuhan atas pertanyaan orang Farisi, <em>"Bukan orang sehat yang memerlukan tabib, tetapi orang sakit."</em> Tuhan memberi tahu orang Farisi bahwa pemungut cukai dan orang berdosa ialah pasien, orang sakit, dan bagi mereka Tuhan bukan seorang Hakim, melainkan seorang Tabib, Penyembuh. Dalam memanggil orang untuk mengikuti Dia bagi kerajaan, Raja Kerajaan Surga melayani sebagai seorang Tabib, bukan sebagai Hakim. Penghakiman seorang hakim dilakukan berdasarkan keadilbenaran, sedangkan penyembuhan yang dilakukan seorang tabib adalah berdasarkan belas kasihan dan kasih karunia. Orang-orang Dia jadikan umat kerajaan surgawi-Nya adalah penderita kusta (8:2-4), orang lumpuh (8:5-13; 9:2-8), orang demam (8:14-15), orang yang dirasuk setan (8:16, 28-32), orang yang terkena bermacam-macam penyakit (8:16), pemungut cukai yang diremehkan, dan orang-orang berdosa (9:9-11). Jika Dia mengunjungi orang-orang yang kasihan itu sebagai seorang Hakim, semua orang itu akan menerima penghukuman dan ditolak, dan tidak seorang pun akan memenuhi syarat, dipilih, dan dipanggil untuk menjadi umat kerajaan surgawi-Nya. Namun, Dia datang untuk melayani sebagai seorang tabib, untuk menyembuhkan, memulihkan, menghidupkan, dan menyelamatkan mereka agar mereka dapat disusun kembali menjadi warga-Nya yang baru dan sorgawi, sehingga Dia dapat mendirikan kerajaan surgawi-Nya di bumi yang rusak ini. Perkataan Tuhan di sini menyiratkan bahwa orang Farisi yang membenarkan diri sendiri tidak sadar bahwa mereka memerlukan Dia sebagai Tabib. Mereka menganggap diri mereka kuat; karena itu mereka dibutakan oleh sikap membenarkan diri sendiri itu. Mereka tidak tahu bahwa mereka sakit. <em>(Pelajaran-Hayat Matius, hal. 450-451)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Ministri Raja baru bagi Kerajaan Surga bukan dimulai dengan kuasa bumiah, melainkan dengan terang surgawi, yaitu Raja itu sendiri sebagai terang hayat yang memancar dalam naungan maut. Ketika Tuhan memulai ministri-Nya sebagai terang, Ia tidak memamerkan kekuasaan dan otoritas. Ia berjalan di pantai sebagai manusia biasa. Tetapi sewaktu Ia datang kepada [Petrus, Andreas, Yakobus, dan Yohanes] di tepi Danau Galilea, Ia bercahaya atas mereka sebagai Terang yang besar, yang bercahaya dalam kegelapan dan di negeri yang dinaungi maut. ... Yohanes Pembaptis adalah magnet yang besar. Tetapi Tuhan Yesus adalah magnet yang paling besar daripada semuanya. Ketika Ia bercahaya atas keempat murid itu, mereka tertarik dan terlawan. Mereka segera meninggalkan pekerjaan mereka dan mengikuti Orang Nazaret kecil ini.</p>
+            <p>Dalam Matius 4 tidak terdapat catatan seperti yang terdapat dalam Lukas 5, yaitu catatan mengenai mukjizat-mukjizat yang dilakukan Tuhan ketika Petrus dipanggil. Tetapi, dalam Matius 4 terdapat terang yang besar yang menarik keempat murid pertama tersebut. Tarikan ini bukan berasal dari apa yang Tuhan Yesus lakukan, melainkan dari apa adanya Dia. Ia adalah terang yang besar, magnet yang besar, dengan kekuatan untuk menarik dan menawan orang. Dengan cara inilah Tuhan menarik dan menawan keempat murid yang pertama itu. Tidak ada seorang pun yang mengikuti Tuhan karena apa yang dilakukan-Nya dapat dipercaya atau setia. Orang-orang yang dapat dipercaya adalah orang-orang yang ditangkap oleh apa adanya Tuhan. Petrus, Andreas, Yakobus, dan Yohanes tertarik dan tertawan di pantai, bukan karena melihat apa yang Tuhan lakukan, melainkan karena menyadari apa adanya Tuhan. Karena mereka telah tertarik dan tertawan, maka mereka menjadi pengikut Tuhan Yesus yang setia sampai akhir. Akhirnya, mereka semua mati martir, karena mereka mengikuti Raja kerajaan surgawi.</p>
+            <p>Tidak hanya demikian, ketika Tuhan Yesus memanggil keempat murid ini, Dia bukan memulai suatu pergerakan maupun revolusi. Sebaliknya, Ia menarik murid-murid ini kepada diri-Nya sendiri bagi berdirinya Kerajaan Surga. <em>(Pelajaran-Hayat Matius, hal. 210-211)</em></p>
+            <p class="book-ref">Bacaan Tambahan: Pelajaran-Hayat Matius, berita 12, 27</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

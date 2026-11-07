@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Jumat, 20 November 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 7 - Jumat, 20 November 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Yoh. 15:4-5</div>
+            <div class="scripture-text">Tinggallah di dalam Aku dan Aku di dalam kamu. Sama seperti ranting tidak dapat berbuah dari dirinya sendiri, kalau ia tidak tinggal pada pokok anggur, demikian juga kamu tidak berbuah, jikalau kamu tidak tinggal di dalam Aku. Akulah pokok anggur dan kamulah ranting-rantingnya. Siapa saja yang tinggal di dalam Aku dan Aku di dalam dia, ia berbuah banyak, sebab di luar Aku kamu tidak dapat berbuat apa-apa.</div>
+            <p>Kaum beriman juga adalah banyak ranting dari pohon anggur. Ini berarti kaum beriman adalah anggota-anggota Kristus Allah untuk membentuk organisme dari Allah Tritunggal dalam penyaluran ilahi. Dalam Yohanes 15:1 Tuhan Yesus berkata, "Akulah pokok anggur yang benar," dan dalam ayat 5 Dia berkata, "Akulah pokok anggur dan kamulah ranting-rantingnya." Pohon anggur ini, yang adalah Kristus, dengan ranting-rantingnya, yang kaum beriman di dalam Kristus, adalah organisme dari Allah Tritunggal dalam ekonomi Allah untuk bertumbuh dengan kekayaan-Nya untuk mengekspresikan hayat ilahi-Nya.</p>
+            <p>Karena itu, satu pohon anggur universal terdiri dari Kristus dan kaum beriman-Nya sebagai ranting-ranting. Dalam pohon anggur ini, organisme ini, Allah Tritunggal hidup, mengekspresikan diri-Nya, dan menyalurkan diri-Nya sampai puncaknya. <em>(The Conclusion of the New Testament, hal. 1178)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Sebagai ranting-ranting pohon anggur, kita perlu tetap tinggal di dalam pohon anggur itu, yaitu Kristus Allah. ... Hanya ketika ranting-ranting itu tetap tinggal di dalam pohon anggur, barulah pohon anggur itu dapat menjadi segalanya bagi mereka. Inilah alasan Tuhan Yesus berkata bahwa Dia adalah pokok anggur dan kita adalah ranting-ranting-Nya, <em>"Tinggallah di dalam Aku dan Aku di dalam kamu"</em> [Yoh. 15:4]. Hayat dan kenikmatan kita adalah tinggal di dalam pohon anggur. Takdir kita sebagai ranting-ranting adalah tinggal di dalam pohon anggur. ... Sebuah ranting pohon anggur tidak dapat hidup sendiri, sebab ia layu dan mati jika terpisah dari pohon anggur. Hubungan antara ranting-ranting dan pohon anggur menggambarkan hubungan antara kita dan Tuhan Yesus. Kita bukan siapa-siapa, kita tidak memiliki apa-apa, dan kita tidak dapat melakukan apa pun tanpa Dia. Apa adanya kita, apa yang kita miliki, dan apa yang kita lakukan harus di dalam Tuhan dan oleh Tuhan di dalam kita. ... Kita jangan melakukan apa pun di dalam diri kita sendiri; kita harus melakukan segalanya dengan tinggal di dalam pohon anggur. ... Karena kita adalah ranting-ranting bagi Tuhan dan Tuhan adalah pokok anggur bagi kita, kita harus tinggal di dalam Dia dan membiarkan Dia tinggal di dalam kita. Maka, dalam pengalaman kita, Kristus akan menjadi segalanya bagi kita bagi kenikmatan kita.</p>
+            <p>Setiap penghambat akan memisahkan kita dari suplai yang kaya dari pohon anggur. Sedikit ketidaktaatan, sebuah dosa, atau bahkan pemikiran yang penuh dosa dapat menjadi penghambat yang memisahkan kita dari kekayaan pohon anggur. Pertama, kita harus memelihara persekutuan antara kita dengan Tuhan. Tidak boleh ada penghambat di antara Dia dan kita. ... Karena itu, kita perlu berdoa, "Tuhan Yesus, janganlah ada apa pun di antara Engkau dan aku yang memisahkan aku dari suplai-Mu yang kaya."</p>
+            <p>Pohon anggur dan ranting-rantingnya adalah satu organisme untuk memuliakan Bapa. Pada pohon anggur kita memiliki pemuliaan Bapa melalui ekspresi kekayaan hayat ilahi dalam menghasilkan buah. Dalam menghasilkan buah, hayat Bapa diekspresikan; jadi, dalam menghasilkan buah, Dia dimuliakan [Yoh. 15:8].</p>
+            <p>Bapa adalah sumber dan substansi pohon anggur. Terpisah dari buahnya, esensi, substansi, dan hayat pohon anggur tertutup, tersembunyi, terkurung. Namun, kekayaan hayat batiniah pohon anggur diekspresikan dalam tandan-tandan buah. Mengekspresikan hayat batiniah dengan cara ini adalah melepaskan substansi ilahi dari dalam pohon anggur. Ketika hayat pohon anggur diungkapkan melalui ranting-rantingnya dalam penyebaran dan pelipatgandaan, Bapa dimuliakan, karena apa adanya Bapa dalam kekayaan hayat-Nya diekspresikan dalam penyebaran dan pelipatgandaan pohon anggur. Inilah pemuliaan Bapa.</p>
+            <p>Kita menghasilkan buah adalah pemuliaan, ekspresi, dari Allah Tritunggal dari batin. Hari ini Allah Tritunggal ada di dalam kita sebagai hayat dan sifat kita, dan ekspresi hayat dan sifat Allah Tritunggal dari batin kita adalah kemuliaan. Karena itu, ketika hayat ilahi beserta sifat-Nya diekspresikan melalui kita dalam menghasilkan buah, Bapa dimuliakan. <em>(The Conclusion of the New Testament, hal. 1180-1182)</em></p>
+            <p class="book-ref">Bacaan Tambahan: The Conclusion of the New Testament, berita 109–110; CWWL, 1967, vol. 2, "An Autobiography of a Person in the Spirit," bab 6</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

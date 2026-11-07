@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Senin, 19 Oktober 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 3 - Senin, 19 Oktober 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Mat. 3:11-12</div>
+            <div class="scripture-text">Aku membaptis kamu dengan air sebagai tanda pertobatan, tetapi Ia yang datang kemudian setelah aku lebih berkuasa daripada aku ... Ia akan membaptiskan kamu dengan Roh Kudus dan dengan api. Alat penampi sudah di tangan-Nya, Ia akan membersihkan tempat pengirikan-Nya dan mengumpulkan gandum-Nya ke dalam lumbung, tetapi sekam itu akan dibakar-Nya dalam api yang tidak terpadamkan.</div>
+            <p>Perjanjian Baru menggunakan gandum hayat untuk melambangkan kaum beriman [lihat Mat. 3:12]... Yang dilambangkan oleh gandum memiliki hayat di batin; mereka adalah anak-anak Allah yang hidup. Tuhan Yesus akan membaptis mereka dalam Roh Kudus (ayat 11) dan mengumpulkan mereka ke dalam lumbung-Nya di surga melalui terangkatan... Kita perlu dilahirkan dari air dan Roh (Yoh. 3:5)... Dengan cara ini kita dilahirkan kembali untuk menjadi anak-anak Allah, kaum beriman yang dilambangkan oleh gandum hayat, yang akan dikumpulkan ke dalam lumbung Tuhan. <em>(The Conclusion of the New Testament, hal. 1151-1152)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Kita perlu melihat rintangan-rintangan yang dihadapi hayat Allah di dalam kita.</p>
+            <p>Masalah pertama yang dihadapi hayat Allah di dalam manusia adalah masalah pengabaian. Setelah seseorang diselamatkan dan menjadi seorang Kristen, ia masih memiliki pemikiran-pemikiran dan konsepsi-konsepsinya... Semua konsepsi insani kita ada dalam kegelapan, dan ini menghalangi kita dari mengenal hayat dan Kristus.</p>
+            <p>Segera setelah kita dibaptis, kita biasanya berpikir bahwa kita harus bergairah dan memberitakan Injil. Namun, ketika kita berdoa dan bersekutu dengan Tuhan di pagi hari, Kristus yang hidup di dalam kita mungkin menjamah kita dengan cara yang berbeda menurut operasi dan pergerakan-Nya yang konstan di dalam kita. Kemudian, segala sesuatu benar-benar mulai terjadi di dalam kita. Contohnya, saat Dia bekerja di dalam kita, kita akan melihat bahwa beberapa hal yang mungkin pernah kita lakukan di masa lalu itu tidak pantas, seperti ... menyalahkan suami kita dan mengeluh tentang orang lain. Kita bahkan akan merasa bahwa kita harus meminta maaf. Oleh karena itu, kita perlu melepaskan rasa malu dan mendatangi orang-orang yang telah kita sakiti, dan berkata, "Saya sungguh menyesal atas cara saya memperlakukan Anda di masa lalu. Saya juga telah menyinggung Allah. Sekarang saya memohon agar Anda mau memaafkan saya." Inilah yang sedang dilakukan Kristus di dalam kita.</p>
+            <p>Jika kita sungguh-sungguh mengenal Tuhan, ketika kita berdoa kepada-Nya di pagi hari, Dia akan bergerak di dalam diri kita dan memberi kita kesadaran akan perlukah kita meminta maaf kepada istri kita. Setelah berdoa, kita harus merendahkan diri kita dan meminta maaf atas kesalahan-kesalahan masa lalu kita kepada istri kita. Setelah meminta maaf, kita perlu berkata kepada Tuhan, "Ya Tuhan, terima kasih. Aku telah menaati pergerakan-Mu di dalam diriku. Aku tidak punya pilihan; aku tidak ingin memiliki konsepsiku sendiri. Engkaulah satu-satunya pilihanku dan satu-satunya konsepsiku." Jika kita semua melakukan ini, Kristus yang hidup akan memiliki lebih banyak tumpuan dan kesempatan untuk berbicara kepada kita dan memberi kita lebih banyak perasaan. Hasil dari operasi yang terus-menerus ini akan meluas kepada bagaimana kita berurusan dengan orang lain, atau mungkin menjamah perbuatan salah kita terhadap orang lain. Pada saat seperti itu, kita hanya perlu memperhatikan Kristus, bukan citra diri atau harga diri kita. Kita perlu pergi kepada orang-orang dan meminta maaf atas kesalahan-kesalahan kita di masa lalu. Dengan cara ini, Kristus tentu akan lebih memiliki tumpuan di dalam kita.</p>
+            <p>Masalah kedua yang dihadapi hayat di dalam diri kita adalah kemunafikan. Ada seorang saudari di gereja di Nanking yang berbicara dengan lambat dan berjalan dengan lambat; segala sesuatu yang dilakukannya dengan lemah lembut. Akibatnya, semua saudara yang bertanggung jawab di gereja di Nanking berpikir bahwa ia sangat rohani. Namun, sesungguhnya, ini adalah kerohanian palsu. Kita perlu melihat bahwa bersikap lambat belum tentu dari hayat, dan bersikap cepat juga belum tentu dari hayat.</p>
+            <p>Hayat adalah diri Allah sendiri, hayat adalah Kristus, dan hayat adalah Roh Kudus. Apa pun yang bukan berasal dari Allah, dari Kristus, atau dari Roh Kudus bukan hayat. Karena itu, seberapa pun seseorang dapat memenuhi—bahkan melampaui—standar moralitas, hal itu belum tentu merupakan hayat.</p>
+            <p>Ekspresi hayat melibatkan penolakan terhadap watak dan kesukaan alamiah kita, serta hanya mengizinkan Kristus bekerja di dalam kita dan meremukkan kita. Maka, tindakan kita melalui operasi batiniah Kristus akan menjadi tindakan hayat. Jika kita selalu melakukan sesuatu menurut watak dan alamiah kita, hasilnya akan selalu berupa kemunafikan. <em>(CWWL, 1953, vol. 1, "Knowing Life and the Church," hal. 131-135, 137-138)</em></p>
+            <p class="book-ref">Bacaan Tambahan: The Conclusion of the New Testament, berita 107</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

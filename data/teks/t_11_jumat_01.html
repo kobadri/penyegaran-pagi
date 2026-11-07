@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Jumat, 18 Desember 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 11 - Jumat, 18 Desember 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Why. 14:1</div>
+            <div class="scripture-text">Lalu aku melihat: Sesungguhnya, Anak Domba berdiri di bukit Sion dan bersama-sama dengan Dia seratus empat puluh empat ribu orang dan di dahi mereka tertulis nama-Nya dan nama Bapa-Nya.</div>
+            <div class="scripture-title">Why. 14:4</div>
+            <div class="scripture-text">Mereka adalah ... sama seperti perawan. Mereka adalah orang-orang yang mengikuti Anak Domba itu ke mana saja Ia pergi. Mereka ditebus dari antara manusia sebagai kurban-kurban sulung bagi Allah dan bagi Anak Domba itu.</div>
+            <p>Para pemenang mula-mula [dalam Wahyu 14:1 dan 4] ... akan dituai sebelum panenan sebagai buah sulung bagi Allah dan bagi Anak Domba. ... Panen itu akan dituai kemudian. Ini berarti buah sulung akan berangkat ke surga sebelum panenan, sama seperti buah sulung dari negeri yang baik dituai dan dibawa ke Bait Allah sebelum panenan (Im. 23:10-11; Kel. 23:19).</p>
+            <p>Anak-laki-laki mengacu kepada pemenang yang telah meninggal sepanjang zaman, sedangkan buah sulung mengacu kepada para pemenang yang hidup pada akhir zaman ini. <em>(The Conclusion of the New Testament, hal. 1226)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Apa arti diangkat? Diangkat berarti dibawa ke hadapan Tuhan. Jika Anda ingin dibawa ke hadapan Tuhan, hari ini Anda harus hidup di depan-Nya. Kebanyakan pujian dan persekutuan Anda mungkin tidak berada di hadapan-Nya, melainkan menurut pilihan Anda sendiri. Anda tidak berada di hadapan Tuhan, melainkan dalam pilihan dan kemauan Anda sendiri. Bila Anda ingin bersekutu, mungkin Tuhan akan berkata, "Pergilah belajar atau bekerja."</p>
+            <p>Anak-laki-laki itu untuk berperang dan mengalahkan Setan. Jadi, anak-laki-laki itu untuk menanggulangi musuh. Buah sulung bukan untuk berperang, melainkan untuk memuaskan Allah dan Anak Domba. Allah dan Anak Domba membutuhkan kenikmatan. Kita, para pemenang yang hidup ini, akan menjadi buah sulung untuk memuaskan kebutuhan Mereka akan kenikmatan.</p>
+            <p>Anda harus ... menggunakan waktu Anda untuk mengasihi Tuhan. Katakanlah kepada-Nya, "Tuhan, aku sangat senang memandang Engkau dan bercakap-cakap dengan Mu. Tuhan, aku ingin memuaskan-Mu, bersatu dengan-Mu dan tinggal di hadirat-Mu." Belajarlah meluangkan waktu untuk mengasihi Tuhan Yesus secara intim. Jika Anda tidak pernah meluangkan waktu seperti ini, Anda adalah orang yang dangkal. Hanya menjadi orang yang tidak berdosa tidak cukup. Kita harus memadai jika hanya menjadi orang yang baik atau benar. Kita harus jatuh cinta kepada Tuhan. Meskipun saya tidak menyukai istilah jatuh cinta, namun saya terpaksa menggunakannya. Kita semua perlu jatuh cinta kepada Tuhan Yesus. Beritahukanlah kepada-Nya, "O Tuhan Yesus, aku cinta kepada-Mu, dan Engkau tahu betapa aku mengasihi-Mu. Ya Tuhan, karena aku mengasihi-Mu, maka aku tidak mau melakukan perkara-perkara tertentu." Demikianlah caranya menjadi seorang pemenang. Tuhan memang membutuhkan anak-laki-laki untuk berperang melawan musuh-Nya, namun Ia juga membutuhkan buah sulung, para pencinta-Nya, untuk kepuasan-Nya.</p>
+            <p>Kita jangan hanya menjadi pejuang, tetapi juga menjadi buah sulung, yaitu orang-orang yang matang lebih dini bagi kepuasan Tuhan. Kita perlu berkata, "Tuhan, untuk kepuasan-Mu, aku ingin matang lebih dini. Tuhan, aku tidak peduli akan keterangkatanku—aku hanya memedulikan kepuasan-Mu. Aku ingin ke surga untuk memuaskan Engkau. Tuhan, selama aku bisa memuaskan-Mu, tidak ada bedanya aku ini tinggal di bumi atau di surga." Demikianlah sikap para pemenang yang hidup. <em>(Pelajaran-Hayat Wahyu, hal. 478-479, 744-747)</em></p>
+            <p>Kasus Henokh, penyebutan kali pertama tentang pengangkatan, mendirikan prinsip dari pengangkatan. ... Ini adalah mencapai kematangan hayat melalui hidup bergaul dengan Allah. Henokh hidup bergaul dengan Allah selama ratus tahun, lalu Allah mengangkatnya (Kej. 5:22-24).</p>
+            <p>Apakah Anda harapkan terangkat? Kalau ya, Anda harus hidup bergaul dengan Allah. Kita tidak hanya harus menyeru nama Tuhan, juga harus hidup bergaul dengan Tuhan. Setelah berseru, selanjutnya bergaul. Bergaul dengan Allah berarti tidak melampaui Allah, tidak lancang, tidak berbuat menurut konsepsi atau kesenangan sendiri, juga tidak melakukan sesuatu di luar Allah. Bergaul dengan Allah berarti menjadikan Allah sebagai inti dan segala kita, kelakuan segala sesuatu menurut wahyu dan pimpinan-Nya, dan melakukan segala sesuatu bersama Dia. Ini bukan saja hidup bagi Allah dan melakukan segala sesuatu bagi Allah, tetapi hidup dan melakukan segala sesuatu menurut Allah dan bersama Allah. <em>(Pelajaran-Hayat Kejadian, hal. 509-510)</em></p>
+            <p class="book-ref">Bacaan Tambahan: Pelajaran-Hayat Kejadian, berita 26</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

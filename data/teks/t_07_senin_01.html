@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Senin, 16 November 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 7 - Senin, 16 November 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Rm. 9:21</div>
+            <div class="scripture-text">Apakah tukang periuk tidak mempunyai hak atas tanah liatnya, untuk membuat dari gumpalan yang sama suatu bejana untuk tujuan yang mulia dan yang lain untuk tujuan yang biasa.</div>
+            <div class="scripture-title">Rm. 9:23</div>
+            <div class="scripture-text">Justru untuk menyatakan kekayaan kemuliaan-Nya atas bejana-bejana belas kasihan-Nya yang telah dipersiapkan-Nya untuk kemuliaan.</div>
+            <p>Kesimpulan dari empat belas Surat Kiriman [Paulus] bisa diekspresikan hanya dengan dua kata: bejana terbuka. Allah menginginkan bejana yang terbuka. Dalam Roma 9:23 Paulus memberi tahu kita bahwa Allah menciptakan kita sebagai bejana belas kasihan untuk kemuliaan. Kemudian dalam 2 Korintus 4:7 ia berkata "Harta ini kami miliki dalam bejana tanah liat." Dua ayat ini dianggap sebagai rahasia mendasar bagi pengalaman kita akan Kristus dan gereja. Anda mungkin mendengar banyak berita tentang Kristus dan gereja, namun jika Anda tidak menyadari bahwa Anda harus menjadi bejana yang terbuka, Kristus dan gereja masih tidak memiliki jalan. ... Sebuah bejana yang terbuka tidak melakukan apa pun selain membiarkan dirinya terbuka untuk diisi. Allah yang melalui proses—Allah Tritunggal, Roh yang all-might, Roh majemuk—ada di sini menantikan suatu celah untuk masuk ke dalam Anda. Berapa banyak Dia akan masuk ke dalam Anda bergantung kepada berapa banyak celah yang Anda berikan kepada-Nya. <em>(CWWL, 1980, vol. 1, "Perfecting Training," hal. 241)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Sebagai bejana, kita bukan alat atau senjata—kita adalah wadah. Menurut Roma 9, kita memuat belas kasihan, kehormatan, dan kemuliaan [ayat 21, 23]. Belas kasihan, kehormatan, dan kemuliaan ini sebenarnya adalah Allah Tritunggal. Pada tahap awal pengalaman kita, Allah Tritunggal adalah belas kasihan kita; pada tahap perkembangan, Dia adalah kehormatan kita; dan pada tahap perampungan, Dia adalah kemuliaan kita. Saat ini kita menikmati Allah kita sebagai belas kasihan dan juga sebagai kehormatan. Ketika Tuhan Yesus datang kembali, kita akan sepenuhnya dibawa ke dalam kehormatan dan juga ke dalam kemuliaan. Maka kita akan dipenuhi dengan Allah Tritunggal tidak hanya sebagai belas kasihan kita, tetapi juga sebagai kehormatan dan kemuliaan.</p>
+            <p>Belas kasihan adalah atribut Allah yang menjangkau paling jauh. Belas kasihan menjangkau lebih jauh daripada kasih karunia, sebab belas kasihan menjangkau situasi yang menyedihkan dan tidak layak menerima kasih karunia. ... Betapa indahnya sebab belas kasihan Allah tidak bergantung pada kondisi yang baik! Sebaliknya, belas kasihan Allah diperlihatkan pada kondisi manusia yang menyedihkan. Belas kasihan Allah yang telah menjangkau kita. ... Kita perlu melihat kemustikaan belas kasihan Allah dan memuji-Nya serta bersaksi tentang hal itu. Dahulu kita adalah orang dosa yang jauh dari Allah; sekarang kita esa dengan Kristus yang all-might. Sungguh belas kasihan yang luar biasa! Kita adalah bejana-bejana yang menampung Allah Tritunggal sebagai belas kasihan.</p>
+            <p>Ketika Paulus menulis Roma 9, pemikirannya sepenuhnya dipenuhi oleh belas kasihan Allah. Ia berkata, "Jadi, hal itu tidak tergantung pada kehendak orang atau usaha orang, tetapi kepada belas kasihan Allah" (ayat 16). Ini sepenuhnya perkara belas kasihan Allah bahwa kita menjadi orang beriman dan kita berada dalam kehidupan gereja. Karena semuanya dari belas kasihan Allah, kita tidak memiliki apa pun untuk dimegahkan dari diri kita sendiri. Perjalanan kita bersama Tuhan bukan perkara kehendak atau usaha kita, melainkan dari belas kasihan Allah. ... Kita mudah berubah, senantiasa berfluktuasi. Karena itu, kita jangan mengandalkan diri sendiri, melainkan mengandalkan belas kasihan Allah. Kita memuji Tuhan karena kita adalah bejana belas kasihan untuk kehormatan dan kemuliaan. Sekarang kita menampung Dia sebagai belas kasihan, dan kita akan menampung Dia sebagai kehormatan dan kemuliaan.</p>
+            <p>Sebagai bejana belas kasihan untuk kehormatan dan kemuliaan, kita dipilih oleh Allah menurut belas kasihan-Nya yang berdaulat (ayat 11-16). ... Menjadi bejana belas kasihan bukan hasil pilihan kita; ini berasal dari kedaulatan Allah. ... Kedaulatan-Nya adalah dasar pemilihan-Nya.</p>
+            <p>Dalam Roma 9:15, Paulus mengutip perkataan Tuhan, "Aku akan menaruh belas kasihan kepada siapa Aku mau menaruh belas kasihan." Karena belas kasihan Allah, kita merespons kepada Injil ketika orang lain tidak merespons, kita menerima firman tentang Kristus sebagai hayat ketika orang lain menolak menerimanya, dan kita mengambil jalan pemulihan Tuhan ketika orang lain undur dari jalan ini. Mengenai Injil, ministri hayat, dan kehidupan gereja, Allah, dalam kedaulatan-Nya, membelas-kasihani kita. Karena itu, kita harus memuji Dia atas belas kasihan-Nya yang berdaulat. <em>(The Conclusion of the New Testament, hal. 1183-1185)</em></p>
+            <p class="book-ref">Bacaan Tambahan: Pelajaran-Hayat Roma, berita 22, 58, 63; Pelajaran-Hayat Kejadian, berita 10, 83–84</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

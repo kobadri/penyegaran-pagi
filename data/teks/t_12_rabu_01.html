@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Rabu, 23 Desember 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 12 - Rabu, 23 Desember 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Yak. 5:7</div>
+            <div class="scripture-text">Karena itu, Saudara-saudara, bersabarlah sampai kedatangan Tuhan! Sesungguhnya petani menantikan hasil yang berharga dari tanahnya dan ia sabar sampai telah turun hujan musim gugur dan hujan musim semi.</div>
+            <div class="scripture-title">Gal. 4:19</div>
+            <div class="scripture-text">Hai anak-anakku, karena kamu aku menderita sakit bersalin lagi, sampai rupa Kristus menjadi nyata di dalam kamu.</div>
+            <p>Tuhan Yesus sesungguhnya adalah Petani yang sejati. Petani yang unik. Ketika kita menantikan kedatangan-Nya, Ia, sebagai Petani yang sejati, menantikan kematangan kita. Mungkin kita berdoa, "Tuhan, kembalilah segera." Akan tetapi, boleh jadi Ia berkata, "Anak-Ku, cepat capailah matang. Sementara engkau menantikan kedatangan-Ku kembali, Aku menantikan kematanganmu. ... Hanya kematanganmu yang bisa mempercepat kedatangan-Ku kembali. Engkau melatih panjang sabarmu, dan Aku melatih panjang sabar-Ku." <em>(Pelajaran-Hayat Yakobus, hal. 141)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Sangatlah membantu, bila kita menyadari bahwa jika kita serius menunggu kedatangan Tuhan kembali, kita perlu bertumbuh dalam hayat. Kebanyakan orang Kristen hari ini memandang kedatangan Tuhan hanya secara objektif, mengganggunya tidak ada hubungannya dengan kondisi rohani atau pertumbuhan rohani kita. Mereka berharap suatu hari Tuhan akan datang dengan tiba-tiba, dan kedatangan-Nya tidak ada sangkut pautnya dengan kematangan mereka.</p>
+            <p>Ilustrasi petani dalam 5:7 menyiratkan petani itu sedang menunggu hasil ladangnya siap dituai. Menurut Wahyu 14, Tuhan juga menunggu untuk panenannya matang. ... Panen ini merupakan hasil dari penaburan diri Tuhan sebagai benih. Penaburan Tuhan telah tergenap pada kedatangan Tuhan kali pertama, dan digambarkan dalam Matius 13. Kita perlu menyadari bahwa matangnya panenan akan mempercepat kedatangan Tuhan kembali.</p>
+            <p>Sewaktu kita dianiaya, kita perlu panjang sabar. Jadi, panjang sabar ini merupakan suatu ekspresi dari sikap sabar kita terhadap orang. Para nabi dianiaya, tetapi mereka panjang sabar terhadap penganiaya-penganiaya mereka. Sebaliknya, kesabaran merupakan suatu ekspresi kesabaran kita terhadap perkara yang menimpa kita. Karena itu, sewaktu Ayub menerima kesusahan, ia memperlihatkan kesabarannya.</p>
+            <p>Dalam tulisannya, Yakobus memakai kata-kata Yunani untuk panjang sabar dan ketabahan. Sementara kita menantikan kedatangan Tuhan kembali, kita memerlukan panjang sabar dan ketabahan, karena kita menghadapi penderitaan dari dua sumber. Sumber-sumber ini adalah orang-orang yang menganiaya kita dan lingkungan yang menyerang kita.</p>
+            <p>Untuk kedatangan Tuhan kembali, kita memerlukan panjang sabar, ketabahan, dan pertumbuhan hayat. Sewaktu kita menerapkan panjang sabar terhadap mereka yang menganiaya kita dan ketabahan terhadap berbagai kesengsaraan, kita perlu bertumbuh dalam hayat. Setelah itu barulah kita dapat berkata, "O Tuhan Yesus, kembalilah segera. Tuhan, tidakkah Engkau melihat bahwa hayatku telah bertumbuh? Hari ini aku bertumbuh lebih pesat daripada kemarin. Karena aku bertumbuh, Tuhan, aku mohon Engkau mempercepat kembali-Mu."</p>
+            <p>Jika kita memenuhi syarat pertumbuhan hayat, Tuhan akan memenuhi janji-Nya untuk segera datang kembali. Karena itu, kita perlu bertumbuh dalam hayat, dan sambil bertumbuh, kita melatih panjang sabar dan ketabahan. Inilah cara yang tepat untuk menunggu kedatangan Tuhan kembali. <em>(Pelajaran-Hayat Yakobus, hal. 141-144)</em></p>
+            <p>Kita semua tahu bahwa tujuan keselamatan Allah adalah untuk bekerja di dalam kita sehingga kita bisa memiliki gambar-Nya (Rm. 8:29). ... Menjadi matang adalah memiliki Tuhan sepenuhnya terbentuk di dalam kita. Ini juga berarti kita, yang telah diselamatkan, telah sepenuhnya ditransformasi ke dalam gambar Tuhan. ... Melalui keselamatan Tuhan, Tuhan telah menambahkan diri-Nya ke dalam kita. Sejak saat kelahiran kembali dan keselamatan kita, Tuhan telah menambahkan diri-Nya ke dalam kita, menyebabkan kita memiliki hayat dan sifat-Nya. Dengan kata lain, sejak waktu keselamatan kita, Tuhan telah bekerja di dalam kita sehingga kita bisa memiliki gambar-Nya. Ketika Tuhan telah sepenuhnya mengerjakan gambar-Nya ke dalam kita dan sepenuhnya diekspresikan dari dalam kita, maka kita akan matang dalam hayat. <em>(CWWL, 1955, vol. 3, "The Way for a Christian to Mature in Life," hal. 295-296)</em></p>
+            <p class="book-ref">Bacaan Tambahan: Pelajaran-Hayat Yakobus, berita 11; The Conclusion of the New Testament, berita 424</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

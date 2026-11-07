@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Kamis, 17 Desember 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 11 - Kamis, 17 Desember 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Why. 1:9</div>
+            <div class="scripture-text">Aku, Yohanes, saudara seiman yang ikut serta dalam kesusahan, dalam Kerajaan dan dalam ketekunan menantikan Yesus, berada di pulau yang bernama Patmos karena firman Allah dan kesaksian yang diberikan oleh Yesus.</div>
+            <div class="scripture-title">Kol. 1:24</div>
+            <div class="scripture-text">Sekarang aku bersukacita bahwa aku boleh menderita karena kamu, dan menggenapkan dalam tubuhku apa yang kurang pada penderitaan Kristus, untuk tubuh-Nya, yaitu jemaat.</div>
+            <p>Perjanjian Baru ... dengan jelas mewahyukan bahwa Daud melambangkan Kristus (Mat. 12:3). Jadi, istri Daud adalah lambang gereja. Daud sedikitnya memiliki tiga istri. ... Hanya Abigail (1 Sam. 25:42) yang memiliki ciri-ciri yang melambangkan gereja. Daud melambangkan Kristus yang berperang di tengah-tengah penderitaan; karena itu Abigail istrinya, melambangkan gereja yang berperang di tengah-tengah penderitaan. Mulai dari 1 Samuel 25, Abigail selalu mendampingi Daud sang pahlawan dan mengikuti dia dalam peperangannya. ... Suami Abigail yang sebelumnya adalah Nabal, yang berarti "bodoh" (25:25). Nabal memandang rendah, menolak, dan menentang Daud pada saat kemiskinannya (ayat 10-11). Ini melambangkan bahwa sifat kita menolak Kristus, memandang rendah Kristus, dan menentang Kristus, suatu hari Nabal terpukul, dan ia meninggal. Ini memberi Abigail kesempatan untuk menjadi istri Daud. Ini menunjukkan bahwa ketika sifat kita yang rusak, yang meninggalkan Kristus, menolak Kristus, dan memandang rendah Kristus, terpukul, kita menjadi pasangan Kristus yang mengikuti Dia di tengah-tengah penderitaan, berperang bagi Kerajaan Allah. <em>(CWWL, 1956, vol. 2, "Three Aspects of the Church, Book 1: The Meaning of the Church," hal. 109)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Gideon, seorang hakim yang luar biasa yang dipanggil oleh Yehova dengan cara yang sangat khusus, sukses karena empat hal. Pertama, dengan teliti mendengarkan firman Allah, sesuatu yang jarang di antara bangsa Israel pada saat itu. Kedua, Gideon menuruti firman Allah dan melaksanakannya. Ketiga, dia membongkar mezbah Baal, dan menebang tiang berhala (6:25-28). Hal ini menjamah hati Allah. ... Allah sebagai Suami yang sejati menganggap semua berhala sebagai laki-laki yang dengannya bangsa Israel, istri-Nya telah melakukan persundalan. Keempat, melalui membongkar mezbah Baal dan merobohkan tiang Asyera milik ayahnya, Gideon mengorbankan hubungannya dengan ayahnya dan kenyamanannya dalam masyarakat.</p>
+            <p>Pemilihan tiga ratus orang [7:2-7] ... menegaskan mengorbankan kepentingan dan kenikmatan pribadi bagi tujuan Allah. Ketika Gideon meniup sangkakala memanggil orang untuk berperang melawan orang Midian, tiga puluh dua ribu orang menyambut seruan itu. Allah berkata bahwa mereka yang ada bersama Gideon terlalu banyak bagi Allah untuk menyerahkan Midian ke dalam tangannya, sebab bangsa Israel dapat memegahkan dirinya melawan Allah, dengan mengatakan, "Tanganku sendirilah yang menyelamatkan aku" (ayat 2). Dengan memberi tahu Gideon bahwa ia memiliki begitu banyak orang, Allah menunjukkan bahwa Dia akan berperang bagi mereka. Mula-mula, dua puluh dua ribu pulang ke rumah karena mereka takut (ayat 3). Kemudian Yehova menguji sepuluh ribu orang yang tinggal, melalui membawa mereka minum air. Orang yang ... menjilat air dengan lidahnya seperti anjing dijilat disuruh pulang oleh Allah (ayat 5). Hanya tiga ratus orang yang menghirup dengan membawa tangannya ke mulutnya, merekalah yang dipilih Allah untuk berperang melawan Midian (ayat 6). ... Seperti Gideon, tiga ratus orang ini mau berkorban supaya dapat dipakai Allah. <em>(Pelajaran-Hayat Hakim-hakim, hal. 31-33)</em></p>
+            <p>Tiga ratus orang itu bergerak bersama dan bertindak dalam kesehatan. Semua daging mereka dikerat, sehingga mereka bisa menjadi esa. Ini adalah kesatuan di dalam Roh dan kehidupan di dalam Tubuh. Catatan dalam Perjanjian Baru adalah catatan bersidang dan bukan catatan bekerja.</p>
+            <p>Tiga ratus orang itu berperang, namun seluruh rakyat mengejar musuh ... Ketika kita menang, seluruh tubuh dibangkitkan. Berdiri di dasar sungai bukan untuk diri kita sendiri, tetapi bagi seluruh tubuh. <em>"Sekarang aku ... menggenapkan dalam tubuhku apa yang kurang pada penderitaan Kristus, untuk tubuh-Nya, yaitu jemaat"</em> (Kol. 1:24). <em>(CWWN, vol. 11, hal. 774)</em></p>
+            <p class="book-ref">Bacaan Tambahan: CWWN, vol. 11, hal. 771-775; Pelajaran-Hayat Hakim-hakim, berita 4–5</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

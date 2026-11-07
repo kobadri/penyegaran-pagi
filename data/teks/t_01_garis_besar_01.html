@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Minggu Pekan 1</title>
+    <style>
+        body { background-color: #121212; font-family: Arial, sans-serif; margin: 0; padding: 20px 0; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; }
+        .mobile-container { width: 100%; max-width: 420px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); display: flex; flex-direction: column; max-height: 88vh; overflow: hidden; position: relative; }
+        .header { background-color: #1e5138; color: white; padding: 15px; text-align: left; font-size: 16px; font-weight: bold; flex-shrink: 0; }
+        .content-scroll { padding: 15px; overflow-y: auto; flex-grow: 1; font-size: 14px; line-height: 1.6; color: #333; }
+        .week-title { font-size: 18px; font-weight: bold; color: #1e5138; margin-top: 5px; margin-bottom: 4px; line-height: 1.3; }
+        .scripture-subtitle { font-size: 12px; font-weight: bold; color: #2e7d32; margin-bottom: 15px; }
+        .accordion-section { background-color: #f4f9f4; border-left: 4px solid #1e5138; padding: 10px; margin-bottom: 15px; border-radius: 4px; }
+        .accordion-section .toggle-header { background-color: #c8e6c9; padding: 6px 8px; border-radius: 4px; cursor: pointer; font-weight: bold; color: #1e5138; margin: 0; display: flex; justify-content: space-between; align-items: center; }
+        .toggle-content { margin-top: 10px; display: none; }
+        .bottom-nav { display: flex; justify-content: space-between; gap: 6px; padding: 12px; background-color: #f8f9fa; border-top: 1px solid #ddd; flex-shrink: 0; }
+        .nav-btn { flex: 1; background-color: #1e5138; color: #ffffff; text-align: center; padding: 10px 0; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 12px; border: none; cursor: pointer; }
+        .nav-btn:hover { background-color: #143726; }
+        .verse-text { font-weight: bold; font-style: italic; }
+
+        /* Styling Modal Pemutar Media yang Diperbarui Agar Tidak Terpotong */
+        #mediaModal {
+            display: none;
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 200;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .modal-content {
+            background: white;
+            padding: 15px;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 400px;
+            max-height: 90vh;
+            overflow-y: auto;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .modal-content video {
+            width: 100%;
+            max-height: 60vh;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-top: 10px;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="mobile-container">
+        <div class="header">Kaum Beriman (1)</div>
+        <div class="content-scroll">
+            <div style="font-size: 12px; color: #555; margin-bottom: 2px;">Pekan ke 01</div>
+            <div class="week-title">Murid-murid, Orang-orang Beriman, Orang-orang Kudus, dan Orang-orang Kristen.</div>
+            <div class="scripture-subtitle">Matius 5:1; 28:19; 2 Korintus 6:14-16; 1 Korintus 1:2; 1 Petrus 4:16.</div>
+
+            <!-- AKORDION I: GARIS BESAR -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 I. Garis Besar (Outline) Pekan 1 <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+                    <p><strong>Kita adalah Murid-murid Kristus Mengikuti dan mempelajari Kristus menurut realitas yang nyata dalam Yesus. Dimuridkan dari seorang manusia alamiah menjadi manusia-Allah, memperhidupkan hayat ilahi melalui menyangkal hayat alamiah menurut model Manusia-Allah pertama. Mempelajari Kristus melalui makan Kristus, dibangunkan setiap pagi untuk mendengar firman, memikul gandar-Nya yang lemah lembut, dan hidup oleh hayat Kristus yang menghuni di batin.</strong></p>
+                    <p><strong>Kita adalah Orang-orang Beriman dalam Kristus Orang-orang yang memiliki hayat ilahi dan hidup oleh iman dari Putra Allah. Kita telah dipindahkan dari Adam ke dalam Kristus, dilahirkan kembali (dilahirkan dua kali), dan diikatkan kepada Kristus menjadi satu roh dengan Dia. Iman timbul dari pendengaran firman yang diterapkan oleh Roh. Sebagai orang beriman, kita memiliki kesatuan organik dengan Kristus yang digambarkan dalam 7 hubungan: Pohon Anggur dan ranting, Kepala dan anggota, Penghirup/Pemakan/Peminum hayat, Mempelai Laki-laki dan mempelai perempuan, Bapa dan anak-anak, Tabib dan pasien, serta Terang dunia dan penyebar terang.</strong></p>
+                    <p><strong>Kita adalah Orang-orang Kudus Allah Orang-orang yang telah dipisahkan dan dijadikan kudus kepada Allah. Dikuduskan secara posisi oleh darah penebusan Kristus (Ibr. 13:12) dan sedang dikuduskan secara watak (subjektif/transformasi) oleh Roh Kudus. Secara individu kita adalah kaum saleh, dan secara korporat kita adalah penyusun gereja.</strong></p>
+                    <p><strong>Kita adalah Orang-orang Kristen (Manusia-manusia-Kristus) Orang-orang yang esa dengan Kristus dalam kesatuan organik, memiliki Kristus sebagai isi yang menyuplai untuk memperhidupkan Dia bagi perbesaran-Nya dalam kehidupan sehari-hari. Memikul kesaksian Kristus, berbagian dalam penderitaan-Nya, dan berjalan oleh Roh bagi ekspresi Allah.</strong></p>
+                </div>
+            </div>
+
+            <!-- AKORDION II: AYAT ALKITAB RAWATAN PAGI -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 II. Ayat Alkitab Rawatan Pagi (Hari 1–6) <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+                    <p><strong>Hari 1 (Senin) Matius 9:</strong></p>
+                    <p class="verse-text">9: "Setelah Yesus pergi dari situ, Ia melihat seorang yang bernama Matius duduk di tempat pemungutan cukai, lalu Ia berkata kepadanya, “Ikutlah Aku.” Matius pun bangkit dan mengikut Dia." Matius 11:29: "Pikullah gandar yang Kupasang dan belajarlah kepada-Ku, karena Aku lemah lembut dan rendah hati dan jiwamu akan mendapat ketenangan."</p>
+                    <p><strong>Hari 2 (Selasa) Roma 12:</strong></p>
+                    <p class="verse-text">2: "Janganlah kamu menjadi serupa dengan dunia ini, tetapi berubahlah oleh pembaruan budimu, sehingga kamu dapat membedakan mana kehendak Allah: Apa yang baik, yang berkenan kepada-Nya dan sempurna." Efesus 4:23: "Supaya kamu dibarui di dalam roh dan pikiranmu."</p>
+                    <p><strong>Hari 3 (Rabu) Roma 12:</strong></p>
+                    <p class="verse-text">5: "Demikian juga kita, walaupun banyak, adalah satu tubuh di dalam Kristus; tetapi kita masing-masing adalah anggota yang seorang terhadap yang lain." Filipi 3:10: "Yang kukehendaki ialah mengenal Dia dan kuasa kebangkitan-Nya dan persekutuan dalam penderitaan-Nya, di mana aku menjadi serupa dengan Dia dalam kematian-Nya."</p>
+                    <p><strong>Hari 4 (Kamis) Yohanes 1:</strong></p>
+                    <p class="verse-text">12-13: "Namun semua orang yang menerima-Nya diberi-Nya kuasa supaya menjadi anak-anak Allah, yaitu mereka yang percaya dalam nama-nama-Nya; orang-orang yang dilahirkan ... dari Allah." Roma 12:3: "Janganlah kamu memikirkan hal-hal yang lebih tinggi daripada yang patut kamu pikirkan, tetapi hendaklah kamu berpikir sedemikian rupa, sehingga kamu menguasai diri menurut ukuran iman, yang dikaruniakan Allah kepada kamu masing-masing."</p>
+                    <p><strong>Hari 5 (Jumat) 1 Korintus 1:</strong></p>
+                    <p class="verse-text">2: "Kepada jemaat Allah di Korintus, yaitu mereka yang dikuduskan dalam Kristus Yesus dan yang dipanggil menjadi orang-orang kudus, dengan semua orang di segala tempat, yang berseru kepada nama Tuhan kita Yesus Kristus..." 2 Tesalonika 2:13: "Akan tetapi kami harus selalu mengucap syukur kepada Allah karena kamu, Saudara-saudara, yang dikasihi Tuhan, sebab Allah sejak semula telah memilih kamu untuk diselamatkan dalam Roh yang menguduskan kamu dan dalam kebenaran yang kamu percayai."</p>
+                    <p><strong>Hari 6 (Sabtu) Galatia 2:</strong></p>
+                    <p class="verse-text">20: "Namun aku hidup, tetapi bukan lagi aku sendiri yang hidup, melainkan Kristus yang hidup di dalam aku. Hidup yang sekarang aku hidupi secara jasmani adalah hidup oleh iman dalam Anak Allah yang telah mengasihi aku dan menyerahkan diri-Nya untuk aku." 1 Petrus 4:16: "Tetapi, jika ia menderita sebagai orang Kristen, maka janganlah ia malu, melainkan hendaklah ia memuliakan Allah dalam nama Kristus itu."</p>
+                </div>
+            </div>
+
+            <!-- AKORDION III: POIN-POIN CATATAN KAKI -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 III. Poin-Poin Catatan Kaki (Footnote) <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+                    <p><strong>Dalam pembacaan materi Penyegaran Pagi Pekan 1, terdapat penyingkapan catatan kaki kunci dari Alkitab Versi Pemulihan:</strong></p>
+                    <p><strong>Roh Pikiran (Efesus 4:23) Roh pikiran adalah roh kaum beriman yang telah dilahirkan kembali yang dibaurkan dengan Roh Allah, yang menyebar ke dalam pikiran untuk mengendalikan dan memperbaruinya. Pembaruan pikiran terjadi saat pikiran diletakkan di atas roh (Rm. 8:6).</strong></p>
+                    <p><strong>Akta Kelahiran Rohani / Roh Ganda (Roma 8:16) Akta kelahiran kedua dari kelahiran rohani kita adalah roh ganda — Roh Kudus yang bersaksi bersama-sama dengan roh kita bahwa kita adalah anak-anak Allah.</strong></p>
+                    <p><strong>Tiga Aspek Firman sebagai Sumber Iman (Roma 10:17) Ada tiga aspek firman: firman tertulis (Alkitab), firman hidup (Kristus), dan firman yang diterapkan (Roh itu). Ketika firman tertulis dibaca dan didengar, firman itu menjadi firman hidup (Kristus), dan saat diterima oleh Roh, firman itu menjadi sumber iman di dalam kita.</strong></p>
+                    <p><strong>Ukuran Iman (Roma 12:3) Allah memberikan iman yang sama secara kualitas kepada semua orang percaya, tetapi kuantitasnya bergantung pada pertumbuhan hayat. Berpikir lebih tinggi tentang diri sendiri tanpa pikiran jernih dapat merusak tatanan hayat Tubuh.</strong></p>
+                    <p><strong>Pengudusan Posisi vs. Pengudusan Watak (1 Kor. 1:2 & 2 Tes. 2:13) Pengudusan Posisi: Dikuduskan oleh darah penebusan Kristus secara luar/posisi untuk dipisahkan kepada Allah. Pengudusan Watak: Pengudusan subjektif dan proses transformasi oleh Roh Kudus yang membaurkan watak kita dengan sifat kudus Allah.</strong></p>
+                    <p><strong>Gereja dan Kaum Saleh (1 Kor. 1:2) Frasa "kepada gereja Allah" menjelaskan "mereka yang dikuduskan dalam Kristus Yesus". Ini menunjukkan bahwa gereja adalah susunan dari kaum saleh, dan secara individu kita adalah kaum saleh, secara korporat kita adalah gereja.</strong></p>
+                    <p><strong>Makna "Orang Kristen" & "Dalam Nama Kristus" (1 Petrus 4:16 & Kisah 11:26) Istilah "Kristen" semula merupakan sebutan ejekan di Antiokhia, tetapi secara positif bermakna manusia milik Kristus yang esa dengan Kristus dalam kesatuan organik. Menderita "dalam nama Kristus" berarti menderita di dalam persona Kristus sendiri.</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL PEMUTAR MEDIA -->
+        <div id="mediaModal" onclick="closeModal(event)">
+            <div class="modal-content" id="modalBody" onclick="event.stopPropagation()">
+                <!-- Konten Media Dinamis -->
+            </div>
+        </div>
+
+        <!-- NAVIGASI BAWAH -->
+        <div class="bottom-nav">
+            <a href="../../index.html" class="nav-btn">🏠 Home</a>
+            
+            
+        </div>
+    </div>
+
+    <script>
+        function toggleSection(header) {
+            const content = header.nextElementSibling;
+            const arrow = header.querySelector('.arrow');
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                arrow.textContent = "▼";
+            } else {
+                content.style.display = "block";
+                arrow.textContent = "▲";
+            }
+        }
+
+        function playAudio() {
+            var modal = document.getElementById("mediaModal");
+            var body = document.getElementById("modalBody");
+            
+            body.innerHTML = `
+                <h3 style="margin: 0 0 5px 0; font-size: 16px;">Audio Penyegaran Pagi</h3>
+                <p style="margin: 0 0 10px 0; font-size: 12px; color: #666;">Pekan 1</p>
+                <audio id="myAudio" controls autoplay style="width:100%; margin-top:10px;">
+                    <source src="../berita_mingguan/Pekan_01/1_Empat_Lapisan_Identitas_Orang_Kristen.m4a" type="audio/mp4">
+                    Peramban Anda tidak mendukung elemen audio.
+                </audio>
+                <br>
+                <button onclick="closeModalDirect()" style="padding: 6px 14px; background:#1e5138; color:white; border:none; border-radius:8px; cursor:pointer; font-size: 12px; margin-top: 10px;">Tutup</button>
+            `;
+            modal.style.display = "flex";
+
+            var audioElement = document.getElementById("myAudio");
+            audioElement.onended = function() {
+                closeModalDirect();
+            };
+        }
+
+        function playVideo() {
+            var modal = document.getElementById("mediaModal");
+            var body = document.getElementById("modalBody");
+            
+            body.innerHTML = `
+                <h3 style="margin: 0 0 5px 0; font-size: 16px;">Video Penyegaran Pagi</h3>
+                <p style="margin: 0 0 10px 0; font-size: 12px; color: #666;">Pekan 1</p>
+                <video id="myVideo" controls autoplay>
+                    <source src="../berita_mingguan/Pekan_01/1_Makna_Asli_Empat_Status_Pengikut_Kristus.mp4" type="video/mp4">
+                    Peramban Anda tidak mendukung elemen video.
+                </video>
+                <br>
+                <button onclick="closeModalDirect()" style="padding: 6px 14px; background:#1e5138; color:white; border:none; border-radius:8px; cursor:pointer; font-size: 12px; margin-top: 10px;">Tutup</button>
+            `;
+            modal.style.display = "flex";
+
+            var videoElement = document.getElementById("myVideo");
+            videoElement.onended = function() {
+                closeModalDirect();
+            };
+        }
+
+        function closeModal(event) {
+            closeModalDirect();
+        }
+
+        function closeModalDirect() {
+            var modal = document.getElementById("mediaModal");
+            if (modal) modal.style.display = "none";
+
+            var audioElement = document.getElementById("myAudio");
+            if (audioElement) {
+                audioElement.pause();
+                audioElement.currentTime = 0;
+            }
+            var videoElement = document.getElementById("myVideo");
+            if (videoElement) {
+                videoElement.pause();
+                videoElement.currentTime = 0;
+            }
+        }
+    </script>
+</body>
+</html>

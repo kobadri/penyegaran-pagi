@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Selasa, 10 November 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 6 - Selasa, 10 November 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Kis. 13:32-33</div>
+            <div class="scripture-text">Kami sekarang memberitakan kabar kesukaan kepada kamu bahwa janji yang diberikan kepada nenek moyang kita telah digenapi Allah kepada kita, keturunan mereka, dengan membangkitkan Yesus, seperti yang tertulis dalam mazmur kedua: Engkaulah Anak-Ku! Aku telah memperanakkan Engkau pada hari ini.</div>
+            <p>Sebagai Anak sulung Allah, [Kristus] adalah hal-hal yang kudus dan dapat dipercaya dari Daud. Melalui Dia yang demikian, pengampunan dosa-dosa diberitakan, dan setiap orang yang percaya pada-Nya dibenarkan dari segala sesuatu.</p>
+            <p>Dalam Kisah Para Rasul 13:32-33 ... kita melihat bahwa Kristus sebagai Anak sulung Allah dijanjikan kepada nenek moyang, dan Allah menggenapi janji ini kepada keturunan mereka dengan membangkitkan Yesus. ... Dia dilahirkan oleh Allah dalam kebangkitan-Nya untuk menjadi Putra sulung Allah di antara banyak saudara (Rm. 8:29). Dia dahulu adalah Putra tunggal Allah dari kekekalan (Yoh. 1:18; 3:16). Setelah inkarnasi, melalui kebangkitan, Dia dilahirkan oleh Allah dalam keinsanian-Nya untuk menjadi Putra sulung Allah. <em>(The Conclusion of the New Testament, hal. 2993)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Paulus dapat melihat kebangkitan Tuhan dalam firman dalam Mazmur 2: <em>"Anak-Ku engkau! Engkau telah Kuperanakkan pada hari ini"</em> (ayat 7). Paulus menerapkan kata "hari ini" kepada hari kebangkitan Tuhan. ... Yesus, Anak Manusia, dilahirkan untuk menjadi Putra Allah melalui dibangkitkan dari antara orang mati. Karena itu, Allah membangkitkan Yesus dari antara orang mati adalah Allah melahirkan Dia untuk menjadi Putra sulung-Nya.</p>
+            <p>Tuhan Yesus memiliki dua kelahiran. Pertama, Ia dilahirkan dari Maria untuk menjadi Anak Manusia. Kemudian, tiga puluh tiga setengah tahun setelahnya, Ia disalibkan, dikuburkan, dan dibangkitkan dari antara orang mati. Melalui kebangkitan, Ia memiliki kelahiran kedua, sebab sebagai manusia, Ia dilahirkan dalam kebangkitan-Nya untuk menjadi Putra Allah. Karena itu, dalam kelahiran-Nya yang pertama, Ia dilahirkan dari Maria untuk menjadi Anak Manusia, dan dalam kelahiran-Nya yang kedua, Ia dilahirkan dalam kebangkitan untuk menjadi Putra Allah.</p>
+            <p>Menurut Perjanjian Baru, Ia adalah Putra Allah dalam dua aspek. Pertama, Ia adalah Putra tunggal Allah; kedua, Ia sekarang adalah Putra sulung Allah. Kata-kata "tunggal" menunjukkan bahwa Allah hanya memiliki satu Putra. Yohanes 1:18 dan 3:16 berbicara tentang Putra Tunggal Allah. Secara kekal, Kristus adalah Putra Tunggal Allah. Inilah status kekal-Nya. Namun melalui kebangkitan, Ia, sebagai manusia, dilahirkan untuk menjadi Putra sulung Allah. Kata "sulung" menunjukkan bahwa Allah sekarang memiliki banyak putra (Ibr. 2:10). ... Kita yang percaya kepada Kristus adalah banyak putra Allah dan banyak saudara Tuhan, banyak saudara dari Putra sulung Allah (Rm. 8:29).</p>
+            <p>Sebagai Putra tunggal Allah, Tuhan adalah perwujudan hayat ilahi. Injil Yohanes menekankan bahwa Yesus Kristus adalah Putra Allah dan bahwa sebagai Putra Allah, Ia adalah perwujudan hayat ilahi (1:4). Melalui kebangkitan, Kristus menjadi Putra sulung Allah sebagai penyalur hayat untuk penyebarluasan hayat. Pertama, Ia adalah Putra tunggal sebagai perwujudan hayat; sekarang Ia adalah Putra sulung untuk penyebarluasan hayat. Melalui Dia menjadi Putra sulung Allah dalam kebangkitan, hayat ilahi telah disalurkan ke dalam semua orang beriman-Nya untuk menghasilkan penyebarluasan hayat yang terwujud di dalam Dia.</p>
+            <p>Dalam Kisah Para Rasul 13, Paulus tidak memberitakan Kristus sebagai Putra tunggal Allah, seperti yang dilakukan Injil Yohanes. Sebaliknya, di sini Paulus memberitakan Kristus sebagai Putra sulung Allah bagi penyebarluasan. Karena alasan ini, ia memberitakan kebangkitan Tuhan Yesus sebagai kelahiran-Nya yang kedua. Melalui kelahiran-Nya yang kedua, kelahiran-Nya dalam kebangkitan, Kristus menjadi Putra sulung Allah bagi penyebarluasan hayat ilahi.</p>
+            <p>Dalam Kisah Para Rasul 13:34, Paulus menyampaikan perkataan lebih lanjut mengenai kebangkitan Kristus: <em>"Lagi pula, Allah telah membangkitkan Dia dari antara orang mati dan Ia tidak akan diserahkan kembali kepada kebinasaan, seperti yang telah difirmankan-Nya: Aku akan memberikan kepadamu janji-janji kudus yang dapat dipercayai, yang telah Kuberikan kepada Daud."</em> Ayat 33 dan 34 berkaitan dengan Kristus yang bangkit. Ayat 33 menunjukkan bahwa kebangkitan Kristus adalah kelahiran-Nya yang kedua untuk menghasilkan Dia sebagai Putra Sulung Allah. <em>(The Conclusion of the New Testament, hal. 2993-2995)</em></p>
+            <p class="book-ref">Bacaan Tambahan: The Conclusion of the New Testament, berita 293</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

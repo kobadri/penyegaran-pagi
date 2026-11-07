@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Kamis, 26 November 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 8 - Kamis, 26 November 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Mat. 9:16-17</div>
+            <div class="scripture-text">Tidak seorang pun menambalkan secarik kain yang belum susut pada baju yang tua, karena jika demikian kain penambal itu akan mencarik baju itu, lalu makin besarlah koyaknya. Begitu pula anggur yang baru tidak dituang ke dalam kantong kulit yang tua, karena jika demikian kantong itu akan koyak sehingga anggur itu terbuang dan kantong itu pun hancur. Tetapi anggur yang baru disimpan orang dalam kantong yang baru pula, dan dengan demikian terpeliharalah kedua-duanya.</div>
+            <p>Mula-mula Kristus adalah kain yang belum susut untuk membuat baju baru. Kemudian, melalui kematian dan kebangkitan-Nya, Dia dijadikan baju baru untuk meutupi kita sebagai keadilbenaran kita di hadapan Allah, agar kita dapat dibenarkan oleh Allah dan diperkenan oleh-Nya. ... Menjahitkan secarik kain yang belum susut pada pakaian yang tua berarti [hanya] meniru apa yang Kristus lakukan dalam kehidupan insani-Nya di bumi.</p>
+            <p>Baju tua dalam Matius 9:16 melambangkan perilaku yang baik, perbuatan yang baik, dan praktik-praktik agamawi yang dihasilkan oleh hayat usang alamiah manusia. ... Tuhan Yesus menunjukkan kepada murid-murid Yohanes bahwa ... baju mereka telah koyak dan dengan berpuasa mereka mencoba untuk menambalnya. <em>(Pelajaran-Hayat Matius, hal. 462-463)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Tuhan Yesus mengibaratkan diri-Nya sebagai secarik kain yang belum susut. Ini menunjukkan apa adanya Dia di antara inkarnasi-Nya dan penyaliban-Nya. Selama jangka waktu itu Ia adalah kain yang belum susut, kain baru yang belum dicuci dan diproses. Melalui kematian dan kebangkitan-Nya, "kain baru" diproses dan dijadikan "baju yang baru". Tujuan Tuhan adalah memberikan diri-Nya kepada kita bukan sebagai secarik kain yang belum susut, melainkan sebagai baju yang telah rampung dan genap supaya kita dapat mengenakannya sebagai keadilbenaran kita untuk dibenarkan di hadapan Allah. Setelah kematian dan kebangkitan-Nya, Ia dijadikan baju yang telah selesai dibuat untuk kita kenakan, sehingga kita dapat menghadiri pernikahan-Nya. Jadi, Ia bukan hanya Mempelai Laki-laki, tetapi juga pakaian pernikahan kita yang membuat kita bersyarat untuk menghadiri pesta pernikahan-Nya.</p>
+            <p>Ketika kita dibaptis ke dalam-Nya, kita mengenakan Dia. Segera, Ia sebagai Roh itu menjadi pakaian kita, penutup kita dan kita pun bersyarat. Karena itu baju baru yang harus kita kenakan ialah Kristus sendiri sebagai Roh yang all-might.</p>
+            <p>Anggur yang baru [Matius 9:17] melambangkan Kristus sebagai hayat baru, penuh dengan semangat, yang membangkitkan kegembiraan orang. Anggur baru itu ialah Hayat Kristus yang menghibur. ... Anggur baru ini menguatkan kita, membuat kita berenergi, dan membuat kita riang gembira. Penyelamat rajani ini bukan hanya Mempelai Laki-laki bagi umat kerajaan untuk kenikmatan mereka, melainkan juga baju baru mereka untuk memperlengkapi mereka secara luaran, agar mereka bisa memenuhi syarat untuk menghadiri pernikahan. Selanjutnya, Dia adalah hayat baru mereka untuk merangsang mereka secara batiniah guna menikmati Dia sebagai Mempelai Laki-laki mereka. Sebagai Raja surgawi mereka, Dia adalah Mempelai Laki-laki bagi kenikmatan umat kerajaan, dan kerajaan surgawi-Nya adalah pesta pernikahan-Nya (22:2). Saat itu mereka akan menikmati Dia. Untuk menikmati Dia sebagai Mempelai Laki-laki dalam pesta kerajaan, mereka memerlukan Dia sebagai baju baru mereka secara luaran dan anggur baru mereka secara batiniah.</p>
+            <p>Dalam Matius 9:17, Tuhan mengatakan bahwa kita tidak seharusnya menuang anggur yang baru ke dalam kantong kulit yang tua. Kantong kulit yang tua melambangkan praktik agamawi, seperti berpuasa yang dilakukan oleh orang Farisi dalam agama yang usang dan oleh murid-murid Yohanes dalam agama yang baru. Semua agama adalah kantong kulit yang tua. ... Menaruh anggur yang baru ke dalam kantong kulit yang tua berarti menaruh Kristus sebagai hayat yang menggairahkan ke dalam agama.</p>
+            <p>Kantong kulit yang baru [dalam ayat 17] melambangkan kehidupan gereja dalam gereja lokal sebagai wadah bagi anggur yang baru, yaitu Kristus sendiri sebagai hayat yang menggairahkan. Umat kerajaan dibangun ke dalam gereja (16:18), dan gereja terekspresi melalui gereja-gereja lokal tempat kehidupan umat kerajaan (18:15-20). Mereka adalah orang-orang yang dilahirkan kembali yang menyusun Tubuh Kristus menjadi gereja (Rm. 12:5; Ef. 1:22-23). Tubuh Kristus sebagai kepenuhan-Nya juga disebut "Kristus itu" (1 Kor. 12:12), mengacu kepada Kristus yang korporat. Kristus yang individual adalah anggur yang baru, hayat yang menggembirakan di batin, dan Kristus yang korporat adalah kantong kulit yang baru, wadah luaran yang menampung anggur yang baru. <em>(Pelajaran-Hayat Matius, hal. 463-464, 466-469, 471)</em></p>
+            <p class="book-ref">Bacaan Tambahan: Pelajaran-Hayat Matius, berita 28</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

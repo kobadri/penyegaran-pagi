@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Minggu Pekan 10</title>
+    <style>
+        body { background-color: #121212; font-family: Arial, sans-serif; margin: 0; padding: 20px 0; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; }
+        .mobile-container { width: 100%; max-width: 420px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); display: flex; flex-direction: column; max-height: 88vh; overflow: hidden; position: relative; }
+        .header { background-color: #1e5138; color: white; padding: 15px; text-align: left; font-size: 16px; font-weight: bold; flex-shrink: 0; }
+        .content-scroll { padding: 15px; overflow-y: auto; flex-grow: 1; font-size: 14px; line-height: 1.6; color: #333; }
+        .week-title { font-size: 18px; font-weight: bold; color: #1e5138; margin-top: 5px; margin-bottom: 4px; line-height: 1.3; }
+        .scripture-subtitle { font-size: 12px; font-weight: bold; color: #2e7d32; margin-bottom: 15px; }
+        .accordion-section { background-color: #f4f9f4; border-left: 4px solid #1e5138; padding: 10px; margin-bottom: 15px; border-radius: 4px; }
+        .accordion-section .toggle-header { background-color: #c8e6c9; padding: 6px 8px; border-radius: 4px; cursor: pointer; font-weight: bold; color: #1e5138; margin: 0; display: flex; justify-content: space-between; align-items: center; }
+        .toggle-content { margin-top: 10px; display: none; }
+        .bottom-nav { display: flex; justify-content: space-between; gap: 6px; padding: 12px; background-color: #f8f9fa; border-top: 1px solid #ddd; flex-shrink: 0; }
+        .nav-btn { flex: 1; background-color: #1e5138; color: #ffffff; text-align: center; padding: 10px 0; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 12px; border: none; cursor: pointer; }
+        .nav-btn:hover { background-color: #143726; }
+        .verse-text { font-weight: bold; font-style: italic; }
+
+        /* Styling Modal Pemutar Media Agar Responsif dan Tidak Terpotong */
+        #mediaModal {
+            display: none;
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 200;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .modal-content {
+            background: white;
+            padding: 15px;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 400px;
+            max-height: 90vh;
+            overflow-y: auto;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .modal-content video {
+            width: 100%;
+            max-height: 60vh;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-top: 10px;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="mobile-container">
+        <div class="header">Kaum Beriman (1)</div>
+        <div class="content-scroll">
+            <div style="font-size: 12px; color: #555; margin-bottom: 2px;">Pekan ke 10</div>
+            <div class="week-title">Diserupakan kepada Kematian Kristus dan Mencapai Kebangkitan yang Unggul.</div>
+            <div class="scripture-subtitle">Filipi 3:10-11.</div>
+
+            <!-- AKORDION I: GARIS BESAR -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 I. Garis Besar (Outline) Pekan 10 <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+<p><strong>Diserupakan kepada Kematian Kristus sebagai Cetakan Kehidupan</strong><br>
+Kemustikaan pengenalan akan Kristus, menganggap segala sesuatu rugi, mendapatkan Kristus, dan mengenal kuasa kebangkitan-Nya bermuara pada satu hal: diserupakan kepada kematian Kristus. Diserupakan kepada kematian-Nya adalah dasar bagi seluruh pengalaman akan Kristus.<br>
+Cetakan kematian Kristus mengacu pada pengalaman Yesus yang senantiasa menaruh hayat insani dan alamiah-Nya kepada kematian agar Dia dapat hidup oleh hayat Allah Bapa.</p>
+<p><strong>Allah telah menaruh orang beriman ke dalam cetakan kematian Kristus seperti adonan yang dimasukkan ke dalam cetakan kue. Dalam cetakan ini, manusia alamiah dimatikan, manusia lama disalibkan, dan ego ditiadakan.</strong><br>
+Penyerupaan ini terjadi melalui operasi kuasa kebangkitan Kristus. Sewaktu diserupakan kepada kematian-Nya, kita mengalami kematian-Nya yang merampungkan semua: melepaskan dan melipatgandakan hayat, memuliakan Bapa, menarik orang lain kepada Kristus, menyelamatkan hayat jiwa kepada hayat kekal, serta mengalahkan dunia dan Iblis.</p>
+<p><strong>Mencapai Kebangkitan yang Unggul dari Antara Orang Mati</strong><br>
+Hasil dari diserupakan kepada kematian Kristus adalah mencapai, atau tiba pada, kebangkitan yang unggul (eksanastasis) dari antara orang mati.</p>
+<p><strong>Kebangkitan yang unggul adalah kebangkitan yang luar biasa dan ekstra yang menjadi hadiah/pahala kerajaan bagi kaum saleh pemenang (Why. 20:4, 6; Ibr. 11:35). Sementara semua orang beriman yang mati dalam Kristus akan dibangkitkan pada kedatangan Tuhan kembali, para pemenang menikmati bagian ekstra yang luar biasa ini.</strong></p>
+<p><strong>Mencapai kebangkitan yang unggul berarti seluruh diri kita secara bertahap dan senantiasa dibangkitkan—Roh dihidupkan saat kelahiran kembali, jiwa ditransformasi, dan tubuh fana ditransfigurasi.</strong></p>
+<p><strong>Kebangkitan yang unggul adalah kebangkitan dari ciptaan lama ke dalam ciptaan baru, meninggalkan segala hal alamiah dan dibawa masuk sepenuhnya ke dalam Allah.</strong><br>
+Bagi Paulus, hidup adalah Kristus sebagai kebangkitan yang unggul. Paulus berlari pada perlombaan untuk mendapatkan hadiah ini dengan melupakan apa yang di belakang dan mengejar apa yang di depan.<br>
+Penyerupaan kepada kematian Kristus untuk mencapai kebangkitan yang unggul adalah satu-satunya jalan bagi Tuhan untuk maju dalam pemulihan-Nya, membangun gereja-Nya, mempersiapkan mempelai perempuan, dan mendatangkan kedatangan-Nya kembali.</p>
+                </div>
+            </div>
+
+            <!-- AKORDION II: AYAT ALKITAB RAWATAN PAGI -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 II. Ayat Alkitab Rawatan Pagi (Hari 1–6) <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+<p><strong>Hari 1 (Senin) Filipi 3:</strong></p>
+<p class="verse-text">10: "Yang kukehendaki ialah mengenal Dia dan kuasa kebangkitan-Nya dan persekutuan dalam penderitaan-Nya, di mana aku menjadi serupa dengan Dia dalam kematian-Nya." Yohanes 6:57: "Sama seperti Bapa yang hidup mengutus Aku dan Aku hidup oleh Bapa, demikian juga siapa saja yang memakan Aku, akan hidup oleh Aku."</p>
+<p><strong>Hari 2 (Selasa) Galatia 2:</strong></p>
+<p class="verse-text">19b-20: "... Aku telah disalibkan dengan Kristus, namun aku hidup, tetapi bukan lagi aku sendiri yang hidup, melainkan Kristus yang hidup di dalam aku. Hidup yang sekarang aku hidupi secara jasmani adalah hidup oleh iman dalam Anak Allah yang telah mengasihi aku dan menyerahkan diri-Nya untuk aku." Matius 16:24: "Lalu Yesus berkata kepada murid-murid-Nya, “Jika seseorang mau mengikut Aku, ia harus menyangkal dirinya, memikul salibnya dan mengikut Aku.”"</p>
+<p><strong>Hari 3 (Rabu) Yohanes 12:</strong></p>
+<p class="verse-text">24: "Sesungguhnya Aku berkata kepadamu: Jika biji gandum tidak jatuh ke dalam tanah dan mati, ia tetap satu biji saja, tetapi jika ia mati, ia akan menghasilkan banyak buah." Yohanes 12:32: "Dan Aku, apabila Aku ditinggikan dari bumi, Aku akan menarik semua orang datang kepada-Ku."</p>
+<p><strong>Hari 4 (Kamis) Filipi 3:</strong></p>
+<p class="verse-text">11: "Supaya aku akhirnya beroleh kebangkitan dari antara orang mati." Wahyu 20:6: "Berbahagia dan kuduslah orang yang mendapat bagian dalam kebangkitan pertama itu. Kematian yang kedua tidak berkuasa lagi atas mereka, tetapi mereka akan menjadi imam-imam Allah dan Kristus, dan mereka akan memerintah sebagai raja bersama-sama dengan Dia selama seribu tahun."</p>
+<p><strong>Hari 5 (Jumat) Filipi 1:</strong></p>
+<p class="verse-text">21: "Karena bagiku hidup adalah Kristus dan mati adalah keuntungan." Yohanes 11:25: "Jawab Yesus kepadanya, “Akulah kebangkitan dan hidup...”"</p>
+<p><strong>Hari 6 (Sabtu) Filipi 3:</strong></p>
+<p class="verse-text">12-13: "Bukan seolah-olah aku telah memperoleh hal ini atau telah sempurna, melainkan aku mengejarnya, kalau-kalau aku dapat juga menangkapnya, karena aku pun telah ditangkap oleh Kristus Yesus. Saudara-saudara, aku sendiri tidak menganggap bahwa aku telah menangkapnya, tetapi inilah yang kulakukan: Aku melupakan apa yang telah di belakangku dan mengarahkan diri kepada apa yang di hadapanku."</p>
+                </div>
+            </div>
+
+            <!-- AKORDION III: POIN-POIN CATATAN KAKI -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 III. Poin-Poin Catatan Kaki (Footnote) <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+<p><strong>Makna Kematian Kristus sebagai Cetakan (Mold) (Flp. 3:10 & Yoh. 6:57) Cetakan kematian Kristus mengacu pada pola hidup Yesus sewaktu di bumi yang senantiasa menaruh hayat insani dan alamiah-Nya kepada kematian agar Dia dapat memperhidupkan hayat Bapa. Kematian Kristus adalah cetakan di mana kehidupan harian orang beriman ditaruh dan dibentuk seperti adonan dalam cetakan kue.</strong></p>
+<p><strong>Dua Kategori Penderitaan Kristus (Flp. 3:10, Kol. 1:24 & Yoh. 12:24)</strong> Penderitaan bagi Penebusan: Diresapi dan dirampungkan oleh diri Kristus sendiri di atas salib sebagai Anak Domba Allah; manusia tidak dapat dan tidak boleh berbagian di dalamnya. Penderitaan bagi Pembangunan Tubuh Kristus: Kristus sebagai biji gandum yang mati untuk melipatgandakan hayat. Penderitaan ini dilanjutkan dan digenapkan oleh kaum beriman melalui kehilangan hayat jiwa.</p>
+<p><strong>Operasi Salib dan Kuasa Kebangkitan (Flp. 3:10 & Ef. 1:19-20) Kuasa kebangkitan Kristus adalah Roh itu sendiri yang beroperasi dari dalam batin. Hanya melalui kuasa kebangkitan kita dimampukan untuk tetap memikul salib dan menanggulangi enam hal negatif: manusia lama, tubuh dosa, daging dengan hawa nafsunya, praktik-praktik tubuh, ego, dan hayat jiwa.</strong></p>
+<p><strong>Kematian yang Merampungkan Semua (All-inclusive Death) (Yoh. 12:24-32) Ketika orang beriman diserupakan kepada kematian Kristus, lima hasil ilahi dilepaskan: (1) memelihara hayat jiwa kepada hayat kekal, (2) mengalahkan dunia dan Iblis, (3) melepaskan dan melipatgandakan hayat ilahi kepada orang lain, (4) memuliakan Allah Bapa, dan (5) menjadi magnet yang menarik orang lain kepada Kristus.</strong></p>
+<p><strong>Makna Kebangkitan yang Unggul / Ekstra (Out-Resurrection) (Flp. 3:11 & Why. 20:4, 6) Kebangkitan yang unggul (eksanastasis) bukanlah sekadar kebangkitan umum yang dialami seluruh kaum beriman saat kedatangan Tuhan kembali, melainkan bagian ekstra dan hadiah/pahala kerajaan bagi kaum saleh pemenang yang telah diserupakan dengan kematian Kristus selama hidup di bumi.</strong></p>
+<p><strong>Proses Kebangkitan Bertahap Seluruh Diri (Ef. 2:5-6, Rm. 8:6, 11 & 1 Tes. 5:23) Kebangkitan adalah proses hayat bertahap yang dialami saat ini: Roh: Dibangkitkan/dihidupkan pada saat kelahiran kembali. Jiwa: Dibangkitkan melalui pembaruan pikiran dan transformasi. Tubuh: Dibangkitkan melalui penghidupan Roh dan transfigurasi tubuh fana pada kedatangan Tuhan.</strong></p>
+<p><strong>Mengejar Kristus sebagai Hadiah dan Sasaran (Flp. 3:12-14) Kristus sendiri adalah sasaran (goal) dan hadiah (prize). Kata "mengejar" (pursue) dalam bahasa Yunani menggunakan kata yang sama dengan "menganiaya" (persecute). Sama seperti Paulus dahulu menganiaya Kristus secara negatif, setelah diselamatkan ia "menganiaya" (mengejar secara positif) Kristus dengan tidak mau melepaskan Dia, melupakan apa yang di belakang dan mengarahkan diri kepada kekayaan Kristus di hadapannya.</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL PEMUTAR MEDIA -->
+        <div id="mediaModal" onclick="closeModal(event)">
+            <div class="modal-content" id="modalBody" onclick="event.stopPropagation()">
+                <!-- Konten Media Dinamis -->
+            </div>
+        </div>
+
+        <!-- NAVIGASI BAWAH -->
+        <div class="bottom-nav">
+            <a href="../../index.html" class="nav-btn">🏠 Home</a>
+            
+            
+        </div>
+    </div>
+
+    <script>
+        function toggleSection(header) {
+            const content = header.nextElementSibling;
+            const arrow = header.querySelector('.arrow');
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                arrow.textContent = "▼";
+            } else {
+                content.style.display = "block";
+                arrow.textContent = "▲";
+            }
+        }
+
+        function playAudio() {
+            var modal = document.getElementById("mediaModal");
+            var body = document.getElementById("modalBody");
+            
+            body.innerHTML = `
+                <h3 style="margin: 0 0 5px 0; font-size: 16px;">Audio Penyegaran Pagi</h3>
+                <p style="margin: 0 0 10px 0; font-size: 12px; color: #666;">Pekan 10</p>
+                <audio id="myAudio" controls autoplay style="width:100%; margin-top:10px;">
+                    <source src="../berita_mingguan/Pekan_10/10_Mengapa_Berusaha_Jadi_Orang_Baik_Itu_Gagal.m4a" type="audio/mp4">
+                    Peramban Anda tidak mendukung elemen audio.
+                </audio>
+                <br>
+                <button onclick="closeModalDirect()" style="padding: 6px 14px; background:#1e5138; color:white; border:none; border-radius:8px; cursor:pointer; font-size: 12px; margin-top: 10px;">Tutup</button>
+            `;
+            modal.style.display = "flex";
+
+            var audioElement = document.getElementById("myAudio");
+            audioElement.onended = function() {
+                closeModalDirect();
+            };
+        }
+
+        function playVideo() {
+            var modal = document.getElementById("mediaModal");
+            var body = document.getElementById("modalBody");
+            
+            body.innerHTML = `
+                <h3 style="margin: 0 0 5px 0; font-size: 16px;">Video Penyegaran Pagi</h3>
+                <p style="margin: 0 0 10px 0; font-size: 12px; color: #666;">Pekan 10</p>
+                <video id="myVideo" controls autoplay>
+                    <source src="../berita_mingguan/Pekan_10/10_Bagaimana_Cetakan_Kematian_Kristus_Bekerja.mp4" type="video/mp4">
+                    Peramban Anda tidak mendukung elemen video.
+                </video>
+                <br>
+                <button onclick="closeModalDirect()" style="padding: 6px 14px; background:#1e5138; color:white; border:none; border-radius:8px; cursor:pointer; font-size: 12px; margin-top: 10px;">Tutup</button>
+            `;
+            modal.style.display = "flex";
+
+            var videoElement = document.getElementById("myVideo");
+            videoElement.onended = function() {
+                closeModalDirect();
+            };
+        }
+
+        function closeModal(event) {
+            closeModalDirect();
+        }
+
+        function closeModalDirect() {
+            var modal = document.getElementById("mediaModal");
+            if (modal) modal.style.display = "none";
+
+            var audioElement = document.getElementById("myAudio");
+            if (audioElement) {
+                audioElement.pause();
+                audioElement.currentTime = 0;
+            }
+            var videoElement = document.getElementById("myVideo");
+            if (videoElement) {
+                videoElement.pause();
+                videoElement.currentTime = 0;
+            }
+        }
+    </script>
+</body>
+</html>

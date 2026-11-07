@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Minggu Pekan 8</title>
+    <style>
+        body { background-color: #121212; font-family: Arial, sans-serif; margin: 0; padding: 20px 0; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; }
+        .mobile-container { width: 100%; max-width: 420px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); display: flex; flex-direction: column; max-height: 88vh; overflow: hidden; position: relative; }
+        .header { background-color: #1e5138; color: white; padding: 15px; text-align: left; font-size: 16px; font-weight: bold; flex-shrink: 0; }
+        .content-scroll { padding: 15px; overflow-y: auto; flex-grow: 1; font-size: 14px; line-height: 1.6; color: #333; }
+        .week-title { font-size: 18px; font-weight: bold; color: #1e5138; margin-top: 5px; margin-bottom: 4px; line-height: 1.3; }
+        .scripture-subtitle { font-size: 12px; font-weight: bold; color: #2e7d32; margin-bottom: 15px; }
+        .accordion-section { background-color: #f4f9f4; border-left: 4px solid #1e5138; padding: 10px; margin-bottom: 15px; border-radius: 4px; }
+        .accordion-section .toggle-header { background-color: #c8e6c9; padding: 6px 8px; border-radius: 4px; cursor: pointer; font-weight: bold; color: #1e5138; margin: 0; display: flex; justify-content: space-between; align-items: center; }
+        .toggle-content { margin-top: 10px; display: none; }
+        .bottom-nav { display: flex; justify-content: space-between; gap: 6px; padding: 12px; background-color: #f8f9fa; border-top: 1px solid #ddd; flex-shrink: 0; }
+        .nav-btn { flex: 1; background-color: #1e5138; color: #ffffff; text-align: center; padding: 10px 0; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 12px; border: none; cursor: pointer; }
+        .nav-btn:hover { background-color: #143726; }
+        .verse-text { font-weight: bold; font-style: italic; }
+
+        /* Styling Modal Pemutar Media Agar Responsif dan Tidak Terpotong */
+        #mediaModal {
+            display: none;
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 200;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .modal-content {
+            background: white;
+            padding: 15px;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 400px;
+            max-height: 90vh;
+            overflow-y: auto;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .modal-content video {
+            width: 100%;
+            max-height: 60vh;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-top: 10px;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="mobile-container">
+        <div class="header">Kaum Beriman (1)</div>
+        <div class="content-scroll">
+            <div style="font-size: 12px; color: #555; margin-bottom: 2px;">Pekan ke 08</div>
+            <div class="week-title">Mengenal dan Mengalami Kristus yang Almuhit dalam Injil Matius.</div>
+            <div class="scripture-subtitle">Matius 2:1-2; 3:11; 4:12-16; 8:20; 16:16; 21:5.</div>
+
+            <!-- AKORDION I: GARIS BESAR -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 I. Garis Besar (Outline) Pekan 8 <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+<p><strong>Kristus adalah Raja Surgawi dan Putra Allah yang Hidup</strong><br>
+Raja Surgawi: Yesus Kristus adalah Mesias yang dinubuatkan dalam Perjanjian Lama. Dia datang bukan dengan kemuliaan lahiriah yang menakutkan, melainkan dengan kelembutan yang berbudi dan rendah hati.</p>
+<p><strong>Kristus dan Putra Allah: "Kristus" mengacu kepada Yang Diurapi Allah berkaitan dengan jabatan dan amanat-Nya untuk merampungkan tujuan kekal Allah. "Putra Allah yang hidup" mengacu kepada persona-Nya yang mewujudkan Bapa dan dirampungkan dalam Roh bagi ekspresi penuh Allah Tritunggal.</strong></p>
+<p><strong>Kristus adalah Anak Manusia, Pembaptis, dan Terang Hayat</strong><br>
+Anak Manusia: Kristus berdiri sebagai manusia yang menang untuk mengalahkan Iblis, menahan setiap serangan, dan membawa kekuasaan Allah ke bumi.<br>
+Sang Pembaptis: Baptisan-Nya di dalam Roh Kudus membawa orang beriman ke dalam Kerajaan Surga, sedangkan baptisan-Nya di dalam api menempatkan orang tidak beriman ke dalam telaga api.<br>
+Terang Hayat: Ministri-Nya bagi Kerajaan Surga dimulai dengan bersinar sebagai Terang yang besar untuk menarik orang-orang kepada diri-Nya.</p>
+<p><strong>Kristus adalah Tabib, Mempelai Laki-laki, Pakaian Baru, dan Anggur Baru</strong><br>
+Tabib & Mempelai Laki-laki: Menyembuhkan orang berdosa (pasien) dengan belas kasihan dan menyajikan diri-Nya sebagai Mempelai Laki-laki untuk memberi kenikmatan manis di hadirat-Nya.<br>
+Kain Belum Susut & Pakaian Baru: Kristus sebelum salib adalah kain yang belum susut. Melalui kematian dan kebangkitan-Nya, Dia menjadi pakaian baru untuk menutupi kita sebagai keadilbenaran di hadapan Allah.<br>
+Anggur Baru & Kantung Kulit yang Baru: Kristus yang individu adalah anggur baru (hayat baru yang menggairahkan), sedangkan Kristus yang korporat (kehidupan gereja lokal) adalah kantung kulit yang baru untuk menampung anggur tersebut.</p>
+<p><strong>Kristus adalah Gembala, Tuan Tuaian, Pemberi Perhentian, dan Roti/Remah-remah</strong><br>
+Gembala & Tuan Tuaian: Melayani umat-Nya sebagai Gembala dan mengajak orang percaya berdoa kepada Tuan empunya tuaian agar mengutus pekerja-pekerja.<br>
+Pemberi Perhentian: Mengundang mereka yang letih lesu untuk memikul gandar-Nya (kehendak Bapa) demi mendapat perhentian batiniah bagi jiwa.<br>
+Yunus yang Lebih Besar & Roti/Remah-remah: Kristus mati dan dibangkitkan sebagai tanda Yunus. Dia menyajikan diri-Nya sebagai roti dan remah-remah di bawah meja untuk dimakan dan dicerna oleh orang percaya.<br>
+Yang Bangkit dengan Semua Otoritas: Dalam keinsanian-Nya yang telah dibangkitkan, Kristus memegang semua otoritas di surga dan di bumi untuk memuridkan bangsa-bangsa.</p>
+                </div>
+            </div>
+
+            <!-- AKORDION II: AYAT ALKITAB RAWATAN PAGI -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 II. Ayat Alkitab Rawatan Pagi (Hari 1–6) <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+<p><strong>Hari 1 (Senin) Matius 16:</strong></p>
+<p class="verse-text">16: "Jawab Simon Petrus, “Engkaulah Mesias, Anak Allah yang hidup!”" Matius 21:5: "“Katakanlah kepada putri Sion: Lihat, Rajamu datang kepadamu, Ia lemah lembut dan mengendarai seekor keledai betina, dan seekor keledai beban yang muda.”"</p>
+<p><strong>Hari 2 (Selasa) Matius 4:</strong></p>
+<p class="verse-text">4: "Tetapi Yesus menjawab, “Ada tertulis: Manusia hidup bukan dari roti saja, tetapi dari setiap firman yang keluar dari mulut Allah.”" Matius 3:11: "Aku membaptis kamu dengan air sebagai tanda pertobatan, tetapi Ia yang datang kemudian setelah aku lebih berkuasa daripada aku dan aku tidak layak membawa kasut-Nya. Ia akan membaptiskan kamu dengan Roh Kudus dan dengan api."</p>
+<p><strong>Hari 3 (Rabu) Matius 4:</strong></p>
+<p class="verse-text">16: "“Bangsa yang diam dalam kegelapan, telah melihat Terang yang besar dan bagi mereka yang diam di negeri yang dinaungi maut, telah terbit Terang.”" Matius 9:11-12: "Pada waktu orang Farisi melihat hal itu, berkatalah mereka kepada murid-murid Yesus, “Mengapa gurumu makan bersama-sama dengan pemungut cukai dan orang berdosa?” Yesus mendengarnya dan berkata, “Bukan orang sehat yang memerlukan tabib, tetapi orang sakit.”"</p>
+<p><strong>Hari 4 (Kamis) Matius 9:</strong></p>
+<p class="verse-text">16-17: "Tidak seorang pun menambalkan secarik kain yang belum susut pada baju yang tua, karena jika demikian kain penambal itu akan mencabik baju itu, lalu makin besarlah koyaknya. Begitu pula anggur yang baru tidak dituang ke dalam kantong kulit yang tua, karena jika demikian kantong itu akan koyak sehingga anggur itu terbuang dan kantong itu pun hancur. Tetapi anggur yang baru disimpan orang dalam kantong yang baru pula, dan dengan demikian terpeliharalah kedua-duanya."</p>
+<p><strong>Hari 5 (Jumat) Matius 9:</strong></p>
+<p class="verse-text">38: "Karena itu, mintalah kepada tuan yang empunya tuaian, supaya Ia mengirimkan pekerja-pekerja untuk tuaian itu." Matius 11:29-30: "Pikullah gandar yang Kupasang dan belajarlah kepada-Ku, karena Aku lemah lembut dan rendah hati dan jiwamu akan mendapat ketenangan. Sebab gandar yang Kupasang itu menyenangkan dan beban-Ku pun ringan."</p>
+<p><strong>Hari 6 (Sabtu) Matius 15:</strong></p>
+<p class="verse-text">26-27: "Tetapi Yesus menjawab, “Tidak patut mengambil roti yang disediakan bagi anak-anak dan melemparkannya kepada anjing.” Kata perempuan itu, “Benar Tuhan, namun anjing itu makan remah-remah yang jatuh dari meja tuannya.”"</p>
+                </div>
+            </div>
+
+            <!-- AKORDION III: POIN-POIN CATATAN KAKI -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 III. Poin-Poin Catatan Kaki (Footnote) <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+<p><strong>Gelar "Kristus" vs "Putra Allah" & Raja yang Lemah Lembut (Mat. 16:16 & 21:5)</strong> Kristus: Misi dan jabatan-Nya sebagai Yang Diurapi untuk merampungkan ekonomi Allah melalui ketersaliban, kebangkitan, dan kedatangan-Nya kembali. Putra Allah: Persona-Nya yang memiliki dan mewujudkan hayat Allah. Raja Lemah Lembut: Yesus mengendarai keledai beban muda, menunjukkan kerendahhatian dan ketidakmauan-Nya untuk berperang secara lahiriah atau bersaing dengan manusia.</p>
+<p><strong>Kedudukan sebagai Manusia & Tiga Jenis Baptisan (Mat. 4:4 & 3:11)</strong> Anak Manusia: Ketika dicobai Iblis, Yesus menjawab sebagai manusia ("Ada tertulis: Manusia hidup..."), karena Iblis dikalahkan oleh manusia kedua. Tiga Baptisan: Baptisan air (pertobatan), baptisan Roh Kudus (memulai Kerajaan Surga dan memberi hayat kepada gandum/orang percaya), serta baptisan api (mengakhiri Kerajaan Surga dengan mencampakkan sekam/orang tidak beriman ke telaga api).</p>
+<p><strong>Kristus sebagai Tabib, Magnet Terang, dan Mempelai (Mat. 4:16 & 9:11-15)</strong> Tabib: Kristus mendatangi pemungut cukai dan orang berdosa bukan sebagai Hakim yang menghukum menurut keadilbenaran, melainkan Tabib yang menyembuhkan menurut belas kasihan. Terang Besar: Ministri-Nya menarik murid-murid seperti magnet raksasa bukan lewat pamer kekuatan, tetapi lewat pancaran persona-Nya. Mempelai Laki-laki: Kehadiran-Nya membawa kemanisan dan sukacita perjamuan pernikahan tanpa rasa takut.</p>
+<p><strong>Rahasia Kain Belum Susut, Pakaian Baru, Anggur Baru, dan Kantung Kulit (Mat. 9:16-17)</strong> Kain belum susut: Kristus dalam kehidupan insani-Nya di bumi sebelum diproses melalui kematian dan kebangkitan. Pakaian baru: Kristus yang telah dibangkitkan sebagai keadilbenaran objektif yang menutupi kaum beriman. Anggur baru: Hayat Kristus yang menggairahkan dan memuaskan batin. Kantung kulit yang baru: Kehidupan gereja yang korporat (Kristus yang korporat) dalam gereja lokal sebagai wadah yang menampung anggur baru.</p>
+<p><strong>Tuan Tuaian dan Memikul Gandar Tuhan (Mat. 9:38 & 11:28-30)</strong> Tuan Tuaian: Orang-orang adalah tuaian hidup. Berdoa meminta pekerja kepada Tuan tuaian menunjukkan penghormatan penuh kepada kedaulatan Kristus. Gandar Tuhan: Memikul gandar Kristus berarti dibatasi dan dikuasai oleh kehendak Bapa. Gandar ini "menyenangkan" (pas dan cocok) sehingga memberikan perhentian batiniah yang sempurna bagi jiwa.</p>
+<p><strong>Makan Roti dan Remah-remah di Bawah Meja (Mat. 15:26-27) Kebanyakan Kanaan menyadari bahwa Kristus yang ditolak oleh anak-anak (Israel) telah menjadi "remah-remah di bawah meja" yang dicurahkan bagi bangsa-bangsa lain (anjing kafir). Hal utama dalam kehidupan kerajaan bukanlah penyucian ritual lahiriah, melainkan memakan, mencerna, dan mengasimilasi Kristus secara batiniah.</strong></p>
+<p><strong>Otoritas Kebangkitan untuk Memuridkan Bangsa-Bangsa (Mat. 28:18-19) Setelah kebangkitan-Nya, Kristus dalam keinsanian-Nya menerima seluruh otoritas di surga dan di bumi untuk mengutus murid-murid-Nya memuridkan semua bangsa ke dalam nama Bapa, Putra, dan Roh Kudus.</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL PEMUTAR MEDIA -->
+        <div id="mediaModal" onclick="closeModal(event)">
+            <div class="modal-content" id="modalBody" onclick="event.stopPropagation()">
+                <!-- Konten Media Dinamis -->
+            </div>
+        </div>
+
+        <!-- NAVIGASI BAWAH -->
+        <div class="bottom-nav">
+            <a href="../../index.html" class="nav-btn">🏠 Home</a>
+            
+            
+        </div>
+    </div>
+
+    <script>
+        function toggleSection(header) {
+            const content = header.nextElementSibling;
+            const arrow = header.querySelector('.arrow');
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                arrow.textContent = "▼";
+            } else {
+                content.style.display = "block";
+                arrow.textContent = "▲";
+            }
+        }
+
+        function playAudio() {
+            var modal = document.getElementById("mediaModal");
+            var body = document.getElementById("modalBody");
+            
+            body.innerHTML = `
+                <h3 style="margin: 0 0 5px 0; font-size: 16px;">Audio Penyegaran Pagi</h3>
+                <p style="margin: 0 0 10px 0; font-size: 12px; color: #666;">Pekan 8</p>
+                <audio id="myAudio" controls autoplay style="width:100%; margin-top:10px;">
+                    <source src="../berita_mingguan/Pekan_08/8_Paradoks_Kepemimpinan_Kristus_Dalam_Injil_Matius.m4a" type="audio/mp4">
+                    Peramban Anda tidak mendukung elemen audio.
+                </audio>
+                <br>
+                <button onclick="closeModalDirect()" style="padding: 6px 14px; background:#1e5138; color:white; border:none; border-radius:8px; cursor:pointer; font-size: 12px; margin-top: 10px;">Tutup</button>
+            `;
+            modal.style.display = "flex";
+
+            var audioElement = document.getElementById("myAudio");
+            audioElement.onended = function() {
+                closeModalDirect();
+            };
+        }
+
+        function playVideo() {
+            var modal = document.getElementById("mediaModal");
+            var body = document.getElementById("modalBody");
+            
+            body.innerHTML = `
+                <h3 style="margin: 0 0 5px 0; font-size: 16px;">Video Penyegaran Pagi</h3>
+                <p style="margin: 0 0 10px 0; font-size: 12px; color: #666;">Pekan 8</p>
+                <video id="myVideo" controls autoplay>
+                    <source src="../berita_mingguan/Pekan_08/8_Sisi_Mengejutkan_Raja_Surgawi_dalam_Injil_Matius.mp4" type="video/mp4">
+                    Peramban Anda tidak mendukung elemen video.
+                </video>
+                <br>
+                <button onclick="closeModalDirect()" style="padding: 6px 14px; background:#1e5138; color:white; border:none; border-radius:8px; cursor:pointer; font-size: 12px; margin-top: 10px;">Tutup</button>
+            `;
+            modal.style.display = "flex";
+
+            var videoElement = document.getElementById("myVideo");
+            videoElement.onended = function() {
+                closeModalDirect();
+            };
+        }
+
+        function closeModal(event) {
+            closeModalDirect();
+        }
+
+        function closeModalDirect() {
+            var modal = document.getElementById("mediaModal");
+            if (modal) modal.style.display = "none";
+
+            var audioElement = document.getElementById("myAudio");
+            if (audioElement) {
+                audioElement.pause();
+                audioElement.currentTime = 0;
+            }
+            var videoElement = document.getElementById("myVideo");
+            if (videoElement) {
+                videoElement.pause();
+                videoElement.currentTime = 0;
+            }
+        }
+    </script>
+</body>
+</html>

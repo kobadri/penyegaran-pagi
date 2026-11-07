@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Minggu Pekan 11</title>
+    <style>
+        body { background-color: #121212; font-family: Arial, sans-serif; margin: 0; padding: 20px 0; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; }
+        .mobile-container { width: 100%; max-width: 420px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); display: flex; flex-direction: column; max-height: 88vh; overflow: hidden; position: relative; }
+        .header { background-color: #1e5138; color: white; padding: 15px; text-align: left; font-size: 16px; font-weight: bold; flex-shrink: 0; }
+        .content-scroll { padding: 15px; overflow-y: auto; flex-grow: 1; font-size: 14px; line-height: 1.6; color: #333; }
+        .week-title { font-size: 18px; font-weight: bold; color: #1e5138; margin-top: 5px; margin-bottom: 4px; line-height: 1.3; }
+        .scripture-subtitle { font-size: 12px; font-weight: bold; color: #2e7d32; margin-bottom: 15px; }
+        .accordion-section { background-color: #f4f9f4; border-left: 4px solid #1e5138; padding: 10px; margin-bottom: 15px; border-radius: 4px; }
+        .accordion-section .toggle-header { background-color: #c8e6c9; padding: 6px 8px; border-radius: 4px; cursor: pointer; font-weight: bold; color: #1e5138; margin: 0; display: flex; justify-content: space-between; align-items: center; }
+        .toggle-content { margin-top: 10px; display: none; }
+        .bottom-nav { display: flex; justify-content: space-between; gap: 6px; padding: 12px; background-color: #f8f9fa; border-top: 1px solid #ddd; flex-shrink: 0; }
+        .nav-btn { flex: 1; background-color: #1e5138; color: #ffffff; text-align: center; padding: 10px 0; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 12px; border: none; cursor: pointer; }
+        .nav-btn:hover { background-color: #143726; }
+        .verse-text { font-weight: bold; font-style: italic; }
+
+        /* Styling Modal Pemutar Media Agar Responsif dan Tidak Terpotong */
+        #mediaModal {
+            display: none;
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 200;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .modal-content {
+            background: white;
+            padding: 15px;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 400px;
+            max-height: 90vh;
+            overflow-y: auto;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .modal-content video {
+            width: 100%;
+            max-height: 60vh;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-top: 10px;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="mobile-container">
+        <div class="header">Kaum Beriman (1)</div>
+        <div class="content-scroll">
+            <div style="font-size: 12px; color: #555; margin-bottom: 2px;">Pekan ke 11</div>
+            <div class="week-title">Bintang-bintang, Anak-Laki-laki, Buah Sulung, Panenan, serta Permata Yaspis dan Batu Permata Lainnya.</div>
+            <div class="scripture-subtitle">Wahyu 1:20; 12:1-11; 14:1-5; 21:9-11, 18-21.</div>
+
+            <!-- AKORDION I: GARIS BESAR -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 I. Garis Besar (Outline) Pekan 11 <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+<p><strong>Bintang-bintang yang Bersinar di Tengah Kemerosotan Gereja</strong><br>
+Kaum beriman yang setia adalah bintang-bintang yang bersinar dan memikul kesaksian hidup Yesus.</p>
+<p><strong>Bintang-bintang yang hidup mengikuti visi Kristus yang terkini, memperhatikan firman prophetik Alkitab sampai Kristus sebagai Bintang Fajar terbit di dalam hati mereka, serta dipenuhi oleh Roh yang diintensifkan tujuh ganda.</strong><br>
+Waspada terhadap Bintang Mengembara dan Tujuh Perusak Gereja (Yeh. 25–29): Bintang mengembara tidak memiliki kedudukan tetap pada kebenaran. Tujuh tipe perusak:<br>
+Bani Amon (membenci Kristus dan gereja)<br>
+Bani Moab (membawa gereja serupa dengan dunia)<br>
+Bani Edom (manusia lama yang membenci manusia baru)<br>
+Orang Filistin (manusia alamiah yang beragama)<br>
+Tirus (mengejar kekayaan duniawi)<br>
+Sidon (duri yang merusak pertumbuhan hayat)<br>
+Mesir (mengandalkan sumber daya/hikmat alamiah sendiri tanpa bergantung pada Allah).</p>
+<p><strong>Anak-Laki-laki: Pemenang yang Berperang Mengalahkan Musuh Allah</strong><br>
+Anak-laki-laki melambangkan bagian yang lebih kuat di antara umat Allah (pemenang yang telah meninggal sepanjang zaman) yang dilahirkan oleh perempuan cemerlang.<br>
+Mereka mengalahkan Iblis oleh darah Anak Domba, perkataan kesaksian, dan tidak mengasihi hayat jiwa (nyawa) mereka sampai mati.<br>
+Dua Perlambangan Pemenang:<br>
+Abigail: Istri Daud yang melambangkan gereja yang berperang bersama Kristus di tengah penderitaan setelah manusia lama (Nabal) dipukul mati.<br>
+Gideon dan 300 Orang: Pemenang yang rela mengorbankan kenyamanan pribadi demi tujuan Allah; kemenangan mereka membangkitkan seluruh Tubuh Kristus.</p>
+<p><strong>Buah Sulung dan Panenan</strong></p>
+<p><strong>Buah Sulung (144.000 pemenang yang hidup pada akhir zaman): Pemenang tahap awal yang matang lebih dini dan terangkat ke Gunung Sion di surga sebelum masa kesusahan besar untuk memuaskan hati Allah dan Anak Domba.</strong><br>
+Panenan: Mayoritas kaum beriman yang matang belakangan dan akan dituai oleh Kristus pada akhir kesusahan besar.<br>
+Keterangkatan menuntut kematangan hayat melalui hidup bergaul dengan Allah (seperti Henokh).</p>
+<p><strong>Permata Yaspis dan Batu-batu Permata Lainnya</strong></p>
+<p><strong>Permata Yaspis: Menandakan penampilan Allah yang bersinar dengan kemuliaan Allah sebagai terang Yerusalem Baru bagi ekspresi penuh Allah secara korporat.</strong><br>
+Batu-batu Permata Lainnya: Menandakan kekayaan kecantikan Kristus. Melalui Roh yang menghakimi, membakar, dan mengalir, kaum beriman ditransformasi dari tanah liat menjadi batu-batu permata.<br>
+Warna-warna fondasi membentuk pelangi kekal yang menandakan bahwa Yerusalem Baru dibangun di atas kesetiaan Allah yang memegang perjanjian-Nya.</p>
+                </div>
+            </div>
+
+            <!-- AKORDION II: AYAT ALKITAB RAWATAN PAGI -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 II. Ayat Alkitab Rawatan Pagi (Hari 1–6) <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+<p><strong>Hari 1 (Senin) Wahyu 1:</strong></p>
+<p class="verse-text">20: "Inilah rahasia ketujuh bintang yang telah kaulihat pada tangan kanan-Ku dan ketujuh kaki pelita emas itu: Ketujuh bintang itu ialah malaikat ketujuh jemaat dan ketujuh kaki pelita itu ialah ketujuh jemaat." 2 Petrus 1:19: "Dengan demikian, kami makin diteguhkan oleh firman yang telah disampaikan oleh para nabi. Alangkah baiknya kalau kamu memperhatikannya sama seperti memperhatikan pelita yang bercahaya di tempat yang gelap sampai fajar menyingsing dan bintang timur terbit bersinar di dalam hatimu."</p>
+<p><strong>Hari 2 (Selasa) 1 Korintus 3:</strong></p>
+<p class="verse-text">12: "Entahkah orang membangun di atas dasar ini dengan emas, perak, batu permata, kayu, rumput kering atau jerami." 1 Korintus 3:16-17: "Tidak tahukah kamu bahwa kamu sekalian adalah bait Allah dan bahwa Roh Allah diam di dalam kamu? Jika ada orang yang membinasakan bait Allah, maka Allah akan membinasakan dia. Sebab bait Allah adalah kudus dan bait Allah itu ialah kamu sekalian."</p>
+<p><strong>Hari 3 (Rabu) Wahyu 12:</strong></p>
+<p class="verse-text">5: "Ia melahirkan seorang Anak laki-laki, yang akan menggembalakan semua bangsa dengan gada besi; tiba-tiba Anaknya itu dirampas dan dibawa lari kepada Allah dan ke takhta-Nya." Wahyu 12:11: "Mereka mengalahkan dia oleh darah Anak Domba, dan oleh perkataan kesaksian mereka. Karena mereka tidak mengasihi nyawa mereka sampai harus menghadapi maut."</p>
+<p><strong>Hari 4 (Kamis) Wahyu 1:</strong></p>
+<p class="verse-text">9: "Aku, Yohanes, saudara seiman yang ikut serta dalam kesusahan, dalam Kerajaan dan dalam ketekunan menantikan Yesus, berada di pulau yang bernama Patmos karena firman Allah dan kesaksian yang diberikan oleh Yesus." Kolose 1:24: "Sekarang aku bersukacita bahwa aku boleh menderita karena kamu, dan menggenapkan dalam tubuhku apa yang kurang pada penderitaan Kristus, untuk tubuh-Nya, yaitu jemaat."</p>
+<p><strong>Hari 5 (Jumat) Wahyu 14:</strong></p>
+<p class="verse-text">1: "Lalu aku melihat: Sesungguhnya, Anak Domba berdiri di bukit Sion dan bersama-sama dengan Dia seratus empat puluh empat ribu orang dan di dahi mereka tertulis nama-Nya dan nama Bapa-Nya." Wahyu 14:4: "Mereka adalah orang-orang yang tidak mencemarkan dirinya dengan perempuan-perempuan, karena mereka murni seperti perawan. Mereka adalah orang-orang yang mengikuti Anak Domba itu ke mana saja Ia pergi. Mereka ditebus dari antara manusia sebagai kurban-kurban sulung bagi Allah dan bagi Anak Domba itu."</p>
+<p><strong>Hari 6 (Sabtu) Wahyu 4:</strong></p>
+<p class="verse-text">3: "Dia yang duduk di takhta itu tampaknya bagaikan permata yaspis dan permata yaspis; dan pelangi melingkungi takhta itu, kilauannya bagaikan permata zamrud." Wahyu 21:11: "Kota itu penuh dengan kemuliaan Allah. Cahayanya sama seperti permata yang paling indah, bagaikan permata yaspis, jernih seperti kristal." Wahyu 21:18-19: "Tembok itu terbuat dari permata yaspis; dan kota itu sendiri dari emas murni, jernih seperti kaca. Dasar-dasar tembok kota itu dihiasi dengan segala jenis permata. Dasar yang pertama batu yaspis..."</p>
+                </div>
+            </div>
+
+            <!-- AKORDION III: POIN-POIN CATATAN KAKI -->
+            <div class="accordion-section">
+                <h4 class="toggle-header" onclick="toggleSection(this)">📍 III. Poin-Poin Catatan Kaki (Footnote) <span class="arrow">▼</span></h4>
+                <div class="toggle-content">
+<p><strong>Fungsi Bintang-bintang dan Bintang Fajar (Why. 1:20 & 2 Ptr. 1:19) Bintang-bintang adalah orang-orang rohani/utusan gereja yang memikul kesaksian hidup Yesus. Memperhatikan firman Alkitab secara hidup mentransformasi firman tertulis menjadi firman hidup (Kristus), sehingga Bintang Fajar terbit di dalam batin kita.</strong></p>
+<p><strong>Peringatan terhadap "Bintang Mengembara" dan Tujuh Tipe Perusak (Yeh. 25–29 & Yud. 12-13) Bintang mengembara adalah orang-orang yang tidak memiliki tumpuan kebenaran yang tetap. Alkitab memperingatkan tujuh elemen perusak gereja: Amon (pembenci gereja), Moab (pencemar kekudusan), Edom (manusia lama), Filistin (manusia alamiah yang beragama), Tirus (pemburu kekayaan), Sidon (duri pengganggu), dan Mesir (kemandirian dari Allah).</strong></p>
+<p><strong>Rahasia Kemenangan Anak-Laki-Laki (Why. 12:5, 11) Anak-laki-laki melambangkan para pemenang kolektif yang lebih kuat. Mereka mengalahkan Iblis melalui tiga hal: (1) darah Anak Domba yang menjawab setiap dakwaan, (2) perkataan kesaksian yang mengumumkan kemenangan Kristus, dan (3) tidak mengasihi hayat jiwa (ego/nyawa) sampai mati.</strong></p>
+<p><strong>Karakteristik Pejuang: Abigail dan Tiga Ratus Orang Gideon (1 Sam. 25 & Hak. 7)</strong> Abigail: Manusia lama kita yang bebal (Nabal) harus dipukul mati agar kita bersatu dengan Kristus sebagai pejuang di tengah penderitaan. Tiga Ratus Orang Gideon: Mengorbankan kenikmatan dan kepentingan diri sendiri demi peperangan Allah. Kemenangan mereka membawa berkat bagi seluruh Tubuh.</p>
+<p><strong>Keterangkatan Buah Sulung bagi Kepuasan Allah (Why. 14:1-5 & Kej. 5:22-24) Buah sulung terangkat ke Sion surgawi sebelum kesusahan besar bukan untuk keselamatan diri sendiri, melainkan bagi kepuasan dan kenikmatan Allah dan Anak Domba. Syarat terangkat sebagai buah sulung adalah matang lebih awal melalui hidup bergaul erat dengan Allah.</strong></p>
+<p><strong>Penampilan Permata Yaspis dan Keserupaan dengan Allah (Why. 4:3 & 21:11, 18-19) Permata yaspis melambangkan penampilan Allah yang penuh hayat (berwarna hijau jernih) dan kemuliaan. Karena tembok dan fondasi Yerusalem Baru terbuat dari yaspis, kaum beriman yang telah ditransformasi akan memiliki penampilan yang persis sama dengan Allah untuk mengekspresikan Dia secara korporat dalam kekekalan.</strong></p>
+<p><strong>Dasar Pelangi Kekal (Why. 21:19-21) Dua belas batu permata fondasi kota kudus memancarkan warna-warna pelangi. Ini menunjukkan bahwa bangunan kekal Allah didasarkan pada kesetiaan Allah dalam memegang perjanjian-Nya, memberikan jaminan yang teguh dan tak tergoyahkan bagi seluruh umat tebusan-Nya.</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL PEMUTAR MEDIA -->
+        <div id="mediaModal" onclick="closeModal(event)">
+            <div class="modal-content" id="modalBody" onclick="event.stopPropagation()">
+                <!-- Konten Media Dinamis -->
+            </div>
+        </div>
+
+        <!-- NAVIGASI BAWAH -->
+        <div class="bottom-nav">
+            <a href="../../index.html" class="nav-btn">🏠 Home</a>
+            
+            
+        </div>
+    </div>
+
+    <script>
+        function toggleSection(header) {
+            const content = header.nextElementSibling;
+            const arrow = header.querySelector('.arrow');
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                arrow.textContent = "▼";
+            } else {
+                content.style.display = "block";
+                arrow.textContent = "▲";
+            }
+        }
+
+        function playAudio() {
+            var modal = document.getElementById("mediaModal");
+            var body = document.getElementById("modalBody");
+            
+            body.innerHTML = `
+                <h3 style="margin: 0 0 5px 0; font-size: 16px;">Audio Penyegaran Pagi</h3>
+                <p style="margin: 0 0 10px 0; font-size: 12px; color: #666;">Pekan 11</p>
+                <audio id="myAudio" controls autoplay style="width:100%; margin-top:10px;">
+                    <source src="../berita_mingguan/Pekan_11/11_Dari_Tanah_Liat_Menjadi_Permata_Yaspis.m4a" type="audio/mp4">
+                    Peramban Anda tidak mendukung elemen audio.
+                </audio>
+                <br>
+                <button onclick="closeModalDirect()" style="padding: 6px 14px; background:#1e5138; color:white; border:none; border-radius:8px; cursor:pointer; font-size: 12px; margin-top: 10px;">Tutup</button>
+            `;
+            modal.style.display = "flex";
+
+            var audioElement = document.getElementById("myAudio");
+            audioElement.onended = function() {
+                closeModalDirect();
+            };
+        }
+
+        function playVideo() {
+            var modal = document.getElementById("mediaModal");
+            var body = document.getElementById("modalBody");
+            
+            body.innerHTML = `
+                <h3 style="margin: 0 0 5px 0; font-size: 16px;">Video Penyegaran Pagi</h3>
+                <p style="margin: 0 0 10px 0; font-size: 12px; color: #666;">Pekan 11</p>
+                <video id="myVideo" controls autoplay>
+                    <source src="../berita_mingguan/Pekan_11/11_Empat_Simbol_Rahasia_Orang_Percaya_dalam_Kitab_Wahyu.mp4" type="video/mp4">
+                    Peramban Anda tidak mendukung elemen video.
+                </video>
+                <br>
+                <button onclick="closeModalDirect()" style="padding: 6px 14px; background:#1e5138; color:white; border:none; border-radius:8px; cursor:pointer; font-size: 12px; margin-top: 10px;">Tutup</button>
+            `;
+            modal.style.display = "flex";
+
+            var videoElement = document.getElementById("myVideo");
+            videoElement.onended = function() {
+                closeModalDirect();
+            };
+        }
+
+        function closeModal(event) {
+            closeModalDirect();
+        }
+
+        function closeModalDirect() {
+            var modal = document.getElementById("mediaModal");
+            if (modal) modal.style.display = "none";
+
+            var audioElement = document.getElementById("myAudio");
+            if (audioElement) {
+                audioElement.pause();
+                audioElement.currentTime = 0;
+            }
+            var videoElement = document.getElementById("myVideo");
+            if (videoElement) {
+                videoElement.pause();
+                videoElement.currentTime = 0;
+            }
+        }
+    </script>
+</body>
+</html>

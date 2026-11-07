@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Selasa, 3 November 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 5 - Selasa, 3 November 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Za. 4:7</div>
+            <div class="scripture-text">... Ia akan mengangkat batu utama, sedang orang bersorak: Bagus! Bagus sekali batu itu!</div>
+            <div class="scripture-title">Za. 3:9</div>
+            <div class="scripture-text">Sebab sesungguhnya permata yang telah Kuserahkan kepada Yosua—satu permata yang bermata tujuh—sesungguhnya Aku akan mengukirkan ukiran di atasnya, demikianlah firman TUHAN semesta alam, dan Aku akan menghapuskan kesalahan negeri ini dalam satu hari saja.</div>
+            <p>Yesus Kristus adalah batu bagi bangunan Allah. ... Menurut Kisah Para Rasul 4:12, batu ini adalah Dia yang di dalamnya kita dapat diselamatkan. Jadi, Dia adalah Batu-Penyelamat. Sebagai Batu-Penyelamat, Dia itu kokoh, padat, kuat, dan dapat diandalkan. ... Batu ini adalah batu karang, batu fondasi, dan batu penjuru. Dalam Zakharia 4:7 kita melihat bahwa Dia bahkan adalah batu utama. Kristus adalah bahan bagi bangunan Allah. Bangunan Allah seluruhnya berasal dari Kristus. <em>(Pelajaran-Hayat Kisah Para Rasul, hal. 174)</em></p>
+            <p>Batu utama dengan seruan "Kasih karunia, kasih karunia baginya!" [Za. 4:7, TL] menandakan Kristus, yang adalah kasih karunia sebagai batu, yang padanya ada tujuh mata Yehowa, Roh Allah yang diintensifkan tujuh ganda bagi penampungan pembangunan kembali Bait Allah (Za. 3:9; 4:7-10; Why. 5:6). Mengangkat batu utama adalah merampungkan bangunan itu. ... Bagi bangunan Allah, Kristus adalah batu dalam tiga aspek. Kristus adalah batu fondasi untuk menopang bangunan Allah (Yes. 28:16; 1 Kor. 3:11), batu penjuru untuk menggabungkan anggota-anggota orang Yahudi dan bukan Yahudi dari Tubuh-Nya (Ef. 2:20; 1 Ptr. 2:6), dan batu utama untuk merampungkan bangunan Allah. <em>(Life-study of Zechariah, hal. 30-31)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Tahukah Anda, apakah Tuhan Yesus hari ini? Ia adalah batu. Ia adalah Anak Domba juga Singa untuk menjadi batu itu. Setelah menghapuskan kesalahan dan mengalahkan semua musuh, Ia sekarang sedang membangun. ... Sekarang kita bisa mengerti, mengapa dalam kunjungan-Nya yang terakhir ke Yerusalem, Tuhan Yesus menunjukkan kepada tukang-tukang bangunan Yahudi bahwa yang mereka tolak bukan saja Anak Domba, Sang Penebus, dan Singa, Pemenang itu, tetapi juga batu, batu penjuru itu. Setelah kematian dan kebangkitan-Nya, datanglah zaman gereja, yaitu zaman pembangunan Allah. Bagi pembangunan gereja, Kristus adalah batu karang. Seperti yang dikatakan-Nya kepada Petrus, <em>"Engkau adalah batu, dan di atas batu karang ini Aku akan membangun gereja-Ku"</em> (Mat. 16:18, TL). Setelah penyaliban dan kebangkitan, zaman ini menjadi zaman batu karang, zaman batu. Ini adalah zaman pembangunan.</p>
+            <p>Kelihatannya sepanjang berabad-abad tidak ada orang yang menyadari bahwa zaman ini bukan hanya zaman penebusan dan zaman kemenangan, tetapi yang lebih utama ialah zaman pembangunan. Kristus hari ini adalah batu itu. ... Puji Tuhan! Dia sekarang adalah Singa-Anak Domba-batu. Kemenangan-Nya dan penebusan-Nya adalah untuk menjadikan Dia itu batu. Jika Dia tidak mengalahkan musuh dan menghapuskan kesalahan, tidak ada jalan bagi-Nya untuk menggenapkan pekerjaan pembangunan Allah! Haleluya! Tuhan Yesus kita sekarang adalah Singa-Anak Domba-batu!</p>
+            <p>Batu ini bermata tujuh. Ini merupakan butir penting. Ketujuh mata ini adalah tujuh Roh Allah, dan tujuh Roh Allah adalah pelita yang menyala-nyala, bersinar-sinar. Apakah fungsi mata itu? Sudah tentu untuk melihat. Namun, ketujuh mata Kristus bukan untuk melihat berbagai perkara, melainkan untuk melihat kita, menatap kita. Tidak diragukan, ketujuh mata dari batu pembangunan ini adalah untuk mentransfus dan menginfus. Bila Ia menatap kita, kita akan mengerti Ia senang atau susah. ... Melalui menatap kita, Ia mentransfusikan semua apa adanya diri-Nya ke dalam diri kita. ... Ketujuh Roh Allah adalah untuk menyalurkan hayat karena, dalam Alkitab, Roh itu adalah Roh hayat. Ketujuh pelita adalah untuk menerangi, memeriksa, menyingkapkan, dan menghakimi dalam pergerakan Allah. Ini adalah untuk administrasi Allah. Transfusi melalui mata, penyaluran hayat melalui Roh Allah, dan penerangan, pemeriksaan, penyingkapan, dan penghakiman oleh ketujuh pelita semuanya terdapat dalam Kitab Wahyu. Semuanya adalah untuk Yerusalem Baru. Sebelum kita memasuki kehidupan gereja, kita tidak pernah mendengar segala perkara ini. Tetapi setelah kita berada di dalam gereja, kita mengalami sesuatu yang bersinar di dalam kita untuk memeriksa setiap rahasia seumur hidup kita. <em>(Pelajaran-Hayat Wahyu, hal. 542-544)</em></p>
+            <p class="book-ref">Bacaan Tambahan: Pelajaran-Hayat Wahyu, berita 22, 33, 68; CWWL, 1977, vol. 3, "The Ultimate Significance of the Golden Lampstand," bab 5; Life-study of Zechariah, berita 4–5</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

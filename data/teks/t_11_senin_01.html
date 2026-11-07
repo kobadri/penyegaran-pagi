@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Senin, 14 Desember 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 11 - Senin, 14 Desember 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Why. 1:20</div>
+            <div class="scripture-text">Inilah rahasia ketujuh bintang yang telah kaulihat pada tangan kanan-Ku dan ketujuh kaki pelita emas itu: Ketujuh bintang itu ialah malaikat ketujuh jemaat...</div>
+            <div class="scripture-title">2 Ptr. 1:19</div>
+            <div class="scripture-text">Dengan demikian, kami makin diteguhkan oleh firman yang telah disampaikan oleh para nabi. Alangkah baiknya kalau kamu memperhatikannya sama seperti memperhatikan pelita yang bercahaya di tempat yang gelap sampai fajar menyingsing dan bintang timur terbit bersinar di dalam hatimu.</div>
+            <p>Dalam Kitab Wahyu, bintang-bintang adalah orang-orang yang bersinar di dalam gereja-gereja. ... "Ketujuh bintang itu ialah utusan (malaikat, LAI) ketujuh jemaat" [1:20]. Utusan-utusan ini adalah orang-orang rohani dalam gereja-gereja. Mereka mungkin tidak bertanggung jawab untuk urusan-urusan gereja, tetapi mereka bertanggung jawab untuk memikul kesaksian Yesus [ayat 2, 9]. Sebagai bintang-bintang, mereka harus bersifat surgawi dan dalam kedudukan surgawi.</p>
+            <p>Bintang-bintang bisa pemenang, bisa bukan. Tentu tentu mereka adalah orang-orang yang setia, orang-orang yang benar-benar rohani, para pemenang di antara kaum saleh di dalam gereja. Di mata Allah, orang-orang ini adalah bintang-bintang yang bersinar. Semua orang beriman harus damba menjadi bintang-bintang. <em>(The Conclusion of the New Testament, hal. 1221-1222)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Dalam Alkitab kita melihat bagaimana kita bisa bukan hanya mengikuti bintang tetapi bahkan menjadi salah satu dari bintang-bintang. Ada dua jalan: pertama, oleh Alkitab, dan kedua, oleh Roh itu.</p>
+            <p>Dua Petrus 1:19 memberi kita rahasia pertama. ... Kita memiliki firman nubuat, Alkitab. Namun, firman nubuat bukan bintang. ... Ayat ini berkata bahwa karena kita memiliki firman nubuat, kita perlu memperhatikannya, kita perlu menaruh perhatian yang penuh kepadanya, sampai fajar menyingsing dan bintang fajar terbit di dalam hati kita.</p>
+            <p>Alkitab seharusnya bukan hanya firman hitam di atas putih; ini jangan menjadi huruf-huruf yang mati. Kita harus memperhatikan firman Alkitab sampai sesuatu seperti fajar terbit di dalam kita—yaitu, Kristus, sebagai bintang fajar.</p>
+            <p>Jika kita mengoulah Firman dengan hidup dan tepat, Firman itu tentu akan menjadi Kristus yang hidup. Ini adalah titik peralihan-Nya—Firman perlu berubah menjadi Kristus; firman tertulis perlu berubah menjadi firman yang hidup. Kita tidak pernah dapat memisahkan Kristus dari firman yang hidup. Kita harus memperhatikan firman nubuat sampai firman itu terbit di dalam kita sebagai Kristus, fosfor itu, sebagai fajar yang menerobos kegelapan.</p>
+            <p>Dalam Kitab 2 Petrus kita memiliki firman nubuat, tetapi dalam Kitab Wahyu kita memiliki tujuh Roh, Wahyu 3:1 berkata, "Inilah firman Dia, yang memiliki ketujuh Roh Allah dan ketujuh bintang itu." Tangan Yesus tidak hanya memegang ketujuh bintang itu. Ini berarti tujuh. Roh itu esa dengan tujuh bintang itu dan tujuh bintang itu esa dengan tujuh Roh itu. Jika kita memiliki firman yang hidup sebagai bintang fajar yang terbit di dalam kita dan kita esa dengan tujuh Roh, pada akhirnya kita akan menjadi bintang-bintang. Kita tidak hanya memiliki bintang yang bersinar di dalam kita, tetapi melalui memandang bintang dan mengikuti Roh itu, kita menjadi bintang-bintang. <em>(CWWL, 1970, vol. 1, "New Testament Service," hal. 287-289)</em></p>
+            <p>Bileam diupah oleh Balak untuk mengutuki orang Israel. Tetapi bukannya mengutuki umat Allah, Bileam malahan memberkati mereka. Beratas nama Allah, Bileam berkata, "Tidak ada ditengok kepincangan di antara keturunan Yakub, dan tidak ada dilihat kesukaran di antara orang Israel" (Bil. 23:21). Lebih lanjut, dalam Bilangan 24:5 Bileam berkata, "Alangkah indahnya kemah-kemahmu, hai Yakub, dan tempat-tempat kediamanmu, hai Israel!" Menurut ayat-ayat ini, Allah tidak melihat kejahatan pada Israel. Sebaliknya, yang terlihat oleh-Nya hanyalah kebaikan, kejujuran, dan keelokan. Begitu pula keadaan gereja hari ini.</p>
+            <p>Jangan mengatakan gereja tenggelam atau mati. Semakin Anda berkata demikian, Anda semakin menaruh diri Anda di bawah kutukan. Sebaliknya, bila Anda memuji Tuhan atas hidup gereja sambil mengatakan yang baik mengenai gereja, Anda akan meletakkan diri Anda di bawah berkat Allah. ... Siapa yang berbicara positif tentang gereja, menyatakan bahwa gereja itu elok dan adalah rumah Allah, akan menerima berkat. <em>(Pelajaran-Hayat Keluaran, hal. 109-110)</em></p>
+            <p class="book-ref">Bacaan Tambahan: CWWL, 1970, vol. 1, "New Testament Service," bab 6; Pelajaran-Hayat Keluaran, berita 7</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

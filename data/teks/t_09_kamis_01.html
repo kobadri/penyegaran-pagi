@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyegaran Pagi - Kamis, 3 Desember 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #1b2e23;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #0d1b14;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+        .header-card {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 14px 16px;
+            border-radius: 6px;
+        }
+        .header-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a3c9bb;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 6px;
+        }
+        /* Accordion 1 - Rawatan Pagi */
+        .accordion-rawatan {
+            background-color: #1b4d3e;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-rawatan .accordion-header {
+            background-color: #1b4d3e;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-rawatan .accordion-content {
+            background-color: #e8f3ee;
+            padding: 16px;
+            display: none;
+            color: #1b2e23;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-rawatan .accordion-content.active {
+            display: block;
+        }
+
+        /* Accordion 2 - Pembacaan Hari Ini */
+        .accordion-pembacaan {
+            background-color: #2e725d;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .accordion-pembacaan .accordion-header {
+            background-color: #2e725d;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-pembacaan .accordion-content {
+            background-color: #ffffff;
+            padding: 16px;
+            display: none;
+            color: #112218;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .accordion-pembacaan .accordion-content.active {
+            display: block;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .scripture-title {
+            font-weight: bold;
+            color: #0d1b14;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .scripture-title:first-child {
+            margin-top: 0;
+        }
+        /* Firman Tuhan / Ayat Alkitab: Tebal & Miring */
+        .scripture-text {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1e3a2b;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .book-ref {
+            font-style: italic;
+            color: #4a6b5d;
+            font-size: 0.88rem;
+            margin-top: 8px;
+        }
+
+        /* Navigation Button / Tombol Home */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1b4d3e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home:hover, .btn-home:active {
+            background-color: #296d59;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Card -->
+        <div class="header-card" style="text-align: center;">
+            <div class="header-title" style="text-align: center;">Penyegaran Pagi</div>
+            <div class="header-sub" style="justify-content: center; border-top: none; padding-top: 2px;">
+                <span>Kaum Beriman (1) - Pekan 9 - Kamis, 3 Desember 2026</span>
+            </div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="../../index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background-color: #296d59; color: #ffffff; text-decoration: none; padding: 6px 16px; border-radius: 16px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    <span>🏠</span>
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Accordion 1: Rawatan Pagi -->
+        <div class="accordion-rawatan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📍</span>
+                    <span>Rawatan Pagi</span>
+                </div>
+                <span class="icon-arrow">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+                
+            <div class="scripture-title">Why. 3:8</div>
+            <div class="scripture-text">... Kekuatanmu tidak seberapa, namun engkau menuruti firman-Ku dan engkau tidak menyangkal nama-Ku.</div>
+            <div class="scripture-title">Ef. 6:24</div>
+            <div class="scripture-text">Anugerah menyertai semua orang, yang mengasihi Tuhan kita Yesus Kristus dengan kasih yang tidak binasa.</div>
+            <p>Dalam Wahyu 3:8 Tuhan ... berkata bahwa gereja di Filadelfia tidak menyangkal nama-Nya. ... Firman adalah ekspresi Tuhan, dan nama itu adalah diri Tuhan sendiri. Gereja yang murtad telah menyimpang dari firman Tuhan dan menjadi bidah. Walaupun gereja yang direformasi sedikit banyak sudah dipulihkan kepada firman Tuhan, namun mereka menyangkal nama Tuhan dengan menjadikan diri mereka denominasi-denominasi, mengambil nama-nama lain, misalnya: gereja Luther, gereja Wesley, gereja Anglikan, gereja Presbiterian, dan gereja Baptis. Gereja yang dipulihkan bukan hanya kembali kepada firman Tuhan secara keseluruhan, tetapi juga telah meninggalkan segala nama selain nama Tuhan Yesus Kristus. ... Gereja, sebagai perawan suci yang dipertunangkan kepada Kristus (2 Kor. 11:2), tidak seharusnya memiliki nama lain, selain nama Suaminya. ... Dalam kehidupan gereja yang dipulihkan, tidak ada ajaran Bileam (2:14), tidak ada ajaran Nikolaus (2:15), tidak ada ajaran Izebel (2:20), juga tidak ada seluk-beluk Setan (2:24); hanya ada firman murni Tuhan. ... Penyimpangan dari firman Tuhan kepada berbagai bidah dan meninggikan banyak nama selain nama Kristus adalah tanda yang paling mencolok dari kekristenan yang merosot. Kembali kepada firman yang murni dari segala bidah dan tradisi dan meninggikan nama Tuhan dengan meninggalkan semua nama lain merupakan kesaksian yang paling menjamah orang dalam gereja yang dipulihkan. Inilah sebabnya, gereja dalam pemulihan Tuhan memiliki wahyu dan penyertaan Tuhan, bahkan secara hidup mengekspresikan Tuhan, penuh dengan terang dan kelimpahan hayat. <em>(Pelajaran-Hayat Wahyu, hal. 256-257)</em></p>
+        
+            </div>
+        </div>
+
+        <!-- Accordion 2: Pembacaan Hari Ini -->
+        <div class="accordion-pembacaan">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="title-group">
+                    <span>📖</span>
+                    <span>Pembacaan Hari Ini</span>
+                </div>
+                <span class="icon-arrow">&#9650;</span>
+            </div>
+            <div class="accordion-content active">
+                
+            <p>Gereja di Filadelfia [adalah] gereja dalam pemulihan (Why. 3:7-13). Dalam bahasa Yunani, "Filadelfia" berarti "kasih persaudaraan." ... Seperti halnya gereja reformasi yang dilambangkan oleh gereja di Sardis adalah reaksi terhadap gereja di Tiatira, demikian pula gereja kasih persaudaraan adalah reaksi terhadap gereja reformasi yang mati. <em>(Pelajaran-Hayat Wahyu, hal. 247)</em></p>
+            <p>Kita dapat memberi tahu orang baru, "Ketika Anda menyeru nama-Nya, 'O Tuhan Yesus,' Anda merasakan sesuatu yang manis di dalam Anda. ... Jika Anda menyeru nama orang yang lain, Anda tidak akan memiliki perasaan seperti itu, tetapi ketika Anda berseru kepada Tuhan Yesus dan berkata, 'Yesus, aku cinta pada-Mu,' Anda akan merasakan perbedaannya. Selain itu, semakin dalam, semakin tinggi, dan semakin limpah seruan Anda, perasaan di dalam Anda ini akan semakin diperkuat. Menyeru nama Tuhan akan membuat Anda gembira, bahkan bergejolak. Anda mungkin bahkan melompat kegirangan. Ini membuktikan bahwa Kristus itu riil dan hidup. Ketika Anda menghadapi masalah, pertanyaan, kesulitan, atau kesukaran, Anda bisa berseru, 'O Tuhan Yesus.' Dengan cara ini kita bisa menyampaikan berita kepada orang yang baru dibaptis, membantu dia untuk mengenal Yesus Kristus sebagai Roh yang hidup. Jika kita mengunjungi orang di rumah mereka, membaptis mereka, dan mengajar mereka mengenai Yesus dengan cara ini, kita akan benar-benar dibangunkan.</p>
+            <p>Selain itu, kebangunan ini adalah di dalam kasih. Frasa <em>di dalam kasih</em> digunakan enam kali dalam Kitab Efesus (1:4; 3:17; 4:2, 15-16; 5:2). Ini adalah kasih yang awalnya ada di dalam Allah, yang menjadi kasih Kristus dan di dalam Kristus, dan yang telah ditransfusikan ke dalam kita untuk menjadi kasih kita terhadap-Nya. Kasih Allah bukan kasih yang diam. Sebaliknya, ini adalah kasih yang beroperasi, bekerja di dalam kita untuk membangkitkan kita untuk mengasihi Dia. ... Allah terlebih dahulu mengasihi kita melalui Dia menginfus kita dengan kasih-Nya dan menimbulkan di dalam kita kasih yang dengannya kita mengasihi Dia dan saudara-saudara (1 Yoh. 4:19-21). Kita mengasihi Tuhan bukan hanya karena Dia mengasihi kita tetapi juga karena tujuan kekal, kesenangan hati, dan perkenan-Nya. Kita mengasihi Yesus karena Dia memiliki rencana untuk mendapatkan gereja sebagai Tubuh-Nya. Kasih kita hari ini lebih tinggi, lebih dalam, dan lebih kaya daripada kasih yang kita miliki di masa lalu. Sebelumnya, kita mengasihi Yesus dengan kasih yang egois, tetapi sekarang kita mengasihi Dia karena Dia telah memberikan rasul-rasul, nabi-nabi, penginjil-penginjil, dan gembala-gembala serta pengajar-pengajar untuk memperlengkapi semua orang kudus untuk melakukan apa yang mereka lakukan. <em>(CWWL, 1988, vol. 1, hal. 495)</em></p>
+            <p class="book-ref">Bacaan Tambahan: The Conclusion of the New Testament, berita 238</p>
+        
+            </div>
+        </div>
+
+        <!-- Tombol Home -->
+        </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.innerHTML = '&#9660;';
+            } else {
+                content.classList.add('active');
+                icon.innerHTML = '&#9650;';
+            }
+        }
+    </script>
+</body>
+</html>

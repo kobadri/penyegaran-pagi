@@ -526,13 +526,12 @@
             submenu.innerHTML = "";
             if (pos.dalam) {
                 submenu.appendChild(buatTautanSubmenu(
-                    "Garis Besar, pos.fileGarisBesar, false));
+                    "Garis Besar", pos.fileGarisBesar, false));
                 for (var h = 1; h <= 6; h++) {
                     var ms = pos.mulaiPekan.msHari + h * SATU_HARI;
                     var tgl = objTanggal(ms);
                     var aktif = (tgl.msHari === t.msHari);
-                    var label = K.hariIndo[h];
-                        (aktif ? "  \u2022 Hari Ini" : "");
+                    var label = K.hariIndo[h] + (aktif ? "  \u2022 Hari Ini" : "");
                     submenu.appendChild(buatTautanSubmenu(
                         label,
                         K.pathTeks + "t_" + pad2(pos.pekan) + "_" + K.hariBerkas[h] + "_01.html",

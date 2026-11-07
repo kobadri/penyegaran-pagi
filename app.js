@@ -526,7 +526,7 @@
             submenu.innerHTML = "";
             if (pos.dalam) {
                 submenu.appendChild(buatTautanSubmenu(
-                    "Garis Besar Pekan " + pos.pekan, pos.fileGarisBesar, false));
+                    "Garis Besar", pos.fileGarisBesar, false));
                 for (var h = 1; h <= 6; h++) {
                     var ms = pos.mulaiPekan.msHari + h * SATU_HARI;
                     var tgl = objTanggal(ms);

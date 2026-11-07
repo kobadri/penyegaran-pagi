@@ -1,0 +1,75 @@
+/* Pengaturan Dasar & Latar Belakang */
+body {
+    background-color: #121212;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Kontainer Utama yang Fleksibel (Responsif) */
+.mobile-container {
+    width: 100%;
+    /* Di HP lebarnya maksimal mengikuti layar, di Laptop dibatasi agar mirip tampilan HP yang elegan */
+    max-width: 480px; 
+    height: 100vh;
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Penyesuaian Otomatis Khusus Layar Lebar (Laptop / Desktop) */
+@media (min-width: 768px) {
+    body {
+        padding: 20px 0; /* Memberikan ruang atas & bawah di laptop */
+    }
+    
+    .mobile-container {
+        height: 90vh; /* Membuat tinggi bingkai proporsional di layar besar */
+        border-radius: 16px; /* Sudut melengkung yang cantik di laptop */
+    }
+}
+
+/* Header & Bagian Kontrubusi Teks */
+.header {
+    background-color: #1e5138;
+    color: white;
+    padding: 16px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.content-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Bisa digulir jika teks panjang */
+    flex-grow: 1;
+}
+
+/* Tombol dan Komponen Lain */
+.menu-btn {
+    width: 100%;
+    background-color: #1e5138;
+    color: white;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-sizing: border-box;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

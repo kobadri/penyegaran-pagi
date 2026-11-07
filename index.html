@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Penyegaran Pagi - FKKP</title>
+    <meta name="theme-color" content="#1e5138">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="icon" type="image/png" sizes="64x64" href="./assets/favicon.png">
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
+    <link rel="preload" as="image" href="./assets/icon-512.png">
+    <style>
+        /* ============================================================
+           CSS BERSIH (1 blok, hasil akhirnya sama dengan tampilan lama)
+           Perbaikan kecepatan di HP:
+           - tanpa "transition: all" (pemicu repaint besar-besaran)
+           - tanpa "backdrop-filter: blur" (berat di GPU HP)
+           - tanpa kotak 100vh dengan scroll bersarang: halaman men-scroll
+             dirinya secara alami, sehingga gerakan jari terasa halus
+           ============================================================ */
+        * { box-sizing: border-box; }
+
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .mobile-container {
+            width: 100%;
+            max-width: 440px;
+            min-height: calc(100vh - 30px);
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        @supports (min-height: 100dvh) {
+            .mobile-container { min-height: calc(100dvh - 30px); }
+        }
+        @media (min-width: 480px) {
+            body { padding: 20px 15px; }
+            .mobile-container { min-height: 650px; }
+        }
+
+        .header {
+            background-color: #1e5138;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .sub-header {
+            text-align: center;
+            padding: 15px 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            border-bottom: 1px solid #eee;
+            background: #f9f9f9;
+        }
+        .date-box {
+            text-align: center;
+            padding: 12px;
+            margin: 15px 20px;
+            background: #f8f9fa;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+        }
+        .date-box .date {
+            font-weight: bold;
+            color: #1e5138;
+            font-size: 15px;
+        }
+        .date-box .desc {
+            font-size: 12px;
+            color: #666;
+            margin-top: 3px;
+        }
+        .pesan-luar {
+            display: none;
+            margin: 10px 20px;
+            padding: 14px;
+            background: #fdf3e4;
+            border: 1px solid #f0d9b5;
+            border-radius: 8px;
+            color: #7a5a1e;
+            font-size: 13px;
+            line-height: 1.5;
+            text-align: center;
+        }
+        .menu-list {
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* Semua tombol menu: 65% lebar, di tengah, teks di tengah, panah di ujung */
+        .menu-btn,
+        .submenu-btn,
+        .modal-tutup {
+            width: 65%;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 14px 20px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            font-family: inherit;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+        .menu-btn > span:first-child,
+        .submenu-btn > span:first-child {
+            flex-grow: 1;
+            text-align: center;
+        }
+        .menu-btn:active,
+        .submenu-btn:active,
+        .modal-tutup:active { transform: scale(0.98); }
+
+        .menu-btn { background-color: #1e5138; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .menu-btn:hover { background-color: #143726; }
+
+        .menu-btn-media { background-color: #1e5138; margin-bottom: 8px; }
+        .menu-btn-media:hover { background-color: #143726; }
+
+        .btn-media-sub {
+            background-color: #2e7d32;
+            width: 65%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn-media-sub:hover { background-color: #1e5138; }
+
+        .menu-btn-danger { background-color: #991b1b; margin-top: 5px; }
+        .menu-btn-danger:hover { background-color: #7f1d1d; }
+
+        .submenu-container {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            padding-left: 10px;
+            margin-bottom: 5px;
+        }
+        .submenu-btn {
+            background-color: #2d7a54;
+            border-radius: 6px;
+        }
+        .submenu-btn:hover { background-color: #1e5138; }
+
+        .footer {
+            text-align: center;
+            padding: 12px;
+            font-size: 12px;
+            color: #777;
+            border-top: 1px solid #eee;
+            background: #f9f9f9;
+            margin-top: auto;
+        }
+
+        /* Modal pemutar media: lapisan gelap polos (tanpa blur agar lancar di HP) */
+        #mediaModal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            z-index: 200;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+        .modal-content {
+            background: white;
+            padding: 15px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            width: 100%;
+            max-width: 400px;
+            max-height: 90vh;
+            overflow-y: auto;
+            text-align: center;
+            animation: modalPop 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        @keyframes modalPop {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .modal-tutup { background: #1e5138; margin-top: 15px; }
+        .modal-tutup:hover { background: #143726; }
+
+        /* ============================================================
+           LAYAR PEMBUKA (SPLASH) - lencana muncul dulu beberapa detik,
+           lalu memudar dan halaman utama tampil. Gerakan memakai
+           transform/opacity saja (dipercepat GPU, lancar di HP).
+           ============================================================ */
+        #splash {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 300;
+            /* pengaman tanpa JavaScript: tetap memudar sendiri */
+            animation: splashHilang 0.6s ease 2.6s forwards;
+        }
+        #splash img {
+            width: 62%;
+            max-width: 240px;
+            height: auto;
+            filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.45));
+            animation: splashMuncul 0.55s ease-out both;
+        }
+        #splash .splash-teks {
+            margin-top: 16px;
+            color: #e2e8f0;
+            font-weight: bold;
+            font-size: 15px;
+            letter-spacing: 1px;
+            animation: splashTeksMuncul 0.7s ease-out 0.3s both;
+        }
+        #splash .splash-tinggal {
+            margin-top: 4px;
+            color: #94a3b8;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: splashTeksMuncul 0.7s ease-out 0.45s both;
+        }
+        @keyframes splashMuncul {
+            from { transform: scale(0.85); opacity: 0; }
+            to   { transform: scale(1); opacity: 1; }
+        }
+        @keyframes splashTeksMuncul {
+            from { transform: translateY(6px); opacity: 0; }
+            to   { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes splashHilang {
+            to { opacity: 0; visibility: hidden; }
+        }
+        #splash.mundur { animation: splashHilang 0.6s ease forwards; }
+        @media (prefers-reduced-motion: reduce) {
+            #splash img, #splash .splash-teks, #splash .splash-tinggal { animation: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Layar pembuka: gambar muncul dulu beberapa detik, memudar,
+         lalu halaman utama tampil. Sekali per sesi agar tidak mengganggu. -->
+    <div id="splash">
+        <img src="./assets/icon-512.png" alt="Lencana Penyegaran Pagi" width="240" height="240">
+        <div class="splash-teks">Penyegaran Pagi</div>
+        <div class="splash-tinggal">Morning Refresh</div>
+    </div>
+
+    <div class="mobile-container">
+        <div class="header">Penyegaran Pagi - FKKP</div>
+        <div class="sub-header" id="pp-sub-judul">Kaum Beriman (1)</div>
+        <div class="date-box">
+            <div class="date" id="pp-tanggal">Menyiapkan tanggal...</div>
+            <div class="desc" id="pp-deskripsi">&nbsp;</div>
+        </div>
+
+        <div class="pesan-luar" id="pp-pesan-luar">
+            Buku penyegaran pagi <b>Kaum Beriman (1)</b> berlaku
+            4 Oktober - 26 Desember 2026. Sekarang di luar periode itu,
+            jadi bacaan pekan ini belum tersedia.
+            Nantikan buku penyegaran berikutnya.
+        </div>
+
+        <div class="menu-list">
+            <!-- Tombol Hari Ini (diisi otomatis oleh app.js sesuai tanggal WIB) -->
+            <a href="#" id="btn-hari-ini" class="menu-btn">
+                <span>Hari Ini</span>
+                <span>&rsaquo;</span>
+            </a>
+
+            <!-- Tombol Pekan Ini (Buka/Tutup Submenu) -->
+            <a href="javascript:void(0);" id="baris-pekan-ini" onclick="toggleSubmenu();" class="menu-btn">
+                <span>Pekan Ini</span>
+                <span>&#9662;</span>
+            </a>
+
+            <!-- Submenu diisi otomatis oleh app.js untuk pekan yang sedang berjalan -->
+            <div id="pekanSubmenu" class="submenu-container"></div>
+
+            <!-- Tombol Media & Submenu Dropdown -->
+            <button class="menu-btn menu-btn-media" onclick="toggleMediaMenu();">
+                <span>&#127916; Media</span> <span id="media-arrow">&#9660;</span>
+            </button>
+            <div id="media-submenu" style="display:none; flex-direction:column; gap:6px; margin-bottom:10px;">
+                <button class="btn-media-sub" onclick="playAudioPekanIni();">&#127925; Audio</button>
+                <button class="btn-media-sub" onclick="playVideoPekanIni();">&#127916; Video</button>
+            </div>
+
+            <!-- Keluar / Exit -->
+            <a href="#" onclick="exitApp(); return false;" class="menu-btn menu-btn-danger">
+                <span>Keluar / Exit</span>
+                <span>&rsaquo;</span>
+            </a>
+        </div>
+
+        <div class="footer">Penyegaran Pagi - FKKP</div>
+    </div>
+
+    <!-- Modal pemutar media (HANYA SATU - sebelumnya ada 3 salinan ber-ID sama) -->
+    <div id="mediaModal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div id="modalBody"></div>
+            <button class="modal-tutup" onclick="closeModalDirect()">Tutup</button>
+        </div>
+    </div>
+
+    <script src="pp-konfigurasi.js?v=1"></script>
+    <script src="app.js"></script>
+    <script>
+        /* ==================== Submenu Pekan ==================== */
+        function toggleSubmenu() {
+            var sub = document.getElementById("pekanSubmenu");
+            sub.style.display = (sub.style.display === "flex") ? "none" : "flex";
+        }
+
+        /* ==================== Media (Audio / Video) ====================
+           Nomor pekan diambil langsung dari perhitungan tanggal (app.js).
+           Sebelumnya dipakai document.body.innerText.match(...) yang memaksa
+           seluruh halaman dihitung ulang tata letaknya setiap kali ditekan. */
+        function pekanAktif() {
+            try {
+                if (typeof ppPosisi === "function") {
+                    var pos = ppPosisi();
+                    if (pos.dalam) return pos.pekan;
+                }
+            } catch (e) { /* abaikan */ }
+            return 5; // sama seperti perilaku lama bila di luar periode
+        }
+
+        /* Peta berkas media per pekan (sama seperti daftar lama) */
+        var PP_MEDIA_AUDIO = {
+            "01": "data/berita_mingguan/Pekan_01/1_Empat_Lapisan_Identitas_Orang_Kristen.m4a",
+            "02": "data/berita_mingguan/Pekan_02/2_Mengapa_Allah_Suka_Menyembunyikan_Diri.m4a",
+            "03": "data/berita_mingguan/Pekan_03/3_Peremukan_Ego_Lewat_Lima_Metafora_Matius.m4a",
+            "04": "data/berita_mingguan/Pekan_04/4_Allah_Sendiri_Adalah_Warisan_Kita.m4a",
+            "05": "data/berita_mingguan/Pekan_05/5_Dari_Domba_Rapuh_Menjadi_Batu_Hidup.m4a",
+            "06": "data/berita_mingguan/Pekan_06/6_Bagaimana_Manusia_Fana_Menjadi_Bersifat_Ilahi.m4a",
+            "07": "data/berita_mingguan/Pekan_07/7_Harta_Ilahi_dalam_Bejana_Tanah_Liat.m4a",
+            "08": "data/berita_mingguan/Pekan_08/8_Paradoks_Kepemimpinan_Kristus_Dalam_Injil_Matius.m4a",
+            "09": "data/berita_mingguan/Pekan_09/9_Merobek_Tirai_Ego_demi_Penyatuan_Ilahi.m4a",
+            "10": "data/berita_mingguan/Pekan_10/10_Mengapa_Berusaha_Jadi_Orang_Baik_Itu_Gagal.m4a",
+            "11": "data/berita_mingguan/Pekan_11/11_Dari_Tanah_Liat_Menjadi_Permata_Yaspis.m4a",
+            "12": "data/berita_mingguan/Pekan_12/12_Ketika_Gaun_Pengantin_Menjadi_Zirah_Perang.m4a"
+        };
+        var PP_MEDIA_VIDEO = {
+            "01": "data/berita_mingguan/Pekan_01/1_Makna_Asli_Empat_Status_Pengikut_Kristus.mp4",
+            "02": "data/berita_mingguan/Pekan_02/2_Realitas_Tersembunyi_Kaum_Beriman.mp4",
+            "03": "data/berita_mingguan/Pekan_03/3_Mengungkap_Makna_Radikal_Metafora_Identitas_Kaum_Beriman.mp4",
+            "04": "data/berita_mingguan/Pekan_04/4_Proses_Kematangan_Ahli_Waris_Allah.mp4",
+            "05": "data/berita_mingguan/Pekan_05/5_Bagaimana_Tanah_Liat_Bertransformasi_Menjadi_Batu_Hidup.mp4",
+            "06": "data/berita_mingguan/Pekan_06/6_Bagaimana_Hayat_Ilahi_Bertumbuh_di_Dalam_Kita.mp4",
+            "07": "data/berita_mingguan/Pekan_07/7_Mengapa_Kita_Disebut_Bejana,_Gandum,_dan_Ranting.mp4",
+            "08": "data/berita_mingguan/Pekan_08/8_Sisi_Mengejutkan_Raja_Surgawi_dalam_Injil_Matius.mp4",
+            "09": "data/berita_mingguan/Pekan_09/9_Cara_Memantulkan_Cahaya_Kristus.mp4",
+            "10": "data/berita_mingguan/Pekan_10/10_Bagaimana_Cetakan_Kematian_Kristus_Bekerja.mp4",
+            "11": "data/berita_mingguan/Pekan_11/11_Empat_Simbol_Rahasia_Orang_Percaya_dalam_Kitab_Wahyu.mp4",
+            "12": "data/berita_mingguan/Pekan_12/12_Dua_Sisi_Mempelai_Kristus_yang_Menggetarkan_Musuh.mp4"
+        };
+
+        function toggleMediaMenu() {
+            var s = document.getElementById("media-submenu");
+            var a = document.getElementById("media-arrow");
+            var terbuka = (s.style.display === "flex");
+            s.style.display = terbuka ? "none" : "flex";
+            a.textContent = terbuka ? "\u25BC" : "\u25B2";
+        }
+
+        function playAudioPekanIni() {
+            var num = pekanAktif();
+            var p = String(num).padStart(2, "0");
+            var audioFile = PP_MEDIA_AUDIO[p] || ("data/berita_mingguan/Pekan_" + p + "/audio.m4a");
+            document.getElementById("modalBody").innerHTML =
+                '<h3 style="margin:0 0 5px 0; font-size:16px; color:#1e5138;">Audio Penyegaran Pagi</h3>' +
+                '<p style="margin:0 0 10px 0; font-size:12px; color:#666;">Pekan ' + num + '</p>' +
+                '<audio id="myAudio" controls autoplay style="width:100%; margin-top:10px;">' +
+                '<source src="' + audioFile + '" type="audio/mp4">' +
+                '<source src="' + audioFile.replace("data/", "") + '" type="audio/mp4">' +
+                'Peramban Anda tidak mendukung audio.' +
+                '</audio>';
+            document.getElementById("mediaModal").style.display = "flex";
+            var a = document.getElementById("myAudio");
+            if (a) a.onended = closeModalDirect;
+        }
+
+        function playVideoPekanIni() {
+            var num = pekanAktif();
+            var p = String(num).padStart(2, "0");
+            var videoFile = PP_MEDIA_VIDEO[p] || ("data/berita_mingguan/Pekan_" + p + "/video.mp4");
+            document.getElementById("modalBody").innerHTML =
+                '<h3 style="margin:0 0 5px 0; font-size:16px; color:#1e5138;">Video Penyegaran Pagi</h3>' +
+                '<p style="margin:0 0 10px 0; font-size:12px; color:#666;">Pekan ' + num + '</p>' +
+                '<video id="myVideo" controls autoplay style="width:100%; max-height:60vh; object-fit:contain; border-radius:8px; margin-top:10px; background:black;">' +
+                '<source src="' + videoFile + '" type="video/mp4">' +
+                '<source src="' + videoFile.replace("data/", "") + '" type="video/mp4">' +
+                'Peramban Anda tidak mendukung video.' +
+                '</video>';
+            document.getElementById("mediaModal").style.display = "flex";
+            var v = document.getElementById("myVideo");
+            if (v) v.onended = closeModalDirect;
+        }
+
+        function closeModal(e) { closeModalDirect(); }
+        function closeModalDirect() {
+            var m = document.getElementById("mediaModal");
+            if (m) m.style.display = "none";
+            var a = document.getElementById("myAudio");
+            if (a) { a.pause(); a.currentTime = 0; }
+            var v = document.getElementById("myVideo");
+            if (v) { v.pause(); v.currentTime = 0; }
+            document.getElementById("modalBody").innerHTML = "";
+        }
+
+        /* ==================== Keluar / Exit ==================== */
+        function exitApp() {
+            try { window.close(); } catch (e) { /* abaikan */ }
+            window.location.replace("about:blank");
+        }
+
+        /* ==================== Layar Pembuka (Splash) ==================== */
+        (function () {
+            var splash = document.getElementById("splash");
+            if (!splash) return;
+            var sudah;
+            try { sudah = sessionStorage.getItem("pp_splash") === "1"; } catch (e) { sudah = false; }
+            if (sudah) {
+                /* Sudah tampil di sesi ini: langsung hilang sebelum tergambar */
+                splash.style.display = "none";
+                return;
+            }
+            try { sessionStorage.setItem("pp_splash", "1"); } catch (e) { /* abaikan */ }
+            setTimeout(function () {
+                splash.classList.add("mundur");
+                setTimeout(function () {
+                    if (splash.parentNode) splash.parentNode.removeChild(splash);
+                }, 700);
+            }, 2400);
+        })();
+
+        /* ==================== Service Worker & PWA ==================== */
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function () {
+                navigator.serviceWorker.register("./service-worker.js")
+                    .catch(function (err) { console.log("SW failed", err); });
+            });
+        }
+
+        var deferredPrompt;
+        var installBtn = document.getElementById("btnInstallPWA");
+        window.addEventListener("beforeinstallprompt", function (e) {
+            e.preventDefault();
+            deferredPrompt = e;
+            if (installBtn) installBtn.style.display = "flex";
+        });
+        if (installBtn) {
+            installBtn.addEventListener("click", function () {
+                if (!deferredPrompt) return;
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then(function (hasil) {
+                    if (hasil && hasil.outcome === "accepted") {
+                        console.log("Jemaat menerima instalasi aplikasi");
+                    }
+                    deferredPrompt = null;
+                    installBtn.style.display = "none";
+                });
+            });
+        }
+    </script>
+</body>
+</html>

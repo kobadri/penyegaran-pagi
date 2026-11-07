@@ -570,8 +570,18 @@
 })();
 
 window.tutupReader = function() {
-    var r = document.getElementById("reader-overlay") || document.getElementById("reader") || document.querySelector(".reader-container") || document.getElementById("outline-overlay");
-    if (r) { r.style.display = "none"; }
+    var r = document.getElementById("reader") || document.getElementById("reader-overlay") || document.querySelector(".reader-container");
+    if (r) { r.innerHTML = ""; r.style.display = "none"; }
+    var main = document.querySelector(".mobile-container");
+    if (main) { main.style.display = "flex"; }
+    window.location.hash = "";
+};
+window.salinTeksBacaan = function() {
+    var el = document.querySelector(".bacaan-body, #reader, article, main") || document.body;
+    navigator.clipboard.writeText(el.innerText).then(function() {
+        alert("Materi berhasil disalin ke clipboard!");
+    });
+};
     var main = document.querySelector(".mobile-container") || document.body;
     if (main) { main.style.display = "flex"; }
     window.location.hash = "";

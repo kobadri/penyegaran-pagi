@@ -10,14 +10,6 @@
     <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
     <link rel="preload" as="image" href="./assets/icon-512.png">
     <style>
-        /* ============================================================
-           CSS BERSIH (1 blok, hasil akhirnya sama dengan tampilan lama)
-           Perbaikan kecepatan di HP:
-           - tanpa "transition: all" (pemicu repaint besar-besaran)
-           - tanpa "backdrop-filter: blur" (berat di GPU HP)
-           - tanpa kotak 100vh dengan scroll bersarang: halaman men-scroll
-             dirinya secara alami, sehingga gerakan jari terasa halus
-           ============================================================ */
         * { box-sizing: border-box; }
 
         body {
@@ -104,13 +96,10 @@
             gap: 10px;
         }
 
-        /* Semua tombol menu: 65% lebar, di tengah, teks di tengah, panah di ujung */
         .menu-btn,
         .submenu-btn,
         .modal-tutup {
-            width: 65%;
-            margin-left: auto;
-            margin-right: auto;
+            
             padding: 14px 20px;
             font-size: 1.05rem;
             font-weight: bold;
@@ -142,10 +131,24 @@
         .menu-btn-media:hover { background-color: #143726; }
 
         .btn-media-sub {
-            background-color: #2e7d32;
             width: 65%;
             margin-left: auto;
             margin-right: auto;
+            padding: 14px 20px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            font-family: inherit;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            background-color: #2e7d32;
+            
         }
         .btn-media-sub:hover { background-color: #1e5138; }
 
@@ -175,7 +178,6 @@
             margin-top: auto;
         }
 
-        /* Modal pemutar media: lapisan gelap polos (tanpa blur agar lancar di HP) */
         #mediaModal {
             display: none;
             position: fixed;
@@ -206,11 +208,6 @@
         .modal-tutup { background: #1e5138; margin-top: 15px; }
         .modal-tutup:hover { background: #143726; }
 
-        /* ============================================================
-           LAYAR PEMBUKA (SPLASH) - lencana muncul dulu beberapa detik,
-           lalu memudar dan halaman utama tampil. Gerakan memakai
-           transform/opacity saja (dipercepat GPU, lancar di HP).
-           ============================================================ */
         #splash {
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -220,7 +217,6 @@
             justify-content: center;
             align-items: center;
             z-index: 300;
-            /* pengaman tanpa JavaScript: tetap memudar sendiri */
             animation: splashHilang 0.6s ease 2.6s forwards;
         }
         #splash img {
@@ -258,14 +254,9 @@
             to { opacity: 0; visibility: hidden; }
         }
         #splash.mundur { animation: splashHilang 0.6s ease forwards; }
-        @media (prefers-reduced-motion: reduce) {
-            #splash img, #splash .splash-teks, #splash .splash-tinggal { animation: none; }
-        }
     </style>
 </head>
 <body>
-    <!-- Layar pembuka: gambar muncul dulu beberapa detik, memudar,
-         lalu halaman utama tampil. Sekali per sesi agar tidak mengganggu. -->
     <div id="splash">
         <img src="./assets/icon-512.png" alt="Lencana Penyegaran Pagi" width="240" height="240">
         <div class="splash-teks">Penyegaran Pagi</div>
@@ -284,26 +275,21 @@
             Buku penyegaran pagi <b>Kaum Beriman (1)</b> berlaku
             4 Oktober - 26 Desember 2026. Sekarang di luar periode itu,
             jadi bacaan pekan ini belum tersedia.
-            Nantikan buku penyegaran berikutnya.
         </div>
 
         <div class="menu-list">
-            <!-- Tombol Hari Ini (diisi otomatis oleh app.js sesuai tanggal WIB) -->
             <a href="#" id="btn-hari-ini" class="menu-btn">
                 <span>Hari Ini</span>
                 <span>&rsaquo;</span>
             </a>
 
-            <!-- Tombol Pekan Ini (Buka/Tutup Submenu) -->
             <a href="javascript:void(0);" id="baris-pekan-ini" onclick="toggleSubmenu();" class="menu-btn">
                 <span>Pekan Ini</span>
                 <span>&#9662;</span>
             </a>
 
-            <!-- Submenu diisi otomatis oleh app.js untuk pekan yang sedang berjalan -->
             <div id="pekanSubmenu" class="submenu-container"></div>
 
-            <!-- Tombol Media & Submenu Dropdown -->
             <button class="menu-btn menu-btn-media" onclick="toggleMediaMenu();">
                 <span>&#127916; Media</span> <span id="media-arrow">&#9660;</span>
             </button>
@@ -312,7 +298,6 @@
                 <button class="btn-media-sub" onclick="playVideoPekanIni();">&#127916; Video</button>
             </div>
 
-            <!-- Keluar / Exit -->
             <a href="#" onclick="exitApp(); return false;" class="menu-btn menu-btn-danger">
                 <span>Keluar / Exit</span>
                 <span>&rsaquo;</span>
@@ -322,7 +307,6 @@
         <div class="footer">Penyegaran Pagi - FKKP</div>
     </div>
 
-    <!-- Modal pemutar media (HANYA SATU - sebelumnya ada 3 salinan ber-ID sama) -->
     <div id="mediaModal" onclick="closeModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
             <div id="modalBody"></div>
@@ -333,27 +317,21 @@
     <script src="pp-konfigurasi.js?v=1"></script>
     <script src="app.js"></script>
     <script>
-        /* ==================== Submenu Pekan ==================== */
         function toggleSubmenu() {
             var sub = document.getElementById("pekanSubmenu");
             sub.style.display = (sub.style.display === "flex") ? "none" : "flex";
         }
 
-        /* ==================== Media (Audio / Video) ====================
-           Nomor pekan diambil langsung dari perhitungan tanggal (app.js).
-           Sebelumnya dipakai document.body.innerText.match(...) yang memaksa
-           seluruh halaman dihitung ulang tata letaknya setiap kali ditekan. */
         function pekanAktif() {
             try {
                 if (typeof ppPosisi === "function") {
                     var pos = ppPosisi();
                     if (pos.dalam) return pos.pekan;
                 }
-            } catch (e) { /* abaikan */ }
-            return 5; // sama seperti perilaku lama bila di luar periode
+            } catch (e) { }
+            return 5;
         }
 
-        /* Peta berkas media per pekan (sama seperti daftar lama) */
         var PP_MEDIA_AUDIO = {
             "01": "data/berita_mingguan/Pekan_01/1_Empat_Lapisan_Identitas_Orang_Kristen.m4a",
             "02": "data/berita_mingguan/Pekan_02/2_Mengapa_Allah_Suka_Menyembunyikan_Diri.m4a",
@@ -400,7 +378,6 @@
                 '<p style="margin:0 0 10px 0; font-size:12px; color:#666;">Pekan ' + num + '</p>' +
                 '<audio id="myAudio" controls autoplay style="width:100%; margin-top:10px;">' +
                 '<source src="' + audioFile + '" type="audio/mp4">' +
-                '<source src="' + audioFile.replace("data/", "") + '" type="audio/mp4">' +
                 'Peramban Anda tidak mendukung audio.' +
                 '</audio>';
             document.getElementById("mediaModal").style.display = "flex";
@@ -417,7 +394,6 @@
                 '<p style="margin:0 0 10px 0; font-size:12px; color:#666;">Pekan ' + num + '</p>' +
                 '<video id="myVideo" controls autoplay style="width:100%; max-height:60vh; object-fit:contain; border-radius:8px; margin-top:10px; background:black;">' +
                 '<source src="' + videoFile + '" type="video/mp4">' +
-                '<source src="' + videoFile.replace("data/", "") + '" type="video/mp4">' +
                 'Peramban Anda tidak mendukung video.' +
                 '</video>';
             document.getElementById("mediaModal").style.display = "flex";
@@ -436,24 +412,21 @@
             document.getElementById("modalBody").innerHTML = "";
         }
 
-        /* ==================== Keluar / Exit ==================== */
         function exitApp() {
-            try { window.close(); } catch (e) { /* abaikan */ }
+            try { window.close(); } catch (e) { }
             window.location.replace("about:blank");
         }
 
-        /* ==================== Layar Pembuka (Splash) ==================== */
         (function () {
             var splash = document.getElementById("splash");
             if (!splash) return;
             var sudah;
             try { sudah = sessionStorage.getItem("pp_splash") === "1"; } catch (e) { sudah = false; }
             if (sudah) {
-                /* Sudah tampil di sesi ini: langsung hilang sebelum tergambar */
                 splash.style.display = "none";
                 return;
             }
-            try { sessionStorage.setItem("pp_splash", "1"); } catch (e) { /* abaikan */ }
+            try { sessionStorage.setItem("pp_splash", "1"); } catch (e) { }
             setTimeout(function () {
                 splash.classList.add("mundur");
                 setTimeout(function () {
@@ -462,32 +435,10 @@
             }, 2400);
         })();
 
-        /* ==================== Service Worker & PWA ==================== */
         if ("serviceWorker" in navigator) {
             window.addEventListener("load", function () {
                 navigator.serviceWorker.register("./service-worker.js")
                     .catch(function (err) { console.log("SW failed", err); });
-            });
-        }
-
-        var deferredPrompt;
-        var installBtn = document.getElementById("btnInstallPWA");
-        window.addEventListener("beforeinstallprompt", function (e) {
-            e.preventDefault();
-            deferredPrompt = e;
-            if (installBtn) installBtn.style.display = "flex";
-        });
-        if (installBtn) {
-            installBtn.addEventListener("click", function () {
-                if (!deferredPrompt) return;
-                deferredPrompt.prompt();
-                deferredPrompt.userChoice.then(function (hasil) {
-                    if (hasil && hasil.outcome === "accepted") {
-                        console.log("Jemaat menerima instalasi aplikasi");
-                    }
-                    deferredPrompt = null;
-                    installBtn.style.display = "none";
-                });
             });
         }
     </script>

@@ -28,7 +28,7 @@
         .pesan-luar { display: none; margin: 10px 20px; padding: 14px; background: #fdf3e4; border: 1px solid #f0d9b5; border-radius: 8px; color: #7a5a1e; font-size: 13px; line-height: 1.5; text-align: center; }
         .menu-list { padding: 10px 20px; display: flex; flex-direction: column; gap: 10px; }
         .menu-btn, .submenu-btn, .modal-tutup, .btn-media-sub {
-            width: 65%; margin-left: auto; margin-right: auto; padding: 14px 20px;
+            width: 60%; margin-left: auto; margin-right: auto; padding: 14px 20px;
             font-size: 1.05rem; font-weight: bold; font-family: inherit;
             display: flex; justify-content: space-between; align-items: center;
             color: white; text-decoration: none; border: none; border-radius: 8px;
@@ -42,9 +42,20 @@
         .btn-media-sub:hover { background-color: #1e5138; }
         .menu-btn-danger { background-color: #991b1b; margin-top: 5px; }
         .menu-btn-danger:hover { background-color: #7f1d1d; }
+        /* PERBAIKAN 2026-11-09: warna tombol sesuai tampilan baru
+           (sampling dari desain): Pekan Lalu merah #b91c1c,
+           Hari Ini hijau #2e7d32, selebihnya hijau tua #1e5138. */
+        .menu-btn-lalu { background-color: #b91c1c; }
+        .menu-btn-lalu:hover { background-color: #7f1d1d; }
+        .menu-btn-sukses { background-color: #2e7d32; }
+        .menu-btn-sukses:hover { background-color: #1e5138; }
         .submenu-container { display: none; flex-direction: column; gap: 6px; padding-left: 10px; margin-bottom: 5px; }
         .submenu-btn { background-color: #2d7a54; border-radius: 6px; }
         .submenu-btn:hover { background-color: #1e5138; }
+        /* BARU 2026-11-09: isi dropdown Pekan Lalu berwarna MERAH MUDA,
+           serasi dengan tombol Pekan Lalu yang merah. */
+        .submenu-btn-lalu { background-color: #e05252; border-radius: 6px; }
+        .submenu-btn-lalu:hover { background-color: #991b1b; }
         .footer { text-align: center; padding: 12px; font-size: 12px; color: #777; border-top: 1px solid #eee; background: #f9f9f9; margin-top: auto; }
         #mediaModal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.75); z-index: 200; justify-content: center; align-items: center; padding: 10px; }
         .modal-content { background: white; padding: 15px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); width: 100%; max-width: 400px; max-height: 90vh; overflow-y: auto; text-align: center; }
@@ -152,10 +163,23 @@
         })();
         </script>
         <div class="menu-list">
+<<<<<<< HEAD
 <button class="menu-btn" id="baris-pekan-lalu-btn" onclick="toggleSubmenuPekanLalu();"><span>Pekan Lalu</span><span id="pekan-lalu-arrow">&#9660;</span></button>
             <div id="pekanLaluSubmenu" class="submenu-container"></div>
     <a href="#" id="btn-hari-ini" class="menu-btn" style="background-color: #2e7d32; border: 2px solid #81c784;" style="background-color: #2e7d32;"><span>Hari Ini</span><span>&rsaquo;</span></a>
             <a href="javascript:void(0);" id="baris-pekan-ini" onclick="toggleSubmenu();" class="menu-btn"><span>Pekan Ini</span><span>&#9662;</span></a>
+=======
+            <!-- PERBAIKAN 2026-11-09: Pekan Lalu kini tombol dropdown
+                 merah, PERSIS sama perilakunya dengan "Pekan Ini".
+                 Isi submenu dibangun otomatis oleh app.js (render()):
+                 bila pekan ini Pekan_06 maka menu ini berisi Pekan_05
+                 (data/teks/t_05_*_01.html). Sebelumnya tombol ini
+                 mengarah ke pekan-lalu.html yang tidak ada (404). -->
+            <a href="javascript:void(0);" id="baris-pekan-lalu" onclick="toggleSubmenuLalu();" class="menu-btn menu-btn-lalu"><span>Pekan Lalu</span><span id="panah-pekan-lalu">&#9660;</span></a>
+            <div id="pekanLaluSubmenu" class="submenu-container"></div>
+            <a href="#" id="btn-hari-ini" class="menu-btn menu-btn-sukses"><span>Hari Ini</span><span>&rsaquo;</span></a>
+            <a href="javascript:void(0);" id="baris-pekan-ini" onclick="toggleSubmenu();" class="menu-btn"><span>Pekan Ini</span><span id="panah-pekan-ini">&#9660;</span></a>
+>>>>>>> 5169fb152a5591861d420f2f5a9036315b3067b6
             <div id="pekanSubmenu" class="submenu-container"></div>
             <button class="menu-btn" onclick="toggleMediaMenu();"><span>&#127916; Media</span><span id="media-arrow">&#9660;</span></button>
             <div id="media-submenu" style="display:none; flex-direction:column; gap:6px; margin-bottom:10px;">
@@ -174,12 +198,111 @@
         </div>
     </div>
     <script src="pp-konfigurasi.js?v=4"></script>
-    <script src="app.js?v=4"></script>
+    <script src="app.js?v=8"></script>
     <script>
+<<<<<<< HEAD
         function toggleSubmenu() { var s = document.getElementById("pekanSubmenu"); s.style.display = (s.style.display === "flex") ? "none" : "flex"; }
         function toggleSubmenuPekanLalu() { var s = document.getElementById("pekanLaluSubmenu"); var a = document.getElementById("pekan-lalu-arrow"); var t = (s.style.display === "flex"); s.style.display = t ? "none" : "flex"; a.textContent = t ? "\u25BC" : "\u25B2"; }
+=======
+        /* ============================================================
+           PERBAIKAN 2026-11-09 v2: JARING PENGAMAN SUBMENU
+           ------------------------------------------------------------
+           Masalah dilaporkan: tombol "Pekan Lalu" tidak merespon.
+           Sebab: app.js versi LAMA masih terpasang di server sehingga
+           submenu #pekanLaluSubmenu tidak pernah diisi (dropdown
+           terbuka tetapi tingginya nol piksel - terkesan mati).
+           Solusi: script mandiri di bawah mengisi submenu HANYA BILA
+           MASIH KOSONG, sehingga:
+           - app.js baru sudah jalan  -> submenu terisi -> dilewati.
+           - app.js lama / gagal muat -> diisi di sini -> tombol tetap
+             merespon (tautan langsung ke berkas bacaan).
+           Isinya dihitung dinamis dari tanggal WIB: bila pekan ini
+           Pekan_06 maka Pekan Lalu berisi t_05_*_01.html.
+           ============================================================ */
+        function ppPosisiCadangan() {
+            var t = null, y = 0, m = 0, d = 0;
+            try {
+                var fmt = new Intl.DateTimeFormat("en-GB", {
+                    timeZone: "Asia/Jakarta",
+                    year: "numeric", month: "2-digit", day: "2-digit"
+                });
+                if (fmt.formatToParts) {
+                    var bag = fmt.formatToParts(new Date()), i;
+                    for (i = 0; i < bag.length; i++) {
+                        if (bag[i].type === "year")  y = parseInt(bag[i].value, 10);
+                        if (bag[i].type === "month") m = parseInt(bag[i].value, 10);
+                        if (bag[i].type === "day")   d = parseInt(bag[i].value, 10);
+                    }
+                    t = Date.UTC(y, m - 1, d);
+                }
+            } catch (e) { t = null; }
+            if (!t) {
+                var w = new Date(Date.now() + (7 * 60 + new Date().getTimezoneOffset()) * 60000);
+                t = Date.UTC(w.getFullYear(), w.getMonth(), w.getDate());
+            }
+            var MS_MULAI = Date.UTC(2026, 9, 4);      /* 4 Oktober 2026 */
+            var MS_SELESAI = Date.UTC(2026, 11, 26);  /* 26 Desember 2026 */
+            var selisih = Math.round((t - MS_MULAI) / 86400000);
+            var dalam = (selisih >= 0 && t <= MS_SELESAI);
+            return { dalam: dalam, pekan: dalam ? Math.floor(selisih / 7) + 1 : 0 };
+        }
+
+        var ppHariCadangan  = ["garis_besar", "senin", "selasa", "rabu", "kamis", "jumat", "sabtu"];
+        var ppLabelCadangan = ["Garis Besar", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+
+        function ppIsiSubmenuCadangan(idKontainer, pekanTarget, pakaiMerah) {
+            var kotak = document.getElementById(idKontainer);
+            if (!kotak || kotak.children.length > 0) return; /* sudah diisi app.js */
+            var posisi = ppPosisiCadangan();
+            if (!posisi.dalam || pekanTarget < 1 || pekanTarget > 12) {
+                var info = document.createElement("div");
+                info.style.cssText = "font-size:12px;color:#666;padding:4px 6px;text-align:center;";
+                info.textContent = (posisi.dalam && pekanTarget < 1)
+                    ? "Buku ini baru dimulai (Pekan 1). Belum ada pekan sebelumnya."
+                    : "Submenu bacaan aktif saat periode buku berjalan.";
+                kotak.appendChild(info);
+                return;
+            }
+            var nomor = (pekanTarget < 10 ? "0" : "") + pekanTarget;
+            for (var i = 0; i < ppHariCadangan.length; i++) {
+                var a = document.createElement("a");
+                a.className = "submenu-btn" + (pakaiMerah ? " submenu-btn-lalu" : "");
+                a.setAttribute("href", "data/teks/t_" + nomor + "_" + ppHariCadangan[i] + "_01.html");
+                var kiri = document.createElement("span");
+                kiri.textContent = ppLabelCadangan[i];
+                var kanan = document.createElement("span");
+                kanan.innerHTML = "&rsaquo;";
+                a.appendChild(kiri);
+                a.appendChild(kanan);
+                kotak.appendChild(a);
+            }
+        }
+
+        function toggleSubmenu() {
+            var pos = ppPosisiCadangan();
+            ppIsiSubmenuCadangan("pekanSubmenu", pos.pekan, false);
+            var s = document.getElementById("pekanSubmenu");
+            var a = document.getElementById("panah-pekan-ini");
+            var t = (s.style.display === "flex");
+            s.style.display = t ? "none" : "flex";
+            if (a) a.textContent = t ? "\u25BC" : "\u25B2";
+        }
+        function toggleSubmenuLalu() {
+            var pos = ppPosisiCadangan();
+            ppIsiSubmenuCadangan("pekanLaluSubmenu", pos.pekan - 1, true);
+            var s = document.getElementById("pekanLaluSubmenu");
+            var a = document.getElementById("panah-pekan-lalu");
+            var t = (s.style.display === "flex");
+            s.style.display = t ? "none" : "flex";
+            if (a) a.textContent = t ? "\u25BC" : "\u25B2";
+        }
+>>>>>>> 5169fb152a5591861d420f2f5a9036315b3067b6
         function toggleMediaMenu() { var s = document.getElementById("media-submenu"); var a = document.getElementById("media-arrow"); var t = (s.style.display === "flex"); s.style.display = t ? "none" : "flex"; a.textContent = t ? "\u25BC" : "\u25B2"; }
         function exitApp() { try { window.close(); } catch (e) {} window.location.replace("about:blank"); }
+
+        /* Isi sejak awal bila masih kosong (app.js lama/tidak ada) */
+        ppIsiSubmenuCadangan("pekanLaluSubmenu", ppPosisiCadangan().pekan - 1, true);
+        ppIsiSubmenuCadangan("pekanSubmenu", ppPosisiCadangan().pekan, false);
     </script>
     <script>
         /* PERBARUI 2026-11-08: pendaftaran service worker.

@@ -17,6 +17,54 @@
      tombol "Tutup" dan klik di luar modal berfungsi.
    - Blok mati btn-audio/btn-video di render() dihapus (elemen
      dengan id tersebut tidak ada di index.html).
+   PERBARUI 2026-11-08 (tombol salin versi menyeluruh):
+   - sisipkanTombolSalinKhususReader() ditulis ulang:
+     * Posisi PASTI menurut jenis halaman: nama berkas iframe
+       (t_NN_garis_besar_01.html -> MINGGUAN; t_NN_<hari>_01.html ->
+       HARIAN); bila nama berkas tak dikenali, ditekan dari
+       <title>/.header/.header-sub/h1-h4 halaman.
+       HARIAN  -> tombol salin SEBELUM (di atas) Home.
+       MINGGUAN-> tombol salin SESUDAH (di bawah) Home.
+     * Tombol salin meniru tampilan tombol Home (kelas + gaya
+       inline disalin), jadi selalu berdampingan dan serasi.
+     * Menyalin SELURUH teks bacaan pada kontainer utama (.container
+       / .mobile-container) - termasuk isi accordion yang TERTUTUP -
+       tanpa emoji, panah, tombol, navigasi, atau modal media.
+     * Pemutar clipboard: Clipboard API + cadangan execCommand
+       (untuk konteks non-HTTPS) + umpan balik "Tersalin!".
+     * Klik Home tetap dicegat untuk menutup reader (perilaku lama
+       dipertahankan, kini di intersepsiTombolHome()).
+   PERBAIKAN 2026-11-09 (submenu Pekan Lalu dinamis):
+   - Tombol "Pekan Lalu" di index.html kini membuka submenu PERSIS
+     sama dengan "Pekan Ini", tetapi mengarah ke pekan sebelumnya
+     (pekan - 1). Bila pekan ini Pekan_06 maka menu ini Pekan_05.
+   - render() mengisi #pekanLaluSubmenu setiap perhitungan ulang;
+     bila Pekan 1 / di luar periode, tampil catatan penjelasan.
+   PERBAIKAN 2026-11-09 v2 (warna merah muda):
+   - Seluruh butir submenu Pekan Lalu memakai kelas tambahan
+     "submenu-btn-lalu" (warna merah muda #e05252, hover merah tua)
+     sesuai permintaan, serasi dengan tombol Pekan Lalu.
+   - index.html kini juga memuat jaring pengaman: bila app.js versi
+     lama/gagal dimuat, submenu diisi oleh script bawaan index.html
+     sehingga tombol "Pekan Lalu" TETAP merespon.
+   PERBAIKAN 2026-11-09 v3 (salmon KEBAL ketidakcocokan versi):
+   - Diagnosa situs live 9 Nov 2026: index.html versi LAMA (tanpa
+     rule CSS .submenu-btn-lalu) berpasangan dengan app.js baru
+     (menambah kelas) -> butir dropdown jatuh ke HIJAU .submenu-btn
+     karena kelasnya tidak dikenali CSS.
+   - Solusi: app.js kini MENYUNTIKKAN sendiri <style> berisi warna
+     butir Pekan Lalu (#e05252, hover #991b1b, dengan !important)
+     segera setelah dimuat. Akibatnya butir TETAP merah salmon
+     walaupun index.html lama yang tayang - tidak bergantung pada
+     CSS mana pun di index.html.
+   PERMINTAAN 2026-11-09 v4 (Home di KIRI, salin di KANAN):
+   - Di dalam pembaca (reader), tombol Home kini SELALU berada di
+     sebelah kiri dan "Copy To Clipboard" di sebelah kanan, untuk
+     SEMUA halaman (harian maupun garis besar) - susunan yang lebih
+     umum seperti aplikasi pada umumnya.
+   - Caranya: tombol salin selalu disisipkan SESUDAH tombol Home
+     (sebelumnya: harian = salin di kiri Home; mingguan = salin di
+     kanan Home - tidak seragam).
    ============================================================ */
 
 (function () {
@@ -164,7 +212,16 @@
         var el = doc.querySelector(".mobile-container > .header");
         if (el) el.style.display = "none";
 
-        sisipkanTombolSalinKhususReader(doc);
+        /* PERMINTAAN 2026-11-09: susunan tombol di reader kini
+           SERAGAM - Home di kiri, Copy To Clipboard di kanan (lebih
+           umum). Posisi tidak lagi bergantung pada jenis halaman;
+           jenis tetap dihitung dari nama berkas dan diteruskan bila
+           kelak diperlukan. */
+        var jenis = null;
+        if (/garis[-_]?besar|mingguan/i.test(src)) jenis = "mingguan";
+        else if (/[_\/](senin|selasa|rabu|kamis|jumat|sabtu)[_\/]/i.test(src)) jenis = "harian";
+
+        sisipkanTombolSalinKhususReader(doc, jenis);
 
         var daftar = doc.querySelectorAll(".accordion-header, .toggle-header");
         for (var i = 0; i < daftar.length; i++) {
@@ -172,66 +229,262 @@
         }
     }
 
-    function sisipkanTombolSalinKhususReader(doc) {
-        var semuaElemen = doc.querySelectorAll("a, button");
-        for (var h = 0; h < semuaElemen.length; h++) {
-            var el = semuaElemen[h];
-            var teks = el.textContent || el.innerText || "";
-            var href = el.getAttribute("href") || "";
+    /* ============================================================
+       TOMBOL COPY TO CLIPBOARD DI READER - versi menyeluruh
+       ------------------------------------------------------------
+       1. Selalu berdampingan dengan tombol Home/Beranda.
+       2. Posisi (PERMINTAAN 2026-11-09): Home DI KIRI, tombol salin
+          DI KANAN pada SEMUA halaman - susunan yang umum dan seragam
+          untuk harian maupun mingguan. (Sebelumnya: harian = salin
+          di kiri Home; mingguan = salin di kanan Home.)
+       3. Menyalin SELURUH teks bacaan pada kontainer utama (.container
+          / .mobile-container) - termasuk isi accordion yang TERTUTUP -
+          tanpa emoji, panah, tombol, navigasi, atau modal media;
+          antarblok dipisah baris baru agar salinan rapi.
+       4. Klik tombol Home tetap dicegat untuk menutup reader.
+       ============================================================ */
 
-            if ((teks.includes("Home") || href.includes("index.html") || el.classList.contains("home-btn")) && el.getAttribute("data-fixed-home") !== "1") {
-                el.setAttribute("data-fixed-home", "1");
-                el.setAttribute("href", "javascript:void(0);");
+    var ID_TOMBOL_SALIN = "pp-btn-salin";
+    var LABEL_SALIN = "📋 Copy To Clipboard";
+    var LABEL_TERSENTUH = "✓ Tersalin!";
+    var LABEL_GAGAL = "Gagal salin";
 
-                el.addEventListener("click", function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    tutupBacaan();
-                }, true);
+    var TAG_BLOK = /^(DIV|P|LI|UL|OL|H[1-6]|SECTION|ARTICLE|HEADER|FOOTER|TABLE|TR|BLOCKQUOTE|BR|FIGURE|FIGCAPTION)$/;
 
-                var parent = el.parentNode;
-                if (parent && !parent.querySelector("#pp-btn-salin")) {
-                    var isBottom = parent.classList.contains("bottom-nav") || parent.tagName === "DIV";
+    var SELECTOR_KONTEN = [
+        ".container", ".mobile-container", "main", "article", ".content-scroll",
+        ".isi-bacaan", ".konten-bacaan", ".bacaan", "#isi-bacaan",
+        "#konten", "#content", ".content"
+    ];
 
-                    parent.style.display = "flex";
-                    parent.style.flexDirection = "row";
-                    parent.style.gap = "8px";
-                    parent.style.justifyContent = "center";
-                    parent.style.alignItems = "center";
+    var SELECTOR_ABAIKAN =
+        "script, style, noscript, template, nav, footer, " +
+        ".navigasi, .toolbar, .menu, button, .btn, " +
+        ".icon-arrow, .arrow, .title-group > span:first-child, " +
+        ".header-card a, .nav-container a, a[href$=\"index.html\"], " +
+        ".bottom-nav, #mediaModal, " +
+        "#" + ID_TOMBOL_SALIN + ", #btnHome, #tombolHome, #btnBeranda, " +
+        ".btn-home, .tombol-home, .btn-beranda";
 
-                    el.style.flex = "1";
-                    el.style.margin = "0";
+    var BULAN_INDO = { januari: 0, februari: 1, maret: 2, april: 3, mei: 4, juni: 5,
+                       juli: 6, agustus: 7, september: 8, oktober: 9,
+                       november: 10, desember: 11 };
 
-                    var btnCopy = doc.createElement("button");
-                    btnCopy.type = "button";
-                    btnCopy.id = "pp-btn-salin";
-                    btnCopy.innerHTML = "📋 Copy To Clipboard";
-                    btnCopy.style.flex = "1";
-                    btnCopy.style.margin = "0";
-                    btnCopy.style.padding = isBottom ? "10px 15px" : "6px 12px";
-                    btnCopy.style.backgroundColor = "#2e7d32";
-                    btnCopy.style.border = "0";
-                    btnCopy.style.color = "#ffffff";
-                    btnCopy.style.fontWeight = "bold";
-                    btnCopy.style.borderRadius = "8px";
-                    btnCopy.style.cursor = "pointer";
-                    btnCopy.style.fontSize = "0.85rem";
+    /* Teks elemen tanpa emoji/simbol: "🏠 Home" -> "Home". */
+    function teksInti(el) {
+        return (el.textContent || "")
+            .replace(/[^\p{L}\p{N}\s]/gu, "")
+            .replace(/\s+/g, " ")
+            .trim();
+    }
 
-                    btnCopy.addEventListener("click", function() {
-                        var targetEl = doc.querySelector(".content-scroll, .bacaan-body, article, main") || doc.body;
-                        var teksSalin = targetEl.innerText || targetEl.textContent;
-                        navigator.clipboard.writeText(teksSalin).then(function() {
-                            btnCopy.innerHTML = "✓ Tersalin!";
-                            setTimeout(function() { btnCopy.innerHTML = "📋 Copy To Clipboard"; }, 2000);
-                        }).catch(function() {
-                            alert("Gagal menyalin teks.");
-                        });
-                    });
+    function cariTombolHomeReader(doc) {
+        var byId = doc.getElementById("btnHome") ||
+                   doc.getElementById("tombolHome") ||
+                   doc.getElementById("btnBeranda");
+        if (byId) return byId;
 
-                    parent.appendChild(btnCopy);
-                }
+        var bySelector = doc.querySelector(
+            '.btn-home, .tombol-home, .home-btn, .btn-beranda, [data-aksi="home"]');
+        if (bySelector) return bySelector;
+
+        /* Pola aplikasi: <a href="../../index.html">🏠 Home</a> */
+        var byHref = doc.querySelector(
+            'a[href$="index.html"], a[href="/"], a[href*="home"], a[href*="beranda"]');
+        if (byHref) return byHref;
+
+        var semua = doc.querySelectorAll("a, button");
+        for (var i = 0; i < semua.length; i++) {
+            if (/^(home|beranda)$/i.test(teksInti(semua[i]))) return semua[i];
+        }
+        return null;
+    }
+
+    function tentukanJenisHalamanReader(doc) {
+        var sumber = [doc.title || ""];
+        var daftarSelector = [".header-title", ".header-sub", ".header", ".week-title",
+                              "h1", "h2", "h3", "h4"];
+        for (var s = 0; s < daftarSelector.length; s++) {
+            var kelompok = doc.querySelectorAll(daftarSelector[s]);
+            for (var k = 0; k < kelompok.length; k++) {
+                sumber.push(kelompok[k].textContent || "");
             }
         }
+        var teks = sumber.join(" ").toLowerCase();
+
+        /* Nama hari Senin-Sabtu dicek lebih dulu: halaman harian boleh
+           saja memuat frasa "Garis Besar" pada judul bagiannya (h4). */
+        if (/\b(senin|selasa|rabu|kamis|jumat|jum'?at|sabtu)\b/.test(teks)) return "harian";
+        if (/garis\s?besar|mingguan|outline|weekly/.test(teks)) return "mingguan";
+        if (/\bminggu\b/.test(teks)) return "mingguan";
+
+        var cocok = teks.match(
+            /\b(\d{1,2})\s+(januari|februari|maret|april|mei|juni|juli|agustus|september|oktober|november|desember)\s+(\d{4})\b/);
+        if (cocok) {
+            var t = new Date(parseInt(cocok[3], 10), BULAN_INDO[cocok[2]], parseInt(cocok[1], 10));
+            if (!isNaN(t.getTime())) return t.getDay() === 0 ? "mingguan" : "harian";
+        }
+        return "harian";
+    }
+
+    /* Perilaku lama yang dipertahankan: Home menutup reader. */
+    function intersepsiTombolHome(tombolHome) {
+        if (!tombolHome || tombolHome.getAttribute("data-fixed-home") === "1") return;
+        tombolHome.setAttribute("data-fixed-home", "1");
+        tombolHome.setAttribute("href", "javascript:void(0);");
+        tombolHome.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            tutupBacaan();
+        }, true);
+    }
+
+    /* Efek hover/aktif/disabled untuk tombol salin (tetap mengikuti
+       warna yang disalin dari tombol Home). */
+    function sisipkanGayaTombolSalin(doc) {
+        if (doc.getElementById("pp-btn-salin-gaya")) return;
+        var style = doc.createElement("style");
+        style.id = "pp-btn-salin-gaya";
+        style.textContent =
+            "#pp-btn-salin{border:0;cursor:pointer;font-family:inherit;" +
+            "transition:background-color .2s ease,transform .1s ease}" +
+            "#pp-btn-salin:hover{filter:brightness(1.15)}" +
+            "#pp-btn-salin:active{transform:scale(0.98)}" +
+            "#pp-btn-salin:disabled{opacity:.7;cursor:default}";
+        (doc.head || doc.documentElement).appendChild(style);
+    }
+
+    function buatTombolSalinReader(doc, tombolHome) {
+        var btn = doc.createElement("button");
+        btn.type = "button";
+        btn.id = ID_TOMBOL_SALIN;
+        btn.innerHTML = LABEL_SALIN;
+        btn.title = "Salin seluruh isi bacaan";
+        btn.setAttribute("aria-label", "Salin isi bacaan ke clipboard");
+        btn.setAttribute("data-label-asli", LABEL_SALIN);
+
+        /* Tampilan mengikuti tombol Home (kelas + gaya inline):
+         * - template harian : pil #296d59 dari gaya inline Home;
+         * - template mingguan: kelas .nav-btn (pil #1e5138, flex:1). */
+        if (tombolHome) {
+            if (tombolHome.className) btn.className = tombolHome.className;
+            var gaya = tombolHome.getAttribute("style");
+            if (gaya) btn.setAttribute("style", gaya);
+        }
+        btn.style.border = "0";
+        btn.style.cursor = "pointer";
+        btn.style.fontFamily = "inherit";
+        btn.style.marginLeft = "6px";
+        btn.style.marginRight = "6px";
+        return btn;
+    }
+
+    /* Rekursif: teks node, dengan baris baru pada batas elemen blok
+       (klon yang terlepas dari DOM tidak punya layout, sehingga
+       innerText tidak andal). */
+    function ekstrakTeksReader(node) {
+        if (node.nodeType === 3) return node.nodeValue;
+        if (node.nodeType !== 1) return "";
+        if (node.matches && node.matches(SELECTOR_ABAIKAN)) return "";
+        var hasil = "";
+        var anak = node.childNodes;
+        for (var i = 0; i < anak.length; i++) {
+            hasil += ekstrakTeksReader(anak[i]);
+        }
+        if (TAG_BLOK.test(node.tagName || "")) hasil += "\n";
+        return hasil;
+    }
+
+    function ambilTeksBacaanReader(doc) {
+        var konten = null;
+        for (var i = 0; i < SELECTOR_KONTEN.length && !konten; i++) {
+            var el = doc.querySelector(SELECTOR_KONTEN[i]);
+            if (el && (el.textContent || "").trim().length > 0) konten = el;
+        }
+        if (!konten) konten = doc.body;
+        if (!konten) return "";
+
+        /* Bekerja pada klon: halaman asli tidak terganggu dan isi
+           accordion yang tertutup (display:none) tetap ikut tersalin. */
+        var teks = ekstrakTeksReader(konten.cloneNode(true));
+        return teks
+            .replace(/[\u{1F000}-\u{1FAFF}\u{2B00}-\u{2BFF}\u{FE0F}\u{200D}]/gu, "")
+            .replace(/[ \t]{2,}/g, " ")
+            .replace(/^[ \t]+/gm, "")
+            .replace(/[ \t]*\r?\n[ \t\n]*/g, "\n")
+            .trim();
+    }
+
+    /* Cadangan untuk konteks non-HTTPS: textarea sementara + execCommand. */
+    function salinCadangan(teks) {
+        try {
+            var ta = document.createElement("textarea");
+            ta.value = teks;
+            ta.setAttribute("readonly", "");
+            ta.style.position = "fixed";
+            ta.style.top = "-9999px";
+            document.body.appendChild(ta);
+            ta.select();
+            var berhasil = document.execCommand("copy");
+            document.body.removeChild(ta);
+            return berhasil;
+        } catch (e) {
+            return false;
+        }
+    }
+
+    function salinTeksKeClipboard(teks, tombol) {
+        var selesai = function (sukses) {
+            tombol.innerHTML = sukses ? LABEL_TERSENTUH : LABEL_GAGAL;
+            tombol.disabled = true;
+            setTimeout(function () {
+                tombol.innerHTML = tombol.getAttribute("data-label-asli") || LABEL_SALIN;
+                tombol.disabled = false;
+            }, 2000);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext) {
+            navigator.clipboard.writeText(teks).then(
+                function () { selesai(true); },
+                function () { selesai(salinCadangan(teks)); }
+            );
+        } else {
+            selesai(salinCadangan(teks));
+        }
+    }
+
+    function sisipkanTombolSalinKhususReader(doc, jenisPaksa) {
+        if (!doc || !doc.body) return null;
+
+        /* Hapus tombol lama bila ada agar posisi dihitung ulang. */
+        var lama = doc.getElementById(ID_TOMBOL_SALIN);
+        if (lama) lama.parentNode.removeChild(lama);
+
+        /* PERMINTAAN 2026-11-09: Home di KIRI, salin di KANAN untuk
+           SEMUA jenis halaman. Karena keduanya berdampingan satu
+           baris, cukup SELALU menyisipkan tombol salin SESUDAH
+           tombol Home. Argumen jenisPaksa tidak lagi menentukan
+           posisi (dipertahankan agar pemanggil lama tetap cocok). */
+        var jenis = jenisPaksa || tentukanJenisHalamanReader(doc);
+        var tombolHome = cariTombolHomeReader(doc);
+        var tombolSalin = buatTombolSalinReader(doc, tombolHome);
+        sisipkanGayaTombolSalin(doc);
+
+        if (!tombolHome) {
+            doc.body.insertBefore(tombolSalin, doc.body.firstChild);
+        } else {
+            /* Home tetap pertama (kiri), salin menyusul (kanan). */
+            tombolHome.insertAdjacentElement("afterend", tombolSalin);
+        }
+
+        intersepsiTombolHome(tombolHome);
+
+        tombolSalin.addEventListener("click", function () {
+            var teks = ambilTeksBacaanReader(doc);
+            if (!teks) return;
+            salinTeksKeClipboard(teks, tombolSalin);
+        });
+
+        return tombolSalin;
     }
 
     function pasangToggleAccordion(header) {
@@ -285,9 +538,28 @@
         }
     });
 
-    function buatTautanSubmenu(label, file, aktif) {
+    /* PERBAIKAN 2026-11-09 v3: gaya butir submenu Pekan Lalu kini
+       DISUNTIKKAN langsung oleh app.js, bukan hanya mengandalkan
+       CSS di index.html. Bila index.html versi lama yang tayang
+       (tanpa rule .submenu-btn-lalu), butir tetap MERAH SALMON.
+       Dipanggil segera di bawah; id dipakai agar tak dobel.
+       !important agar mengungguli :hover hijau .submenu-btn. */
+    function pasangGayaSubmenuLalu() {
+        var kepala = document.head || document.getElementsByTagName("head")[0];
+        if (!kepala || document.getElementById("pp-gaya-submenu-lalu")) return;
+        var gaya = document.createElement("style");
+        gaya.id = "pp-gaya-submenu-lalu";
+        gaya.textContent =
+            ".submenu-btn-lalu{background-color:#e05252 !important;}" +
+            ".submenu-btn-lalu:hover{background-color:#991b1b !important;}";
+        kepala.appendChild(gaya);
+    }
+    pasangGayaSubmenuLalu();
+
+    function buatTautanSubmenu(label, file, aktif, kelasTambahan) {
         var a = document.createElement("a");
-        a.className = "submenu-btn" + (aktif ? " submenu-aktif" : "");
+        a.className = "submenu-btn" + (aktif ? " submenu-aktif" : "") +
+                      (kelasTambahan ? " " + kelasTambahan : "");
         a.setAttribute("href", file);
 
         var kiri = document.createElement("span");
@@ -361,6 +633,39 @@
                 info.style.cssText = "font-size:12px;color:#666;padding:4px 6px;text-align:center;";
                 info.textContent = "Submenu bacaan aktif saat periode buku berjalan.";
                 submenu.appendChild(info);
+            }
+        }
+
+        /* ============================================================
+           PERBAIKAN 2026-11-09: SUBMENU "PEKAN LALU" (dinamis)
+           ------------------------------------------------------------
+           Persis sama dengan submenu "Pekan Ini", tetapi seluruh
+           pilihan mengarah ke pekan SEBELUMNYA (pekan - 1).
+           Bila pekan ini Pekan_06, menu ini berisi Pekan_05:
+           data/teks/t_05_garis_besar_01.html ... t_05_sabtu_01.html.
+           Bila buku baru dimulai (Pekan 1), tampil catatan singkat;
+           di luar periode buku, catatan yang sama dengan Pekan Ini.
+           ============================================================ */
+        var submenuLalu = document.getElementById("pekanLaluSubmenu");
+        if (submenuLalu) {
+            submenuLalu.innerHTML = "";
+            if (pos.dalam && pos.pekan >= 2) {
+                var pekanLalu = pos.pekan - 1;
+                var fileLalu = K.pathTeks + "t_" + pad2(pekanLalu) + "_garis_besar_01.html";
+                submenuLalu.appendChild(buatTautanSubmenu("Garis Besar", fileLalu, false, "submenu-btn-lalu"));
+                for (var hl = 1; hl <= 6; hl++) {
+                    submenuLalu.appendChild(buatTautanSubmenu(
+                        K.hariIndo[hl],
+                        K.pathTeks + "t_" + pad2(pekanLalu) + "_" + K.hariBerkas[hl] + "_01.html",
+                        false, "submenu-btn-lalu"));
+                }
+            } else {
+                var infoLalu = document.createElement("div");
+                infoLalu.style.cssText = "font-size:12px;color:#666;padding:4px 6px;text-align:center;";
+                infoLalu.textContent = (pos.dalam && pos.pekan === 1)
+                    ? "Buku ini baru dimulai (Pekan 1). Belum ada pekan sebelumnya."
+                    : "Submenu bacaan aktif saat periode buku berjalan.";
+                submenuLalu.appendChild(infoLalu);
             }
         }
 

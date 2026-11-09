@@ -40,6 +40,13 @@
      (pekan - 1). Bila pekan ini Pekan_06 maka menu ini Pekan_05.
    - render() mengisi #pekanLaluSubmenu setiap perhitungan ulang;
      bila Pekan 1 / di luar periode, tampil catatan penjelasan.
+   PERBAIKAN 2026-11-09 v2 (warna merah muda):
+   - Seluruh butir submenu Pekan Lalu memakai kelas tambahan
+     "submenu-btn-lalu" (warna merah muda #e05252, hover merah tua)
+     sesuai permintaan, serasi dengan tombol Pekan Lalu.
+   - index.html kini juga memuat jaring pengaman: bila app.js versi
+     lama/gagal dimuat, submenu diisi oleh script bawaan index.html
+     sehingga tombol "Pekan Lalu" TETAP merespon.
    ============================================================ */
 
 (function () {
@@ -511,9 +518,10 @@
         }
     });
 
-    function buatTautanSubmenu(label, file, aktif) {
+    function buatTautanSubmenu(label, file, aktif, kelasTambahan) {
         var a = document.createElement("a");
-        a.className = "submenu-btn" + (aktif ? " submenu-aktif" : "");
+        a.className = "submenu-btn" + (aktif ? " submenu-aktif" : "") +
+                      (kelasTambahan ? " " + kelasTambahan : "");
         a.setAttribute("href", file);
 
         var kiri = document.createElement("span");
@@ -606,12 +614,12 @@
             if (pos.dalam && pos.pekan >= 2) {
                 var pekanLalu = pos.pekan - 1;
                 var fileLalu = K.pathTeks + "t_" + pad2(pekanLalu) + "_garis_besar_01.html";
-                submenuLalu.appendChild(buatTautanSubmenu("Garis Besar", fileLalu, false));
+                submenuLalu.appendChild(buatTautanSubmenu("Garis Besar", fileLalu, false, "submenu-btn-lalu"));
                 for (var hl = 1; hl <= 6; hl++) {
                     submenuLalu.appendChild(buatTautanSubmenu(
                         K.hariIndo[hl],
                         K.pathTeks + "t_" + pad2(pekanLalu) + "_" + K.hariBerkas[hl] + "_01.html",
-                        false));
+                        false, "submenu-btn-lalu"));
                 }
             } else {
                 var infoLalu = document.createElement("div");

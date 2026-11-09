@@ -28,7 +28,7 @@
         .pesan-luar { display: none; margin: 10px 20px; padding: 14px; background: #fdf3e4; border: 1px solid #f0d9b5; border-radius: 8px; color: #7a5a1e; font-size: 13px; line-height: 1.5; text-align: center; }
         .menu-list { padding: 10px 20px; display: flex; flex-direction: column; gap: 10px; }
         .menu-btn, .submenu-btn, .modal-tutup, .btn-media-sub {
-            width: 65%; margin-left: auto; margin-right: auto; padding: 14px 20px;
+            width: 60%; margin-left: auto; margin-right: auto; padding: 14px 20px;
             font-size: 1.05rem; font-weight: bold; font-family: inherit;
             display: flex; justify-content: space-between; align-items: center;
             color: white; text-decoration: none; border: none; border-radius: 8px;
@@ -42,6 +42,13 @@
         .btn-media-sub:hover { background-color: #1e5138; }
         .menu-btn-danger { background-color: #991b1b; margin-top: 5px; }
         .menu-btn-danger:hover { background-color: #7f1d1d; }
+        /* PERBAIKAN 2026-11-09: warna tombol sesuai tampilan baru
+           (sampling dari desain): Pekan Lalu merah #b91c1c,
+           Hari Ini hijau #2e7d32, selebihnya hijau tua #1e5138. */
+        .menu-btn-lalu { background-color: #b91c1c; }
+        .menu-btn-lalu:hover { background-color: #7f1d1d; }
+        .menu-btn-sukses { background-color: #2e7d32; }
+        .menu-btn-sukses:hover { background-color: #1e5138; }
         .submenu-container { display: none; flex-direction: column; gap: 6px; padding-left: 10px; margin-bottom: 5px; }
         .submenu-btn { background-color: #2d7a54; border-radius: 6px; }
         .submenu-btn:hover { background-color: #1e5138; }
@@ -136,9 +143,16 @@
         })();
         </script>
         <div class="menu-list">
-                <a href="pekan-lalu.html" class="btn btn-success mb-2">Pekan Lalu &rsaquo;</a>
-    <a href="#" id="btn-hari-ini" class="menu-btn"><span>Hari Ini</span><span>&rsaquo;</span></a>
-            <a href="javascript:void(0);" id="baris-pekan-ini" onclick="toggleSubmenu();" class="menu-btn"><span>Pekan Ini</span><span>&#9662;</span></a>
+            <!-- PERBAIKAN 2026-11-09: Pekan Lalu kini tombol dropdown
+                 merah, PERSIS sama perilakunya dengan "Pekan Ini".
+                 Isi submenu dibangun otomatis oleh app.js (render()):
+                 bila pekan ini Pekan_06 maka menu ini berisi Pekan_05
+                 (data/teks/t_05_*_01.html). Sebelumnya tombol ini
+                 mengarah ke pekan-lalu.html yang tidak ada (404). -->
+            <a href="javascript:void(0);" id="baris-pekan-lalu" onclick="toggleSubmenuLalu();" class="menu-btn menu-btn-lalu"><span>Pekan Lalu</span><span id="panah-pekan-lalu">&#9660;</span></a>
+            <div id="pekanLaluSubmenu" class="submenu-container"></div>
+            <a href="#" id="btn-hari-ini" class="menu-btn menu-btn-sukses"><span>Hari Ini</span><span>&rsaquo;</span></a>
+            <a href="javascript:void(0);" id="baris-pekan-ini" onclick="toggleSubmenu();" class="menu-btn"><span>Pekan Ini</span><span id="panah-pekan-ini">&#9660;</span></a>
             <div id="pekanSubmenu" class="submenu-container"></div>
             <button class="menu-btn" onclick="toggleMediaMenu();"><span>&#127916; Media</span><span id="media-arrow">&#9660;</span></button>
             <div id="media-submenu" style="display:none; flex-direction:column; gap:6px; margin-bottom:10px;">
@@ -157,9 +171,22 @@
         </div>
     </div>
     <script src="pp-konfigurasi.js?v=4"></script>
-    <script src="app.js?v=4"></script>
+    <script src="app.js?v=5"></script>
     <script>
-        function toggleSubmenu() { var s = document.getElementById("pekanSubmenu"); s.style.display = (s.style.display === "flex") ? "none" : "flex"; }
+        function toggleSubmenu() {
+            var s = document.getElementById("pekanSubmenu");
+            var a = document.getElementById("panah-pekan-ini");
+            var t = (s.style.display === "flex");
+            s.style.display = t ? "none" : "flex";
+            if (a) a.textContent = t ? "\u25BC" : "\u25B2";
+        }
+        function toggleSubmenuLalu() {
+            var s = document.getElementById("pekanLaluSubmenu");
+            var a = document.getElementById("panah-pekan-lalu");
+            var t = (s.style.display === "flex");
+            s.style.display = t ? "none" : "flex";
+            if (a) a.textContent = t ? "\u25BC" : "\u25B2";
+        }
         function toggleMediaMenu() { var s = document.getElementById("media-submenu"); var a = document.getElementById("media-arrow"); var t = (s.style.display === "flex"); s.style.display = t ? "none" : "flex"; a.textContent = t ? "\u25BC" : "\u25B2"; }
         function exitApp() { try { window.close(); } catch (e) {} window.location.replace("about:blank"); }
     </script>

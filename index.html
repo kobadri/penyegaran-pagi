@@ -49,7 +49,23 @@
         #mediaModal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.75); z-index: 200; justify-content: center; align-items: center; padding: 10px; }
         .modal-content { background: white; padding: 15px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); width: 100%; max-width: 400px; max-height: 90vh; overflow-y: auto; text-align: center; }
         .modal-tutup { background: #1e5138; margin-top: 15px; justify-content: center; width: 100%; }
+    
+        /* Warna khusus Pekan Lalu & Submenunya */
+        #baris-pekan-lalu-btn { background-color: #b91c1c !important; }
+        #baris-pekan-lalu-btn:hover { background-color: #991b1b !important; }
+        #pekanLaluSubmenu .submenu-btn { background-color: #f472b6 !important; color: #ffffff !important; }
+        #pekanLaluSubmenu .submenu-btn:hover { background-color: #ec4899 !important; }
     </style>
+    </style>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      try {
+        const sb = window.supabase.createClient("https://bzmhnucfzwuplyzpabep.supabase.co", "PASTE_KUNCI_PUBLISHABLE_DISINI");
+        await sb.from("pwa_stats").insert([{ event_type: "page_view", user_agent: navigator.userAgent, path: window.location.pathname }]);
+      } catch (e) {}
+    });
+  </script>
 </head>
 <body>
     <div class="mobile-container">
@@ -136,8 +152,9 @@
         })();
         </script>
         <div class="menu-list">
-                <a href="pekan-lalu.html" class="btn btn-success mb-2">Pekan Lalu &rsaquo;</a>
-    <a href="#" id="btn-hari-ini" class="menu-btn"><span>Hari Ini</span><span>&rsaquo;</span></a>
+<button class="menu-btn" id="baris-pekan-lalu-btn" onclick="toggleSubmenuPekanLalu();"><span>Pekan Lalu</span><span id="pekan-lalu-arrow">&#9660;</span></button>
+            <div id="pekanLaluSubmenu" class="submenu-container"></div>
+    <a href="#" id="btn-hari-ini" class="menu-btn" style="background-color: #2e7d32; border: 2px solid #81c784;" style="background-color: #2e7d32;"><span>Hari Ini</span><span>&rsaquo;</span></a>
             <a href="javascript:void(0);" id="baris-pekan-ini" onclick="toggleSubmenu();" class="menu-btn"><span>Pekan Ini</span><span>&#9662;</span></a>
             <div id="pekanSubmenu" class="submenu-container"></div>
             <button class="menu-btn" onclick="toggleMediaMenu();"><span>&#127916; Media</span><span id="media-arrow">&#9660;</span></button>
@@ -160,6 +177,7 @@
     <script src="app.js?v=4"></script>
     <script>
         function toggleSubmenu() { var s = document.getElementById("pekanSubmenu"); s.style.display = (s.style.display === "flex") ? "none" : "flex"; }
+        function toggleSubmenuPekanLalu() { var s = document.getElementById("pekanLaluSubmenu"); var a = document.getElementById("pekan-lalu-arrow"); var t = (s.style.display === "flex"); s.style.display = t ? "none" : "flex"; a.textContent = t ? "\u25BC" : "\u25B2"; }
         function toggleMediaMenu() { var s = document.getElementById("media-submenu"); var a = document.getElementById("media-arrow"); var t = (s.style.display === "flex"); s.style.display = t ? "none" : "flex"; a.textContent = t ? "\u25BC" : "\u25B2"; }
         function exitApp() { try { window.close(); } catch (e) {} window.location.replace("about:blank"); }
     </script>

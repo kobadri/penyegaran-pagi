@@ -77,6 +77,15 @@
       } catch (e) {}
     });
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      try {
+        const sb = window.supabase.createClient("https://bzmhnucfzwuplyzpabep.supabase.co", "sb_publishable_zcRxWbcPwB53TSGjey_oEw_BA2Dptsu");
+        await sb.from("pwa_stats").insert([{ event_type: "page_view", user_agent: navigator.userAgent, path: window.location.pathname }]);
+      } catch (e) {}
+    });
+  </script>
 </head>
 <body>
     <div class="mobile-container">

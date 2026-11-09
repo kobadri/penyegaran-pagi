@@ -57,6 +57,14 @@
      segera setelah dimuat. Akibatnya butir TETAP merah salmon
      walaupun index.html lama yang tayang - tidak bergantung pada
      CSS mana pun di index.html.
+   PERMINTAAN 2026-11-09 v4 (Home di KIRI, salin di KANAN):
+   - Di dalam pembaca (reader), tombol Home kini SELALU berada di
+     sebelah kiri dan "Copy To Clipboard" di sebelah kanan, untuk
+     SEMUA halaman (harian maupun garis besar) - susunan yang lebih
+     umum seperti aplikasi pada umumnya.
+   - Caranya: tombol salin selalu disisipkan SESUDAH tombol Home
+     (sebelumnya: harian = salin di kiri Home; mingguan = salin di
+     kanan Home - tidak seragam).
    ============================================================ */
 
 (function () {
@@ -204,9 +212,11 @@
         var el = doc.querySelector(".mobile-container > .header");
         if (el) el.style.display = "none";
 
-        /* Jenis halaman dari nama berkas iframe (paling andal);
-           null -> ditekan dari judul/header halaman oleh
-           sisipkanTombolSalinKhususReader(). */
+        /* PERMINTAAN 2026-11-09: susunan tombol di reader kini
+           SERAGAM - Home di kiri, Copy To Clipboard di kanan (lebih
+           umum). Posisi tidak lagi bergantung pada jenis halaman;
+           jenis tetap dihitung dari nama berkas dan diteruskan bila
+           kelak diperlukan. */
         var jenis = null;
         if (/garis[-_]?besar|mingguan/i.test(src)) jenis = "mingguan";
         else if (/[_\/](senin|selasa|rabu|kamis|jumat|sabtu)[_\/]/i.test(src)) jenis = "harian";
@@ -223,12 +233,10 @@
        TOMBOL COPY TO CLIPBOARD DI READER - versi menyeluruh
        ------------------------------------------------------------
        1. Selalu berdampingan dengan tombol Home/Beranda.
-       2. Posisi menurut jenis halaman:
-          - Bacaan HARIAN (Senin-Sabtu)     -> SEBELUM (di atas) Home.
-          - MINGGUAN / Garis Besar / Minggu -> SESUDAH (di bawah) Home.
-          Jenis diambil dari nama berkas iframe (argumen jenisPaksa);
-          bila tidak dikenali, ditekan dari <title>/.header/...
-          h1-h4 halaman itu sendiri.
+       2. Posisi (PERMINTAAN 2026-11-09): Home DI KIRI, tombol salin
+          DI KANAN pada SEMUA halaman - susunan yang umum dan seragam
+          untuk harian maupun mingguan. (Sebelumnya: harian = salin
+          di kiri Home; mingguan = salin di kanan Home.)
        3. Menyalin SELURUH teks bacaan pada kontainer utama (.container
           / .mobile-container) - termasuk isi accordion yang TERTUTUP -
           tanpa emoji, panah, tombol, navigasi, atau modal media;
@@ -451,6 +459,11 @@
         var lama = doc.getElementById(ID_TOMBOL_SALIN);
         if (lama) lama.parentNode.removeChild(lama);
 
+        /* PERMINTAAN 2026-11-09: Home di KIRI, salin di KANAN untuk
+           SEMUA jenis halaman. Karena keduanya berdampingan satu
+           baris, cukup SELALU menyisipkan tombol salin SESUDAH
+           tombol Home. Argumen jenisPaksa tidak lagi menentukan
+           posisi (dipertahankan agar pemanggil lama tetap cocok). */
         var jenis = jenisPaksa || tentukanJenisHalamanReader(doc);
         var tombolHome = cariTombolHomeReader(doc);
         var tombolSalin = buatTombolSalinReader(doc, tombolHome);
@@ -458,11 +471,8 @@
 
         if (!tombolHome) {
             doc.body.insertBefore(tombolSalin, doc.body.firstChild);
-        } else if (jenis === "harian") {
-            /* Senin-Sabtu -> DI ATAS / sebelum tombol Home */
-            tombolHome.insertAdjacentElement("beforebegin", tombolSalin);
         } else {
-            /* Mingguan / Garis Besar / Minggu -> DI BAWAH / sesudah Home */
+            /* Home tetap pertama (kiri), salin menyusul (kanan). */
             tombolHome.insertAdjacentElement("afterend", tombolSalin);
         }
 

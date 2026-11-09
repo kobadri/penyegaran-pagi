@@ -47,6 +47,16 @@
    - index.html kini juga memuat jaring pengaman: bila app.js versi
      lama/gagal dimuat, submenu diisi oleh script bawaan index.html
      sehingga tombol "Pekan Lalu" TETAP merespon.
+   PERBAIKAN 2026-11-09 v3 (salmon KEBAL ketidakcocokan versi):
+   - Diagnosa situs live 9 Nov 2026: index.html versi LAMA (tanpa
+     rule CSS .submenu-btn-lalu) berpasangan dengan app.js baru
+     (menambah kelas) -> butir dropdown jatuh ke HIJAU .submenu-btn
+     karena kelasnya tidak dikenali CSS.
+   - Solusi: app.js kini MENYUNTIKKAN sendiri <style> berisi warna
+     butir Pekan Lalu (#e05252, hover #991b1b, dengan !important)
+     segera setelah dimuat. Akibatnya butir TETAP merah salmon
+     walaupun index.html lama yang tayang - tidak bergantung pada
+     CSS mana pun di index.html.
    ============================================================ */
 
 (function () {
@@ -517,6 +527,24 @@
             document.body.style.overflow = "";
         }
     });
+
+    /* PERBAIKAN 2026-11-09 v3: gaya butir submenu Pekan Lalu kini
+       DISUNTIKKAN langsung oleh app.js, bukan hanya mengandalkan
+       CSS di index.html. Bila index.html versi lama yang tayang
+       (tanpa rule .submenu-btn-lalu), butir tetap MERAH SALMON.
+       Dipanggil segera di bawah; id dipakai agar tak dobel.
+       !important agar mengungguli :hover hijau .submenu-btn. */
+    function pasangGayaSubmenuLalu() {
+        var kepala = document.head || document.getElementsByTagName("head")[0];
+        if (!kepala || document.getElementById("pp-gaya-submenu-lalu")) return;
+        var gaya = document.createElement("style");
+        gaya.id = "pp-gaya-submenu-lalu";
+        gaya.textContent =
+            ".submenu-btn-lalu{background-color:#e05252 !important;}" +
+            ".submenu-btn-lalu:hover{background-color:#991b1b !important;}";
+        kepala.appendChild(gaya);
+    }
+    pasangGayaSubmenuLalu();
 
     function buatTautanSubmenu(label, file, aktif, kelasTambahan) {
         var a = document.createElement("a");

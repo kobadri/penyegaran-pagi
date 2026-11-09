@@ -34,6 +34,12 @@
        (untuk konteks non-HTTPS) + umpan balik "Tersalin!".
      * Klik Home tetap dicegat untuk menutup reader (perilaku lama
        dipertahankan, kini di intersepsiTombolHome()).
+   PERBAIKAN 2026-11-09 (submenu Pekan Lalu dinamis):
+   - Tombol "Pekan Lalu" di index.html kini membuka submenu PERSIS
+     sama dengan "Pekan Ini", tetapi mengarah ke pekan sebelumnya
+     (pekan - 1). Bila pekan ini Pekan_06 maka menu ini Pekan_05.
+   - render() mengisi #pekanLaluSubmenu setiap perhitungan ulang;
+     bila Pekan 1 / di luar periode, tampil catatan penjelasan.
    ============================================================ */
 
 (function () {
@@ -581,6 +587,39 @@
                 info.style.cssText = "font-size:12px;color:#666;padding:4px 6px;text-align:center;";
                 info.textContent = "Submenu bacaan aktif saat periode buku berjalan.";
                 submenu.appendChild(info);
+            }
+        }
+
+        /* ============================================================
+           PERBAIKAN 2026-11-09: SUBMENU "PEKAN LALU" (dinamis)
+           ------------------------------------------------------------
+           Persis sama dengan submenu "Pekan Ini", tetapi seluruh
+           pilihan mengarah ke pekan SEBELUMNYA (pekan - 1).
+           Bila pekan ini Pekan_06, menu ini berisi Pekan_05:
+           data/teks/t_05_garis_besar_01.html ... t_05_sabtu_01.html.
+           Bila buku baru dimulai (Pekan 1), tampil catatan singkat;
+           di luar periode buku, catatan yang sama dengan Pekan Ini.
+           ============================================================ */
+        var submenuLalu = document.getElementById("pekanLaluSubmenu");
+        if (submenuLalu) {
+            submenuLalu.innerHTML = "";
+            if (pos.dalam && pos.pekan >= 2) {
+                var pekanLalu = pos.pekan - 1;
+                var fileLalu = K.pathTeks + "t_" + pad2(pekanLalu) + "_garis_besar_01.html";
+                submenuLalu.appendChild(buatTautanSubmenu("Garis Besar", fileLalu, false));
+                for (var hl = 1; hl <= 6; hl++) {
+                    submenuLalu.appendChild(buatTautanSubmenu(
+                        K.hariIndo[hl],
+                        K.pathTeks + "t_" + pad2(pekanLalu) + "_" + K.hariBerkas[hl] + "_01.html",
+                        false));
+                }
+            } else {
+                var infoLalu = document.createElement("div");
+                infoLalu.style.cssText = "font-size:12px;color:#666;padding:4px 6px;text-align:center;";
+                infoLalu.textContent = (pos.dalam && pos.pekan === 1)
+                    ? "Buku ini baru dimulai (Pekan 1). Belum ada pekan sebelumnya."
+                    : "Submenu bacaan aktif saat periode buku berjalan.";
+                submenuLalu.appendChild(infoLalu);
             }
         }
 

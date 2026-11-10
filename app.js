@@ -832,10 +832,7 @@
 
     function tampilkanTombolInstall() {
         var b = document.getElementById("btn-install");
-        if (!b) return;
-        /* Tombol hanya tampil setelah browser benar-benar mengirim
-           beforeinstallprompt; jangan tampil sebagai tombol semu. */
-        b.style.display = (!dalamModeAplikasi() && promptInstall) ? "flex" : "none";
+        if (b && !dalamModeAplikasi()) b.style.display = "flex";
     }
 
     window.addEventListener("beforeinstallprompt", function (e) {

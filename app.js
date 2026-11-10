@@ -832,7 +832,10 @@
 
     function tampilkanTombolInstall() {
         var b = document.getElementById("btn-install");
-        if (b && !dalamModeAplikasi()) b.style.display = "flex";
+        if (!b) return;
+        /* Tombol hanya tampil setelah browser benar-benar mengirim
+           beforeinstallprompt; jangan tampil sebagai tombol semu. */
+        b.style.display = (!dalamModeAplikasi() && promptInstall) ? "flex" : "none";
     }
 
     window.addEventListener("beforeinstallprompt", function (e) {
@@ -873,11 +876,43 @@
 
     tampilkanTombolInstall();
 
-    /* Beri tahu service worker agar precache bacaan pekan berjalan
-       diperbarui (bila perangkat sedang daring). */
-    if ("serviceWorker" in navigator) {
+    /* Cache offline dinamis: hanya dua pekan berjalan.
+       Sinkronisasi hanya saat online agar cache lama tidak terhapus saat offline. */
+    function kirimSinkronPekan() {
+        if (!("serviceWorker" in navigator) || navigator.onLine === false) return;
+        var pos = window.ppPosisi();
+        var pekanAktif = (pos && pos.dalam && pos.pekan) ? pos.pekan : 0;
+        var pekan = pekanAktif ? [pekanAktif, pekanAktif - 1].filter(function (n) { return n >= 1; }) : [];
+        var daftar = [];
+        pekan.forEach(function (nomor) {
+            var nn = pad2(nomor);
+            daftar.push(K.pathTeks + "t_" + nn + "_garis_besar_01.html");
+            Object.keys(K.hariBerkas || {}).forEach(function (k) {
+                daftar.push(K.pathTeks + "t_" + nn + "_" + K.hariBerkas[k] + "_01.html");
+            });
+            var media = daftarMedia(nomor);
+            (media.audio || []).forEach(function (nama) { daftar.push(folderMedia(nomor) + nama); });
+            (media.video || []).forEach(function (nama) { daftar.push(folderMedia(nomor) + nama); });
+        });
+        var urls = daftar.filter(function (v, i, a) { return a.indexOf(v) === i; })
+            .map(function (v) { return new URL(v, document.baseURI).href; });
         navigator.serviceWorker.ready.then(function (reg) {
-            if (reg.active) reg.active.postMessage({ jenis: "SINKRON_PEKAN" });
+            var pekerja = reg.active;
+            if (pekerja) pekerja.postMessage({
+                jenis: "SINKRON_PEKAN",
+                pekanAktif: pekanAktif,
+                urls: urls
+            });
         }).catch(function () {});
+    }
+
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.ready.then(kirimSinkronPekan).catch(function () {});
+        window.addEventListener("online", kirimSinkronPekan);
+        window.addEventListener("focus", kirimSinkronPekan);
+        window.addEventListener("pageshow", kirimSinkronPekan);
+        document.addEventListener("visibilitychange", function () {
+            if (document.visibilityState === "visible") kirimSinkronPekan();
+        });
     }
 })();

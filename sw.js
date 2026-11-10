@@ -37,10 +37,9 @@ self.addEventListener("activate", function (event) {
     event.waitUntil((async function () {
         var keys = await caches.keys();
         var shellCache = await caches.open(PP_SHELL_CACHE);
-        var contentCache = await caches.open(PP_CONTENT_CACHE);
 
-        /* Pindahkan cache lama terlebih dahulu: materi tetap aman sampai
-           unduhan dua pekan terbaru berhasil, sementara shell aplikasi tetap ada. */
+        /* Salin hanya berkas inti aplikasi dari cache lama. Materi lama
+           tetap berada di cache asal sampai dua pekan baru berhasil diunduh. */
         for (var i = 0; i < keys.length; i++) {
             var key = keys[i];
             if (key === PP_SHELL_CACHE || key === PP_CONTENT_CACHE ||
@@ -50,17 +49,12 @@ self.addEventListener("activate", function (event) {
             var requests = await oldCache.keys();
             for (var j = 0; j < requests.length; j++) {
                 var oldUrl = new URL(requests[j].url);
+                if (urlMateri(oldUrl)) continue;
                 var oldResponse = await oldCache.match(requests[j]);
-                if (!oldResponse) continue;
-                if (urlMateri(oldUrl)) {
-                    if (!await contentCache.match(requests[j])) {
-                        await contentCache.put(requests[j], oldResponse);
-                    }
-                } else if (!await shellCache.match(requests[j])) {
+                if (oldResponse && !await shellCache.match(requests[j])) {
                     await shellCache.put(requests[j], oldResponse);
                 }
             }
-            await caches.delete(key);
         }
         await self.clients.claim();
     })());
@@ -103,7 +97,18 @@ self.addEventListener("fetch", function (event) {
     if (urlMateri(url)) {
         event.respondWith((async function () {
             var cache = await caches.open(PP_CONTENT_CACHE);
-            var saved = await cache.match(new Request(url.href));
+            var lookup = new Request(url.href);
+            var saved = await cache.match(lookup);
+            /* Cache lama tetap menjadi jaring pengaman sampai sinkronisasi baru sukses. */
+            if (!saved) {
+                var oldKeys = await caches.keys();
+                for (var i = 0; i < oldKeys.length && !saved; i++) {
+                    if (oldKeys[i] === PP_SHELL_CACHE || oldKeys[i] === PP_CONTENT_CACHE) continue;
+                    if (oldKeys[i].indexOf("pp-zai-") !== 0 && oldKeys[i].indexOf("pp-content-") !== 0) continue;
+                    var oldCache = await caches.open(oldKeys[i]);
+                    saved = await oldCache.match(lookup);
+                }
+            }
             try {
                 var network = await fetch(request);
                 if (network && network.ok) return network;
@@ -150,6 +155,13 @@ self.addEventListener("message", function (event) {
         /* Bila tidak ada pekan aktif, bersihkan seluruh cache materi lama. */
         if (!urls.length) {
             for (var z = 0; z < currentKeys.length; z++) await cache.delete(currentKeys[z]);
+            var oldCaches = await caches.keys();
+            for (var q = 0; q < oldCaches.length; q++) {
+                if (oldCaches[q] !== PP_SHELL_CACHE && oldCaches[q] !== PP_CONTENT_CACHE &&
+                    (oldCaches[q].indexOf("pp-zai-") === 0 || oldCaches[q].indexOf("pp-content-") === 0)) {
+                    await caches.delete(oldCaches[q]);
+                }
+            }
             await beriStatus({jenis:"SINKRON_PEKAN_SELESAI", sukses:true, pekanAktif:0, tersimpan:0, gagal:0, total:0});
             return;
         }
@@ -200,6 +212,14 @@ self.addEventListener("message", function (event) {
             var keys = await cache.keys();
             for (var k = 0; k < keys.length; k++) {
                 if (!allowed.has(keys[k].url)) await cache.delete(keys[k]);
+            }
+            /* Setelah dua pekan baru lengkap, barulah cache generasi lama dibuang. */
+            var oldCachesAfterSync = await caches.keys();
+            for (var n = 0; n < oldCachesAfterSync.length; n++) {
+                if (oldCachesAfterSync[n] !== PP_SHELL_CACHE && oldCachesAfterSync[n] !== PP_CONTENT_CACHE &&
+                    (oldCachesAfterSync[n].indexOf("pp-zai-") === 0 || oldCachesAfterSync[n].indexOf("pp-content-") === 0)) {
+                    await caches.delete(oldCachesAfterSync[n]);
+                }
             }
         }
 

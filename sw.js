@@ -36,14 +36,32 @@ self.addEventListener("install", function (event) {
 self.addEventListener("activate", function (event) {
     event.waitUntil((async function () {
         var keys = await caches.keys();
-        await Promise.all(keys.map(function (key) {
-            if ((key.indexOf("pp-zai-") === 0 || key.indexOf("pp-shell-") === 0 ||
-                 key.indexOf("pp-content-") === 0) &&
-                key !== PP_SHELL_CACHE && key !== PP_CONTENT_CACHE) {
-                return caches.delete(key);
+        var shellCache = await caches.open(PP_SHELL_CACHE);
+        var contentCache = await caches.open(PP_CONTENT_CACHE);
+
+        /* Pindahkan cache lama terlebih dahulu: materi tetap aman sampai
+           unduhan dua pekan terbaru berhasil, sementara shell aplikasi tetap ada. */
+        for (var i = 0; i < keys.length; i++) {
+            var key = keys[i];
+            if (key === PP_SHELL_CACHE || key === PP_CONTENT_CACHE ||
+                !(key.indexOf("pp-zai-") === 0 || key.indexOf("pp-shell-") === 0 ||
+                  key.indexOf("pp-content-") === 0)) continue;
+            var oldCache = await caches.open(key);
+            var requests = await oldCache.keys();
+            for (var j = 0; j < requests.length; j++) {
+                var oldUrl = new URL(requests[j].url);
+                var oldResponse = await oldCache.match(requests[j]);
+                if (!oldResponse) continue;
+                if (urlMateri(oldUrl)) {
+                    if (!await contentCache.match(requests[j])) {
+                        await contentCache.put(requests[j], oldResponse);
+                    }
+                } else if (!await shellCache.match(requests[j])) {
+                    await shellCache.put(requests[j], oldResponse);
+                }
             }
-            return Promise.resolve(false);
-        }));
+            await caches.delete(key);
+        }
         await self.clients.claim();
     })());
 });

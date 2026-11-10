@@ -832,7 +832,10 @@
 
     function tampilkanTombolInstall() {
         var b = document.getElementById("btn-install");
-        if (b && !dalamModeAplikasi()) b.style.display = "flex";
+        if (!b) return;
+        /* Tombol hanya tampil setelah browser benar-benar mengirim
+           beforeinstallprompt; jangan tampil sebagai tombol semu. */
+        b.style.display = (!dalamModeAplikasi() && promptInstall) ? "flex" : "none";
     }
 
     window.addEventListener("beforeinstallprompt", function (e) {
@@ -873,11 +876,38 @@
 
     tampilkanTombolInstall();
 
-    /* Beri tahu service worker agar precache bacaan pekan berjalan
-       diperbarui (bila perangkat sedang daring). */
+    /* Unduh offline hanya untuk Pekan Ini dan Pekan Lalu.
+       Cache perangkat dibersihkan; sumber GitHub tidak pernah dihapus. */
+    function daftarAsetOffline() {
+        var pos = window.ppPosisi();
+        if (!pos.dalam || !pos.pekan) return null;
+        var pekan = [pos.pekan, pos.pekan - 1].filter(function (n) { return n >= 1; });
+        var daftar = [];
+        pekan.forEach(function (nomor) {
+            var nn = pad2(nomor);
+            daftar.push(K.pathTeks + "t_" + nn + "_garis_besar_01.html");
+            Object.keys(K.hariBerkas || {}).forEach(function (k) {
+                daftar.push(K.pathTeks + "t_" + nn + "_" + K.hariBerkas[k] + "_01.html");
+            });
+            var media = daftarMedia(nomor);
+            (media.audio || []).forEach(function (nama) { daftar.push(folderMedia(nomor) + nama); });
+            (media.video || []).forEach(function (nama) { daftar.push(folderMedia(nomor) + nama); });
+        });
+        return daftar.filter(function (v, i, a) { return a.indexOf(v) === i; })
+            .map(function (v) { return new URL(v, document.baseURI).href; });
+    }
+
     if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.ready.then(function (reg) {
-            if (reg.active) reg.active.postMessage({ jenis: "SINKRON_PEKAN" });
-        }).catch(function () {});
+        var asetOffline = daftarAsetOffline();
+        if (asetOffline && asetOffline.length) {
+            navigator.serviceWorker.ready.then(function (reg) {
+                var pekerja = reg.active || reg.waiting || reg.installing;
+                if (pekerja) pekerja.postMessage({
+                    jenis: "SINKRON_PEKAN",
+                    pekanAktif: window.ppPosisi().pekan,
+                    urls: asetOffline
+                });
+            }).catch(function () {});
+        }
     }
 })();
